@@ -1,0 +1,14 @@
+{
+  "en":{
+    "hero":{ "title":"Micah Walker — Product Designer & Builder","subtitle":"Designing human-centred products from idea to shipped outcome"},
+    "timeline":{ "title":"Experience"}
+  },
+  "es":{
+    "hero":{ "title":"Micah Walker — Diseñador de Producto y Constructor","subtitle":"Diseñando productos centrados en las personas, desde la idea hasta su lanzamiento"},
+    "timeline":{ "title":"Experiencia"}
+  },
+  "de":{
+    "hero":{ "title":"Micah Walker — Produktdesigner & Macher","subtitle":"Gestaltung humanzentrierter Produkte von der Idee bis zum Release"},
+    "timeline":{ "title":"Erfahrung"}
+  }
+}

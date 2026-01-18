@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Game Test</title>
+  <style>
+    body { margin: 20px; font-family: Arial, sans-serif; }
+    canvas { border: 2px solid #333; display: block; margin: 20px auto; }
+    #console { background: #f0f0f0; padding: 10px; margin: 20px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Paper Toss Debug</h1>
+  <div id="console"></div>
+  <canvas id="game-canvas" width="250" height="188"></canvas>
+  <div style="text-align: center;">
+    <button id="start-game">Start Game</button>
+  </div>
+  
+  <script type="module">
+    import { PaperTossGame } from './js/components/paperToss/game.js';
+    
+    const log = document.getElementById('console');
+    const logMsg = (msg) => {
+      const p = document.createElement('p');
+      p.textContent = msg;
+      log.appendChild(p);
+      console.log(msg);
+    };
+    
+    logMsg('Initializing game...');
+    
+    const canvas = document.getElementById('game-canvas');
+    const game = new PaperTossGame(canvas, { maxThrows: 5 });
+    
+    logMsg('Game instance created');
+    
+    game.init();
+    logMsg('Game initialized');
+    
+    document.getElementById('start-game').addEventListener('click', () => {
+      logMsg('Starting game...');
+      game.startGame();
+      logMsg('Game started');
+    });
+    
+    canvas.addEventListener('mousedown', (e) => {
+      logMsg(`Mouse down at: ${e.clientX}, ${e.clientY}`);
+    });
+  </script>
+</body>
+</html>

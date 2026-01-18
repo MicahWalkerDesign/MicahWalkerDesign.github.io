@@ -1,0 +1,104 @@
+:root{
+  --color-primary:#1E4C3A;
+  --color-secondary:#B76E4B;
+  --color-accent:#7FB7DF;
+  --sticky-note:#FFF3B0;
+  --phase-muted:#F4F4F2;
+  --bg:#FAF6F0;
+  --text:#333233;
+  --muted:#6B6B6B;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+.site-header{display:flex;justify-content:flex-end;padding:12px 20px}
+.lang-switch button{background:transparent;border:1px solid transparent;padding:6px 8px;margin-left:6px;border-radius:6px;color:var(--muted);cursor:pointer}
+.lang-switch button.active{border-color:var(--color-primary);color:var(--color-primary)}
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;left:auto;width:auto;height:auto;padding:8px 12px;background:white;border-radius:6px;margin:8px}
+.lang-switch button:focus{outline:2px solid var(--color-accent);outline-offset:3px}
+.timeline-header[tabindex],.card-header[tabindex]{outline-offset:3px}
+.hero{padding:48px 20px;display:flex;align-items:center;justify-content:center}
+
+.visually-hidden{position:absolute!important;clip:rect(1px,1px,1px,1px)!important;padding:0!important;border:0!important;height:1px!important;width:1px!important;overflow:hidden}
+
+.section-title{letter-spacing:0.02em}
+.company{font-size:13px;color:var(--muted)}
+.hero-inner{text-align:center;max-width:900px;margin:0 auto;animation:fadeUp .7s ease both}
+.avatar{width:160px;height:160px;border-radius:50%;object-fit:cover;border:6px solid rgba(30,76,58,0.06);box-shadow:0 8px 24px rgba(30,76,58,0.06)}
+.title{font-size:clamp(22px,4vw,40px);margin:18px 0 8px}
+.subtitle{font-size:clamp(14px,2.2vw,18px);color:var(--muted);margin:0}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.section-title{font-size:18px;margin:28px 20px 12px}
+.timeline{padding:10px 20px}
+.timeline-list{max-width:860px;margin:0 auto}
+.timeline-item{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.04);align-items:flex-start}
+.timeline-marker{width:12px;height:12px;border-radius:50%;background:var(--color-primary);margin-top:8px}
+.timeline-content{flex:1}
+.timeline-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.role{font-weight:600}
+.company{color:var(--muted);font-size:14px}
+.timeline-body{margin-top:8px;max-height:0;overflow:hidden;transition:max-height .28s ease;padding-right:6px}
+.timeline-body.open{max-height:240px}
+
+.portfolio{padding:26px 20px}
+.divider{background:linear-gradient(90deg,var(--color-primary),var(--color-accent));color:white;padding:14px;border-radius:8px;max-width:900px;margin:0 auto 18px;text-align:center;font-weight:600}
+.columns{display:flex;gap:20px;max-width:900px;margin:0 auto}
+.column{flex:1;background:rgba(255,255,255,0.6);padding:14px;border-radius:10px}
+.cards .card{border-radius:10px;padding:12px;margin-bottom:12px;background:white;border:1px solid rgba(0,0,0,0.04)}
+.card-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.card-phases{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px;opacity:0;transform:translateY(6px);transition:all .28s ease}
+.card-phases.open{opacity:1;transform:none}
+.phase{padding:12px;border-radius:10px;border:1px dashed rgba(0,0,0,0.06);background:linear-gradient(0deg,rgba(250,250,250,1),white);min-height:64px;display:flex;flex-direction:column;justify-content:center}
+
+/* Phase visual language */
+.phase[data-phase="0"]{background:linear-gradient(180deg,var(--sticky-note),#fff9d6);border-style:solid;border-color:rgba(0,0,0,0.06);box-shadow:2px 6px 12px rgba(30,76,58,0.04);transform:rotate(-1deg)}
+.phase[data-phase="0"] .placeholder{font-style:italic;color:#6b4f2b}
+.phase[data-phase="1"]{background:linear-gradient(180deg,white,var(--phase-muted));border-radius:8px;box-shadow:0 6px 18px rgba(30,76,58,0.04)}
+.phase[data-phase="2"]{background:linear-gradient(180deg,#fff,#fbfbfb);display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px}
+.phase[data-phase="2"] .placeholder{grid-column:span 1;height:46px;background:#fff;border:1px solid rgba(0,0,0,0.04)}
+.phase[data-phase="3"]{background:linear-gradient(180deg,#ffffff,#f7fffd);box-shadow:0 10px 30px rgba(30,76,58,0.06);border-radius:12px}
+.phase strong{display:block;margin-bottom:6px}
+
+.phase-icon{width:40px;height:40px;margin:0 auto 8px;display:block}
+.phase{align-items:center;text-align:center}
+
+/* Icon entrance animation */
+.phase-icon{opacity:0;transform:translateY(8px) scale(.98);transition:opacity .36s ease,transform .36s cubic-bezier(.2,.9,.2,1)}
+.card-phases.open .phase .phase-icon{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .phase-icon{transition:none!important;transform:none!important;opacity:1!important}
+}
+
+/* Focus-visible polish for interactive headers */
+.timeline-header:focus-visible, .card-header:focus-visible, #start-game:focus-visible, .lang-switch button:focus-visible{
+  outline:3px solid rgba(127,183,223,0.28);
+  border-radius:8px;
+}
+
+/* small icon for chevrons via reduced motion-friendly transform */
+.chev{transition:transform .18s ease;color:var(--muted);font-weight:600}
+.timeline-body.open + .chev, .card-phases.open + .chev { transform: rotate(90deg); }
+
+/* refined hero spacing */
+.hero-inner{padding:6px 14px}
+.title{font-weight:700}
+.subtitle{max-width:70ch;margin-left:auto;margin-right:auto}
+
+.game{padding:26px 20px;max-width:900px;margin:0 auto}
+#toss-canvas{width:100%;max-width:900px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:linear-gradient(180deg,#fff,#f6f7f6)}
+#offer-modal{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35)}
+.modal.hidden{display:none}
+.modal-content{background:white;padding:18px;border-radius:10px;width:320px}
+.modal-actions{margin-top:12px;text-align:right}
+
+@media (max-width:720px){
+  .columns{flex-direction:column}
+  .timeline-item{flex-direction:row}
+  .hero{padding:28px 12px}
+  .avatar{width:120px;height:120px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
