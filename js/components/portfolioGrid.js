@@ -297,6 +297,7 @@ function createGalleryContent(phaseData, lang) {
             src="${img}" 
             alt="Project screenshot" 
             class="gallery-image"
+            loading="lazy"
             onerror="this.src='assets/case-studies/placeholder.svg'"
           >
         </div>
@@ -340,6 +341,7 @@ function createProofOfWorkContent(phaseData, lang) {
             src="${phaseData[tool] || 'assets/case-studies/placeholder.svg'}" 
             alt="${t(`portfolio.tools.${tool}`)} preview" 
             class="gallery-image"
+            loading="lazy"
             onerror="this.src='assets/case-studies/placeholder.svg'"
           >
         </div>

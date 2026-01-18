@@ -279,6 +279,20 @@ function handleLanguageChange(event) {
   }
 }
 
+/**
+ * Performance Optimization:
+ * Adds a class to body during resize to disable transitions/animations.
+ * This prevents layout thrashing and improves resize performance.
+ */
+let resizeTimer;
+window.addEventListener("resize", () => {
+  document.body.classList.add("resize-animation-stopper");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove("resize-animation-stopper");
+  }, 400);
+});
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);

@@ -151,10 +151,14 @@ export class PaperTossGame {
       rotation: 0
     };
     
-    // Handle window resize
+    // Handle window resize with debounce to prevent layout thrashing
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-      this.setupCanvas();
-      this.render();
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        this.setupCanvas();
+        this.render();
+      }, 100);
     });
   }
   
