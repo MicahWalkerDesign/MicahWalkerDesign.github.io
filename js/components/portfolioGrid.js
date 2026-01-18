@@ -152,7 +152,7 @@ export function renderPortfolio(container, data = defaultPortfolioData) {
   const lang = getCurrentLanguage();
   
   const html = `
-    <div class="portfolio__grid">
+    <div class="portfolio-columns-wrapper">
       <div class="portfolio-column">
         <h3 class="portfolio-column__title" data-i18n="portfolio.appDevelopment">${t('portfolio.appDevelopment')}</h3>
         <div class="portfolio-cards" id="apps-column">

@@ -92,13 +92,8 @@ export class PaperTossGame {
     this.resetGame();
     
     // Log startup geometry once (for tuning verification)
-    console.log('=== GAME GEOMETRY ===');
-    console.log('Canvas: ' + this.width + 'x' + this.height);
-    console.log('Bin: ' + this.options.binWidth + 'w x ' + this.options.binHeight + 'h');
-    console.log('Paper start: (' + Math.round(this.restingPaper.x) + ', ' + Math.round(this.restingPaper.y) + ')');
-    console.log('Bin spawn: (' + Math.round(this.bin.x + this.bin.width/2) + ', ' + Math.round(this.bin.y) + ') Lane ' + this.bin.lane);
-    console.log('Lane distances: A=' + Math.round(this.restingPaper.y - this.lanes.A.centerY) + 'px, B=' + Math.round(this.restingPaper.y - this.lanes.B.centerY) + 'px, C=' + Math.round(this.restingPaper.y - this.lanes.C.centerY) + 'px');
-    console.log('==================');
+    // Logging removed for production
+
     this.render();
   }
   

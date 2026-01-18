@@ -24,6 +24,37 @@ import { PaperTossGame } from './components/paperToss/game.js';
 let experienceData = null;
 let paperTossGame = null;
 
+// Mobile Menu Logic
+function setupMobileMenu() {
+  const btn = document.querySelector('.header__menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const links = menu.querySelectorAll('a');
+  
+  if (!btn || !menu) return;
+  
+  btn.addEventListener('click', () => {
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    toggleMenu(!isExpanded);
+  });
+  
+  // Close menu when clicking a link
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      toggleMenu(false);
+    });
+  });
+  
+  function toggleMenu(open) {
+    btn.setAttribute('aria-expanded', open);
+    btn.classList.toggle('is-active', open);
+    menu.setAttribute('aria-hidden', !open);
+    menu.classList.toggle('is-open', open);
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+}
+
 /**
  * Initializes the entire application.
  * Called when DOM is ready.
@@ -37,8 +68,10 @@ async function initApp() {
   // Set up toggle button listeners
   setupLanguageToggles();
   setupThemeToggles();
+  setupMobileMenu();
   
   // Set up contact modal
+
   setupContactModal();
   
   // Load and render experience timeline
