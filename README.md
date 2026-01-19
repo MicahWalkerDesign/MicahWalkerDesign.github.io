@@ -5,8 +5,8 @@ A static portfolio website for Product Designer & Builder, built with vanilla HT
 ## 🌍 Theme: Earth / Motion / Clarity
 
 The design system features two themes:
-- **Sage** (default): Nature-inspired greens
-- **Clay**: Warm terracotta tones
+- **Sage** : Nature-inspired greens
+- **Clay** (default): Warm terracotta tones
 
 ## ✨ Features
 
