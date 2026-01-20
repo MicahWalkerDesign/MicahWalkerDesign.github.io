@@ -218,6 +218,13 @@ export function renderPortfolio(container, data = defaultPortfolioData) {
       title: 'Future Experience',
       summary: 'Another case study coming soon.',
       tags: ['UX Research', 'Prototyping']
+    },
+    { 
+      id: 'coming-soon-3', 
+      isPlaceholder: true,
+      title: 'In the Lab',
+      summary: 'Experimental designs and concepts.',
+      tags: ['Interaction', 'Motion']
     }
   ];
   
