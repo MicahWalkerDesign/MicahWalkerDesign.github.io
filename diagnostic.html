@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostic Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: monospace;
+      background: #f0f0f0;
+    }
+    
+    .test-container {
+      background: white;
+      border: 2px solid red;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .test-canvas-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+      background: #e0e0e0;
+      border: 2px solid blue;
+    }
+    
+    .test-canvas {
+      width: 250px;
+      height: 188px;
+      background: linear-gradient(180deg, #D8CFC4 0%, #B8A490 100%);
+      border: 2px solid green;
+      cursor: grab;
+      touch-action: none;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    #log {
+      background: #222;
+      color: #0f0;
+      padding: 10px;
+      margin-top: 20px;
+      height: 200px;
+      overflow-y: auto;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Diagnostic Test</h1>
+  
+  <h2>Issue 1: Container Centering</h2>
+  <p>Red border = container (should be centered with equal left/right margins)</p>
+  
+  <div class="test-container">
+    <p>This container has max-width: 1200px and margin: 0 auto</p>
+    <p>Measure the distance from left edge to container border vs right edge to container border</p>
+  </div>
+  
+  <h2>Issue 2: Canvas Click Detection</h2>
+  <p>Blue border = canvas wrapper, Green border = canvas</p>
+  
+  <div class="test-canvas-wrapper">
+    <canvas 
+      id="test-canvas" 
+      class="test-canvas"
+      width="250"
+      height="188"
+    ></canvas>
+  </div>
+  
+  <button id="start-btn">Start Game Simulation</button>
+  
+  <div id="log"></div>
+  
+  <script type="module">
+    const log = document.getElementById('log');
+    const canvas = document.getElementById('test-canvas');
+    const startBtn = document.getElementById('start-btn');
+    
+    function logMsg(msg) {
+      const timestamp = new Date().toLocaleTimeString();
+      log.innerHTML += `[${timestamp}] ${msg}<br>`;
+      log.scrollTop = log.scrollHeight;
+    }
+    
+    logMsg('Page loaded');
+    logMsg(`Canvas getBoundingClientRect: ${JSON.stringify(canvas.getBoundingClientRect())}`);
+    logMsg(`Canvas CSS size: ${canvas.style.width || 'not set'} x ${canvas.style.height || 'not set'}`);
+    logMsg(`Canvas actual size: ${canvas.width} x ${canvas.height}`);
+    logMsg(`Window DPR: ${window.devicePixelRatio}`);
+    
+    let isPlaying = false;
+    
+    startBtn.addEventListener('click', () => {
+      isPlaying = true;
+      logMsg('Game started - click anywhere on canvas');
+    });
+    
+    canvas.addEventListener('mousedown', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      logMsg(`Canvas mousedown: clientX=${e.clientX}, clientY=${e.clientY}`);
+      logMsg(`  Rect: left=${rect.left.toFixed(2)}, top=${rect.top.toFixed(2)}`);
+      logMsg(`  Relative: x=${x.toFixed(2)}, y=${y.toFixed(2)}`);
+      logMsg(`  Is playing: ${isPlaying}`);
+      
+      if (!isPlaying) {
+        logMsg('  ❌ Game not started - click "Start Game Simulation" first');
+      } else {
+        logMsg('  ✅ Click detected successfully');
+      }
+    });
+    
+    canvas.addEventListener('click', (e) => {
+      logMsg(`Canvas click event fired`);
+    });
+    
+    // Test container centering
+    window.addEventListener('resize', () => {
+      const container = document.querySelector('.test-container');
+      const rect = container.getBoundingClientRect();
+      const leftMargin = rect.left;
+      const rightMargin = window.innerWidth - rect.right;
+      
+      logMsg(`Container margins: left=${leftMargin.toFixed(2)}px, right=${rightMargin.toFixed(2)}px, diff=${Math.abs(leftMargin - rightMargin).toFixed(2)}px`);
+    });
+    
+    // Initial check
+    setTimeout(() => {
+      const container = document.querySelector('.test-container');
+      const rect = container.getBoundingClientRect();
+      const leftMargin = rect.left;
+      const rightMargin = window.innerWidth - rect.right;
+      
+      logMsg(`Initial container check:`);
+      logMsg(`  Left margin: ${leftMargin.toFixed(2)}px`);
+      logMsg(`  Right margin: ${rightMargin.toFixed(2)}px`);
+      logMsg(`  Difference: ${Math.abs(leftMargin - rightMargin).toFixed(2)}px`);
+      
+      if (Math.abs(leftMargin - rightMargin) < 1) {
+        logMsg(`  ✅ Container is centered`);
+      } else {
+        logMsg(`  ❌ Container is NOT centered`);
+      }
+    }, 100);
+  </script>
+</body>
+</html>

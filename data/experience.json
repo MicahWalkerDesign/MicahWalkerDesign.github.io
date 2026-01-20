@@ -1,0 +1,14 @@
+{
+  "en":[
+    {"role":"Senior Product Designer","company":"Acme Health","range":"2021 — Present","description":"Leading cross-functional product design for consumer health applications. Focus on research-driven design and measurable outcomes."},
+    {"role":"Product Designer","company":"Studio Labs","range":"2018 — 2021","description":"Worked on multi-platform experiences and design systems."}
+  ],
+  "es":[
+    {"role":"Senior Product Designer","company":"Acme Health","range":"2021 — Presente","description":"Liderando el diseño de productos multiplataforma enfocados en la salud del consumidor."},
+    {"role":"Product Designer","company":"Studio Labs","range":"2018 — 2021","description":"Trabajo en experiencias multiplataforma y sistemas de diseño."}
+  ],
+  "de":[
+    {"role":"Senior Product Designer","company":"Acme Health","range":"2021 — Heute","description":"Leitung funktionsübergreifender Produktgestaltung für Consumer-Health-Anwendungen."},
+    {"role":"Product Designer","company":"Studio Labs","range":"2018 — 2021","description":"Arbeit an plattformübergreifenden Erfahrungen und Designsystemen."}
+  ]
+}

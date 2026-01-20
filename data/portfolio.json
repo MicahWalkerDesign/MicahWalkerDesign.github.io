@@ -1,0 +1,14 @@
+{
+  "en":{
+    "apps":[{"title":"HealthTrack","tag":"Mobile app"},{"title":"FitSync","tag":"Wearable companion"}],
+    "sites":[{"title":"Studio Site","tag":"Marketing site"},{"title":"Docs Hub","tag":"Documentation"}]
+  },
+  "es":{
+    "apps":[{"title":"HealthTrack","tag":"Aplicación móvil"},{"title":"FitSync","tag":"Companion para wearable"}],
+    "sites":[{"title":"Sitio Studio","tag":"Sitio de marketing"},{"title":"Docs Hub","tag":"Documentación"}]
+  },
+  "de":{
+    "apps":[{"title":"HealthTrack","tag":"Mobile App"},{"title":"FitSync","tag":"Wearable Begleiter"}],
+    "sites":[{"title":"Studio Seite","tag":"Marketingseite"},{"title":"Docs Hub","tag":"Dokumentation"}]
+  }
+}
