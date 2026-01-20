@@ -1,0 +1,462 @@
+{
+  "_comment": [
+    "LinkedIn Experience Data Mirror",
+    "------------------------------",
+    "IMPORTANT: Real-time LinkedIn API embedding is NOT possible on GitHub Pages.",
+    "LinkedIn does not provide a public API for profile data without OAuth.",
+    "Scraping violates LinkedIn's Terms of Service.",
+    "",
+    "WORKAROUND: This JSON file serves as a manual mirror of LinkedIn experience.",
+    "To update this data:",
+    "  1. Export your LinkedIn profile data (Settings > Data Privacy > Get a copy)",
+    "  2. Extract the Positions.csv file",
+    "  3. Format entries into this JSON structure",
+    "  4. Commit and push to GitHub",
+    "",
+    "This approach is safe, compliant, and works on static hosting."
+  ],
+  "lastUpdated": "2026-01-16",
+  "experiences": [
+    {
+      "id": "arthrex-apac",
+      "company": "Arthrex APAC",
+      "role": {
+        "en": "Sales Representative / Territory Manager – Orthopaedic Sports Medicine",
+        "es": "Representante de Ventas / Gerente de Territorio – Medicina Deportiva Ortopédica",
+        "de": "Vertriebsmitarbeiter / Gebietsleiter – Orthopädische Sportmedizin"
+      },
+      "location": {
+        "en": "Perth, Western Australia · Hybrid",
+        "es": "Perth, Australia Occidental · Híbrido",
+        "de": "Perth, Westaustralien · Hybrid"
+      },
+      "dates": {
+        "start": "2024-09",
+        "end": null,
+        "display": {
+          "en": "Sep 2024 – Present",
+          "es": "Sep 2024 – Presente",
+          "de": "Sep 2024 – Heute"
+        }
+      },
+      "description": {
+        "en": "Strategic consultant between clinicians, hospitals, and product teams. Driving adoption of innovative orthopaedic solutions.",
+        "es": "Consultor estratégico entre clínicos, hospitales y equipos de producto. Impulsando la adopción de soluciones ortopédicas innovadoras.",
+        "de": "Strategischer Berater zwischen Klinikern, Krankenhäusern und Produktteams. Fördert die Einführung innovativer orthopädischer Lösungen."
+      },
+      "bullets": {
+        "en": [
+          "Strategic consultant between clinicians, hospitals, and product teams",
+          "Workflow analysis and system adoption",
+          "Product education and training",
+          "CRM & data-informed territory optimisation",
+          "Cross-functional collaboration",
+          "User-centred thinking & feedback loops"
+        ],
+        "es": [
+          "Consultor estratégico entre clínicos, hospitales y equipos de producto",
+          "Análisis de flujos de trabajo y adopción de sistemas",
+          "Educación y capacitación de productos",
+          "Optimización de territorio basada en CRM y datos",
+          "Colaboración multifuncional",
+          "Pensamiento centrado en el usuario y bucles de retroalimentación"
+        ],
+        "de": [
+          "Strategischer Berater zwischen Klinikern, Krankenhäusern und Produktteams",
+          "Analyse von Workflows und Systemeinführung",
+          "Produktschulung und -weiterbildung",
+          "CRM- und datenbasierte Gebietsoptimierung",
+          "Bereichsübergreifende Zusammenarbeit",
+          "Nutzerzentriertes Denken und Feedback-Schleifen"
+        ]
+      },
+      "skills": ["Sales Strategy", "Medical Devices", "Territory Management", "CRM", "Product Training", "Stakeholder Management"]
+    },
+    {
+      "id": "freelance-designer",
+      "company": "Freelance / Independent",
+      "role": {
+        "en": "Product Designer & Builder",
+        "es": "Diseñador de Producto y Constructor",
+        "de": "Produktdesigner & Entwickler"
+      },
+      "location": {
+        "en": "Remote (Germany / Australia)",
+        "es": "Remoto (Alemania / Australia)",
+        "de": "Remote (Deutschland / Australien)"
+      },
+      "dates": {
+        "start": "2020-04",
+        "end": null,
+        "display": {
+          "en": "Apr 2020 – Present",
+          "es": "Abr 2020 – Presente",
+          "de": "Apr 2020 – Heute"
+        }
+      },
+      "description": {
+        "en": "Designing and building digital products from concept to launch. Focus on health, fitness, and productivity applications.",
+        "es": "Diseñando y construyendo productos digitales desde el concepto hasta el lanzamiento. Enfoque en aplicaciones de salud, fitness y productividad.",
+        "de": "Entwurf und Entwicklung digitaler Produkte vom Konzept bis zum Launch. Fokus auf Anwendungen für Gesundheit, Fitness und Produktivität."
+      },
+      "bullets": {
+        "en": [
+          "End-to-end product design from research to shipped product",
+          "UI/UX design for mobile and web applications",
+          "Front-end development (HTML, CSS, JavaScript)",
+          "Client consultation and requirements gathering",
+          "Prototyping in Figma, Adobe XD, and Sketch"
+        ],
+        "es": [
+          "Diseño de producto de principio a fin, desde investigación hasta producto final",
+          "Diseño UI/UX para aplicaciones móviles y web",
+          "Desarrollo front-end (HTML, CSS, JavaScript)",
+          "Consulta con clientes y recopilación de requisitos",
+          "Prototipado en Figma, Adobe XD y Sketch"
+        ],
+        "de": [
+          "End-to-End Produktdesign von der Recherche bis zum ausgelieferten Produkt",
+          "UI/UX-Design für Mobile- und Web-Anwendungen",
+          "Front-End-Entwicklung (HTML, CSS, JavaScript)",
+          "Kundenberatung und Anforderungserhebung",
+          "Prototyping in Figma, Adobe XD und Sketch"
+        ]
+      },
+      "skills": ["Product Design", "UI/UX", "Figma", "Adobe XD", "HTML/CSS", "JavaScript", "User Research"]
+    },
+    {
+      "id": "uniklinik-frankfurt",
+      "company": "Uniklinik Frankfurt",
+      "role": {
+        "en": "Clinical Exercise Physiologist",
+        "es": "Fisiólogo del Ejercicio Clínico",
+        "de": "Klinischer Trainingsphysiologe"
+      },
+      "location": {
+        "en": "Frankfurt, Germany · On-site",
+        "es": "Frankfurt, Alemania · Presencial",
+        "de": "Frankfurt, Deutschland · Präsenz"
+      },
+      "dates": {
+        "start": "2022-08",
+        "end": "2024-07",
+        "display": {
+          "en": "Aug 2022 – Jul 2024",
+          "es": "Ago 2022 – Jul 2024",
+          "de": "Aug 2022 – Jul 2024"
+        }
+      },
+      "description": {
+        "en": "Clinical exercise programming for orthopaedic and cardiac rehabilitation patients.",
+        "es": "Programación de ejercicio clínico para pacientes de rehabilitación ortopédica y cardíaca.",
+        "de": "Klinische Trainingsplanung für orthopädische und kardiale Reha-Patienten."
+      },
+      "bullets": {
+        "en": [
+          "Designed individualised exercise programs for rehabilitation",
+          "Collaborated with multidisciplinary medical teams",
+          "Monitored patient progress and adapted protocols",
+          "Patient education on exercise and lifestyle"
+        ],
+        "es": [
+          "Diseño de programas de ejercicio individualizados para rehabilitación",
+          "Colaboración con equipos médicos multidisciplinarios",
+          "Monitoreo del progreso del paciente y adaptación de protocolos",
+          "Educación del paciente sobre ejercicio y estilo de vida"
+        ],
+        "de": [
+          "Entwicklung individueller Trainingsprogramme für die Rehabilitation",
+          "Zusammenarbeit mit multidisziplinären medizinischen Teams",
+          "Überwachung des Fortschritts und Anpassung von Protokollen",
+          "Patientenaufklärung zu Training und Lebensstil"
+        ]
+      },
+      "skills": ["Clinical Exercise", "Rehabilitation", "Patient Care", "Program Design", "Medical Collaboration"]
+    },
+    {
+      "id": "aussie-ausdauer",
+      "company": "Aussie Ausdauer",
+      "role": {
+        "en": "Personal Trainer & Injury Consultant",
+        "es": "Entrenador Personal y Consultor de Lesiones",
+        "de": "Personal Trainer & Verletzungsberater"
+      },
+      "location": {
+        "en": "Frankfurt, Germany · Hybrid",
+        "es": "Frankfurt, Alemania · Híbrido",
+        "de": "Frankfurt, Deutschland · Hybrid"
+      },
+      "dates": {
+        "start": "2020-02",
+        "end": "2024-06",
+        "display": {
+          "en": "Feb 2020 – Jun 2024",
+          "es": "Feb 2020 – Jun 2024",
+          "de": "Feb 2020 – Jun 2024"
+        }
+      },
+      "description": {
+        "en": "Running personal training business specialising in injury prevention and rehabilitation.",
+        "es": "Negocio de entrenamiento personal especializado en prevención y rehabilitación de lesiones.",
+        "de": "Leitung eines Personal-Training-Unternehmens mit Schwerpunkt auf Verletzungsprävention und Rehabilitation."
+      },
+      "bullets": {
+        "en": [
+          "Built and managed independent training business",
+          "Specialised in injury prevention and return-to-sport",
+          "Online and in-person coaching delivery",
+          "Client acquisition and retention strategies"
+        ],
+        "es": [
+          "Creación y gestión de negocio de entrenamiento independiente",
+          "Especialización en prevención de lesiones y retorno al deporte",
+          "Entrega de coaching online y presencial",
+          "Estrategias de adquisición y retención de clientes"
+        ],
+        "de": [
+          "Aufbau und Leitung eines unabhängigen Trainingsunternehmens",
+          "Spezialisierung auf Verletzungsprävention und Return-to-Sport",
+          "Online- und Präsenz-Coaching",
+          "Strategien zur Kundengewinnung und -bindung"
+        ]
+      },
+      "skills": ["Personal Training", "Injury Prevention", "Business Management", "Client Relations"]
+    },
+    {
+      "id": "tg-ruesselsheim",
+      "company": "TG 1862 Rüsselsheim",
+      "role": {
+        "en": "Orthopaedic Rehabilitation Fitness Coordinator",
+        "es": "Coordinador de Fitness en Rehabilitación Ortopédica",
+        "de": "Koordinator für Fitness in der orthopädischen Rehabilitation"
+      },
+      "location": {
+        "en": "Rüsselsheim, Germany · On-site",
+        "es": "Rüsselsheim, Alemania · Presencial",
+        "de": "Rüsselsheim, Deutschland · Präsenz"
+      },
+      "dates": {
+        "start": "2019-09",
+        "end": "2022-08",
+        "display": {
+          "en": "Sep 2019 – Aug 2022",
+          "es": "Sep 2019 – Ago 2022",
+          "de": "Sep 2019 – Aug 2022"
+        }
+      },
+      "description": {
+        "en": "Coordinating fitness programs within orthopaedic rehabilitation setting.",
+        "es": "Coordinación de programas de fitness en entorno de rehabilitación ortopédica.",
+        "de": "Koordination von Fitnessprogrammen im orthopädischen Reha-Umfeld."
+      },
+      "bullets": {
+        "en": [
+          "Coordinated fitness programs for rehabilitation members",
+          "Supervised group exercise classes",
+          "Equipment maintenance and facility management",
+          "Member onboarding and progress tracking"
+        ],
+        "es": [
+          "Coordinación de programas de fitness para miembros en rehabilitación",
+          "Supervisión de clases de ejercicio grupal",
+          "Mantenimiento de equipos y gestión de instalaciones",
+          "Integración de miembros y seguimiento del progreso"
+        ],
+        "de": [
+          "Koordination von Fitnessprogrammen für Reha-Mitglieder",
+          "Leitung von Gruppentrainings",
+          "Gerätewartung und Facility-Management",
+          "Onboarding von Mitgliedern und Fortschrittsverfolgung"
+        ]
+      },
+      "skills": ["Rehabilitation", "Fitness Coordination", "Group Exercise", "Member Management"]
+    },
+    {
+      "id": "dantrim",
+      "company": "DanTrim GmbH",
+      "role": {
+        "en": "Studio Manager & Rehabilitation Consultant",
+        "es": "Gerente de Estudio y Consultor de Rehabilitación",
+        "de": "Studioleiter & Rehabilitationsberater"
+      },
+      "location": {
+        "en": "Frankfurt, Germany · On-site",
+        "es": "Frankfurt, Alemania · Presencial",
+        "de": "Frankfurt, Deutschland · Präsenz"
+      },
+      "dates": {
+        "start": "2018-03",
+        "end": "2020-02",
+        "display": {
+          "en": "Mar 2018 – Feb 2020",
+          "es": "Mar 2018 – Feb 2020",
+          "de": "Mär 2018 – Feb 2020"
+        }
+      },
+      "description": {
+        "en": "Managing fitness studio operations and providing rehabilitation consulting services.",
+        "es": "Gestión de operaciones de estudio de fitness y servicios de consultoría en rehabilitación.",
+        "de": "Leitung der Studioabläufe und Beratung in der Rehabilitation."
+      },
+      "bullets": {
+        "en": [
+          "Managed daily studio operations and staff scheduling",
+          "Provided rehabilitation consulting for members",
+          "Drove membership sales and retention",
+          "Developed training programs and protocols"
+        ],
+        "es": [
+          "Gestión de operaciones diarias del estudio y programación de personal",
+          "Consultoría de rehabilitación para miembros",
+          "Impulso de ventas de membresías y retención",
+          "Desarrollo de programas de entrenamiento y protocolos"
+        ],
+        "de": [
+          "Verantwortung für den täglichen Studiobetrieb und Einsatzplanung",
+          "Rehabilitationsberatung für Mitglieder",
+          "Steigerung von Mitgliedsverkäufen und -bindung",
+          "Entwicklung von Trainingsprogrammen und Protokollen"
+        ]
+      },
+      "skills": ["Studio Management", "Staff Leadership", "Sales", "Rehabilitation", "Program Development"]
+    },
+    {
+      "id": "forum-newcastle",
+      "company": "The Forum Sports & Aquatics Centre (UoN)",
+      "role": {
+        "en": "Certified Personal Trainer",
+        "es": "Entrenador Personal Certificado",
+        "de": "Zertifizierter Personal Trainer"
+      },
+      "location": {
+        "en": "Newcastle, NSW, Australia · On-site",
+        "es": "Newcastle, NSW, Australia · Presencial",
+        "de": "Newcastle, NSW, Australien · Präsenz"
+      },
+      "dates": {
+        "start": "2016-01",
+        "end": "2016-12",
+        "display": {
+          "en": "Jan 2016 – Dec 2016",
+          "es": "Ene 2016 – Dic 2016",
+          "de": "Jan 2016 – Dez 2016"
+        }
+      },
+      "description": {
+        "en": "Delivering personal training services at university sports facility.",
+        "es": "Servicios de entrenamiento personal en instalaciones deportivas universitarias.",
+        "de": "Erbringung von Personal-Training-Leistungen in einer universitären Sportanlage."
+      },
+      "bullets": {
+        "en": [
+          "Conducted fitness assessments and goal setting",
+          "Designed and delivered personalised training programs",
+          "Supported members with technique and motivation"
+        ],
+        "es": [
+          "Evaluaciones de fitness y establecimiento de metas",
+          "Diseño y entrega de programas de entrenamiento personalizados",
+          "Apoyo a miembros con técnica y motivación"
+        ],
+        "de": [
+          "Durchführung von Fitness-Assessments und Zielsetzung",
+          "Entwurf und Durchführung personalisierter Trainingsprogramme",
+          "Unterstützung von Mitgliedern bei Technik und Motivation"
+        ]
+      },
+      "skills": ["Personal Training", "Fitness Assessment", "Program Design"]
+    },
+    {
+      "id": "swim-instructor",
+      "company": "Various Employers",
+      "role": {
+        "en": "Swim Instructor",
+        "es": "Instructor de Natación",
+        "de": "Schwimmlehrer"
+      },
+      "location": {
+        "en": "Newcastle, NSW, Australia · On-site",
+        "es": "Newcastle, NSW, Australia · Presencial",
+        "de": "Newcastle, NSW, Australien · Präsenz"
+      },
+      "dates": {
+        "start": "2012-05",
+        "end": "2016-12",
+        "display": {
+          "en": "May 2012 – Dec 2016",
+          "es": "May 2012 – Dic 2016",
+          "de": "Mai 2012 – Dez 2016"
+        }
+      },
+      "description": {
+        "en": "Teaching swimming to children and adults at various aquatic facilities.",
+        "es": "Enseñanza de natación a niños y adultos en diversas instalaciones acuáticas.",
+        "de": "Schwimmunterricht für Kinder und Erwachsene in verschiedenen Einrichtungen."
+      },
+      "bullets": {
+        "en": [
+          "Taught swimming to children and adults",
+          "Delivered learn-to-swim programs",
+          "Ensured pool safety and supervision"
+        ],
+        "es": [
+          "Enseñanza de natación a niños y adultos",
+          "Entrega de programas de aprender a nadar",
+          "Garantía de seguridad y supervisión en piscina"
+        ],
+        "de": [
+          "Unterricht im Schwimmen für Kinder und Erwachsene",
+          "Durchführung von Anfängerschwimmkursen",
+          "Gewährleistung von Sicherheit und Aufsicht im Schwimmbad"
+        ]
+      },
+      "skills": ["Swim Instruction", "Child Safety", "Teaching", "Water Safety"]
+    },
+    {
+      "id": "newcastle-knights",
+      "company": "Newcastle Knights (Juniors S&C)",
+      "role": {
+        "en": "Volunteer Assistant Coach",
+        "es": "Entrenador Asistente Voluntario",
+        "de": "Ehrenamtlicher Assistenztrainer"
+      },
+      "location": {
+        "en": "Newcastle, NSW, Australia · On-site",
+        "es": "Newcastle, NSW, Australia · Presencial",
+        "de": "Newcastle, NSW, Australien · Präsenz"
+      },
+      "dates": {
+        "start": "2015-09",
+        "end": "2016-08",
+        "display": {
+          "en": "Sep 2015 – Aug 2016",
+          "es": "Sep 2015 – Ago 2016",
+          "de": "Sep 2015 – Aug 2016"
+        }
+      },
+      "description": {
+        "en": "Assisting with strength and conditioning for junior rugby league athletes.",
+        "es": "Asistencia con fuerza y acondicionamiento para atletas juveniles de rugby league.",
+        "de": "Unterstützung im Bereich Kraft und Kondition bei Junioren im Rugby League."
+      },
+      "bullets": {
+        "en": [
+          "Assisted with strength and conditioning sessions",
+          "Supported junior athlete development",
+          "Helped with game-day preparation"
+        ],
+        "es": [
+          "Asistencia en sesiones de fuerza y acondicionamiento",
+          "Apoyo al desarrollo de atletas juveniles",
+          "Ayuda en la preparación para días de partido"
+        ],
+        "de": [
+          "Unterstützung bei Kraft- und Konditionseinheiten",
+          "Förderung der Entwicklung von Nachwuchsathleten",
+          "Mithilfe bei der Vorbereitung auf Spieltage"
+        ]
+      },
+      "skills": ["Strength & Conditioning", "Coaching", "Youth Development", "Rugby League"]
+    }
+  ]
+}

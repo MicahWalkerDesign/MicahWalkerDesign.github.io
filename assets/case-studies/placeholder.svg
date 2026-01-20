@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Placeholder image for case studies -->
+  <rect width="600" height="400" fill="#E8E6E1"/>
+  <rect x="240" y="140" width="120" height="120" rx="10" fill="#4A7C59" opacity="0.3"/>
+  <text 
+    x="300" 
+    y="210" 
+    font-family="system-ui, -apple-system, sans-serif" 
+    font-size="24" 
+    fill="#4A7C59" 
+    text-anchor="middle"
+  >Screenshot</text>
+</svg>
