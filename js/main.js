@@ -17,12 +17,11 @@ import { initI18n, setLanguage, getCurrentLanguage, t } from './i18n.js';
 import { initTheme, setTheme, getTheme } from './theme.js';
 import { initModal, openModal } from './components/modal.js';
 import { loadExperienceData, renderTimeline, refreshTimeline } from './components/timeline.js';
-import { renderPortfolio, refreshPortfolio, loadPortfolioData } from './components/portfolioGrid.js';
+import { initPortfolio, refreshPortfolio } from './components/portfolioGrid.js';
 import { PaperTossGame } from './components/paperToss/game.js';
 
 // Application state
 let experienceData = null;
-let portfolioData = null;
 let paperTossGame = null;
 
 // Mobile Menu Logic
@@ -210,18 +209,7 @@ async function initTimeline() {
   renderTimeline(container, experienceData);
 }
 
-export async function initPortfolio() {
-  const container = document.getElementById('portfolio-container');
-  if (!container) {
-    console.warn('Portfolio container not found');
-    return;
-  }
-
-  // Load portfolio data from JSON
-  portfolioData = await loadPortfolioData();
-
-  renderPortfolio(container, portfolioData);
-}
+// initPortfolio is now imported from portfolioGrid.js
 
 /**
  * Initializes the paper toss game.
@@ -278,8 +266,8 @@ function handleLanguageChange(event) {
 
   // Refresh portfolio with new language
   const portfolioContainer = document.getElementById('portfolio-container');
-  if (portfolioContainer && portfolioData) {
-    refreshPortfolio(portfolioContainer, portfolioData);
+  if (portfolioContainer) {
+    refreshPortfolio(portfolioContainer);
     // Re-initialize effects for new content
     setupScrollReveal();
     setupMagneticEffect();
