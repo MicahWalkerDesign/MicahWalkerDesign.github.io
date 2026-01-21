@@ -24,8 +24,8 @@ const dictionaries = {
     // Hero section
     hero: {
       greeting: "Hi, I'm",
-      title: 'Micah Walker — Product Designer & Builder',
-      tagline: 'Product Designer & Builder',
+      title: 'Micah Walker — Product Designer & Frontend Developer',
+      tagline: 'Product Designer & Frontend Developer',
       subtitle: 'Designing human-centred products from idea to shipped outcome',
       description: 'I design and build digital products with a focus on clarity, motion, and grounded user experiences.',
       ctaPrimary: 'View Work',
@@ -109,7 +109,7 @@ const dictionaries = {
       closeModal: 'Close modal'
     }
   },
-  
+
   es: {
     // Header / Navigation
     header: {
@@ -208,7 +208,7 @@ const dictionaries = {
       closeModal: 'Cerrar modal'
     }
   },
-  
+
   de: {
     // Header / Navigation
     header: {
@@ -333,11 +333,11 @@ function getNestedValue(obj, path) {
 export function t(key) {
   const value = getNestedValue(dictionaries[currentLanguage], key);
   if (value !== undefined) return value;
-  
+
   // Fallback to English
   const fallback = getNestedValue(dictionaries.en, key);
   if (fallback !== undefined) return fallback;
-  
+
   // Return key if not found (helps identify missing translations)
   console.warn(`Missing translation for key: ${key}`);
   return key;
@@ -367,7 +367,7 @@ function updateDOM() {
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
     const translation = t(key);
-    
+
     // Handle different element types
     if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
       if (element.placeholder) {
@@ -377,13 +377,13 @@ function updateDOM() {
       element.textContent = translation;
     }
   });
-  
+
   // Update aria-label attributes
   document.querySelectorAll('[data-i18n-aria]').forEach(element => {
     const key = element.getAttribute('data-i18n-aria');
     element.setAttribute('aria-label', t(key));
   });
-  
+
   // Update document language attribute
   document.documentElement.lang = currentLanguage;
 }
@@ -398,14 +398,14 @@ export function setLanguage(lang) {
     console.warn(`Language '${lang}' not available. Falling back to English.`);
     lang = 'en';
   }
-  
+
   currentLanguage = lang;
   localStorage.setItem('portfolio-language', lang);
   updateDOM();
-  
+
   // Dispatch custom event for components that need to react to language changes
   window.dispatchEvent(new CustomEvent('languagechange', { detail: { language: lang } }));
-  
+
   // Announce change to screen readers
   const announcements = {
     en: 'Language changed to English',
@@ -438,9 +438,9 @@ export function initI18n() {
   const urlLang = urlParams.get('lang');
   const storedLang = localStorage.getItem('portfolio-language');
   const browserLang = navigator.language.split('-')[0];
-  
+
   let initialLang = 'en';
-  
+
   if (urlLang && dictionaries[urlLang]) {
     initialLang = urlLang;
   } else if (storedLang && dictionaries[storedLang]) {
@@ -448,10 +448,10 @@ export function initI18n() {
   } else if (dictionaries[browserLang]) {
     initialLang = browserLang;
   }
-  
+
   currentLanguage = initialLang;
   updateDOM();
-  
+
   return initialLang;
 }
 
