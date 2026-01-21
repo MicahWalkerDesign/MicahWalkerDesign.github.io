@@ -85,6 +85,8 @@ async function initApp() {
   // Set up animations after dynamic content is loaded
   setupScrollReveal();
   setupMagneticEffect();
+  setupCursorGlow();
+  setupScrollProgress();
 
   // Listen for language changes to refresh content
   window.addEventListener('languagechange', handleLanguageChange);
@@ -349,6 +351,60 @@ window.addEventListener("resize", () => {
     document.body.classList.remove("resize-animation-stopper");
   }, 400);
 });
+
+/**
+ * Sets up cursor glow effect with smooth lerp animation.
+ */
+function setupCursorGlow() {
+  const glow = document.getElementById('cursor-glow');
+  if (!glow) return;
+
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    glow.style.display = 'none';
+    return;
+  }
+
+  let mouseX = 0, mouseY = 0;
+  let glowX = 0, glowY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animate() {
+    // Lerp for smooth following
+    glowX += (mouseX - glowX) * 0.1;
+    glowY += (mouseY - glowY) * 0.1;
+
+    glow.style.left = glowX + 'px';
+    glow.style.top = glowY + 'px';
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
+
+/**
+ * Sets up scroll progress indicator.
+ */
+function setupScrollProgress() {
+  const progressBar = document.getElementById('scroll-progress');
+  if (!progressBar) return;
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = progress + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress(); // Initial call
+}
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {

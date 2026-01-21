@@ -827,11 +827,20 @@
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-8);
   }
+
+  /* Featured project - first card spans 2 columns */
+  .case-card:first-child {
+    grid-column: span 2;
+  }
 }
 
 @media (min-width: 1200px) {
   .portfolio-grid-wrapper {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .case-card:first-child {
+    grid-column: span 2;
   }
 }
 
@@ -864,9 +873,11 @@
 }
 
 .case-card:hover {
-  box-shadow: var(--shadow-md), var(--glow, none), var(--card-inset, none);
-  border-color: var(--secondary);
-  transform: scale(1.01) translateZ(0);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), var(--glow, none);
+  border-color: transparent;
+  background: linear-gradient(var(--surface), var(--surface)) padding-box,
+    var(--grad-primary) border-box;
+  transform: translateY(-8px) scale(1.01);
 }
 
 .case-card:focus-within {
@@ -1765,4 +1776,82 @@
 
 .btn-icon:hover {
   color: var(--primary);
+}
+
+/* ========================================
+   SCROLL PROGRESS INDICATOR
+   ======================================== */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--grad-primary);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ========================================
+   CURSOR GLOW EFFECT
+   ======================================== */
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--color-primary-rgb, 61, 90, 61), 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+/* ========================================
+   SKELETON LOADERS
+   ======================================== */
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-card {
+  background: linear-gradient(90deg,
+      var(--border) 25%,
+      var(--hover) 50%,
+      var(--border) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: var(--radius-xl);
+  min-height: 280px;
+}
+
+/* ========================================
+   BADGE STAGGER ANIMATION
+   ======================================== */
+@keyframes badge-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.badge {
+  animation: badge-appear 0.4s ease-out both;
 }

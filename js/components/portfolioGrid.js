@@ -56,7 +56,8 @@ export async function initPortfolio() {
         </div>
         
         <div class="case-card__tags tech-stack">
-          ${techStack.map(tech => `<span class="badge">${tech}</span>`).join('')}
+          ${techStack.map((tech, i) => `<span class="badge" style="animation-delay: ${i * 50}ms">${tech}</span>`).join('')}
+        </div>
         </div>
         
         <p class="case-card__summary">${description}</p>
