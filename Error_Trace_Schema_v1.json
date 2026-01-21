@@ -1,0 +1,108 @@
+{
+  "version": "1.0.0",
+  "description": "Canonical Error & Trace Envelope for API responses and internal telemetry. Use in all services and clients.",
+  "envelope": {
+    "trace_id": "string (W3C traceparent-compatible or UUID)",
+    "request_id": "string (optional; unique per request at edge)",
+    "timestamp": "string (RFC3339)",
+    "service": {
+      "name": "string",
+      "version": "string",
+      "environment": "dev|staging|prod"
+    },
+    "user": {
+      "id": "string (optional; internal user id)",
+      "anon_id": "string (optional; stable anonymous id)"
+    },
+    "feature": {
+      "feature_id": "F-### (optional)",
+      "flow_id": "UF-### (optional)",
+      "screen_id": "S-### (optional)",
+      "use_case_id": "UC-### (optional)",
+      "api_id": "API-### (optional)"
+    }
+  },
+  "success_response": {
+    "ok": true,
+    "data": "any JSON value",
+    "meta": {
+      "pagination": {
+        "cursor": "string|null",
+        "limit": "number|null",
+        "has_more": "boolean|null"
+      }
+    }
+  },
+  "error_response": {
+    "ok": false,
+    "error": {
+      "code": "string (stable, machine-readable; e.g., AUTH_EXPIRED)",
+      "message": "string (human-readable, safe for users)",
+      "detail": "object|null (optional; safe diagnostics, never secrets)",
+      "retryable": "boolean",
+      "http_status": "number",
+      "category": "validation|auth|permission|not_found|conflict|rate_limit|timeout|provider|internal|safety",
+      "fields": [
+        {
+          "path": "string (e.g., body.email)",
+          "issue": "string (e.g., invalid_format)",
+          "message": "string"
+        }
+      ],
+      "docs_url": "string|null (optional; internal link)"
+    }
+  },
+  "gen_ai": {
+    "required_on_ai_calls": true,
+    "fields": {
+      "gen_ai.request.id": "string (client- or server-generated request id)",
+      "gen_ai.request.provider": "string (e.g., openai|anthropic|google|local)",
+      "gen_ai.request.model": "string",
+      "gen_ai.request.prompt_version": "string (semver or date-based)",
+      "gen_ai.request.temperature": "number|null",
+      "gen_ai.request.max_output_tokens": "number|null",
+      "gen_ai.request.input_hash": "string|null (hash of canonicalized input, user-scoped if needed)",
+      "gen_ai.response.id": "string|null (provider response id)",
+      "gen_ai.response.confidence_score": "number|null (0..1)",
+      "gen_ai.response.refusal": "boolean|null",
+      "gen_ai.usage.tokens_input": "number|null",
+      "gen_ai.usage.tokens_output": "number|null",
+      "gen_ai.cost.estimate_usd": "number|null",
+      "gen_ai.safety.flags": [
+        "string"
+      ],
+      "gen_ai.sanitization.policy_version": "string|null",
+      "gen_ai.sanitization.actions": [
+        "string"
+      ]
+    }
+  },
+  "otel_notes": {
+    "trace_context": "Propagate W3C tracecontext headers (traceparent, tracestate) where possible.",
+    "log_linking": "Include trace_id in all logs; map to span_id if available."
+  },
+  "examples": {
+    "success": {
+      "ok": true,
+      "trace_id": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01",
+      "data": {
+        "result": "..."
+      }
+    },
+    "error": {
+      "ok": false,
+      "trace_id": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01",
+      "error": {
+        "code": "RATE_LIMITED",
+        "message": "Too many requests. Please try again shortly.",
+        "detail": {
+          "limit": "10/min"
+        },
+        "retryable": true,
+        "http_status": 429,
+        "category": "rate_limit",
+        "fields": []
+      }
+    }
+  }
+}

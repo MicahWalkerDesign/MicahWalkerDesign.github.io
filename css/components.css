@@ -18,6 +18,8 @@
   text-decoration: none;
   transition: all var(--transition-fast);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn--primary {
@@ -48,16 +50,32 @@
   box-shadow: 0 0 0 6px rgba(var(--focus-ring), 0.2);
 }
 
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: var(--font-semibold);
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.btn-link:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
 /* ========================================
    HEADER & NAVIGATION
    ======================================== */
 .header {
   position: sticky;
   top: 0;
-  z-index: var(--z-sticky);
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: var(--space-3) 0;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  transition: background 0.3s ease;
 }
 
 .header__inner {
@@ -266,12 +284,12 @@
 }
 
 .hero__title {
-  font-size: var(--text-3xl);
+  font-size: var(--fs-h1);
   font-weight: var(--font-bold);
   color: var(--text);
   margin-bottom: var(--space-4);
-  letter-spacing: var(--tracking-tight);
-  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .hero__name {
@@ -298,11 +316,11 @@
 }
 
 .hero__description {
-  font-size: var(--text-lg);
+  font-size: var(--fs-body);
   color: var(--muted);
   max-width: 60ch;
   margin: 0 auto var(--space-8);
-  line-height: var(--leading-relaxed);
+  line-height: 1.6;
 }
 
 .hero__cta {
@@ -1671,4 +1689,80 @@
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
   white-space: nowrap;
+}
+
+/* ========================================
+   ANIMATION & UTILITIES
+   ======================================== */
+
+/* Reveal Animations */
+/* --- Interactive & Motion Classes --- */
+.magnetic {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.2, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* --- Technical UI Components --- */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  background: rgba(var(--color-primary-rgb), 0.1);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Accessibility: Respect User Choice */
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal,
+  .magnetic {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Gradient Text Utility */
+.gradient-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.btn-icon {
+  color: var(--muted);
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  margin-left: var(--space-2);
+}
+
+.btn-icon:hover {
+  color: var(--primary);
 }

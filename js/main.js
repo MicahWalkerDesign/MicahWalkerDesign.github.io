@@ -17,11 +17,12 @@ import { initI18n, setLanguage, getCurrentLanguage, t } from './i18n.js';
 import { initTheme, setTheme, getTheme } from './theme.js';
 import { initModal, openModal } from './components/modal.js';
 import { loadExperienceData, renderTimeline, refreshTimeline } from './components/timeline.js';
-import { renderPortfolio, refreshPortfolio, defaultPortfolioData } from './components/portfolioGrid.js';
+import { renderPortfolio, refreshPortfolio, loadPortfolioData } from './components/portfolioGrid.js';
 import { PaperTossGame } from './components/paperToss/game.js';
 
 // Application state
 let experienceData = null;
+let portfolioData = null;
 let paperTossGame = null;
 
 // Mobile Menu Logic
@@ -29,27 +30,27 @@ function setupMobileMenu() {
   const btn = document.querySelector('.header__menu-btn');
   const menu = document.getElementById('mobile-menu');
   const links = menu.querySelectorAll('a');
-  
+
   if (!btn || !menu) return;
-  
+
   btn.addEventListener('click', () => {
     const isExpanded = btn.getAttribute('aria-expanded') === 'true';
     toggleMenu(!isExpanded);
   });
-  
+
   // Close menu when clicking a link
   links.forEach(link => {
     link.addEventListener('click', () => {
       toggleMenu(false);
     });
   });
-  
+
   function toggleMenu(open) {
     btn.setAttribute('aria-expanded', open);
     btn.classList.toggle('is-active', open);
     menu.setAttribute('aria-hidden', !open);
     menu.classList.toggle('is-open', open);
-    
+
     // Prevent body scroll when menu is open
     document.body.style.overflow = open ? 'hidden' : '';
   }
@@ -64,25 +65,28 @@ async function initApp() {
   initTheme();
   initI18n();
   initModal();
-  
+
   // Set up toggle button listeners
   setupLanguageToggles();
   setupThemeToggles();
   setupMobileMenu();
-  
-  // Set up contact modal
+  // setupScrollReveal and setupMagneticEffect moved to end of initApp to catch dynamic content
 
   setupContactModal();
-  
+
   // Load and render experience timeline
   await initTimeline();
-  
+
   // Render portfolio section
-  initPortfolio();
-  
+  await initPortfolio();
+
   // Initialize paper toss game
   initPaperToss();
-  
+
+  // Set up animations after dynamic content is loaded
+  setupScrollReveal();
+  setupMagneticEffect();
+
   // Listen for language changes to refresh content
   window.addEventListener('languagechange', handleLanguageChange);
 }
@@ -92,7 +96,7 @@ async function initApp() {
  */
 function setupContactModal() {
   const contactBtn = document.getElementById('contact-modal-btn');
-  
+
   contactBtn?.addEventListener('click', () => {
     const contactContent = `
       <div class="contact-info">
@@ -125,7 +129,7 @@ function setupContactModal() {
         </div>
       </div>
     `;
-    
+
     openModal({
       title: t('footer.contact'),
       content: contactContent
@@ -138,19 +142,19 @@ function setupContactModal() {
  */
 function setupLanguageToggles() {
   const langButtons = document.querySelectorAll('[data-lang-toggle]');
-  
+
   langButtons.forEach(button => {
     const lang = button.getAttribute('data-lang-toggle');
-    
+
     // Set initial active state
     if (lang === getCurrentLanguage()) {
       button.classList.add('active');
       button.setAttribute('aria-pressed', 'true');
     }
-    
+
     button.addEventListener('click', () => {
       setLanguage(lang);
-      
+
       // Update button states
       langButtons.forEach(btn => {
         const isActive = btn.getAttribute('data-lang-toggle') === lang;
@@ -166,19 +170,19 @@ function setupLanguageToggles() {
  */
 function setupThemeToggles() {
   const themeButtons = document.querySelectorAll('[data-theme-toggle]');
-  
+
   themeButtons.forEach(button => {
     const theme = button.getAttribute('data-theme-toggle');
-    
+
     // Set initial active state
     if (theme === getTheme()) {
       button.classList.add('active');
       button.setAttribute('aria-pressed', 'true');
     }
-    
+
     button.addEventListener('click', () => {
       setTheme(theme);
-      
+
       // Update button states
       themeButtons.forEach(btn => {
         const isActive = btn.getAttribute('data-theme-toggle') === theme;
@@ -198,25 +202,25 @@ async function initTimeline() {
     console.warn('Timeline container not found');
     return;
   }
-  
+
   // Load experience data from JSON
   experienceData = await loadExperienceData();
-  
+
   // Render timeline
   renderTimeline(container, experienceData);
 }
 
-/**
- * Renders the portfolio section.
- */
-function initPortfolio() {
+export async function initPortfolio() {
   const container = document.getElementById('portfolio-container');
   if (!container) {
     console.warn('Portfolio container not found');
     return;
   }
-  
-  renderPortfolio(container, defaultPortfolioData);
+
+  // Load portfolio data from JSON
+  portfolioData = await loadPortfolioData();
+
+  renderPortfolio(container, portfolioData);
 }
 
 /**
@@ -226,32 +230,32 @@ function initPaperToss() {
   const canvas = document.getElementById('game-canvas');
   const startButton = document.getElementById('start-game');
   const playAgainButton = document.getElementById('play-again');
-  
+
   if (!canvas) {
     console.warn('Game canvas not found');
     return;
   }
-  
+
   // Create game instance
   paperTossGame = new PaperTossGame(canvas, {
     maxThrows: 5
   });
-  
+
   paperTossGame.init();
-  
+
   // Update score display callback
   paperTossGame.onScoreChange = (score) => {
     const scoreElement = document.getElementById('game-score-value');
     if (scoreElement) scoreElement.textContent = score;
   };
-  
+
   // Start button handler
   startButton?.addEventListener('click', () => {
     paperTossGame.startGame();
     startButton.style.display = 'none';
     if (playAgainButton) playAgainButton.style.display = 'inline-block';
   });
-  
+
   // Play again button handler
   playAgainButton?.addEventListener('click', () => {
     paperTossGame.startGame();
@@ -265,18 +269,83 @@ function initPaperToss() {
  */
 function handleLanguageChange(event) {
   const { language } = event.detail;
-  
+
   // Refresh timeline with new language
   const timelineContainer = document.getElementById('timeline-container');
   if (timelineContainer && experienceData) {
     refreshTimeline(timelineContainer, experienceData);
   }
-  
+
   // Refresh portfolio with new language
   const portfolioContainer = document.getElementById('portfolio-container');
-  if (portfolioContainer) {
-    refreshPortfolio(portfolioContainer);
+  if (portfolioContainer && portfolioData) {
+    refreshPortfolio(portfolioContainer, portfolioData);
+    // Re-initialize effects for new content
+    setupScrollReveal();
+    setupMagneticEffect();
   }
+}
+
+/**
+ * Sets up Scroll Reveal animations using IntersectionObserver.
+ * Toggles .active class on .reveal elements when they enter/exit viewport.
+ */
+function setupScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal');
+
+  if (revealElements.length === 0) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Mark as observed to prevent re-observation if using shared observer
+        entry.target.dataset.observed = 'true';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: "0px"
+  });
+
+  revealElements.forEach(el => {
+    if (!el.dataset.observed) {
+      observer.observe(el);
+    }
+  });
+}
+
+/**
+ * Sets up Magnetic Effect for interactive elements.
+ * Moves the element slightly towards the cursor on hover.
+ */
+function setupMagneticEffect() {
+  const magnets = document.querySelectorAll('.magnetic');
+
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+
+  magnets.forEach(magnet => {
+    if (magnet.dataset.magneticSetup) return;
+    magnet.dataset.magneticSetup = 'true';
+
+    magnet.addEventListener('mousemove', (e) => {
+      const rect = magnet.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      // Limit the movement (e.g. 30% of the distance) to keep it subtle
+      const intensity = 0.3;
+
+      magnet.style.transform = `translate3d(${x * intensity}px, ${y * intensity}px, 0)`;
+    });
+
+    magnet.addEventListener('mouseleave', () => {
+      magnet.style.transform = 'translate3d(0, 0, 0)';
+    });
+  });
 }
 
 /**

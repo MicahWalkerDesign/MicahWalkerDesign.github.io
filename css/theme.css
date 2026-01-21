@@ -13,36 +13,38 @@
   /* Background layers - warmed slightly */
   --bg: #F8FAF6;
   --surface: #FFFFFF;
-  
+  --surface-rgb: 255, 255, 255;
+
   /* Text colors - improved contrast */
   --text: #2D3B2D;
   --muted: #4A5A4A;
-  
+
   /* Brand colors */
   --primary: #3D5A3D;
   --primary-text: #FFFFFF;
   --secondary: #7A9E7A;
   --accent: #A8C5A8;
-  
+
   /* UI elements - subtle inner shadow for depth */
   --border: #D4E4D4;
+  --border-rgb: 212, 228, 212;
   --shadow: rgba(45, 59, 45, 0.08);
   --card-inset: inset 0 1px 2px rgba(45, 59, 45, 0.04);
-  
+
   /* Semantic colors */
   --success: #4A7C4A;
   --warning: #B8860B;
   --error: #A85454;
-  
+
   /* Interactive states - stronger focus ring */
   --hover: rgba(61, 90, 61, 0.08);
   --active: rgba(61, 90, 61, 0.12);
   --focus-ring: rgba(168, 197, 168, 0.7);
   --glow: none;
-  
+
   /* Button text on primary backgrounds */
   --btn-primary-text: #FFFFFF;
-  
+
   /* Tag text on accent backgrounds */
   --tag-text: #2D3B2D;
 }
@@ -54,36 +56,38 @@
   /* Background layers - increased separation */
   --bg: #141210;
   --surface: #252220;
-  
+  --surface-rgb: 37, 34, 32;
+
   /* Text colors - reduced brightness for eye strain */
   --text: #E8E3DE;
   --muted: #A89B8E;
-  
+
   /* Brand colors - darker tones with dark text for contrast */
   --primary: #C4956A;
   --primary-text: #141210;
   --secondary: #A8816A;
   --accent: #D8B998;
-  
+
   /* UI elements */
   --border: #3D3530;
+  --border-rgb: 61, 53, 48;
   --shadow: rgba(0, 0, 0, 0.35);
   --card-inset: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-  
+
   /* Semantic colors */
   --success: #7AAF6A;
   --warning: #D8B85A;
   --error: #D86A6A;
-  
+
   /* Interactive states - accent glow on hover */
   --hover: rgba(196, 149, 106, 0.15);
   --active: rgba(196, 149, 106, 0.22);
   --focus-ring: rgba(216, 185, 152, 0.7);
   --glow: 0 0 20px rgba(196, 149, 106, 0.25);
-  
+
   /* Button text on primary backgrounds */
   --btn-primary-text: #141210;
-  
+
   /* Tag text on accent backgrounds */
   --tag-text: #2A2420;
 }
@@ -93,26 +97,41 @@
    ======================================== */
 :root {
   /* Font sizes (mobile-first) */
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  
+  /* Fluid Typography using clamp(MIN, VAL, MAX) */
+  --fs-h1: clamp(2.5rem, 6vw + 1rem, 5rem);
+  --fs-h2: clamp(2rem, 4vw + 1rem, 3.5rem);
+  --fs-body: clamp(1rem, 0.5vw + 0.9rem, 1.2rem);
+
+  /* Glassmorphism & Depth */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-blur: blur(12px);
+
+  /* Modern Gradients */
+  --grad-primary: linear-gradient(135deg, #4A7C59 0%, #8FB996 100%);
+  --grad-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+
+  /* Legacy Font sizes (maintained for compatibility where needed) */
+  --text-xs: clamp(0.75rem, 0.7vw + 0.5rem, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8vw + 0.6rem, 1rem);
+  --text-base: var(--fs-body);
+  --text-lg: clamp(1.125rem, 1.4vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.6vw, 1.5rem);
+  --text-2xl: var(--fs-h2);
+  --text-3xl: clamp(1.875rem, 3vw, 2.5rem);
+  --text-4xl: var(--fs-h1);
+
   /* Font weights */
   --font-normal: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
-  
+
   /* Line heights - increased for readability */
   --leading-tight: 1.3;
   --leading-normal: 1.6;
   --leading-relaxed: 1.8;
-  
+
   /* Letter spacing */
   --tracking-tight: -0.025em;
   --tracking-normal: 0;

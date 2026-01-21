@@ -1,0 +1,83 @@
+{
+  "projects": [
+    {
+      "id": "p1",
+      "category": "Apps",
+      "title": {
+        "en": "Performance-Driven Web App",
+        "es": "Aplicación Web de Alto Rendimiento",
+        "de": "Leistungsorientierte Web-App"
+      },
+      "description": {
+        "en": "Architected a stateless, client-side application focused on sub-second LCP and high-fidelity motion.",
+        "es": "Arquitectura sin estado centrada en LCP sub-segundo y movimiento de alta fidelidad.",
+        "de": "Entwicklung einer zustandslosen, clientseitigen Anwendung mit Fokus auf LCP unter einer Sekunde."
+      },
+      "techStack": ["TypeScript", "Intersection Observer API", "CSS View-Transitions", "Vite"],
+      "sourceUrl": "https://github.com/micahwalker/micahwalkerdesign",
+      "liveUrl": "#",
+      "phases": {
+        "ideas": { "caption": { "en": "Focusing on Core Web Vitals and fluid user experience." } },
+        "design": { "caption": { "en": "Glassmorphism styling and responsive fluid typography." } },
+        "proof": { "caption": { "en": "Lighthouse scores hitting 100 on Performance and Accessibility." } },
+        "product": { 
+          "embedUrl": "./",
+          "repoUrl": "https://github.com/micahwalker/micahwalkerdesign",
+          "caption": { "en": "The live portfolio site itself serves as the demo." }
+        }
+      }
+    },
+    {
+      "id": "p2",
+      "category": "Games",
+      "title": {
+        "en": "Interactive Simulation / Game",
+        "es": "Simulación Interactiva / Juego",
+        "de": "Interaktive Simulation / Spiel"
+      },
+      "description": {
+        "en": "Developed a physics-based Paper Toss game using the Canvas API, utilizing custom easing equations for realistic trajectory mapping.",
+        "es": "Juego de Paper Toss basado en física usando Canvas API y ecuaciones personalizadas.",
+        "de": "Physikbasiertes Paper Toss Spiel mit Canvas API und benutzerdefinierten Easing-Gleichungen."
+      },
+      "techStack": ["Canvas API", "Physics Engines", "Vanilla JS", "WCAG AA"],
+      "sourceUrl": "https://github.com/micahwalker/paper-toss",
+      "liveUrl": "#game",
+      "phases": {
+        "ideas": { "caption": { "en": "Sketching trajectory physics and collision boundaries." } },
+        "design": { "caption": { "en": "Minimalist paper ball and bin asset creation." } },
+        "proof": { "caption": { "en": "Prototyping the drag-and-throw mechanic in isolation." } },
+        "product": { 
+          "embedUrl": "#game",
+          "caption": { "en": "Integrated directly into the portfolio's Game section." }
+        }
+      }
+    },
+    {
+      "id": "p3",
+      "category": "System",
+      "title": {
+        "en": "Multilingual Design System",
+        "es": "Sistema de Diseño Multilingüe",
+        "de": "Mehrsprachiges Design-System"
+      },
+      "description": {
+        "en": "Engineered a JSON-based i18n architecture supporting EN, ES, and DE with zero-flicker theme hydration.",
+        "es": "Arquitectura i18n basada en JSON soportando EN, ES, DE sin parpadeos.",
+        "de": "JSON-basierte i18n-Architektur für EN, ES und DE ohne Theme-Flimmern."
+      },
+      "techStack": ["i18n", "JSON Schema", "Fluid Typography", "CSS Variables"],
+      "sourceUrl": "https://github.com/micahwalker/design-system",
+      "liveUrl": "#",
+      "phases": {
+        "ideas": { "caption": { "en": "Defining token structure for themes and languages." } },
+        "design": { "caption": { "en": "Mapping semantic colors to Sage and Clay themes." } },
+        "proof": { "caption": { "en": "Automated testing of language switching and theme persistence." } },
+        "product": { 
+          "repoUrl": "https://github.com/micahwalker/design-system",
+          "caption": { "en": "Production-ready system powering this website." }
+        }
+      }
+    }
+  ]
+}
