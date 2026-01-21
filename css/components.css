@@ -693,6 +693,10 @@
 .accordion-panel.open {
   display: block;
   animation: slideDown 0.2s ease;
+}
+
+/* Apply border color to open panel on wrapper hover */
+.timeline-item-wrapper:hover .accordion-panel.open {
   border-color: var(--primary);
 }
 
