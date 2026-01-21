@@ -669,6 +669,7 @@
 .accordion-panel.open {
   display: block;
   animation: slideDown 0.2s ease;
+  box-shadow: var(--glow, none);
 }
 
 @keyframes slideDown {
