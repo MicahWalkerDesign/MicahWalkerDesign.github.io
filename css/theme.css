@@ -22,6 +22,8 @@
   /* Brand colors */
   --primary: #3D5A3D;
   --primary-text: #FFFFFF;
+  --primary-rgb: 61, 90, 61;
+  --color-primary-rgb: 61, 90, 61;
   --secondary: #7A9E7A;
   --accent: #A8C5A8;
 
@@ -47,6 +49,19 @@
 
   /* Tag text on accent backgrounds */
   --tag-text: #2D3B2D;
+
+  /* Glassmorphism & Depth - LIGHT THEME: use dark overlays */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(45, 59, 45, 0.1);
+  --glass-blur: blur(12px);
+
+  /* Modern Gradients - LIGHT THEME */
+  --grad-primary: linear-gradient(135deg, #3D5A3D 0%, #7A9E7A 100%);
+  --grad-surface: linear-gradient(180deg, rgba(45, 59, 45, 0.02) 0%, rgba(45, 59, 45, 0) 100%);
+
+  /* Skeleton shimmer - LIGHT THEME: dark shimmer */
+  --skeleton-base: rgba(45, 59, 45, 0.06);
+  --skeleton-shimmer: rgba(45, 59, 45, 0.12);
 }
 
 /* ========================================
@@ -65,6 +80,8 @@
   /* Brand colors - darker tones with dark text for contrast */
   --primary: #C4956A;
   --primary-text: #141210;
+  --primary-rgb: 196, 149, 106;
+  --color-primary-rgb: 196, 149, 106;
   --secondary: #A8816A;
   --accent: #D8B998;
 
@@ -90,6 +107,19 @@
 
   /* Tag text on accent backgrounds */
   --tag-text: #2A2420;
+
+  /* Glassmorphism & Depth - DARK THEME: use light overlays */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
+
+  /* Modern Gradients - DARK THEME */
+  --grad-primary: linear-gradient(135deg, #C4956A 0%, #D8B998 100%);
+  --grad-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+
+  /* Skeleton shimmer - DARK THEME: light shimmer */
+  --skeleton-base: rgba(255, 255, 255, 0.03);
+  --skeleton-shimmer: rgba(255, 255, 255, 0.08);
 }
 
 /* ========================================
@@ -101,15 +131,6 @@
   --fs-h1: clamp(2.5rem, 6vw + 1rem, 5rem);
   --fs-h2: clamp(2rem, 4vw + 1rem, 3.5rem);
   --fs-body: clamp(1rem, 0.5vw + 0.9rem, 1.2rem);
-
-  /* Glassmorphism & Depth */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.15);
-  --glass-blur: blur(12px);
-
-  /* Modern Gradients */
-  --grad-primary: linear-gradient(135deg, #4A7C59 0%, #8FB996 100%);
-  --grad-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
 
   /* Legacy Font sizes (maintained for compatibility where needed) */
   --text-xs: clamp(0.75rem, 0.7vw + 0.5rem, 0.875rem);

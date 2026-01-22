@@ -29,50 +29,93 @@ export async function initPortfolio() {
   const container = document.getElementById('portfolio-container');
   if (!container) return;
 
+  // 1. Inject skeleton loaders immediately for perceived performance
+  container.innerHTML = `
+    <div class="skeleton-card">
+      <div class="skeleton-title skeleton"></div>
+      <div class="skeleton-text skeleton"></div>
+      <div class="skeleton-text skeleton"></div>
+      <div class="skeleton-text--short skeleton"></div>
+      <div class="skeleton-tags">
+        <div class="skeleton-tag skeleton"></div>
+        <div class="skeleton-tag skeleton"></div>
+        <div class="skeleton-tag skeleton"></div>
+      </div>
+    </div>
+    <div class="skeleton-card">
+      <div class="skeleton-title skeleton"></div>
+      <div class="skeleton-text skeleton"></div>
+      <div class="skeleton-text--short skeleton"></div>
+      <div class="skeleton-tags">
+        <div class="skeleton-tag skeleton"></div>
+        <div class="skeleton-tag skeleton"></div>
+      </div>
+    </div>
+    <div class="skeleton-card">
+      <div class="skeleton-title skeleton"></div>
+      <div class="skeleton-text skeleton"></div>
+      <div class="skeleton-text--short skeleton"></div>
+      <div class="skeleton-tags">
+        <div class="skeleton-tag skeleton"></div>
+        <div class="skeleton-tag skeleton"></div>
+      </div>
+    </div>
+  `;
+
   try {
     const data = await loadPortfolioData();
     const lang = getCurrentLanguage();
 
-    // Clear skeletons
+    // 2. Clear skeletons once data is ready
     container.innerHTML = '';
 
     // Handle legacy or new structure
     const projects = data.projects || [];
 
     projects.forEach((project, index) => {
-      const card = document.createElement('article');
-      // Use existing case-card class for styling, add reveal for animation
-      card.className = 'case-card reveal';
-      // Stagger the animation delay based on index
+      const template = document.getElementById('portfolio-card-template');
+      if (!template) return;
+
+      const cardFragment = template.content.cloneNode(true);
+      const card = cardFragment.querySelector('.case-card');
+
+      // Stagger animation
       card.style.transitionDelay = `${index * 0.1}s`;
 
       const title = getLocalizedValue(project.title, lang);
       const description = getLocalizedValue(project.description, lang);
       const techStack = project.techStack || [];
 
-      card.innerHTML = `
-        <div class="case-card__header">
-          <h3 class="case-card__title">${title}</h3>
-        </div>
-        
-        <div class="case-card__tags tech-stack">
-          ${techStack.map((tech, i) => `<span class="badge" style="animation-delay: ${i * 50}ms">${tech}</span>`).join('')}
-        </div>
-        </div>
-        
-        <p class="case-card__summary">${description}</p>
-        
-        <div class="case-card__links" style="margin-top: auto; padding-top: 1rem; display: flex; gap: 1rem;">
-          <a href="${project.sourceUrl}" class="btn-link" target="_blank" rel="noopener noreferrer" aria-label="Source Code for ${title}">
-            Source Code →
-          </a>
-          ${project.liveUrl && project.liveUrl !== '#' ? `
-            <a href="${project.liveUrl}" class="btn-link" target="_blank" rel="noopener noreferrer" aria-label="Live Demo for ${title}">
-              Live Demo →
-            </a>
-          ` : ''}
-        </div>
-      `;
+      // Populate content
+      card.querySelector('.case-card__title').textContent = title;
+      card.querySelector('.case-card__summary').textContent = description;
+
+      // Render tags
+      const tagsContainer = card.querySelector('.tech-stack');
+      techStack.forEach((tech, i) => {
+        const span = document.createElement('span');
+        span.className = 'badge';
+        span.style.animationDelay = `${i * 50}ms`;
+        span.textContent = tech;
+        tagsContainer.appendChild(span);
+      });
+
+      // Handle links
+      const sourceLink = card.querySelector('.source-link');
+      if (sourceLink) {
+        sourceLink.href = project.sourceUrl;
+        sourceLink.setAttribute('aria-label', `Source Code for ${title}`);
+      }
+
+      const liveLink = card.querySelector('.live-link');
+      if (liveLink) {
+        if (project.liveUrl && project.liveUrl !== '#') {
+          liveLink.href = project.liveUrl;
+          liveLink.setAttribute('aria-label', `Live Demo for ${title}`);
+        } else {
+          liveLink.remove();
+        }
+      }
 
       container.appendChild(card);
     });

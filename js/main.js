@@ -87,6 +87,7 @@ async function initApp() {
   setupMagneticEffect();
   setupCursorGlow();
   setupScrollProgress();
+  setupSplitPanel();
 
   // Listen for language changes to refresh content
   window.addEventListener('languagechange', handleLanguageChange);
@@ -278,7 +279,8 @@ function handleLanguageChange(event) {
 
 /**
  * Sets up Scroll Reveal animations using IntersectionObserver.
- * Toggles .active class on .reveal elements when they enter/exit viewport.
+ * Uses progressive enhancement: content is visible by default, 
+ * JavaScript adds animation classes only when ready.
  */
 function setupScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal');
@@ -288,20 +290,25 @@ function setupScrollReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        entry.target.classList.remove('reveal-pending');
         entry.target.classList.add('active');
-        // Mark as observed to prevent re-observation if using shared observer
         entry.target.dataset.observed = 'true';
         observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.15,
-    rootMargin: "0px"
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
   });
 
   revealElements.forEach(el => {
     if (!el.dataset.observed) {
-      observer.observe(el);
+      // Add pending class to hide element before animation
+      el.classList.add('reveal-pending');
+      // Small delay to ensure transition works
+      requestAnimationFrame(() => {
+        observer.observe(el);
+      });
     }
   });
 }
@@ -354,6 +361,7 @@ window.addEventListener("resize", () => {
 
 /**
  * Sets up cursor glow effect with smooth lerp animation.
+ * Optimized with requestAnimationFrame for 60fps performance.
  */
 function setupCursorGlow() {
   const glow = document.getElementById('cursor-glow');
@@ -369,22 +377,25 @@ function setupCursorGlow() {
   let mouseX = 0, mouseY = 0;
   let glowX = 0, glowY = 0;
 
+  // Update target coordinates on move
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
 
   function animate() {
-    // Lerp for smooth following
+    // LERP formula: current + (target - current) * factor
+    // 0.1 creates a soft, lagging follow effect for premium feel
     glowX += (mouseX - glowX) * 0.1;
     glowY += (mouseY - glowY) * 0.1;
 
-    glow.style.left = glowX + 'px';
-    glow.style.top = glowY + 'px';
+    // Use translate3d for GPU acceleration
+    glow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0) translate(-50%, -50%)`;
 
     requestAnimationFrame(animate);
   }
 
+  // Start the animation loop
   animate();
 }
 
@@ -411,4 +422,31 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);
 } else {
   initApp();
+}
+
+/**
+ * Sets up the split panel interaction (Experience vs Qualifications).
+ */
+function setupSplitPanel() {
+  const tabs = document.querySelectorAll('.split-panel__tab');
+
+  if (tabs.length === 0) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const panelId = tab.getAttribute('aria-controls');
+      const side = document.getElementById(panelId);
+      const container = side.parentElement;
+
+      // Update active state classes
+      const sides = container.querySelectorAll('.split-panel__side');
+      sides.forEach(s => s.classList.remove('split-panel__side--active'));
+      side.classList.add('split-panel__side--active');
+
+      // Update ARIA attributes
+      const allTabs = container.querySelectorAll('.split-panel__tab');
+      allTabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+      tab.setAttribute('aria-selected', 'true');
+    });
+  });
 }

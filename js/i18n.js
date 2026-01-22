@@ -16,10 +16,23 @@ const dictionaries = {
     header: {
       experience: 'Experience',
       portfolio: 'Portfolio',
+      about: 'About',
       game: 'Game',
       skipToContent: 'Skip to content',
       language: 'Language',
       theme: 'Theme'
+    },
+    // New Sections
+    about: {
+      title: 'About Me'
+    },
+    background: {
+      title: 'Background',
+      subtitle: 'Click a panel to explore my professional journey or qualifications'
+    },
+    contact: {
+      title: "Contact",
+      subtitle: "Have a project in mind? reach out via email or phone."
     },
     // Hero section
     hero: {
@@ -115,10 +128,23 @@ const dictionaries = {
     header: {
       experience: 'Experiencia',
       portfolio: 'Portafolio',
+      about: 'Sobre Mí',
       game: 'Juego',
       skipToContent: 'Saltar al contenido',
       language: 'Idioma',
       theme: 'Tema'
+    },
+    // New Sections
+    about: {
+      title: 'Sobre Mí'
+    },
+    background: {
+      title: 'Trayectoria',
+      subtitle: 'Haz clic en un panel para explorar mi trayectoria profesional o cualificaciones'
+    },
+    contact: {
+      title: 'Contact',
+      subtitle: '¿Tienes un proyecto en mente? Contáctame por correo o teléfono.'
     },
     // Hero section
     hero: {
@@ -214,10 +240,23 @@ const dictionaries = {
     header: {
       experience: 'Erfahrung',
       portfolio: 'Portfolio',
+      about: 'Über Mich',
       game: 'Spiel',
       skipToContent: 'Zum Inhalt springen',
       language: 'Sprache',
       theme: 'Thema'
+    },
+    // New Sections
+    about: {
+      title: 'Über Mich'
+    },
+    background: {
+      title: 'Hintergrund',
+      subtitle: 'Klicken Sie auf ein Panel, um meine berufliche Laufbahn oder Qualifikationen zu erkunden'
+    },
+    contact: {
+      title: 'Kontakt',
+      subtitle: 'Haben Sie ein Projekt im Sinn? Kontaktieren Sie mich per E-Mail oder Telefon.'
     },
     // Hero section
     hero: {

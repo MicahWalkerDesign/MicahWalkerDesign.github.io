@@ -54,9 +54,10 @@
       <!-- Navigation -->
       <nav class="header__nav" role="navigation" aria-label="Main navigation">
         <ul class="header__nav-list">
-          <li><a href="#experience" data-i18n="header.experience">Experience</a></li>
           <li><a href="#portfolio" data-i18n="header.portfolio">Portfolio</a></li>
-          <li><a href="#game" data-i18n="header.game">Game</a></li>
+          <li><a href="#about" data-i18n="header.about">About</a></li>
+          <li><a href="#background" data-i18n="header.experience">Experience</a></li>
+          <li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
         </ul>
       </nav>
 
@@ -98,9 +99,10 @@
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <nav class="mobile-menu__nav">
       <ul class="mobile-menu__list">
-        <li><a href="#experience" data-i18n="header.experience" class="mobile-menu__link">Experience</a></li>
         <li><a href="#portfolio" data-i18n="header.portfolio" class="mobile-menu__link">Portfolio</a></li>
-        <li><a href="#game" data-i18n="header.game" class="mobile-menu__link">Game</a></li>
+        <li><a href="#about" data-i18n="header.about" class="mobile-menu__link">About</a></li>
+        <li><a href="#background" data-i18n="header.experience" class="mobile-menu__link">Experience</a></li>
+        <li><a href="#contact" data-i18n="footer.contact" class="mobile-menu__link">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -140,50 +142,6 @@
       </div>
     </section>
 
-    <!-- ==================== EXPERIENCE SECTION ==================== -->
-    <section id="experience" class="section experience reveal" aria-labelledby="experience-heading">
-      <div class="container">
-        <header class="section__header">
-          <h2 id="experience-heading" class="section__title" data-i18n="experience.title">
-            Experience
-          </h2>
-          <p class="section__subtitle" data-i18n="experience.subtitle">
-            A timeline of my professional journey
-          </p>
-        </header>
-
-        <!-- 
-          Timeline Container
-          Content is loaded dynamically from assets/linkedin.json
-          See js/components/timeline.js for implementation
-        -->
-        <div id="timeline-container" class="timeline" role="region" aria-label="Work experience timeline">
-          <!-- Skeleton loaders while content loads -->
-          <div class="timeline-skeleton" aria-hidden="true">
-            <div class="timeline-item">
-              <div class="skeleton skeleton-text skeleton-text--short" style="height: 1.2em; margin-bottom: 0.5rem;">
-              </div>
-              <div class="skeleton skeleton-text skeleton-text--medium"></div>
-              <div class="skeleton skeleton-text skeleton-text--long"></div>
-            </div>
-            <div class="timeline-item">
-              <div class="skeleton skeleton-text skeleton-text--short" style="height: 1.2em; margin-bottom: 0.5rem;">
-              </div>
-              <div class="skeleton skeleton-text skeleton-text--medium"></div>
-              <div class="skeleton skeleton-text skeleton-text--long"></div>
-            </div>
-            <div class="timeline-item">
-              <div class="skeleton skeleton-text skeleton-text--short" style="height: 1.2em; margin-bottom: 0.5rem;">
-              </div>
-              <div class="skeleton skeleton-text skeleton-text--medium"></div>
-              <div class="skeleton skeleton-text skeleton-text--long"></div>
-            </div>
-          </div>
-          <p class="timeline__loading sr-only" data-i18n="experience.loading">Loading experience...</p>
-        </div>
-      </div>
-    </section>
-
     <!-- ==================== PORTFOLIO BANNER ==================== -->
     <section class="portfolio-banner" aria-labelledby="portfolio-banner-heading">
       <div class="container">
@@ -205,8 +163,7 @@
 
         <!-- 
           Portfolio Container
-          Renders 2 columns: Apps (2 projects) and Websites (2 projects)
-          Each project has 4 expandable phases with modal content
+          Renders project cards dynamically
           See js/components/portfolioGrid.js for implementation
         -->
         <div id="portfolio-container" class="portfolio__grid">
@@ -216,52 +173,312 @@
             <div class="skeleton skeleton-card"></div>
           </div>
         </div>
+
+        <!-- Portfolio Card Template -->
+        <template id="portfolio-card-template">
+          <article class="case-card reveal">
+            <div class="case-card__header">
+              <h3 class="case-card__title"></h3>
+            </div>
+
+            <div class="case-card__tags tech-stack">
+              <!-- Tags will be injected here -->
+            </div>
+
+            <p class="case-card__summary"></p>
+
+            <div class="case-card__links" style="margin-top: auto; padding-top: 1rem; display: flex; gap: 1rem;">
+              <a href="#" class="btn-link source-link" target="_blank" rel="noopener noreferrer">
+                Source Code →
+              </a>
+              <a href="#" class="btn-link live-link" target="_blank" rel="noopener noreferrer">
+                Live Demo →
+              </a>
+            </div>
+          </article>
+        </template>
       </div>
     </section>
 
-    <!-- ==================== GAME SECTION ==================== -->
-    <section id="game" class="section game reveal" aria-labelledby="game-heading">
+    <!-- ==================== ABOUT & SKILLS SECTION ==================== -->
+    <section id="about" class="section about reveal" aria-labelledby="about-heading">
       <div class="container">
         <header class="section__header">
-          <h2 id="game-heading" class="section__title" data-i18n="game.title">
-            Paper Toss
+          <h2 id="about-heading" class="section__title" data-i18n="about.title">
+            About Me
           </h2>
-          <p class="section__subtitle" data-i18n="game.subtitle">
-            Take a break and toss some paper
+        </header>
+
+        <div class="about__content">
+          <p class="about__bio">
+            I'm a product designer and frontend developer with a passion for creating intuitive,
+            high-performance digital experiences. I blend design thinking with technical execution
+            to build products that are both beautiful and functional.
+          </p>
+
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3 class="skill-category__title">Frontend</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Next.js</span>
+                <span class="skill-tag">CSS/Sass</span>
+                <span class="skill-tag">Tailwind</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3 class="skill-category__title">Design</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Prototyping</span>
+                <span class="skill-tag">Design Systems</span>
+                <span class="skill-tag">Motion Design</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3 class="skill-category__title">Tools</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Vite</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Figma</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3 class="skill-category__title">Back End</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">Node.js</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3 class="skill-category__title">AI</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Gemini</span>
+                <span class="skill-tag">OpenAI</span>
+                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">Prompt Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE & QUALIFICATIONS SPLIT PANEL ==================== -->
+    <section id="background" class="section split-section reveal" aria-labelledby="background-heading">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="background-heading" class="section__title" data-i18n="background.title">
+            Background
+          </h2>
+          <p class="section__subtitle" data-i18n="background.subtitle">
+            Click a panel to explore my professional journey or qualifications
           </p>
         </header>
 
-        <div class="game__wrapper">
-          <!-- Game Instructions -->
-          <div class="game__instructions" aria-live="polite">
-            <p data-i18n="game.instructions">
-              Drag and release to throw the paper into the bin. Score points for successful tosses!
-            </p>
-          </div>
-
-          <!-- Game Canvas -->
-          <div class="game__canvas-wrapper">
-            <canvas id="game-canvas" class="game__canvas" width="480" height="360" role="application"
-              aria-label="Paper toss game" tabindex="0"></canvas>
-          </div>
-
-          <!-- Game Controls -->
-          <div class="game__controls">
-            <button type="button" id="start-game" class="btn btn--primary" data-i18n="game.start">
-              Start Game
+        <div class="split-panel" role="tablist" aria-label="Background information panels">
+          <!-- Experience Panel -->
+          <div class="split-panel__side split-panel__side--experience split-panel__side--active" id="panel-experience"
+            role="tabpanel" aria-labelledby="tab-experience" tabindex="0">
+            <button class="split-panel__tab" id="tab-experience" role="tab" aria-selected="true"
+              aria-controls="panel-experience">
+              <h3 class="split-panel__title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                Experience
+              </h3>
+              <span class="split-panel__hint">Professional history</span>
             </button>
-            <button type="button" id="play-again" class="btn btn--secondary" style="display: none;"
-              data-i18n="game.playAgain">
-              Play Again
-            </button>
+            <div class="split-panel__content">
+              <div id="timeline-container" class="timeline" role="region" aria-label="Work experience timeline">
+                <!-- Skeleton loaders while content loads -->
+                <div class="timeline-skeleton" aria-hidden="true">
+                  <div class="timeline-item">
+                    <div class="skeleton skeleton-text skeleton-text--short"
+                      style="height: 1.2em; margin-bottom: 0.5rem;"></div>
+                    <div class="skeleton skeleton-text skeleton-text--medium"></div>
+                    <div class="skeleton skeleton-text skeleton-text--long"></div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="skeleton skeleton-text skeleton-text--short"
+                      style="height: 1.2em; margin-bottom: 0.5rem;"></div>
+                    <div class="skeleton skeleton-text skeleton-text--medium"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Score Display -->
-          <div class="game__score" aria-live="polite">
-            <span data-i18n="game.score">Score:</span>
-            <span id="game-score-value">0</span>
+          <!-- Qualifications Panel -->
+          <div class="split-panel__side split-panel__side--qualifications" id="panel-qualifications" role="tabpanel"
+            aria-labelledby="tab-qualifications" tabindex="0">
+            <button class="split-panel__tab" id="tab-qualifications" role="tab" aria-selected="false"
+              aria-controls="panel-qualifications">
+              <h3 class="split-panel__title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                Qualifications
+              </h3>
+              <span class="split-panel__hint">Education & achievements</span>
+            </button>
+            <div class="split-panel__content">
+              <div id="qualifications-container" class="qualifications">
+                <div class="qualification-group">
+                  <h4 class="qualification-group__title">Education</h4>
+                  <div class="qualification-item">
+                    <span class="qualification-item__title">Bachelor of Exercise & Sport Science</span>
+                    <span class="qualification-item__meta">University of Newcastle • 2013 - 2016</span>
+                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
+                      Skills: Exercise Physiology · Nutrition · Rehabilitation
+                    </p>
+                  </div>
+                  <div class="qualification-item">
+                    <span class="qualification-item__title">Bachelor of Mechatronics Engineering</span>
+                    <span class="qualification-item__meta">University of Newcastle • 2012 - 2013</span>
+                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
+                      Skills: Analytical Skills · Mechanical Engineering · Electrical Engineering · Problem Solving
+                    </p>
+                  </div>
+                </div>
+
+                <div class="qualification-group">
+                  <h4 class="qualification-group__title">Certifications</h4>
+                  <div class="qualification-item">
+                    <span class="qualification-item__title">Certificate, Quantitative & Qualitative Research</span>
+                    <span class="qualification-item__meta">Goethe University Frankfurt • Feb 2024</span>
+                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
+                      Skills: Qualitative & Quantitative Research Methodologies · User Research
+                    </p>
+                  </div>
+                </div>
+
+                <div class="qualification-group">
+                  <h4 class="qualification-group__title">Military Service</h4>
+                  <div class="qualification-item">
+                    <span class="qualification-item__title">Combat Engineer</span>
+                    <span class="qualification-item__meta">Royal Australian Army • Jan 2013 - Dec 2016</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="section contact reveal" aria-labelledby="contact-heading">
+      <div class="container contact__inner">
+        <header class="section__header">
+          <h2 id="contact-heading" class="section__title" data-i18n="contact.title">
+            Get In Touch
+          </h2>
+          <p class="section__subtitle" data-i18n="contact.subtitle">
+            Have a project in mind? Reach out via email or phone.
+          </p>
+        </header>
+
+        <div class="contact__cta">
+          <!-- Email -->
+          <a href="mailto:Micah.walker@gmail.com" class="btn btn--primary btn--lg magnetic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              class="btn__icon" aria-hidden="true" style="margin-right: 8px;">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Micah.walker@gmail.com
+          </a>
+
+          <!-- Phone -->
+          <a href="tel:+61480663328" class="btn btn--secondary btn--lg magnetic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              class="btn__icon" aria-hidden="true" style="margin-right: 8px;">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+            +61 480 663 328
+          </a>
+
+          <!-- Download Resume -->
+          <a href="assets/Micah Product Designer Resume.pdf" target="_blank" class="btn btn--secondary btn--lg magnetic"
+            id="download-resume-btn" style="margin-top: 1rem; width: 100%; max-width: 300px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              class="btn__icon" aria-hidden="true" style="margin-right: 8px;">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Resume
+          </a>
+        </div>
+
+        <div class="contact__links">
+          <a href="https://www.linkedin.com/in/micah-walker-246745101/" target="_blank" rel="noopener noreferrer"
+            class="contact__link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/MicahWalkerDesign" target="_blank" rel="noopener noreferrer"
+            class="contact__link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GAME SECTION (Easter Egg) ==================== -->
+    <section id="game" class="section game game--compact" aria-labelledby="game-heading">
+      <div class="container">
+        <details class="game__accordion">
+          <summary class="game__trigger">
+            <span class="game__trigger-text">🎮 Take a break — Play Paper Toss</span>
+          </summary>
+          <div class="game__wrapper">
+            <div class="game__instructions" aria-live="polite">
+              <p data-i18n="game.instructions">
+                Drag and release to throw the paper into the bin. Score points for successful tosses!
+              </p>
+            </div>
+
+            <div class="game__canvas-wrapper">
+              <canvas id="game-canvas" class="game__canvas" width="480" height="360" role="application"
+                aria-label="Paper toss game" tabindex="0"></canvas>
+            </div>
+
+            <div class="game__controls">
+              <button type="button" id="start-game" class="btn btn--primary" data-i18n="game.start">
+                Start Game
+              </button>
+              <button type="button" id="play-again" class="btn btn--secondary" style="display: none;"
+                data-i18n="game.playAgain">
+                Play Again
+              </button>
+            </div>
+
+            <div class="game__score" aria-live="polite">
+              <span data-i18n="game.score">Score:</span>
+              <span id="game-score-value">0</span>
+            </div>
+          </div>
+        </details>
       </div>
     </section>
 
