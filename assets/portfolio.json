@@ -4,80 +4,55 @@
       "id": "p1",
       "category": "Apps",
       "title": {
-        "en": "Performance-Driven Web App",
-        "es": "Aplicación Web de Alto Rendimiento",
-        "de": "Leistungsorientierte Web-App"
+        "en": "M&M Clinic",
+        "es": "M&M Clinic",
+        "de": "M&M Clinic"
       },
       "description": {
-        "en": "Architected a stateless, client-side application focused on sub-second LCP and high-fidelity motion.",
-        "es": "Arquitectura sin estado centrada en LCP sub-segundo y movimiento de alta fidelidad.",
-        "de": "Entwicklung einer zustandslosen, clientseitigen Anwendung mit Fokus auf LCP unter einer Sekunde."
+        "en": "Multicentre, Multirole, Multidisciplanary coordination and communication App.",
+        "es": "Aplicación de coordinación y comunicación multicéntrica, multirol y multidisciplinaria.",
+        "de": "Multizentrische, multirollen- und multidisziplinäre Koordinations- und Kommunikations-App."
       },
-      "techStack": ["TypeScript", "Intersection Observer API", "CSS View-Transitions", "Vite"],
-      "sourceUrl": "https://github.com/micahwalker/micahwalkerdesign",
+      "techStack": ["React", "TypeScript", "App Design", "Coordination"],
+      "sourceUrl": "https://github.com/MicahWalkerDesign/MMClinic",
       "liveUrl": "#",
-      "phases": {
-        "ideas": { "caption": { "en": "Focusing on Core Web Vitals and fluid user experience." } },
-        "design": { "caption": { "en": "Glassmorphism styling and responsive fluid typography." } },
-        "proof": { "caption": { "en": "Lighthouse scores hitting 100 on Performance and Accessibility." } },
-        "product": { 
-          "embedUrl": "./",
-          "repoUrl": "https://github.com/micahwalker/micahwalkerdesign",
-          "caption": { "en": "The live portfolio site itself serves as the demo." }
-        }
-      }
+      "phases": {}
     },
     {
       "id": "p2",
-      "category": "Games",
+      "category": "Apps",
       "title": {
-        "en": "Interactive Simulation / Game",
-        "es": "Simulación Interactiva / Juego",
-        "de": "Interaktive Simulation / Spiel"
+        "en": "Espresso Crema App",
+        "es": "Espresso Crema App",
+        "de": "Espresso Crema App"
       },
       "description": {
-        "en": "Developed a physics-based Paper Toss game using the Canvas API, utilizing custom easing equations for realistic trajectory mapping.",
-        "es": "Juego de Paper Toss basado en física usando Canvas API y ecuaciones personalizadas.",
-        "de": "Physikbasiertes Paper Toss Spiel mit Canvas API und benutzerdefinierten Easing-Gleichungen."
+        "en": "An App to help amateur coffee lovers and Cafes quickly identify and improve the taste of their Coffee. (Coming Soon)",
+        "es": "Una aplicación para ayudar a los amantes del café y cafés a mejorar el sabor de su café. (Próximamente)",
+        "de": "Eine App, um Kaffeeliebhabern und Cafés zu helfen, den Geschmack ihres Kaffees zu verbessern. (Demnächst)"
       },
-      "techStack": ["Canvas API", "Physics Engines", "Vanilla JS", "WCAG AA"],
-      "sourceUrl": "https://github.com/micahwalker/paper-toss",
-      "liveUrl": "#game",
-      "phases": {
-        "ideas": { "caption": { "en": "Sketching trajectory physics and collision boundaries." } },
-        "design": { "caption": { "en": "Minimalist paper ball and bin asset creation." } },
-        "proof": { "caption": { "en": "Prototyping the drag-and-throw mechanic in isolation." } },
-        "product": { 
-          "embedUrl": "#game",
-          "caption": { "en": "Integrated directly into the portfolio's Game section." }
-        }
-      }
+      "techStack": ["Product Design", "Coffee Science", "Mobile App", "UX"],
+      "sourceUrl": "https://github.com/MicahWalkerDesign/BeanDoc",
+      "liveUrl": "#",
+      "phases": {}
     },
     {
       "id": "p3",
-      "category": "System",
+      "category": "Web",
       "title": {
-        "en": "Multilingual Design System",
-        "es": "Sistema de Diseño Multilingüe",
-        "de": "Mehrsprachiges Design-System"
+        "en": "Mentes en Movimiento",
+        "es": "Mentes en Movimiento",
+        "de": "Mentes en Movimiento"
       },
       "description": {
-        "en": "Engineered a JSON-based i18n architecture supporting EN, ES, and DE with zero-flicker theme hydration.",
-        "es": "Arquitectura i18n basada en JSON soportando EN, ES, DE sin parpadeos.",
-        "de": "JSON-basierte i18n-Architektur für EN, ES und DE ohne Theme-Flimmern."
+        "en": "A multilingual, multidiscplanary special education support centre website.",
+        "es": "Un sitio web de centro de apoyo a la educación especial multilingüe y multidisciplinario.",
+        "de": "Eine mehrsprachige, multidisziplinäre Website für ein sonderpädagogisches Förderzentrum."
       },
-      "techStack": ["i18n", "JSON Schema", "Fluid Typography", "CSS Variables"],
-      "sourceUrl": "https://github.com/micahwalker/design-system",
-      "liveUrl": "#",
-      "phases": {
-        "ideas": { "caption": { "en": "Defining token structure for themes and languages." } },
-        "design": { "caption": { "en": "Mapping semantic colors to Sage and Clay themes." } },
-        "proof": { "caption": { "en": "Automated testing of language switching and theme persistence." } },
-        "product": { 
-          "repoUrl": "https://github.com/micahwalker/design-system",
-          "caption": { "en": "Production-ready system powering this website." }
-        }
-      }
+      "techStack": ["Web Design", "Accessibility", "Multilingual", "HTML/CSS"],
+      "sourceUrl": "https://github.com/MentesenMovimiento/mentesenmovimiento.github.io",
+      "liveUrl": "https://mentesenmovimiento.github.io",
+      "phases": {}
     }
   ]
 }

@@ -1109,7 +1109,7 @@
 
 @media (min-width: 768px) {
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -1419,7 +1419,8 @@
 }
 
 .contact__link:hover {
-  color: #FFFFFF;
+  color: #E89A7A;
+  /* Lighter terracotta for better hover contrast */
   transform: translateY(-2px);
 }
 

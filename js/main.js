@@ -251,6 +251,28 @@ function initPaperToss() {
   playAgainButton?.addEventListener('click', () => {
     paperTossGame.startGame();
   });
+
+  // Handle "Coffee Break" button click to open details
+  const coffeeBreakBtn = document.getElementById('coffee-break-btn');
+  const gameDetails = document.getElementById('game-details'); // Assuming the details element has this ID or we act on parent
+
+  if (coffeeBreakBtn) {
+    coffeeBreakBtn.addEventListener('click', (e) => {
+      // Find the details element if not selected by ID (fallback to looking near the canvas)
+      // The game is inside a <details> in the footer (usually). 
+      // Let's assume we need to target the <details> specifically.
+      // Based on typical structure, check for the details element containing the game.
+      const details = document.querySelector('details'); // A bit risky if multiple, but "Game" is usually the only one or we'd add an ID.
+
+      if (details) {
+        details.open = true;
+        // Scroll to it
+        setTimeout(() => {
+          details.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    });
+  }
 }
 
 /**
