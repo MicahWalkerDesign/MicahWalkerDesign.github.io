@@ -67,8 +67,8 @@ export function initParticleBackground(canvasId) {
                     const directionX = forceDirectionX * force * 3;
                     const directionY = forceDirectionY * force * 3;
 
-                    this.x -= directionX;
-                    this.y -= directionY;
+                    this.x += directionX;
+                    this.y += directionY;
                 }
             }
         }

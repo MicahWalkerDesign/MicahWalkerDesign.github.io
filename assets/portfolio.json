@@ -68,6 +68,29 @@
       "sourceUrl": "https://github.com/micahwalker/design-system",
       "liveUrl": "#",
       "phases": {}
+    },
+    {
+      "id": "p4",
+      "category": "App",
+      "title": {
+        "en": "Mentes en Movimiento",
+        "es": "Mentes en Movimiento",
+        "de": "Mentes en Movimiento"
+      },
+      "description": {
+        "en": "A holistic wellness platform for Latin American communities, featuring bilingual content and culturally adapted health tracking.",
+        "es": "Una plataforma de bienestar integral para comunidades latinoamericanas.",
+        "de": "Eine ganzheitliche Wellness-Plattform für lateinamerikanische Gemeinschaften."
+      },
+      "techStack": [
+        "React Native",
+        "Firebase",
+        "HealthKit",
+        "Bilingual Support"
+      ],
+      "sourceUrl": "#",
+      "liveUrl": "#",
+      "phases": {}
     }
   ]
 }

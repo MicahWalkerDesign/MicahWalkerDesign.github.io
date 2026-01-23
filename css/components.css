@@ -1200,7 +1200,7 @@
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
-  color: var(--tag-text);
+  color: var(--muted);
   white-space: normal;
   /* Allow text to wrap */
   text-align: center;
