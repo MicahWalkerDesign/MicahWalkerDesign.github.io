@@ -70,7 +70,14 @@
           "Nutzerzentriertes Denken und Feedback-Schleifen"
         ]
       },
-      "skills": ["Sales Strategy", "Medical Devices", "Territory Management", "CRM", "Product Training", "Stakeholder Management"]
+      "skills": [
+        "Sales Strategy",
+        "Medical Devices",
+        "Territory Management",
+        "CRM",
+        "Product Training",
+        "Stakeholder Management"
+      ]
     },
     {
       "id": "freelance-designer",
@@ -122,7 +129,15 @@
           "Prototyping in Figma, Adobe XD und Sketch"
         ]
       },
-      "skills": ["Product Design", "UI/UX", "Figma", "Adobe XD", "HTML/CSS", "JavaScript", "User Research"]
+      "skills": [
+        "Product Design",
+        "UI/UX",
+        "Figma",
+        "HTML/CSS",
+        "JavaScript",
+        "User Research",
+        "LinkedIn JSON Hydration"
+      ]
     },
     {
       "id": "uniklinik-frankfurt",
@@ -171,7 +186,13 @@
           "Patientenaufklärung zu Training und Lebensstil"
         ]
       },
-      "skills": ["Clinical Exercise", "Rehabilitation", "Patient Care", "Program Design", "Medical Collaboration"]
+      "skills": [
+        "Clinical Exercise",
+        "Rehabilitation",
+        "Patient Care",
+        "Program Design",
+        "Medical Collaboration"
+      ]
     },
     {
       "id": "aussie-ausdauer",
@@ -220,7 +241,12 @@
           "Strategien zur Kundengewinnung und -bindung"
         ]
       },
-      "skills": ["Personal Training", "Injury Prevention", "Business Management", "Client Relations"]
+      "skills": [
+        "Personal Training",
+        "Injury Prevention",
+        "Business Management",
+        "Client Relations"
+      ]
     },
     {
       "id": "tg-ruesselsheim",
@@ -269,7 +295,12 @@
           "Onboarding von Mitgliedern und Fortschrittsverfolgung"
         ]
       },
-      "skills": ["Rehabilitation", "Fitness Coordination", "Group Exercise", "Member Management"]
+      "skills": [
+        "Rehabilitation",
+        "Fitness Coordination",
+        "Group Exercise",
+        "Member Management"
+      ]
     },
     {
       "id": "dantrim",
@@ -318,7 +349,13 @@
           "Entwicklung von Trainingsprogrammen und Protokollen"
         ]
       },
-      "skills": ["Studio Management", "Staff Leadership", "Sales", "Rehabilitation", "Program Development"]
+      "skills": [
+        "Studio Management",
+        "Staff Leadership",
+        "Sales",
+        "Rehabilitation",
+        "Program Development"
+      ]
     },
     {
       "id": "forum-newcastle",
@@ -364,7 +401,11 @@
           "Unterstützung von Mitgliedern bei Technik und Motivation"
         ]
       },
-      "skills": ["Personal Training", "Fitness Assessment", "Program Design"]
+      "skills": [
+        "Personal Training",
+        "Fitness Assessment",
+        "Program Design"
+      ]
     },
     {
       "id": "swim-instructor",
@@ -410,7 +451,12 @@
           "Gewährleistung von Sicherheit und Aufsicht im Schwimmbad"
         ]
       },
-      "skills": ["Swim Instruction", "Child Safety", "Teaching", "Water Safety"]
+      "skills": [
+        "Swim Instruction",
+        "Child Safety",
+        "Teaching",
+        "Water Safety"
+      ]
     },
     {
       "id": "newcastle-knights",
@@ -456,7 +502,12 @@
           "Mithilfe bei der Vorbereitung auf Spieltage"
         ]
       },
-      "skills": ["Strength & Conditioning", "Coaching", "Youth Development", "Rugby League"]
+      "skills": [
+        "Strength & Conditioning",
+        "Coaching",
+        "Youth Development",
+        "Rugby League"
+      ]
     }
   ]
 }

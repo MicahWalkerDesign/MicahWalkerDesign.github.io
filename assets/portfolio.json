@@ -2,56 +2,71 @@
   "projects": [
     {
       "id": "p1",
-      "category": "Apps",
+      "category": "System",
       "title": {
-        "en": "M&M Clinic",
-        "es": "M&M Clinic",
-        "de": "M&M Clinic"
+        "en": "Performance-First Design Systems",
+        "es": "Sistemas de Diseño de Alto Rendimiento",
+        "de": "Leistungsorientierte Designsysteme"
       },
       "description": {
-        "en": "Multicentre, Multirole, Multidisciplanary coordination and communication App.",
-        "es": "Aplicación de coordinación y comunicación multicéntrica, multirol y multidisciplinaria.",
-        "de": "Multizentrische, multirollen- und multidisziplinäre Koordinations- und Kommunikations-App."
+        "en": "Architected a stateless, client-side application focused on sub-second LCP and high-fidelity motion.",
+        "es": "Arquitectura sin estado centrada en LCP sub-segundo y movimiento de alta fidelidad.",
+        "de": "Entwicklung einer zustandslosen, clientseitigen Anwendung mit Fokus auf LCP unter einer Sekunde."
       },
-      "techStack": ["React", "TypeScript", "App Design", "Coordination"],
-      "sourceUrl": "https://github.com/MicahWalkerDesign/MMClinic",
+      "techStack": [
+        "TypeScript",
+        "Fluid UI Architecture",
+        "IntersectionObserver",
+        "Lighthouse 100/100"
+      ],
+      "sourceUrl": "https://github.com/micahwalker/micahwalkerdesign",
       "liveUrl": "#",
       "phases": {}
     },
     {
       "id": "p2",
-      "category": "Apps",
+      "category": "Games",
       "title": {
-        "en": "Espresso Crema App",
-        "es": "Espresso Crema App",
-        "de": "Espresso Crema App"
+        "en": "Canvas API Physics Engine",
+        "es": "Motor de Física Canvas API",
+        "de": "Canvas API Physik-Engine"
       },
       "description": {
-        "en": "An App to help amateur coffee lovers and Cafes quickly identify and improve the taste of their Coffee. (Coming Soon)",
-        "es": "Una aplicación para ayudar a los amantes del café y cafés a mejorar el sabor de su café. (Próximamente)",
-        "de": "Eine App, um Kaffeeliebhabern und Cafés zu helfen, den Geschmack ihres Kaffees zu verbessern. (Demnächst)"
+        "en": "Developed a physics-based Paper Toss game using the Canvas API, utilizing custom easing equations for realistic trajectory mapping.",
+        "es": "Juego basado en física usando Canvas API y ecuaciones personalizadas.",
+        "de": "Physikbasiertes Spiel mit Canvas API und benutzerdefinierten Easing-Gleichungen."
       },
-      "techStack": ["Product Design", "Coffee Science", "Mobile App", "UX"],
-      "sourceUrl": "https://github.com/MicahWalkerDesign/BeanDoc",
-      "liveUrl": "#",
+      "techStack": [
+        "Vanilla JS",
+        "Collision Detection",
+        "Mathematics",
+        "A11y (WCAG AA)"
+      ],
+      "sourceUrl": "https://github.com/micahwalker/paper-toss",
+      "liveUrl": "#game",
       "phases": {}
     },
     {
       "id": "p3",
-      "category": "Web",
+      "category": "System",
       "title": {
-        "en": "Mentes en Movimiento",
-        "es": "Mentes en Movimiento",
-        "de": "Mentes en Movimiento"
+        "en": "Multilingual Data Hydration",
+        "es": "Hidratación de Datos Multilingüe",
+        "de": "Mehrsprachige Datenhydratation"
       },
       "description": {
-        "en": "A multilingual, multidiscplanary special education support centre website.",
-        "es": "Un sitio web de centro de apoyo a la educación especial multilingüe y multidisciplinario.",
-        "de": "Eine mehrsprachige, multidisziplinäre Website für ein sonderpädagogisches Förderzentrum."
+        "en": "Engineered a JSON-based i18n architecture supporting EN, ES, and DE with zero-flicker theme hydration.",
+        "es": "Arquitectura i18n basada en JSON soportando EN, ES, DE sin parpadeos.",
+        "de": "JSON-basierte i18n-Architektur für EN, ES und DE ohne Theme-Flimmern."
       },
-      "techStack": ["Web Design", "Accessibility", "Multilingual", "HTML/CSS"],
-      "sourceUrl": "https://github.com/MentesenMovimiento/mentesenmovimiento.github.io",
-      "liveUrl": "https://mentesenmovimiento.github.io",
+      "techStack": [
+        "i18n Schema",
+        "JSON Hydration",
+        "Theme State Persistence",
+        "ES6+"
+      ],
+      "sourceUrl": "https://github.com/micahwalker/design-system",
+      "liveUrl": "#",
       "phases": {}
     }
   ]

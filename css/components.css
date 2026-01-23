@@ -261,6 +261,53 @@
 }
 
 /* ========================================
+   UTILITIES
+   ======================================== */
+.gradient-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* Skeleton Loading Animation */
+.skeleton {
+  background-color: var(--skeleton-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0,
+      var(--skeleton-shimmer) 20%,
+      var(--skeleton-shimmer) 60%,
+      rgba(255, 255, 255, 0));
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    animation: none;
+    background: none;
+  }
+}
+
+/* ========================================
    HERO SECTION
    ======================================== */
 .hero {
@@ -1086,6 +1133,34 @@
    ======================================== */
 .about {
   background: var(--bg);
+  position: relative;
+  /* Ensure positioning context */
+}
+
+#about-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+  /* Allow mouse interaction */
+}
+
+.about .container {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  /* Let mouse pass through container to particles? */
+  /* Wait, user wants interactive particles. */
+  /* But container has content (text, skill boxes). */
+  /* If pointer-events: none, text selection and skill dragging won't work. */
+  /* We must keep pointer-events: auto on container children. */
+}
+
+.about__content {
+  pointer-events: auto;
 }
 
 .about__content {
@@ -1113,11 +1188,59 @@
   }
 }
 
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-tag {
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-3);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  color: var(--tag-text);
+  white-space: normal;
+  /* Allow text to wrap */
+  text-align: center;
+  line-height: 1.4;
+  height: auto;
+  /* Allow height to grow */
+  cursor: grab;
+  /* Indicate draggable */
+  transition: transform 0.2s, opacity 0.2s;
+  user-select: none;
+  /* Prevent text selection while dragging */
+}
+
+.skill-tag:active {
+  cursor: grabbing;
+}
+
+.skill-tag.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+
+
 .skill-category {
   background: var(--surface);
   padding: var(--space-5);
   border-radius: var(--radius-xl);
   border: 1px solid var(--border);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), var(--glow);
+  border-color: var(--primary);
 }
 
 .skill-category__title {

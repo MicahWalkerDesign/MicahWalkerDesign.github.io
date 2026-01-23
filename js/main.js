@@ -19,6 +19,8 @@ import { initModal, openModal } from './components/modal.js';
 import { loadExperienceData, renderTimeline, refreshTimeline } from './components/timeline.js';
 import { initPortfolio, refreshPortfolio } from './components/portfolioGrid.js';
 import { PaperTossGame } from './components/paperToss/game.js';
+import { initSkillDragger } from './components/skillDragger.js';
+import { initParticleBackground } from './components/particleBackground.js';
 
 // Application state
 let experienceData = null;
@@ -64,6 +66,8 @@ async function initApp() {
   initTheme();
   initI18n();
   initModal();
+  initSkillDragger();
+  initParticleBackground('about-particles');
 
   // Set up toggle button listeners
   setupLanguageToggles();
