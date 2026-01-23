@@ -78,9 +78,9 @@
         "de": "Mentes en Movimiento"
       },
       "description": {
-        "en": "A holistic wellness platform for Latin American communities, featuring bilingual content and culturally adapted health tracking.",
-        "es": "Una plataforma de bienestar integral para comunidades latinoamericanas.",
-        "de": "Eine ganzheitliche Wellness-Plattform für lateinamerikanische Gemeinschaften."
+        "en": "A multidisciplinary education support centre, featuring bilingual content and SEO optimisation.",
+        "es": "Un centro de apoyo educativo multidisciplinario, con contenido bilingüe y optimización SEO.",
+        "de": "Ein multidisziplinäres Bildungsunterstützungszentrum mit zweisprachigen Inhalten und SEO-Optimierung."
       },
       "techStack": [
         "React Native",

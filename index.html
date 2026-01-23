@@ -142,20 +142,11 @@
       </div>
     </section>
 
-    <!-- ==================== PORTFOLIO BANNER ==================== -->
-    <section class="portfolio-banner" aria-labelledby="portfolio-banner-heading">
-      <div class="container">
-        <h2 id="portfolio-banner-heading" class="portfolio-banner__title" data-i18n="portfolio.bannerTitle">
-          Portfolio
-        </h2>
-      </div>
-    </section>
-
     <!-- ==================== PORTFOLIO SECTION ==================== -->
     <section id="portfolio" class="section portfolio reveal" aria-labelledby="portfolio-heading">
       <div class="container">
-        <header class="section__header" style="display: none;">
-          <h2 id="portfolio-heading" data-i18n="portfolio.title">Portfolio</h2>
+        <header class="section__header">
+          <h2 id="portfolio-heading" data-i18n="portfolio.title">Here is some of my Projects</h2>
         </header>
 
         <!-- 
@@ -236,8 +227,8 @@
               <div class="skill-tags">
                 <span class="skill-tag">Figma</span>
                 <span class="skill-tag">Prototyping</span>
-                <span class="skill-tag">Design Systems</span>
-                <span class="skill-tag">Motion Design</span>
+                <span class="skill-tag">Systems</span>
+                <span class="skill-tag">Motion</span>
               </div>
             </div>
             <div class="skill-category">
@@ -264,7 +255,7 @@
                 <span class="skill-tag">Gemini</span>
                 <span class="skill-tag">OpenAI</span>
                 <span class="skill-tag">RAG</span>
-                <span class="skill-tag">Prompt Engineering</span>
+                <span class="skill-tag">Prompts</span>
               </div>
             </div>
           </div>
@@ -397,8 +388,10 @@
     </section>
 
     <!-- ==================== CONTACT SECTION ==================== -->
-    <section id="contact" class="section contact reveal" aria-labelledby="contact-heading">
-      <div class="container contact__inner">
+    <section id="contact" class="section contact reveal" aria-labelledby="contact-heading"
+      style="position: relative; overflow: hidden;">
+      <canvas id="contact-particles" aria-hidden="true"></canvas>
+      <div class="container contact__inner" style="position: relative; z-index: 1;">
         <header class="section__header">
           <h2 id="contact-heading" class="section__title" data-i18n="contact.title">
             Get In Touch

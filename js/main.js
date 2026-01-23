@@ -68,6 +68,7 @@ async function initApp() {
   initModal();
   initSkillDragger();
   initParticleBackground('about-particles');
+  initParticleBackground('contact-particles');
 
   // Set up toggle button listeners
   setupLanguageToggles();
