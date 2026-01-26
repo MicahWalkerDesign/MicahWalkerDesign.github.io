@@ -24,7 +24,37 @@ const dictionaries = {
     },
     // New Sections
     about: {
-      title: 'About Me'
+      title: 'About Me',
+      bio: "I'm a Product Designer & Exercise Physiologist who spent my career working in clinical rehabilitation, researching and tackling complex problems in the human body. Now I design and build digital solutions."
+    },
+    skills: {
+      frontend: 'Frontend',
+      design: 'Design',
+      tools: 'Tools',
+      backend: 'Back End',
+      prototyping: 'Prototyping',
+      systems: 'Systems',
+      motion: 'Motion'
+    },
+    qualifications: {
+      title: 'Qualifications',
+      hint: 'Education & achievements',
+      edu: {
+        title: 'Education',
+        d1: { title: 'Bachelor of Exercise & Sport Science', meta: 'University of Newcastle • 2016' },
+        d2: { title: 'Mechatronics Engineering Coursework', meta: 'University of Newcastle • 2 years (2013)' }
+      },
+      certs: {
+        title: 'Certifications',
+        c1: { title: 'Sales Psychology & Account Management', meta: '2025' },
+        c2: { title: 'Qualitative & Quantitative Research Methods', meta: '2023' },
+        c3: { title: 'Rehabilitation Trainer for Orthopedic Diseases', meta: '2021' }
+      },
+      innovations: {
+        title: 'Technical Innovations',
+        i1: { title: 'Autonomous Flight Systems (Quadcopter)', meta: 'Project | 2013', desc: 'Hardware Integration: Custom multi-rotor UAV with calibrated PID tuning for stability.' },
+        i2: { title: 'Embedded Retail Systems (Innovation Award)', meta: 'Project | 2011', desc: 'Full-Stack Development: Hardware-based shopping scanner with relational database telemetry.' }
+      }
     },
     background: {
       title: 'Background',
@@ -93,6 +123,26 @@ const dictionaries = {
     modal: {
       close: 'Close'
     },
+    // Resume
+    resume: {
+      download: 'Download Resume'
+    },
+    // Tags
+    tags: {
+      'Human-Systems Integration': 'Human-Systems Integration',
+      'Clinical Workflows': 'Clinical Workflows',
+      'Data Synchronization': 'Data Synchronization',
+      'Stateless Architecture': 'Stateless Architecture',
+      'JSON Hydration': 'JSON Hydration',
+      'Computer Vision': 'Computer Vision',
+      'Classification': 'Classification',
+      'Accessibility': 'Accessibility',
+      'Information Architecture': 'Information Architecture',
+      'Bilingual Support': 'Bilingual Support',
+      'System': 'System',
+      'App': 'App',
+      'AI / ML': 'AI / ML'
+    },
     // Footer
     footer: {
       copyright: '© 2026 Micah Walker. All rights reserved.',
@@ -123,7 +173,37 @@ const dictionaries = {
     },
     // New Sections
     about: {
-      title: 'Sobre Mí'
+      title: 'Sobre Mí',
+      bio: "Soy Diseñador de Productos y Fisiólogo del Ejercicio que pasó su carrera trabajando en rehabilitación clínica, investigando y abordando problemas complejos en el cuerpo humano. Ahora diseño y construyo soluciones digitales."
+    },
+    skills: {
+      frontend: 'Frontend',
+      design: 'Diseño',
+      tools: 'Herramientas',
+      backend: 'Back End',
+      prototyping: 'Prototipado',
+      systems: 'Sistemas',
+      motion: 'Movimiento'
+    },
+    qualifications: {
+      title: 'Cualificaciones',
+      hint: 'Educación y logros',
+      edu: {
+        title: 'Educación',
+        d1: { title: 'Licenciatura en Ciencias del Ejercicio y del Deporte', meta: 'Universidad de Newcastle • 2016' },
+        d2: { title: 'Curso de Ingeniería Mecatrónica', meta: 'Universidad de Newcastle • 2 años (2013)' }
+      },
+      certs: {
+        title: 'Certificaciones',
+        c1: { title: 'Psicología de Ventas y Gestión de Cuentas', meta: '2025' },
+        c2: { title: 'Métodos de Investigación Cualitativa y Cuantitativa', meta: '2023' },
+        c3: { title: 'Entrenador de Rehabilitación para Enfermedades Ortopédicas', meta: '2021' }
+      },
+      innovations: {
+        title: 'Innovaciones Técnicas',
+        i1: { title: 'Sistemas de Vuelo Autónomo (Quadcopter)', meta: 'Proyecto | 2013', desc: 'Integración de Hardware: UAV multirotor personalizado con ajuste PID calibrado para estabilidad.' },
+        i2: { title: 'Sistemas Minoristas Embebidos (Premio a la Innovación)', meta: 'Proyecto | 2011', desc: 'Desarrollo Full-Stack: Escáner de compras basado en hardware con telemetría de base de datos relacional.' }
+      }
     },
     background: {
       title: 'Trayectoria',
@@ -192,6 +272,26 @@ const dictionaries = {
     modal: {
       close: 'Cerrar'
     },
+    // Resume
+    resume: {
+      download: 'Descargar CV'
+    },
+    // Tags
+    tags: {
+      'Human-Systems Integration': 'Integración Humano-Sistema',
+      'Clinical Workflows': 'Flujos Clínicos',
+      'Data Synchronization': 'Sincronización de Datos',
+      'Stateless Architecture': 'Arquitectura Sin Estado',
+      'JSON Hydration': 'Hidratación JSON',
+      'Computer Vision': 'Visión por Computadora',
+      'Classification': 'Clasificación',
+      'Accessibility': 'Accesibilidad',
+      'Information Architecture': 'Arquitectura de Información',
+      'Bilingual Support': 'Soporte Bilingüe',
+      'System': 'Sistema',
+      'App': 'Aplicación',
+      'AI / ML': 'IA / ML'
+    },
     // Footer
     footer: {
       copyright: '© 2026 Micah Walker. Todos los derechos reservados.',
@@ -222,7 +322,37 @@ const dictionaries = {
     },
     // New Sections
     about: {
-      title: 'Über Mich'
+      title: 'Über Mich',
+      bio: "Ich bin Produktdesigner & Sportphysiologe und habe meine Karriere in der klinischen Rehabilitation verbracht, wo ich komplexe Probleme des menschlichen Körpers erforscht und gelöst habe. Jetzt entwerfe und entwickle ich digitale Lösungen."
+    },
+    skills: {
+      frontend: 'Frontend',
+      design: 'Design',
+      tools: 'Werkzeuge',
+      backend: 'Back End',
+      prototyping: 'Prototyping',
+      systems: 'Systeme',
+      motion: 'Bewegung'
+    },
+    qualifications: {
+      title: 'Qualifikationen',
+      hint: 'Ausbildung & Erfolge',
+      edu: {
+        title: 'Ausbildung',
+        d1: { title: 'Bachelor in Bewegungs- und Sportwissenschaft', meta: 'Universität Newcastle • 2016' },
+        d2: { title: 'Mechatronik-Ingenieurstudium (Grundstudium)', meta: 'Universität Newcastle • 2 Jahre (2013)' }
+      },
+      certs: {
+        title: 'Zertifizierungen',
+        c1: { title: 'Verkaufspsychologie & Account Management', meta: '2025' },
+        c2: { title: 'Qualitative & Quantitative Forschungsmethoden', meta: '2023' },
+        c3: { title: 'Rehabilitationstrainer für orthopädische Erkrankungen', meta: '2021' }
+      },
+      innovations: {
+        title: 'Technische Innovationen',
+        i1: { title: 'Autonome Flugsysteme (Quadcopter)', meta: 'Projekt | 2013', desc: 'Hardware-Integration: Kundenspezifisches Multirotor-UAV mit kalibrierter PID-Abstimmung für Stabilität.' },
+        i2: { title: 'Eingebettete Einzelhandelssysteme (Innovationspreis)', meta: 'Projekt | 2011', desc: 'Full-Stack-Entwicklung: Hardwarebasierter Einkaufsscanner mit relationaler Datenbanktelemetrie.' }
+      }
     },
     background: {
       title: 'Hintergrund',
@@ -290,6 +420,26 @@ const dictionaries = {
     // Modal
     modal: {
       close: 'Schließen'
+    },
+    // Resume
+    resume: {
+      download: 'Lebenslauf herunterladen'
+    },
+    // Tags
+    tags: {
+      'Human-Systems Integration': 'Mensch-System-Integration',
+      'Clinical Workflows': 'Klinische Arbeitsabläufe',
+      'Data Synchronization': 'Datensynchronisation',
+      'Stateless Architecture': 'Zustandslose Architektur',
+      'JSON Hydration': 'JSON-Hydratation',
+      'Computer Vision': 'Computer Vision',
+      'Classification': 'Klassifizierung',
+      'Accessibility': 'Barrierefreiheit',
+      'Information Architecture': 'Informationsarchitektur',
+      'Bilingual Support': 'Zweisprachige Unterstützung',
+      'System': 'System',
+      'App': 'App',
+      'AI / ML': 'KI / ML'
     },
     // Footer
     footer: {

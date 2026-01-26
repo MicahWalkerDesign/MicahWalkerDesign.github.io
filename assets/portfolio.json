@@ -5,12 +5,26 @@
       "isFeatured": true,
       "category": "System",
       "title": {
-        "en": "Pediatric Acute Care Coordinator"
+        "en": "Pediatric Acute Care Coordinator",
+        "es": "Coordinador de Cuidados Agudos Pediátricos",
+        "de": "Koordinator für pädiatrische Akutversorgung"
       },
       "caseStudy": {
-        "problem": "Fragmented communication and delayed coordination in high-stakes pediatric multidisciplinary care units.",
-        "solution": "Designed a centralized communication hub integrating real-time role-based messaging and voice-to-text data entry.",
-        "evidence": "Beta testing: Positive feedback with internal communication and coordination, awaiting external feedback."
+        "problem": {
+          "en": "Fragmented communication and delayed coordination in high-stakes pediatric multidisciplinary care units.",
+          "es": "Comunicación fragmentada y coordinación retrasada en unidades de cuidados multidisciplinarios pediátricos de alto riesgo.",
+          "de": "Fragmentierte Kommunikation und verzögerte Koordination in hochsensiblen multidisziplinären pädiatrischen Pflegeeinheiten."
+        },
+        "solution": {
+          "en": "Designed a centralized communication hub integrating real-time role-based messaging and voice-to-text data entry.",
+          "es": "Diseñó un centro de comunicación centralizado que integra mensajería basada en roles en tiempo real y entrada de datos por voz.",
+          "de": "Entwarf einen zentralisierten Kommunikationsknotenpunkt, der rollenbasierte Echtzeit-Nachrichten und Spracheingabe integriert."
+        },
+        "evidence": {
+          "en": "Beta testing: Positive feedback with internal communication and coordination, awaiting external feedback.",
+          "es": "Pruebas Beta: Comentarios positivos sobre la comunicación y coordinación interna, esperando comentarios externos.",
+          "de": "Beta-Tests: Positives Feedback zur internen Kommunikation und Koordination, warten auf externes Feedback."
+        }
       },
       "codeSnippet": {
         "language": "typescript",
@@ -24,7 +38,7 @@
       ],
       "links": {
         "demo": "#",
-        "source": "#"
+        "source": "https://github.com/MicahWalkerDesign/MultiDisApp"
       },
       "phases": {}
     },
@@ -32,12 +46,26 @@
       "id": "p2",
       "category": "System",
       "title": {
-        "en": "Systems Architecture Showcase"
+        "en": "Systems Architecture Showcase",
+        "es": "Muestra de Arquitectura de Sistemas",
+        "de": "Systemarchitektur-Showcase"
       },
       "caseStudy": {
-        "problem": "Absence of a high-performance platform to demonstrate complex engineering logic and multidisciplinary project history.",
-        "solution": "Developed a stateless, JSON-driven architecture using Vanilla JS/HTML5/CSS3. Implemented a decoupled hydration engine for zero-flicker performance.",
-        "evidence": "Live interactive environment with 100/100 Lighthouse performance telemetry."
+        "problem": {
+          "en": "Absence of a high-performance platform to demonstrate complex engineering logic and multidisciplinary project history.",
+          "es": "Ausencia de una plataforma de alto rendimiento para demostrar lógica de ingeniería compleja e historia de proyectos multidisciplinarios.",
+          "de": "Fehlen einer Hochleistungsplattform zur Demonstration komplexer technischer Logik und multidisziplinärer Projekthistorie."
+        },
+        "solution": {
+          "en": "Developed a stateless, JSON-driven architecture using Vanilla JS/HTML5/CSS3. Implemented a decoupled hydration engine for zero-flicker performance.",
+          "es": "Desarrolló una arquitectura sin estado impulsada por JSON usando Vanilla JS/HTML5/CSS3. Implementó un motor de hidratación desacoplado para un rendimiento sin parpadeos.",
+          "de": "Entwickelte eine zustandslose, JSON-gesteuerte Architektur mit Vanilla JS/HTML5/CSS3. Implementierte eine entkoppelte Hydratations-Engine für flimmerfreie Leistung."
+        },
+        "evidence": {
+          "en": "Live interactive environment with 100/100 Lighthouse performance telemetry.",
+          "es": "Entorno interactivo en vivo con telemetría de rendimiento Lighthouse 100/100.",
+          "de": "Live interaktive Umgebung mit 100/100 Lighthouse-Leistungstelemetrie."
+        }
       },
       "techStack": [
         "Stateless Architecture",
@@ -46,17 +74,32 @@
         "Lighthouse 100"
       ],
       "sourceUrl": "https://github.com/MicahWalkerDesign/MicahWalkerDesign.github.io",
-      "liveUrl": "https://micahwalkerdesign.github.io/",
+      "liveUrl": "self",
       "phases": {}
     },
     {
       "id": "p3",
-      "title": "PerfExpresso: AI Integrated Crema Analysis",
-      "category": "AI / ML",
+      "title": {
+        "en": "PerfExpresso: AI Integrated Crema Analysis",
+        "es": "PerfExpresso: Análisis de Crema Integrado con IA",
+        "de": "PerfExpresso: KI-integrierte Crema-Analyse"
+      },
       "caseStudy": {
-        "problem": "Subjective espresso quality assessment leads to inconsistent brewing extraction standards.",
-        "solution": "Developed a computer vision pipeline using OpenCV to analyze crema color, texture, and persistence.",
-        "evidence": "Achieved 90% accuracy in extraction classification against professional barista grading."
+        "problem": {
+          "en": "Subjective espresso quality assessment leads to inconsistent brewing extraction standards.",
+          "es": "La evaluación subjetiva de la calidad del espresso conduce a estándares de extracción inconsistentes.",
+          "de": "Subjektive Beurteilung der Espressoqualität führt zu inkonsistenten Extraktionsstandards."
+        },
+        "solution": {
+          "en": "Developed a computer vision pipeline using OpenCV to analyze crema color, texture, and persistence.",
+          "es": "Desarrolló un pipeline de visión por computadora usando OpenCV para analizar el color, la textura y la persistencia de la crema.",
+          "de": "Entwickelte eine Computer-Vision-Pipeline mit OpenCV zur Analyse von Crema-Farbe, Textur und Beständigkeit."
+        },
+        "evidence": {
+          "en": "Achieved 90% accuracy in extraction classification against professional barista grading.",
+          "es": "Logró un 90% de precisión en la clasificación de extracción frente a la calificación de baristas profesionales.",
+          "de": "Erreichte 90% Genauigkeit bei der Extraktionsklassifizierung gegenüber professioneller Barista-Bewertung."
+        }
       },
       "techStack": [
         "Swift / SwiftUI",
@@ -66,7 +109,7 @@
       ],
       "links": {
         "demo": "#",
-        "source": "#"
+        "source": "https://github.com/MicahWalkerDesign/PerfEspresso"
       },
       "phases": {}
     },
@@ -74,12 +117,26 @@
       "id": "p4",
       "category": "App",
       "title": {
-        "en": "Clinical Education Ecosystem"
+        "en": "Clinical Education Ecosystem",
+        "es": "Ecosistema de Educación Clínica",
+        "de": "Klinisches Bildungsökosystem"
       },
       "caseStudy": {
-        "problem": "Inefficient information distribution between special needs educators, clinicians, and families requiring developmental support.",
-        "solution": "Architected a multidisciplinary support platform designed for accessibility and high-reliability information delivery.",
-        "evidence": "Before this the Organisation didnt have a website; launched with 100% Lighthouse Performance & SEO scores."
+        "problem": {
+          "en": "Inefficient information distribution between special needs educators, clinicians, and families requiring developmental support.",
+          "es": "Distribución ineficiente de información entre educadores de necesidades especiales, clínicos y familias que requieren apoyo para el desarrollo.",
+          "de": "Ineffiziente Informationsverteilung zwischen Sonderpädagogen, Klinikern und Familien, die Entwicklungsunterstützung benötigen."
+        },
+        "solution": {
+          "en": "Architected a multidisciplinary support platform designed for accessibility and high-reliability information delivery.",
+          "es": "Arquitectó una plataforma de apoyo multidisciplinaria diseñada para la accesibilidad y la entrega de información de alta confiabilidad.",
+          "de": "Konzipierte eine multidisziplinäre Support-Plattform, konzipiert für Barrierefreiheit und hochzuverlässige Informationsbereitstellung."
+        },
+        "evidence": {
+          "en": "Before this the Organisation didnt have a website; launched with 100% Lighthouse Performance & SEO scores.",
+          "es": "Antes de esto, la organización no tenía sitio web; se lanzó con 100% de rendimiento Lighthouse y puntajes SEO.",
+          "de": "Davor hatte die Organisation keine Website; Start mit 100% Lighthouse-Performance & SEO-Scores."
+        }
       },
       "techStack": [
         "Accessibility",

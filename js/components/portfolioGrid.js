@@ -143,27 +143,71 @@ export async function initPortfolio() {
         const span = document.createElement('span');
         span.className = 'badge';
         span.style.animationDelay = `${i * 50}ms`;
-        span.textContent = tech;
+        // Try to translate tag, fallback to original string
+        const translatedTag = t(`tags.${tech}`) !== `tags.${tech}` ? t(`tags.${tech}`) : tech;
+        span.textContent = translatedTag;
         tagsContainer.appendChild(span);
       });
 
       // Handle links (support both legacy and new formats)
+      // Handle links (support both legacy and new formats)
       const sourceLink = card.querySelector('.source-link');
       const sourceUrl = project.sourceUrl || project.links?.source;
-      if (sourceLink && sourceUrl) {
-        sourceLink.href = sourceUrl;
-        sourceLink.setAttribute('aria-label', `Source Code for ${title}`);
-      } else if (sourceLink) {
-        sourceLink.remove();
+
+      if (sourceLink) {
+        if (sourceUrl || project.codeSnippet) {
+          sourceLink.href = sourceUrl || '#';
+          sourceLink.setAttribute('aria-label', `Source Code for ${title}`);
+
+          sourceLink.addEventListener('click', (e) => {
+            if (project.codeSnippet) {
+              e.preventDefault();
+              import('../components/modal.js').then(({ openModal }) => {
+                const codeHtml = `
+                  <div class="code-window" style="max-height: 80vh; overflow-y: auto;">
+                    <div class="code-header">
+                      <div class="dot red"></div>
+                      <div class="dot yellow"></div>
+                      <div class="dot green"></div>
+                    </div>
+                    <pre class="code-content" style="white-space: pre-wrap;">${project.codeSnippet.code}</pre>
+                  </div>
+                  <div style="margin-top: 1rem; text-align: right;">
+                    ${sourceUrl && sourceUrl !== '#' ? `<a href="${sourceUrl}" target="_blank" class="btn btn--secondary">View on GitHub</a>` : ''}
+                  </div>
+                `;
+                openModal({ title: `${title} - Source Code`, content: codeHtml, className: 'modal--wide' });
+              });
+            } else if (!sourceUrl || sourceUrl === '#') {
+              e.preventDefault(); // No link and no snippet
+            }
+          });
+        } else {
+          sourceLink.remove();
+        }
       }
 
       const liveLink = card.querySelector('.live-link');
       const liveUrl = project.liveUrl || project.links?.demo;
-      if (liveLink && liveUrl && liveUrl !== '#') {
-        liveLink.href = liveUrl;
-        liveLink.setAttribute('aria-label', `Live Demo for ${title}`);
-      } else if (liveLink) {
-        liveLink.remove();
+
+      if (liveLink) {
+        if (liveUrl === 'self') {
+          liveLink.href = '#';
+          liveLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            import('../components/modal.js').then(({ openModal }) => {
+              openModal({
+                title: title,
+                content: `<p class="modal-text">You are already on this site!</p><p class="modal-subtext">This portfolio is the live demo of Project 2.</p>`
+              });
+            });
+          });
+        } else if (liveUrl && liveUrl !== '#') {
+          liveLink.href = liveUrl;
+          liveLink.setAttribute('aria-label', `Live Demo for ${title}`);
+        } else {
+          liveLink.remove();
+        }
       }
 
       container.appendChild(card);

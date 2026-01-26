@@ -231,7 +231,7 @@
         </header>
 
         <div class="about__content">
-          <p class="about__bio">
+          <p class="about__bio" data-i18n="about.bio">
             I'm a Product Designer & Exercise Physiologist who spent my career working in clinical rehabilitation,
             researching and tackling complex problems in the human body.
             Now I design and build digital solutions.
@@ -240,7 +240,7 @@
 
           <div class="skills-grid">
             <div class="skill-category">
-              <h3 class="skill-category__title">Frontend</h3>
+              <h3 class="skill-category__title" data-i18n="skills.frontend">Frontend</h3>
               <div class="skill-tags">
                 <span class="skill-tag">TypeScript</span>
                 <span class="skill-tag">React</span>
@@ -250,16 +250,16 @@
               </div>
             </div>
             <div class="skill-category">
-              <h3 class="skill-category__title">Design</h3>
+              <h3 class="skill-category__title" data-i18n="skills.design">Design</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Figma</span>
-                <span class="skill-tag">Prototyping</span>
-                <span class="skill-tag">Systems</span>
-                <span class="skill-tag">Motion</span>
+                <span class="skill-tag" data-i18n="skills.prototyping">Prototyping</span>
+                <span class="skill-tag" data-i18n="skills.systems">Systems</span>
+                <span class="skill-tag" data-i18n="skills.motion">Motion</span>
               </div>
             </div>
             <div class="skill-category">
-              <h3 class="skill-category__title">Tools</h3>
+              <h3 class="skill-category__title" data-i18n="skills.tools">Tools</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Github</span>
                 <span class="skill-tag">Vite</span>
@@ -268,7 +268,7 @@
               </div>
             </div>
             <div class="skill-category">
-              <h3 class="skill-category__title">Back End</h3>
+              <h3 class="skill-category__title" data-i18n="skills.backend">Back End</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Python</span>
                 <span class="skill-tag">SQL</span>
@@ -315,9 +315,9 @@
                   <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                   <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                 </svg>
-                Experience
+                <span data-i18n="experience.title">Experience</span>
               </h3>
-              <span class="split-panel__hint">Professional history</span>
+              <span class="split-panel__hint" data-i18n="experience.subtitle">Professional history</span>
             </button>
             <div class="split-panel__content">
               <div id="timeline-container" class="timeline" role="region" aria-label="Work experience timeline">
@@ -350,53 +350,67 @@
                   <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                   <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                 </svg>
-                Qualifications
+                <span data-i18n="qualifications.title">Qualifications</span>
               </h3>
-              <span class="split-panel__hint">Education & achievements</span>
+              <span class="split-panel__hint" data-i18n="qualifications.hint">Education & achievements</span>
             </button>
             <div class="split-panel__content">
               <div id="qualifications-container" class="qualifications">
                 <div class="qualification-group">
-                  <h4 class="qualification-group__title">Education</h4>
+                  <h4 class="qualification-group__title" data-i18n="qualifications.edu.title">Education</h4>
                   <div class="qualification-item">
-                    <span class="qualification-item__title">Bachelor of Exercise & Sport Science</span>
-                    <span class="qualification-item__meta">University of Newcastle • 2016</span>
+                    <span class="qualification-item__title" data-i18n="qualifications.edu.d1.title">Bachelor of Exercise
+                      & Sport Science</span>
+                    <span class="qualification-item__meta" data-i18n="qualifications.edu.d1.meta">University of
+                      Newcastle • 2016</span>
                   </div>
                   <div class="qualification-item">
-                    <span class="qualification-item__title">Mechatronics Engineering Coursework</span>
-                    <span class="qualification-item__meta">University of Newcastle • 2 years (2013)</span>
-                  </div>
-                </div>
-
-                <div class="qualification-group">
-                  <h4 class="qualification-group__title">Certifications</h4>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title">Sales Psychology & Account Management</span>
-                    <span class="qualification-item__meta">2025</span>
-                  </div>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title">Qualitative & Quantitative Research Methods</span>
-                    <span class="qualification-item__meta">2023</span>
-                  </div>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title">Rehabilitation Trainer for Orthopedic Diseases</span>
-                    <span class="qualification-item__meta">2021</span>
+                    <span class="qualification-item__title" data-i18n="qualifications.edu.d2.title">Mechatronics
+                      Engineering Coursework</span>
+                    <span class="qualification-item__meta" data-i18n="qualifications.edu.d2.meta">University of
+                      Newcastle • 2 years (2013)</span>
                   </div>
                 </div>
 
                 <div class="qualification-group">
-                  <h4 class="qualification-group__title">Technical Innovations</h4>
+                  <h4 class="qualification-group__title" data-i18n="qualifications.certs.title">Certifications</h4>
                   <div class="qualification-item">
-                    <span class="qualification-item__title">Autonomous Flight Systems (Quadcopter)</span>
-                    <span class="qualification-item__meta">Project | 2013</span>
-                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
+                    <span class="qualification-item__title" data-i18n="qualifications.certs.c1.title">Sales Psychology &
+                      Account Management</span>
+                    <span class="qualification-item__meta" data-i18n="qualifications.certs.c1.meta">2025</span>
+                  </div>
+                  <div class="qualification-item">
+                    <span class="qualification-item__title" data-i18n="qualifications.certs.c2.title">Qualitative &
+                      Quantitative Research Methods</span>
+                    <span class="qualification-item__meta" data-i18n="qualifications.certs.c2.meta">2023</span>
+                  </div>
+                  <div class="qualification-item">
+                    <span class="qualification-item__title" data-i18n="qualifications.certs.c3.title">Rehabilitation
+                      Trainer for Orthopedic Diseases</span>
+                    <span class="qualification-item__meta" data-i18n="qualifications.certs.c3.meta">2021</span>
+                  </div>
+                </div>
+
+                <div class="qualification-group">
+                  <h4 class="qualification-group__title" data-i18n="qualifications.innovations.title">Technical
+                    Innovations</h4>
+                  <div class="qualification-item">
+                    <span class="qualification-item__title" data-i18n="qualifications.innovations.i1.title">Autonomous
+                      Flight Systems (Quadcopter)</span>
+                    <span class="qualification-item__meta" data-i18n="qualifications.innovations.i1.meta">Project |
+                      2013</span>
+                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;"
+                      data-i18n="qualifications.innovations.i1.desc">
                       Hardware Integration: Custom multi-rotor UAV with calibrated PID tuning for stability.
                     </p>
                   </div>
                   <div class="qualification-item">
-                    <span class="qualification-item__title">Embedded Retail Systems (Innovation Award)</span>
-                    <span class="qualification-item__meta">Project | 2011</span>
-                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
+                    <span class="qualification-item__title" data-i18n="qualifications.innovations.i2.title">Embedded
+                      Retail Systems (Innovation Award)</span>
+                    <span class="qualification-item__meta" data-i18n="qualifications.innovations.i2.meta">Project |
+                      2011</span>
+                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;"
+                      data-i18n="qualifications.innovations.i2.desc">
                       Full-Stack Development: Hardware-based shopping scanner with relational database telemetry.
                     </p>
                   </div>
@@ -453,7 +467,7 @@
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            Download Resume
+            <span data-i18n="resume.download">Download Resume</span>
           </a>
         </div>
 
