@@ -2,94 +2,93 @@
   "projects": [
     {
       "id": "p1",
+      "isFeatured": true,
       "category": "System",
       "title": {
-        "en": "Performance-First Design Systems",
-        "es": "Sistemas de Diseño de Alto Rendimiento",
-        "de": "Leistungsorientierte Designsysteme"
+        "en": "Pediatric Acute Care Coordinator"
       },
-      "description": {
-        "en": "Architected a stateless, client-side application focused on sub-second LCP and high-fidelity motion.",
-        "es": "Arquitectura sin estado centrada en LCP sub-segundo y movimiento de alta fidelidad.",
-        "de": "Entwicklung einer zustandslosen, clientseitigen Anwendung mit Fokus auf LCP unter einer Sekunde."
+      "caseStudy": {
+        "problem": "Fragmented communication and delayed coordination in high-stakes pediatric multidisciplinary care units.",
+        "solution": "Designed a centralized communication hub integrating real-time role-based messaging and voice-to-text data entry.",
+        "evidence": "Beta testing: Positive feedback with internal communication and coordination, awaiting external feedback."
+      },
+      "codeSnippet": {
+        "language": "typescript",
+        "code": "/* \n * AI Voice Command Processor\n * Integrating Audio Worklets, WebAssembly Inference, and Global State Management\n */\n\nimport { AudioProcessor, FeatureExtractor } from '@core/audio';\nimport { TFModel } from '@ai/tensorflow-lite';\nimport { dispatch, GlobalState } from '@store/state';\nimport { Logger } from '@utils/logger';\n\n// Configuration Constants\nconst SAMPLE_RATE = 16000;\nconst FFT_SIZE = 512;\nconst CONFIDENCE_THRESHOLD = 0.85;\nconst NOISE_GATE_THRESHOLD = 0.02;\n\nexport class VoiceCommandService {\n  private audioContext: AudioContext;\n  private model: TFModel;\n  private isListening: boolean = false;\n  private buffer: Float32Array;\n  private retryCount: number = 0;\n\n  constructor() {\n    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();\n    this.model = new TFModel('assets/models/voice-commands.json');\n    this.buffer = new Float32Array(FFT_SIZE);\n  }\n\n  /**\n   * Initializes the audio pipeline and starts real-time inference.\n   */\n  public async startListening(): Promise<void> {\n    if (this.isListening) return;\n\n    try {\n      Logger.info('Initializing Audio Pipeline...');\n      \n      // 1. Stream Acquisition with constraints\n      const stream = await navigator.mediaDevices.getUserMedia({\n        audio: {\n          echoCancellation: true,\n          noiseSuppression: true,\n          autoGainControl: true,\n          channelCount: 1\n        }\n      });\n\n      const source = this.audioContext.createMediaStreamSource(stream);\n\n      // 2. Audio Worklet for Non-blocking Processing\n      await this.audioContext.audioWorklet.addModule('processors/audio-worklet.js');\n      const workletNode = new AudioWorkletNode(this.audioContext, 'voice-processor');\n\n      // 3. Handle messages from worklet thread\n      workletNode.port.onmessage = (event) => {\n        if (event.data.type === 'AUDIO_BUFFER') {\n          this.handleAudioData(event.data.buffer);\n        } else if (event.data.type === 'ERROR') {\n          this.handleError(event.data.error);\n        }\n      };\n\n      source.connect(workletNode).connect(this.audioContext.destination);\n      this.isListening = true;\n      Logger.success('Voice Command Service Active');\n\n    } catch (error) {\n      console.error('Audio Pipeline Initialization Failed:', error);\n      dispatch({ type: 'ERROR', payload: { code: 'AUDIO_INIT_FAIL', message: error.message } });\n    }\n  }\n\n  /**\n   * Processes raw audio buffer -> MFCC Features -> Model Inference\n   */\n  private async handleAudioData(float32Array: Float32Array): Promise<void> {\n    // 0. Noise Gate: Skip processing if audio is silence\n    const rms = this.calculateRMS(float32Array);\n    if (rms < NOISE_GATE_THRESHOLD) return;\n\n    // 1. Feature Extraction (Mel-frequency cepstral coefficients)\n    // This runs on the main thread but uses optimized WASM backend if available\n    const features = FeatureExtractor.extractMFCC(float32Array, {\n      nMels: 40,\n      fftSize: FFT_SIZE,\n      sampleRate: SAMPLE_RATE\n    });\n\n    // 2. Real-time Inference\n    // Model runs in TFLite interpreter\n    const prediction = await this.model.predict(features);\n\n    // 3. State update based on high-confidence predictions\n    if (prediction.confidence > CONFIDENCE_THRESHOLD) {\n      await this.executeCommand(prediction.label);\n    }\n  }\n\n  /**\n   * Executes the detected command with debounce and validation.\n   */\n  private async executeCommand(label: string): Promise<void> {\n    Logger.info(`Command Detected: ${label}`);\n    \n    // Reset retry count on successful detection\n    this.retryCount = 0;\n\n    switch (label) {\n      case 'NAVIGATE_HOME':\n        dispatch({ type: 'NAVIGATION', payload: '/' });\n        break;\n        \n      case 'ACTIVATE_SEARCH':\n        dispatch({ type: 'UI_MODAL_OPEN', payload: 'search' });\n        break;\n        \n      case 'START_DICTATION':\n        dispatch({ type: 'DICTATION_MODE', payload: true });\n        this.notifyUser('Dictation Started');\n        break;\n        \n      case 'STOP':\n      case 'CANCEL':\n        dispatch({ type: 'PROCESS_HALT' });\n        break;\n        \n      default:\n        dispatch({ type: 'VOICE_LOG', payload: label });\n    }\n  }\n\n  private calculateRMS(buffer: Float32Array): number {\n    let sum = 0;\n    for (let i = 0; i < buffer.length; i++) {\n      sum += buffer[i] * buffer[i];\n    }\n    return Math.sqrt(sum / buffer.length);\n  }\n\n  private notifyUser(message: string): void {\n    // Trigger toast notification\n    dispatch({ type: 'TOAST_SHOW', payload: { message, type: 'info' } });\n  }\n\n  public stop(): void {\n    this.isListening = false;\n    this.audioContext.close();\n  }\n}"
       },
       "techStack": [
-        "TypeScript",
-        "Fluid UI Architecture",
-        "IntersectionObserver",
-        "Lighthouse 100/100"
+        "Human-Systems Integration",
+        "Clinical Workflows",
+        "Data Synchronization",
+        "React"
       ],
-      "sourceUrl": "https://github.com/micahwalker/micahwalkerdesign",
-      "liveUrl": "#",
+      "links": {
+        "demo": "#",
+        "source": "#"
+      },
       "phases": {}
     },
     {
       "id": "p2",
-      "category": "Games",
+      "category": "System",
       "title": {
-        "en": "Canvas API Physics Engine",
-        "es": "Motor de Física Canvas API",
-        "de": "Canvas API Physik-Engine"
+        "en": "Systems Architecture Showcase"
       },
-      "description": {
-        "en": "Developed a physics-based Paper Toss game using the Canvas API, utilizing custom easing equations for realistic trajectory mapping.",
-        "es": "Juego basado en física usando Canvas API y ecuaciones personalizadas.",
-        "de": "Physikbasiertes Spiel mit Canvas API und benutzerdefinierten Easing-Gleichungen."
+      "caseStudy": {
+        "problem": "Absence of a high-performance platform to demonstrate complex engineering logic and multidisciplinary project history.",
+        "solution": "Developed a stateless, JSON-driven architecture using Vanilla JS/HTML5/CSS3. Implemented a decoupled hydration engine for zero-flicker performance.",
+        "evidence": "Live interactive environment with 100/100 Lighthouse performance telemetry."
       },
       "techStack": [
+        "Stateless Architecture",
         "Vanilla JS",
-        "Collision Detection",
-        "Mathematics",
-        "A11y (WCAG AA)"
+        "JSON Hydration",
+        "Lighthouse 100"
       ],
-      "sourceUrl": "https://github.com/micahwalker/paper-toss",
-      "liveUrl": "#game",
+      "sourceUrl": "https://github.com/MicahWalkerDesign/MicahWalkerDesign.github.io",
+      "liveUrl": "https://micahwalkerdesign.github.io/",
       "phases": {}
     },
     {
       "id": "p3",
-      "category": "System",
-      "title": {
-        "en": "Multilingual Data Hydration",
-        "es": "Hidratación de Datos Multilingüe",
-        "de": "Mehrsprachige Datenhydratation"
-      },
-      "description": {
-        "en": "Engineered a JSON-based i18n architecture supporting EN, ES, and DE with zero-flicker theme hydration.",
-        "es": "Arquitectura i18n basada en JSON soportando EN, ES, DE sin parpadeos.",
-        "de": "JSON-basierte i18n-Architektur für EN, ES und DE ohne Theme-Flimmern."
+      "title": "PerfExpresso: AI Integrated Crema Analysis",
+      "category": "AI / ML",
+      "caseStudy": {
+        "problem": "Subjective espresso quality assessment leads to inconsistent brewing extraction standards.",
+        "solution": "Developed a computer vision pipeline using OpenCV to analyze crema color, texture, and persistence.",
+        "evidence": "Achieved 90% accuracy in extraction classification against professional barista grading."
       },
       "techStack": [
-        "i18n Schema",
-        "JSON Hydration",
-        "Theme State Persistence",
-        "ES6+"
+        "Swift / SwiftUI",
+        "CoreML",
+        "Computer Vision",
+        "iOS"
       ],
-      "sourceUrl": "https://github.com/micahwalker/design-system",
-      "liveUrl": "#",
+      "links": {
+        "demo": "#",
+        "source": "#"
+      },
       "phases": {}
     },
     {
       "id": "p4",
       "category": "App",
       "title": {
-        "en": "Mentes en Movimiento",
-        "es": "Mentes en Movimiento",
-        "de": "Mentes en Movimiento"
+        "en": "Clinical Education Ecosystem"
       },
-      "description": {
-        "en": "A multidisciplinary education support centre, featuring bilingual content and SEO optimisation.",
-        "es": "Un centro de apoyo educativo multidisciplinario, con contenido bilingüe y optimización SEO.",
-        "de": "Ein multidisziplinäres Bildungsunterstützungszentrum mit zweisprachigen Inhalten und SEO-Optimierung."
+      "caseStudy": {
+        "problem": "Inefficient information distribution between special needs educators, clinicians, and families requiring developmental support.",
+        "solution": "Architected a multidisciplinary support platform designed for accessibility and high-reliability information delivery.",
+        "evidence": "Before this the Organisation didnt have a website; launched with 100% Lighthouse Performance & SEO scores."
       },
       "techStack": [
+        "Accessibility",
+        "Information Architecture",
         "React Native",
-        "Firebase",
-        "HealthKit",
         "Bilingual Support"
       ],
-      "sourceUrl": "#",
-      "liveUrl": "#",
+      "sourceUrl": "https://github.com/MentesenMovimiento/mentesenmovimiento.github.io",
+      "liveUrl": "https://mentesenmovimiento.org/",
       "phases": {}
     }
   ]

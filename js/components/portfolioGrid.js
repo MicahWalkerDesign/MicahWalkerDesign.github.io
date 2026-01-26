@@ -82,13 +82,60 @@ export async function initPortfolio() {
       // Stagger animation
       card.style.transitionDelay = `${index * 0.1}s`;
 
+
+
       const title = getLocalizedValue(project.title, lang);
-      const description = getLocalizedValue(project.description, lang);
       const techStack = project.techStack || [];
+      const caseStudy = project.caseStudy || {};
 
       // Populate content
       card.querySelector('.case-card__title').textContent = title;
-      card.querySelector('.case-card__summary').textContent = description;
+
+      // Populate Bubble Content
+      const problemText = getLocalizedValue(caseStudy.problem, lang);
+      const solutionText = getLocalizedValue(caseStudy.solution, lang);
+      const evidenceText = getLocalizedValue(caseStudy.evidence, lang) || getLocalizedValue(caseStudy.result, lang);
+
+      // Default state: Problem is active
+      const display = card.querySelector('.bubble-display');
+      if (display) {
+        display.querySelector('[data-content="problem"]').textContent = problemText || 'Problem statement...';
+        display.querySelector('[data-content="solution"]').textContent = solutionText || 'Solution details...';
+        display.querySelector('[data-content="evidence"]').textContent = evidenceText || 'Evidence/Results...';
+      }
+
+      // Interactive Bubble Logic
+      const bubbles = card.querySelectorAll('.bubble-btn');
+      const texts = card.querySelectorAll('.bubble-text');
+
+      bubbles.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation(); // Prevent card expansion if any
+          const target = btn.dataset.target;
+
+          // 1. Update Buttons
+          bubbles.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // 2. Update Content
+          texts.forEach(t => {
+            t.classList.remove('active');
+            if (t.dataset.content === target) {
+              t.classList.add('active');
+            }
+          });
+        });
+      });
+
+      // Featured / Code Snippet Logic
+      if (project.isFeatured) {
+        card.classList.add('featured');
+        const codeWindow = cardFragment.querySelector('.code-window');
+        if (codeWindow && project.codeSnippet) {
+          codeWindow.style.display = 'block';
+          codeWindow.querySelector('.code-content').textContent = project.codeSnippet.code;
+        }
+      }
 
       // Render tags
       const tagsContainer = card.querySelector('.tech-stack');
@@ -100,21 +147,23 @@ export async function initPortfolio() {
         tagsContainer.appendChild(span);
       });
 
-      // Handle links
+      // Handle links (support both legacy and new formats)
       const sourceLink = card.querySelector('.source-link');
-      if (sourceLink) {
-        sourceLink.href = project.sourceUrl;
+      const sourceUrl = project.sourceUrl || project.links?.source;
+      if (sourceLink && sourceUrl) {
+        sourceLink.href = sourceUrl;
         sourceLink.setAttribute('aria-label', `Source Code for ${title}`);
+      } else if (sourceLink) {
+        sourceLink.remove();
       }
 
       const liveLink = card.querySelector('.live-link');
-      if (liveLink) {
-        if (project.liveUrl && project.liveUrl !== '#') {
-          liveLink.href = project.liveUrl;
-          liveLink.setAttribute('aria-label', `Live Demo for ${title}`);
-        } else {
-          liveLink.remove();
-        }
+      const liveUrl = project.liveUrl || project.links?.demo;
+      if (liveLink && liveUrl && liveUrl !== '#') {
+        liveLink.href = liveUrl;
+        liveLink.setAttribute('aria-label', `Live Demo for ${title}`);
+      } else if (liveLink) {
+        liveLink.remove();
       }
 
       container.appendChild(card);

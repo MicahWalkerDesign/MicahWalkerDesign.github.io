@@ -106,7 +106,7 @@
   --btn-primary-text: #141210;
 
   /* Tag text on accent backgrounds */
-  --tag-text: #2A2420;
+  --tag-text: #FFFFFF;
 
   /* Glassmorphism & Depth - DARK THEME: use light overlays */
   --glass-bg: rgba(255, 255, 255, 0.05);

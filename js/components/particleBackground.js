@@ -101,17 +101,28 @@ export function initParticleBackground(canvasId) {
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, width, height);
 
+        // Update color from CSS variable to support theme switching
+        // We do this once per frame
+        const style = getComputedStyle(document.body);
+        const currentColor = style.getPropertyValue('--accent').trim() || '#C4704A';
+
         // Update and draw particles
         particles.forEach(particle => {
             particle.update();
-            particle.draw();
+
+            // Draw logic moved here to use current color
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            ctx.fillStyle = currentColor;
+            ctx.globalAlpha = 0.5;
+            ctx.fill();
         });
 
-        // Draw connections
-        connect();
+        // Draw connections with current color
+        connect(currentColor);
     }
 
-    function connect() {
+    function connect(color) {
         for (let a = 0; a < particles.length; a++) {
             for (let b = a; b < particles.length; b++) {
                 const dx = particles[a].x - particles[b].x;
@@ -120,7 +131,7 @@ export function initParticleBackground(canvasId) {
 
                 if (distance < connectionDistance * connectionDistance) {
                     const opacityValue = 1 - (distance / (connectionDistance * connectionDistance));
-                    ctx.strokeStyle = particleColor;
+                    ctx.strokeStyle = color;
                     ctx.globalAlpha = opacityValue * 0.2;
                     ctx.lineWidth = 1;
                     ctx.beginPath();

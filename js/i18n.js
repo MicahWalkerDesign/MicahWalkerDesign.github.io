@@ -37,12 +37,12 @@ const dictionaries = {
     // Hero section
     hero: {
       greeting: "Hi, I'm",
-      title: 'Micah Walker — Product Designer & Frontend Developer',
-      tagline: 'Product Designer & Frontend Developer',
-      subtitle: 'Designing human-centred products from idea to shipped outcome',
-      description: 'I design and build digital products with a focus on clarity, motion, and grounded user experiences.',
-      ctaPrimary: 'View Work',
-      ctaSecondary: 'Play a Game'
+      title: 'Micah Walker — Frontend Engineer & Technical Product Designer',
+      tagline: 'Frontend Engineer & Technical Product Designer',
+      subtitle: 'Technical Product Architect specializing in Human-Systems Integration',
+      description: 'Technical Product Architect specializing in Human-Systems Integration and Stateless Architectures. Leverages a background in clinical systems and human behavior to engineer high-performance, accessible digital infrastructures.',
+      ctaPrimary: 'Contact',
+      ctaSecondary: 'Take a Break'
     },
     // Experience timeline
     experience: {
@@ -88,20 +88,7 @@ const dictionaries = {
       playAgain: 'Play Again',
       gameOver: 'Game Over!'
     },
-    // Offer modal
-    offer: {
-      title: 'Would you like to make me an offer?',
-      salary: 'Salary',
-      currency: 'Currency',
-      daysPerWeek: 'Days per week',
-      message: 'Optional message',
-      messagePlaceholder: 'Add a personal note...',
-      submit: 'Copy to Clipboard',
-      email: 'Send',
-      cancel: 'Cancel',
-      copied: 'Offer copied to clipboard!',
-      emailSubject: 'Job Offer for Micah Walker'
-    },
+
     // Modal
     modal: {
       close: 'Close'
@@ -149,12 +136,12 @@ const dictionaries = {
     // Hero section
     hero: {
       greeting: 'Hola, soy',
-      title: 'Micah Walker — Diseñador de Producto y Constructor',
-      tagline: 'Diseñador de Producto y Constructor',
-      subtitle: 'Diseñando productos centrados en las personas, desde la idea hasta su lanzamiento',
-      description: 'Diseño y construyo productos digitales con enfoque en claridad, movimiento y experiencias de usuario sólidas.',
-      ctaPrimary: 'Ver Trabajo',
-      ctaSecondary: 'Jugar un Juego'
+      title: 'Micah Walker — Ingeniero Frontend y Diseñador Técnico de Producto',
+      tagline: 'Ingeniero Frontend y Diseñador Técnico de Producto',
+      subtitle: 'Arquitecto de Producto Técnico especializado en Integración Humano-Sistema',
+      description: 'Arquitecto de Producto Técnico especializado en Integración Humano-Sistema y Arquitecturas Sin Estado. Aprovecha experiencia en sistemas clínicos y comportamiento humano para diseñar infraestructuras digitales accesibles y de alto rendimiento.',
+      ctaPrimary: 'Contacto',
+      ctaSecondary: 'Tomar un Descanso'
     },
     // Experience timeline
     experience: {
@@ -200,20 +187,7 @@ const dictionaries = {
       playAgain: 'Jugar de Nuevo',
       gameOver: '¡Juego Terminado!'
     },
-    // Offer modal
-    offer: {
-      title: '¿Te gustaría hacerme una oferta?',
-      salary: 'Salario',
-      currency: 'Moneda',
-      daysPerWeek: 'Días por semana',
-      message: 'Mensaje opcional',
-      messagePlaceholder: 'Añade una nota personal...',
-      submit: 'Copiar al Portapapeles',
-      email: 'Enviar por Email',
-      cancel: 'Cancelar',
-      copied: '¡Oferta copiada al portapapeles!',
-      emailSubject: 'Oferta de Trabajo para Micah Walker'
-    },
+
     // Modal
     modal: {
       close: 'Cerrar'
@@ -261,12 +235,12 @@ const dictionaries = {
     // Hero section
     hero: {
       greeting: 'Hallo, ich bin',
-      title: 'Micah Walker — Produktdesigner & Entwickler',
-      tagline: 'Produktdesigner & Entwickler',
-      subtitle: 'Menschenzentrierte Produkte gestalten, von der Idee bis zur Umsetzung',
-      description: 'Ich entwerfe und entwickle digitale Produkte mit Fokus auf Klarheit, Bewegung und fundierte Nutzererfahrungen.',
-      ctaPrimary: 'Arbeit ansehen',
-      ctaSecondary: 'Ein Spiel spielen'
+      title: 'Micah Walker — Frontend-Ingenieur & Technischer Produktdesigner',
+      tagline: 'Frontend-Ingenieur & Technischer Produktdesigner',
+      subtitle: 'Technischer Produktarchitekt mit Spezialisierung auf Mensch-System-Integration',
+      description: 'Technischer Produktarchitekt mit Spezialisierung auf Mensch-System-Integration und zustandslose Architekturen. Nutzt Erfahrung in klinischen Systemen und menschlichem Verhalten zur Entwicklung hochleistungsfähiger, barrierefreier digitaler Infrastrukturen.',
+      ctaPrimary: 'Kontakt',
+      ctaSecondary: 'Mach eine Pause'
     },
     // Experience timeline
     experience: {
@@ -312,20 +286,7 @@ const dictionaries = {
       playAgain: 'Nochmal spielen',
       gameOver: 'Spiel vorbei!'
     },
-    // Offer modal
-    offer: {
-      title: 'Möchten Sie mir ein Angebot machen?',
-      salary: 'Gehalt',
-      currency: 'Währung',
-      daysPerWeek: 'Tage pro Woche',
-      message: 'Optionale Nachricht',
-      messagePlaceholder: 'Eine persönliche Notiz hinzufügen...',
-      submit: 'In Zwischenablage kopieren',
-      email: 'Per E-Mail senden',
-      cancel: 'Abbrechen',
-      copied: 'Angebot in Zwischenablage kopiert!',
-      emailSubject: 'Jobangebot für Micah Walker'
-    },
+
     // Modal
     modal: {
       close: 'Schließen'

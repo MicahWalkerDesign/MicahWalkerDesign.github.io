@@ -76,7 +76,7 @@ async function initApp() {
   setupMobileMenu();
   // setupScrollReveal and setupMagneticEffect moved to end of initApp to catch dynamic content
 
-  setupContactModal();
+
 
   // Load and render experience timeline
   await initTimeline();
@@ -454,26 +454,31 @@ if (document.readyState === 'loading') {
 /**
  * Sets up the split panel interaction (Experience vs Qualifications).
  */
+/**
+ * Sets up the split panel interaction (Experience vs Qualifications).
+ * Allows clicking anywhere on the minimized panel to expand it.
+ */
 function setupSplitPanel() {
-  const tabs = document.querySelectorAll('.split-panel__tab');
+  const container = document.querySelector('.split-panel');
+  if (!container) return;
 
-  if (tabs.length === 0) return;
+  const sides = container.querySelectorAll('.split-panel__side');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const panelId = tab.getAttribute('aria-controls');
-      const side = document.getElementById(panelId);
-      const container = side.parentElement;
+  sides.forEach(side => {
+    side.addEventListener('click', () => {
+      // If already active, do nothing
+      if (side.classList.contains('split-panel__side--active')) return;
 
       // Update active state classes
-      const sides = container.querySelectorAll('.split-panel__side');
       sides.forEach(s => s.classList.remove('split-panel__side--active'));
       side.classList.add('split-panel__side--active');
 
-      // Update ARIA attributes
+      // Update ARIA attributes on buttons
       const allTabs = container.querySelectorAll('.split-panel__tab');
       allTabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-      tab.setAttribute('aria-selected', 'true');
+
+      const activeTab = side.querySelector('.split-panel__tab');
+      if (activeTab) activeTab.setAttribute('aria-selected', 'true');
     });
   });
 }

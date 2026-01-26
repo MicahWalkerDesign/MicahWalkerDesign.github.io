@@ -115,21 +115,22 @@
       <div class="container hero__inner">
         <div class="hero__content reveal">
           <h1 id="hero-heading" class="hero__title">
-            <span data-i18n="hero.greeting">Hi, I'm</span>
             <span class="hero__name gradient-text">Micah Walker</span>
           </h1>
           <p class="hero__tagline" data-i18n="hero.tagline">
-            Product Designer & Frontend Developer
+            Frontend Engineer & Technical Product Designer
           </p>
           <p class="hero__description" data-i18n="hero.description">
-            I design and build digital products with a focus on clarity, motion, and grounded user experiences.
+            Technical Product Architect specializing in Human-Systems Integration and Stateless Architectures. Leverages
+            a background in clinical systems and human behavior to engineer high-performance, accessible digital
+            infrastructures.
           </p>
           <div class="hero__cta">
-            <a href="#portfolio" class="btn btn--primary magnetic" data-i18n="hero.ctaPrimary">
-              View Work
+            <a href="#contact" class="btn btn--primary magnetic" data-i18n="hero.ctaPrimary">
+              Contact
             </a>
             <a href="#game" class="btn btn--secondary magnetic" data-i18n="hero.ctaSecondary" id="coffee-break-btn">
-              Coffee Break
+              Take a Break
             </a>
           </div>
         </div>
@@ -165,23 +166,53 @@
         <!-- Portfolio Card Template -->
         <template id="portfolio-card-template">
           <article class="case-card reveal">
-            <div class="case-card__header">
-              <h3 class="case-card__title"></h3>
+            <div class="case-card__content">
+              <div class="case-card__header">
+                <h3 class="case-card__title"></h3>
+              </div>
+
+              <!-- Bubble Flow Navigation -->
+              <div class="bubble-nav">
+                <button class="bubble-btn active" data-target="problem" aria-label="Show Problem">
+                  <span>Problem</span>
+                </button>
+                <button class="bubble-btn" data-target="solution" aria-label="Show Solution">
+                  <span>Solution</span>
+                </button>
+                <button class="bubble-btn" data-target="evidence" aria-label="Show Results">
+                  <span>Results</span>
+                </button>
+              </div>
+
+              <!-- Dynamic Content Display (Magnifying Glass Effect) -->
+              <div class="bubble-display">
+                <div class="bubble-text active" data-content="problem"></div>
+                <div class="bubble-text" data-content="solution"></div>
+                <div class="bubble-text" data-content="evidence"></div>
+              </div>
+
+              <div class="case-card__tags tech-stack">
+                <!-- Tags will be injected here -->
+              </div>
+
+              <div class="case-card__links">
+                <a href="#" class="btn-link source-link" target="_blank" rel="noopener noreferrer">
+                  Source Code →
+                </a>
+                <a href="#" class="btn-link live-link" target="_blank" rel="noopener noreferrer">
+                  Live Demo →
+                </a>
+              </div>
             </div>
 
-            <div class="case-card__tags tech-stack">
-              <!-- Tags will be injected here -->
-            </div>
-
-            <p class="case-card__summary"></p>
-
-            <div class="case-card__links" style="margin-top: auto; padding-top: 1rem; display: flex; gap: 1rem;">
-              <a href="#" class="btn-link source-link" target="_blank" rel="noopener noreferrer">
-                Source Code →
-              </a>
-              <a href="#" class="btn-link live-link" target="_blank" rel="noopener noreferrer">
-                Live Demo →
-              </a>
+            <!-- Code Window (Featured only) -->
+            <div class="code-window" style="display: none;" aria-hidden="true">
+              <div class="code-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <pre><code class="code-content"></code></pre>
             </div>
           </article>
         </template>
@@ -205,11 +236,7 @@
             researching and tackling complex problems in the human body.
             Now I design and build digital solutions.
           </p>
-          <p class="about__bio">
-            But who am I? I am a husband, father, and enjoyer of life. I love to experience new cultures and languages
-            (Native English, Fluent German, Conversational Spanish). The world is getting smaller, but we still have the
-            pleasure to experience it.
-          </p>
+
 
           <div class="skills-grid">
             <div class="skill-category">
@@ -234,7 +261,7 @@
             <div class="skill-category">
               <h3 class="skill-category__title">Tools</h3>
               <div class="skill-tags">
-                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Github</span>
                 <span class="skill-tag">Vite</span>
                 <span class="skill-tag">REST APIs</span>
                 <span class="skill-tag">Figma</span>
@@ -247,6 +274,7 @@
                 <span class="skill-tag">SQL</span>
                 <span class="skill-tag">Firebase</span>
                 <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Supabase</span>
               </div>
             </div>
             <div class="skill-category">
@@ -254,7 +282,7 @@
               <div class="skill-tags">
                 <span class="skill-tag">Gemini</span>
                 <span class="skill-tag">OpenAI</span>
-                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">Claude</span>
                 <span class="skill-tag">Prompts</span>
               </div>
             </div>
@@ -332,52 +360,45 @@
                   <h4 class="qualification-group__title">Education</h4>
                   <div class="qualification-item">
                     <span class="qualification-item__title">Bachelor of Exercise & Sport Science</span>
-                    <span class="qualification-item__meta">University of Newcastle • 2014 - 2016</span>
-                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
-                      Skills: Exercise Physiology · Nutrition · Rehabilitation
-                    </p>
+                    <span class="qualification-item__meta">University of Newcastle • 2016</span>
                   </div>
                   <div class="qualification-item">
-                    <span class="qualification-item__title">Bachelor of Mechatronics Engineering</span>
-                    <span class="qualification-item__meta">University of Newcastle • 2012 - 2013</span>
-                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
-                      Skills: Analytical Skills · Mechanical Engineering · Electrical Engineering · Problem Solving
-                    </p>
+                    <span class="qualification-item__title">Mechatronics Engineering Coursework</span>
+                    <span class="qualification-item__meta">University of Newcastle • 2 years (2013)</span>
                   </div>
                 </div>
 
                 <div class="qualification-group">
                   <h4 class="qualification-group__title">Certifications</h4>
                   <div class="qualification-item">
-                    <span class="qualification-item__title">Certificate, Quantitative & Qualitative Research</span>
-                    <span class="qualification-item__meta">Goethe University Frankfurt • Feb 2024</span>
-                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
-                      Skills: Qualitative & Quantitative Research Methodologies · User Research
-                    </p>
-                  </div>
-                </div>
-
-                <div class="qualification-group">
-                  <h4 class="qualification-group__title">Achievements</h4>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title">Nominee for Innovation Award - Arthrex</span>
+                    <span class="qualification-item__title">Sales Psychology & Account Management</span>
                     <span class="qualification-item__meta">2025</span>
                   </div>
                   <div class="qualification-item">
-                    <span class="qualification-item__title">Design Technology Innovation Award</span>
-                    <span class="qualification-item__meta">Portable shopping centre scanners • 2011</span>
+                    <span class="qualification-item__title">Qualitative & Quantitative Research Methods</span>
+                    <span class="qualification-item__meta">2023</span>
                   </div>
                   <div class="qualification-item">
-                    <span class="qualification-item__title">F1 Highschool Racing Engineering Innovation Award</span>
-                    <span class="qualification-item__meta">CAD Design & Fluid dynamics • 2010</span>
+                    <span class="qualification-item__title">Rehabilitation Trainer for Orthopedic Diseases</span>
+                    <span class="qualification-item__meta">2021</span>
                   </div>
                 </div>
 
                 <div class="qualification-group">
-                  <h4 class="qualification-group__title">Military Service</h4>
+                  <h4 class="qualification-group__title">Technical Innovations</h4>
                   <div class="qualification-item">
-                    <span class="qualification-item__title">Combat Engineer - Reservist</span>
-                    <span class="qualification-item__meta">Royal Australian Army • Jan 2013 - Dec 2016</span>
+                    <span class="qualification-item__title">Autonomous Flight Systems (Quadcopter)</span>
+                    <span class="qualification-item__meta">Project | 2013</span>
+                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
+                      Hardware Integration: Custom multi-rotor UAV with calibrated PID tuning for stability.
+                    </p>
+                  </div>
+                  <div class="qualification-item">
+                    <span class="qualification-item__title">Embedded Retail Systems (Innovation Award)</span>
+                    <span class="qualification-item__meta">Project | 2011</span>
+                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;">
+                      Full-Stack Development: Hardware-based shopping scanner with relational database telemetry.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -424,7 +445,7 @@
           </a>
 
           <!-- Download Resume -->
-          <a href="assets/Micah Product Designer Resume.pdf" target="_blank" class="btn btn--secondary btn--lg magnetic"
+          <a href="assets/Micah Resume.pdf" target="_blank" class="btn btn--secondary btn--lg magnetic"
             id="download-resume-btn" style="margin-top: 1rem; width: 100%; max-width: 300px;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               class="btn__icon" aria-hidden="true" style="margin-right: 8px;">
@@ -512,8 +533,7 @@
     </div>
   </footer>
 
-  <!-- Modal Container (managed by js/components/modal.js) -->
-  <div id="modal-root"></div>
+
 
   <!-- Main JavaScript (ES Module) -->
   <script type="module" src="js/main.js"></script>

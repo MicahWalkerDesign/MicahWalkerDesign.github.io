@@ -24,14 +24,14 @@ export class GameUI {
     this.canvas = canvas;
     this.ctx = ctx;
   }
-  
+
   /**
    * Clears the canvas for the next frame.
    */
   clear() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
-  
+
   /**
    * Draws the background with earthy theme colors.
    * @param {number} [groundLevel] - Optional ground Y position (0-1 ratio)
@@ -40,25 +40,25 @@ export class GameUI {
     const width = this.canvas.width;
     const height = this.canvas.height;
     const groundY = height * groundLevel;
-    
+
     // Sky gradient - warm earthy tones matching Clay theme
     const skyGradient = this.ctx.createLinearGradient(0, 0, 0, groundY);
     skyGradient.addColorStop(0, '#D8CFC4');   // Warm cream
     skyGradient.addColorStop(0.5, '#C9BAA8'); // Warm tan
     skyGradient.addColorStop(1, '#B8A490');   // Earthy beige
-    
+
     this.ctx.fillStyle = skyGradient;
     this.ctx.fillRect(0, 0, width, groundY);
-    
+
     // Ground gradient - deeper earthy tones
     const groundGradient = this.ctx.createLinearGradient(0, groundY, 0, height);
     groundGradient.addColorStop(0, '#8B7355');  // Warm brown
     groundGradient.addColorStop(0.4, '#6B5344'); // Medium brown
     groundGradient.addColorStop(1, '#4A3A2A');  // Deep earth
-    
+
     this.ctx.fillStyle = groundGradient;
     this.ctx.fillRect(0, groundY, width, height - groundY);
-    
+
     // Ground line/edge
     this.ctx.strokeStyle = '#5C4D3A';
     this.ctx.lineWidth = 3;
@@ -75,19 +75,19 @@ export class GameUI {
   drawBin(bin) {
     const ctx = this.ctx;
     const centerX = bin.x + bin.width / 2;
-    
+
     // Bin shadow for depth
     ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
     ctx.beginPath();
     ctx.ellipse(centerX, bin.y + bin.height + 10, bin.width / 2 + 10, 12, 0, 0, Math.PI * 2);
     ctx.fill();
-    
+
     // Bin body (earthy brown)
     ctx.fillStyle = '#6b5344';
     ctx.beginPath();
     ctx.roundRect(bin.x, bin.y, bin.width, bin.height, 12);
     ctx.fill();
-    
+
     // Bin body gradient overlay
     const bodyGradient = ctx.createLinearGradient(bin.x, bin.y, bin.x + bin.width, bin.y);
     bodyGradient.addColorStop(0, 'rgba(255,255,255,0.1)');
@@ -97,17 +97,17 @@ export class GameUI {
     ctx.beginPath();
     ctx.roundRect(bin.x, bin.y, bin.width, bin.height, 12);
     ctx.fill();
-    
+
     // Circular rim (ellipse at top)
     ctx.fillStyle = '#8b7355';
     ctx.beginPath();
     ctx.ellipse(centerX, bin.y, bin.width / 2 + 8, 14, 0, 0, Math.PI * 2);
     ctx.fill();
-    
+
     // Circular opening (dark hole - ellipse)
     const openingRadiusX = (bin.openingWidth || bin.width * 0.7) / 2;
     const openingRadiusY = 12;
-    
+
     // Opening depth gradient
     const openingGradient = ctx.createRadialGradient(
       centerX, bin.y, 0,
@@ -116,12 +116,12 @@ export class GameUI {
     openingGradient.addColorStop(0, '#1a1210');
     openingGradient.addColorStop(0.7, '#2a1f18');
     openingGradient.addColorStop(1, '#3a2a20');
-    
+
     ctx.fillStyle = openingGradient;
     ctx.beginPath();
     ctx.ellipse(centerX, bin.y, openingRadiusX, openingRadiusY, 0, 0, Math.PI * 2);
     ctx.fill();
-    
+
     // Rim highlight
     ctx.strokeStyle = '#a08060';
     ctx.lineWidth = 2;
@@ -129,33 +129,33 @@ export class GameUI {
     ctx.ellipse(centerX, bin.y, openingRadiusX + 2, openingRadiusY + 2, 0, 0, Math.PI * 2);
     ctx.stroke();
   }
-  
+
   /**
    * Draws the wind indicator showing direction and speed.
    * @param {Object} wind - Wind state {enabled, speed, direction}
    */
   drawWindIndicator(wind) {
     if (!wind.enabled || Math.abs(wind.speed) < 0.1) return;
-    
+
     const ctx = this.ctx;
     const centerX = this.canvas.width / 2;
     const y = 24;
-    
+
     const direction = wind.speed > 0 ? 1 : -1;
-    
+
     // Simple arrow
     ctx.strokeStyle = 'rgba(80, 60, 40, 0.9)';
     ctx.fillStyle = 'rgba(80, 60, 40, 0.9)';
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
-    
+
     // Arrow line
     const arrowLength = 24;
     ctx.beginPath();
     ctx.moveTo(centerX - arrowLength / 2 * direction, y);
     ctx.lineTo(centerX + arrowLength / 2 * direction, y);
     ctx.stroke();
-    
+
     // Arrow head
     ctx.beginPath();
     ctx.moveTo(centerX + arrowLength / 2 * direction, y);
@@ -163,13 +163,13 @@ export class GameUI {
     ctx.lineTo(centerX + (arrowLength / 2 - 4) * direction, y + 3);
     ctx.closePath();
     ctx.fill();
-    
+
     // Speed number
     ctx.font = 'bold 11px Inter, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(Math.abs(wind.speed).toFixed(1), centerX, y + 12);
   }
-  
+
   /**
    * Draws a paper ball projectile.
    * @param {Object} paper - Paper with x, y, radius, rotation properties
@@ -177,28 +177,28 @@ export class GameUI {
    */
   drawPaper(paper, isDragging = false) {
     const ctx = this.ctx;
-    
+
     ctx.save();
     ctx.translate(paper.x, paper.y);
     ctx.rotate(paper.rotation || 0);
-    
+
     // Shadow underneath
     ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
     ctx.beginPath();
     ctx.ellipse(3, 5, paper.radius * 0.9, paper.radius * 0.4, 0, 0, Math.PI * 2);
     ctx.fill();
-    
+
     // Paper crumpled ball with gradient for 3D effect
     const radius = paper.radius || 18;
     const gradient = ctx.createRadialGradient(-radius * 0.3, -radius * 0.3, 0, 0, 0, radius);
     gradient.addColorStop(0, '#ffffff');
     gradient.addColorStop(0.7, isDragging ? '#f8f8f5' : '#f0f0e8');
     gradient.addColorStop(1, isDragging ? '#e8e8e0' : '#d8d8d0');
-    
+
     ctx.fillStyle = gradient;
     ctx.strokeStyle = '#c0c0b0';
     ctx.lineWidth = 1.5;
-    
+
     // Draw irregular circle to look crumpled
     ctx.beginPath();
     for (let i = 0; i < 10; i++) {
@@ -216,7 +216,7 @@ export class GameUI {
     ctx.closePath();
     ctx.fill();
     ctx.stroke();
-    
+
     // Add some crumple lines for texture
     ctx.strokeStyle = 'rgba(180, 180, 170, 0.6)';
     ctx.lineWidth = 0.8;
@@ -228,7 +228,7 @@ export class GameUI {
     ctx.moveTo(2, -7);
     ctx.lineTo(-4, 2);
     ctx.stroke();
-    
+
     // Highlight when dragging
     if (isDragging) {
       ctx.strokeStyle = 'rgba(100, 140, 100, 0.4)';
@@ -237,46 +237,46 @@ export class GameUI {
       ctx.arc(0, 0, radius + 4, 0, Math.PI * 2);
       ctx.stroke();
     }
-    
+
     ctx.restore();
   }
-  
+
   /**
    * Draws a trail effect behind the flying paper.
    * @param {Array} trail - Array of {x, y, time, rotation} positions
    */
   drawPaperTrail(trail) {
     if (trail.length < 2) return;
-    
+
     const ctx = this.ctx;
     const now = Date.now();
     const maxAge = 500;
-    
+
     ctx.save();
-    
+
     for (let i = 0; i < trail.length - 1; i++) {
       const pos = trail[i];
       const age = now - pos.time;
       const opacity = Math.max(0, 1 - age / maxAge) * 0.3;
-      
+
       if (opacity <= 0) continue;
-      
+
       // Size decreases along trail
       const size = 12 - (i / trail.length) * 5;
-      
+
       ctx.fillStyle = `rgba(240, 240, 230, ${opacity})`;
       ctx.strokeStyle = `rgba(200, 200, 190, ${opacity * 0.8})`;
       ctx.lineWidth = 0.5;
-      
+
       ctx.beginPath();
       ctx.arc(pos.x, pos.y, size, 0, Math.PI * 2);
       ctx.fill();
       ctx.stroke();
     }
-    
+
     ctx.restore();
   }
-  
+
   /**
    * Draws a landing mark where paper landed.
    * @param {number} x - X position
@@ -287,12 +287,12 @@ export class GameUI {
   drawLandingMark(x, y, success, opacity) {
     const ctx = this.ctx;
     ctx.save();
-    
+
     if (success) {
       // Epic golden celebration burst for success
       const baseRadius = 24;
       const burstRadius = baseRadius + (1 - opacity) * 40; // Expands dramatically
-      
+
       // Multiple glow layers
       for (let i = 3; i > 0; i--) {
         ctx.fillStyle = `rgba(255, 215, 0, ${opacity * 0.15 * i})`;
@@ -300,45 +300,45 @@ export class GameUI {
         ctx.arc(x, y, burstRadius * (1 + i * 0.3), 0, Math.PI * 2);
         ctx.fill();
       }
-      
+
       // Inner bright circle
       ctx.fillStyle = `rgba(255, 220, 50, ${opacity * 0.8})`;
       ctx.beginPath();
       ctx.arc(x, y, burstRadius * 0.4, 0, Math.PI * 2);
       ctx.fill();
-      
+
       // Rotating star burst rays
       const rotation = (1 - opacity) * Math.PI * 0.5;
       ctx.strokeStyle = `rgba(255, 200, 50, ${opacity})`;
       ctx.lineWidth = 3;
       ctx.lineCap = 'round';
-      
+
       for (let i = 0; i < 12; i++) {
         const angle = (i / 12) * Math.PI * 2 + rotation;
         const innerR = burstRadius * 0.3;
         const outerR = burstRadius * 1.3;
         const width = i % 2 === 0 ? 3 : 2;
-        
+
         ctx.lineWidth = width;
         ctx.beginPath();
         ctx.moveTo(x + Math.cos(angle) * innerR, y + Math.sin(angle) * innerR);
         ctx.lineTo(x + Math.cos(angle) * outerR, y + Math.sin(angle) * outerR);
         ctx.stroke();
       }
-      
+
       // Sparkles
       for (let i = 0; i < 8; i++) {
         const sparkleAngle = (i / 8) * Math.PI * 2 + rotation * 2;
         const sparkleR = burstRadius * 1.5;
         const sparkleX = x + Math.cos(sparkleAngle) * sparkleR;
         const sparkleY = y + Math.sin(sparkleAngle) * sparkleR;
-        
+
         ctx.fillStyle = `rgba(255, 255, 200, ${opacity})`;
         ctx.beginPath();
         ctx.arc(sparkleX, sparkleY, 2.5, 0, Math.PI * 2);
         ctx.fill();
       }
-      
+
       // Large checkmark in center
       ctx.strokeStyle = `rgba(120, 100, 30, ${opacity})`;
       ctx.lineWidth = 3;
@@ -349,7 +349,7 @@ export class GameUI {
       ctx.lineTo(x - 2, y + 8);
       ctx.lineTo(x + 10, y - 8);
       ctx.stroke();
-      
+
       // "SCORE!" text that fades in and up
       const textY = y - burstRadius - 8 - (1 - opacity) * 15;
       ctx.fillStyle = `rgba(218, 165, 32, ${opacity})`;
@@ -361,12 +361,12 @@ export class GameUI {
       ctx.strokeStyle = `rgba(139, 90, 60, ${opacity})`;
       ctx.fillStyle = `rgba(160, 110, 80, ${opacity * 0.2})`;
       ctx.lineWidth = 3;
-      
+
       // Circle background
       ctx.beginPath();
       ctx.arc(x, y, 10, 0, Math.PI * 2);
       ctx.fill();
-      
+
       // X mark
       ctx.beginPath();
       ctx.moveTo(x - 4, y - 4);
@@ -374,7 +374,7 @@ export class GameUI {
       ctx.moveTo(x + 4, y - 4);
       ctx.lineTo(x - 4, y + 4);
       ctx.stroke();
-      
+
       // Splat effect
       ctx.strokeStyle = `rgba(160, 70, 70, ${opacity * 0.5})`;
       ctx.lineWidth = 1.5;
@@ -386,23 +386,23 @@ export class GameUI {
         ctx.stroke();
       }
     }
-    
+
     ctx.restore();
   }
-  
+
   /**
    * Draws the current score on the canvas.
    * @param {number} score - Current score
    */
   drawScore(score) {
     const ctx = this.ctx;
-    
+
     ctx.fillStyle = '#4a3a2a';
     ctx.font = 'bold 16px Inter, sans-serif';
     ctx.textAlign = 'left';
     ctx.fillText(`${t('game.score')} ${score}`, 12, 24);
   }
-  
+
   /**
    * Draws game instructions.
    * @param {string} message - Instruction text
@@ -412,30 +412,30 @@ export class GameUI {
     const centerX = this.canvas.width / 2;
     const centerY = this.canvas.height - 40;
     const maxWidth = this.canvas.width - 80;
-    
+
     // Semi-transparent background (smaller)
     ctx.fillStyle = 'rgba(240, 230, 220, 0.85)';
     ctx.beginPath();
     ctx.roundRect(centerX - maxWidth / 2 - 12, centerY - 15, maxWidth + 24, 30, 8);
     ctx.fill();
-    
+
     // Border
     ctx.strokeStyle = 'rgba(100, 80, 60, 0.3)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.roundRect(centerX - maxWidth / 2 - 12, centerY - 15, maxWidth + 24, 30, 8);
     ctx.stroke();
-    
+
     // Instruction text (smaller font)
     ctx.fillStyle = '#4a3a2a';
     ctx.font = '10px Inter, sans-serif';
     ctx.textAlign = 'center';
-    
+
     // Wrap text if needed
     const words = message.split(' ');
     let lines = [];
     let currentLine = '';
-    
+
     for (const word of words) {
       const testLine = currentLine ? currentLine + ' ' + word : word;
       const metrics = ctx.measureText(testLine);
@@ -447,7 +447,7 @@ export class GameUI {
       }
     }
     if (currentLine) lines.push(currentLine);
-    
+
     // Draw each line
     const lineHeight = 10;
     const startY = centerY - ((lines.length - 1) * lineHeight) / 2;
@@ -455,7 +455,7 @@ export class GameUI {
       ctx.fillText(line, centerX, startY + i * lineHeight);
     });
   }
-  
+
   /**
    * Draws game over overlay.
    * @param {number} finalScore - Final score achieved
@@ -464,23 +464,23 @@ export class GameUI {
     const ctx = this.ctx;
     const centerX = this.canvas.width / 2;
     const centerY = this.canvas.height / 2;
-    
+
     // Semi-transparent earthy overlay
     ctx.fillStyle = 'rgba(40, 30, 20, 0.7)';
     ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-    
+
     // Game over text
     ctx.fillStyle = '#f0e6d8';
     ctx.font = 'bold 24px Inter, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(t('game.gameOver'), centerX, centerY - 15);
-    
+
     // Final score
     ctx.fillStyle = '#d4a574';
     ctx.font = '18px Inter, sans-serif';
     ctx.fillText(`${t('game.score')} ${finalScore}`, centerX, centerY + 15);
   }
-  
+
   /**
    * Draws a direction-focused trajectory guide (arrow showing direction only).
    * @param {Object} start - Start point {x, y}
@@ -489,44 +489,44 @@ export class GameUI {
    */
   drawTrajectoryGuide(start, end, physics = null) {
     const ctx = this.ctx;
-    
+
     // Calculate drag vector and power
     const dx = end.x - start.x;
     const dy = end.y - start.y;
     const dragDistance = Math.sqrt(dx * dx + dy * dy);
     const angle = Math.atan2(dy, dx);
-    
+
     // Calculate power percentage (0-100)
     const maxDrag = 120;
     const powerPercent = Math.min((dragDistance / maxDrag) * 100, 100);
-    
+
     // Draw power meter arc around start point
     const meterRadius = 28;
-    ctx.strokeStyle = powerPercent < 30 ? 'rgba(200, 100, 60, 0.6)' : 
-                      powerPercent < 70 ? 'rgba(220, 180, 60, 0.7)' : 
-                      'rgba(100, 180, 80, 0.8)';
+    ctx.strokeStyle = powerPercent < 30 ? 'rgba(200, 100, 60, 0.6)' :
+      powerPercent < 70 ? 'rgba(220, 180, 60, 0.7)' :
+        'rgba(100, 180, 80, 0.8)';
     ctx.lineWidth = 4;
     ctx.lineCap = 'round';
     ctx.beginPath();
     ctx.arc(start.x, start.y, meterRadius, -Math.PI * 0.75, -Math.PI * 0.75 + (Math.PI * 1.5 * powerPercent / 100));
     ctx.stroke();
-    
+
     // Draw power percentage text
     ctx.fillStyle = 'rgba(60, 50, 40, 0.9)';
     ctx.font = 'bold 12px Inter, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(`${Math.round(powerPercent)}%`, start.x, start.y + 4);
-    
+
     // Trajectory arrow (smaller, dynamic length based on power)
     const arrowLength = 30 + (powerPercent / 100) * 20;
     const endX = start.x + Math.cos(angle) * arrowLength;
     const endY = start.y + Math.sin(angle) * arrowLength;
-    
+
     // Draw gradient line for trajectory
     const gradient = ctx.createLinearGradient(start.x, start.y, endX, endY);
     gradient.addColorStop(0, 'rgba(80, 60, 40, 0.8)');
     gradient.addColorStop(1, 'rgba(80, 60, 40, 0.3)');
-    
+
     ctx.strokeStyle = gradient;
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
@@ -534,7 +534,7 @@ export class GameUI {
     ctx.moveTo(start.x, start.y);
     ctx.lineTo(endX, endY);
     ctx.stroke();
-    
+
     // Pulsing dots along trajectory (smaller)
     const formHTML = `
       <form id="offer-form" class="offer-form">
@@ -566,176 +566,22 @@ export class GameUI {
         </div>
       </form>`;
     ctx.fill();
-    
+
     // Glow effect on start point (smaller)
     ctx.fillStyle = 'rgba(255, 200, 100, 0.3)';
     ctx.beginPath();
     ctx.arc(start.x, start.y, 6, 0, Math.PI * 2);
     ctx.fill();
-    
+
     ctx.fillStyle = 'rgba(255, 220, 150, 0.6)';
     ctx.beginPath();
     ctx.arc(start.x, start.y, 4, 0, Math.PI * 2);
     ctx.fill();
   }
-  
-  /**
-   * Opens the offer modal after game ends.
-   * @param {number} score - Final score for context
-   * @param {Function} onSubmit - Callback when offer is submitted
-   */
-  showOfferModal(score, onSubmit) {
-    const content = this.createOfferFormHTML();
-    
-    openModal({
-      title: t('offer.title'),
-      content
-    });
-    
-    // Attach form event listeners after modal opens
-    setTimeout(() => {
-      this.attachOfferFormListeners(onSubmit);
-    }, 100);
-  }
-  
-  /**
-   * Creates HTML for the offer form.
-   * @returns {string} - HTML string for offer form
-   */
-  createOfferFormHTML() {
-    return `
-      <form id="offer-form" class="offer-form">
-        <div class="form-group">
-          <label class="form-label" for="offer-salary">${t('offer.salary')}</label>
-          <input 
-            type="number" 
-            id="offer-salary" 
-            name="salary" 
-            class="form-input" 
-            placeholder="100000"
-            min="0"
-            required
-          >
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" for="offer-currency">${t('offer.currency')}</label>
-          <select id="offer-currency" name="currency" class="form-select" required>
-            <option value="AUD">AUD - Australian Dollar</option>
-            <option value="USD">USD - US Dollar</option>
-            <option value="EUR">EUR - Euro</option>
-            <option value="GBP">GBP - British Pound</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" for="offer-days">${t('offer.daysPerWeek')}</label>
-          <select id="offer-days" name="days" class="form-select" required>
-            <option value="5">5 days</option>
-            <option value="4">4 days</option>
-            <option value="3">3 days</option>
-            <option value="2">2 days</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" for="offer-message">${t('offer.message')}</label>
-          <textarea 
-            id="offer-message" 
-            name="message" 
-            class="form-textarea" 
-            placeholder="${t('offer.messagePlaceholder')}"
-            rows="3"
-          ></textarea>
-        </div>
-        
-        <div class="form-actions">
-          <button type="button" id="offer-cancel" class="btn-secondary">${t('offer.cancel')}</button>
-          <button type="button" id="offer-email" class="btn-secondary">${t('offer.email')}</button>
-        </div>
-      </form>
-    `;
-  }
-  
-  /**
-   * Attaches event listeners to offer form buttons.
-   * @param {Function} onSubmit - Callback when offer is submitted
-   */
-  attachOfferFormListeners(onSubmit) {
-    const form = document.getElementById('offer-form');
-    const cancelBtn = document.getElementById('offer-cancel');
-    const emailBtn = document.getElementById('offer-email');
-    
-    if (!form) return;
-    
-    // Cancel button
-    cancelBtn?.addEventListener('click', () => {
-      closeModal();
-    });
-    
-    // Email button
-    emailBtn?.addEventListener('click', () => {
-      const offerText = this.generateOfferText();
-      const subject = encodeURIComponent(t('offer.emailSubject'));
-      const body = encodeURIComponent(offerText);
-      window.location.href = `mailto:?subject=${subject}&body=${body}`;
-    });
-    
-    // Form submit (copy to clipboard)
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const offerText = this.generateOfferText();
-      
-      try {
-        await navigator.clipboard.writeText(offerText);
-        this.showCopiedFeedback();
-        if (onSubmit) onSubmit(offerText);
-      } catch (err) {
-        console.error('Failed to copy:', err);
-        // Fallback: show text for manual copy
-        alert(offerText);
-      }
-    });
-  }
-  
-  /**
-   * Generates formatted offer text from form values.
-   * @returns {string} - Formatted offer text
-   */
-  generateOfferText() {
-    const salary = document.getElementById('offer-salary')?.value || '0';
-    const currency = document.getElementById('offer-currency')?.value || 'AUD';
-     const days = document.getElementById('offer-days')?.value || '4';
-    const message = document.getElementById('offer-message')?.value || '';
-    
-    let text = `Job Offer for Micah Walker\n`;
-    text += `${'='.repeat(30)}\n\n`;
-    text += `Salary: ${salary} ${currency} per year\n`;
-    text += `Working Days: ${days} days per week\n`;
-    
-    if (message) {
-      text += `\nMessage:\n${message}\n`;
-    }
-    
-    text += `\n${'='.repeat(30)}\n`;
-    text += `Submitted via Portfolio Website`;
-    
-    return text;
-  }
-  
-  /**
-   * Shows feedback when offer is copied to clipboard.
-   */
-  showCopiedFeedback() {
-    const liveRegion = document.getElementById('aria-live');
-    if (liveRegion) {
-      liveRegion.textContent = t('offer.copied');
-      setTimeout(() => { liveRegion.textContent = ''; }, 2000);
-    }
-    
-    // Close modal after short delay
-    setTimeout(() => {
-      closeModal();
-    }, 1500);
-  }
+
+
+
+
+
+
 }

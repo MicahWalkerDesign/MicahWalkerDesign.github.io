@@ -21,9 +21,9 @@
       "id": "arthrex-apac",
       "company": "Arthrex APAC",
       "role": {
-        "en": "Sales Representative / Territory Manager – Orthopaedic Sports Medicine",
-        "es": "Representante de Ventas / Gerente de Territorio – Medicina Deportiva Ortopédica",
-        "de": "Vertriebsmitarbeiter / Gebietsleiter – Orthopädische Sportmedizin"
+        "en": "Sales Rep / Territory Manager – Sports Medicine",
+        "es": "Representante de Ventas / Gerente de Territorio – Medicina Deportiva",
+        "de": "Vertriebsmitarbeiter / Gebietsleiter – Sportmedizin"
       },
       "location": {
         "en": "Perth, Western Australia · Hybrid",
@@ -40,52 +40,44 @@
         }
       },
       "description": {
-        "en": "Strategic consultant between clinicians, hospitals, and product teams. Driving adoption of innovative orthopaedic solutions.",
-        "es": "Consultor estratégico entre clínicos, hospitales y equipos de producto. Impulsando la adopción de soluciones ortopédicas innovadoras.",
-        "de": "Strategischer Berater zwischen Klinikern, Krankenhäusern und Produktteams. Fördert die Einführung innovativer orthopädischer Lösungen."
+        "en": "Led workflow analysis and cross-functional orchestration to ensure system-wide viability of orthopaedic solutions.",
+        "es": "Lideró el análisis de flujo de trabajo y la orquestación multifuncional para asegurar la viabilidad del sistema.",
+        "de": "Leitete Workflow-Analysen und funktionsübergreifende Orchestrierung."
       },
       "bullets": {
         "en": [
-          "Strategic consultant between clinicians, hospitals, and product teams",
-          "Workflow analysis and system adoption",
-          "Product education and training",
-          "CRM & data-informed territory optimisation",
-          "Cross-functional collaboration",
-          "User-centred thinking & feedback loops"
+          "Systems Consulting: Led workflow analysis to identify integration constraints and operational bottlenecks",
+          "Technical Synthesis: Abstracted complex instrumentation into scalable solution frameworks for diverse stakeholders",
+          "Data-Driven Optimization: Modeled adoption telemetry to optimize territory strategy and product lifecycles",
+          "Cross-Functional Orchestration: Managed multidisciplinary matrices (Sales, Clinical, Engineering) to ensure system-wide viability"
         ],
         "es": [
-          "Consultor estratégico entre clínicos, hospitales y equipos de producto",
-          "Análisis de flujos de trabajo y adopción de sistemas",
-          "Educación y capacitación de productos",
-          "Optimización de territorio basada en CRM y datos",
-          "Colaboración multifuncional",
-          "Pensamiento centrado en el usuario y bucles de retroalimentación"
+          "Consultoría de Sistemas: Análisis de flujo de trabajo para identificar cuellos de botella",
+          "Síntesis Técnica: Abstracción de instrumentación compleja en marcos escalables",
+          "Optimización basada en Datos: Modelado de telemetría de adopción",
+          "Orquestación Multifuncional: Gestión de matrices multidisciplinarias"
         ],
         "de": [
-          "Strategischer Berater zwischen Klinikern, Krankenhäusern und Produktteams",
-          "Analyse von Workflows und Systemeinführung",
-          "Produktschulung und -weiterbildung",
-          "CRM- und datenbasierte Gebietsoptimierung",
-          "Bereichsübergreifende Zusammenarbeit",
-          "Nutzerzentriertes Denken und Feedback-Schleifen"
+          "Systemberatung: Workflow-Analyse zur Identifizierung von Engpässen",
+          "Technische Synthese: Abstraktion komplexer Instrumente",
+          "Datengetriebene Optimierung: Modellierung von Adoptionstelemetrie",
+          "Funktionsübergreifende Orchestrierung: Management multidisziplinärer Matrizen"
         ]
       },
       "skills": [
-        "Sales Strategy",
-        "Medical Devices",
-        "Territory Management",
-        "CRM",
-        "Product Training",
-        "Stakeholder Management"
+        "Systems Consulting",
+        "Technical Synthesis",
+        "Data-Driven Optimization",
+        "Cross-Functional Orchestration"
       ]
     },
     {
       "id": "freelance-designer",
       "company": "Freelance / Independent",
       "role": {
-        "en": "Product Designer & Builder",
-        "es": "Diseñador de Producto y Constructor",
-        "de": "Produktdesigner & Entwickler"
+        "en": "Systems Designer & Frontend Engineer",
+        "es": "Diseñador de Sistemas e Ingeniero Frontend",
+        "de": "Systemdesigner & Frontend-Ingenieur"
       },
       "location": {
         "en": "Remote (Germany / Australia)",
@@ -102,50 +94,44 @@
         }
       },
       "description": {
-        "en": "Designing and building digital products from concept to launch. Focus on health, fitness, and productivity applications.",
-        "es": "Diseñando y construyendo productos digitales desde el concepto hasta el lanzamiento. Enfoque en aplicaciones de salud, fitness y productividad.",
-        "de": "Entwurf und Entwicklung digitaler Produkte vom Konzept bis zum Launch. Fokus auf Anwendungen für Gesundheit, Fitness und Produktivität."
+        "en": "Architected and deployed full-stack digital products, managing the complete SDLC from problem discovery to production-ready MVPs.",
+        "es": "Arquitectura y despliegue de productos digitales full-stack, gestionando el SDLC completo.",
+        "de": "Architektur und Bereitstellung von Full-Stack-Digitalprodukten, Management des gesamten SDLC."
       },
       "bullets": {
         "en": [
-          "End-to-end product design from research to shipped product",
-          "UI/UX design for mobile and web applications",
-          "Front-end development (HTML, CSS, JavaScript)",
-          "Client consultation and requirements gathering",
-          "Prototyping in Figma, Adobe XD, and Sketch"
+          "End-to-End Product Engineering: Architected and deployed full-stack digital products",
+          "Human-Systems Integration: Translated behavioral telemetry and user research into deterministic UX flows",
+          "Interface & Logic Implementation: Engineered responsive web applications using Vanilla JS/HTML5/CSS3",
+          "Automated Lifecycle Workflows: Leveraged AI-supported development tooling to compress iteration cycles"
         ],
         "es": [
-          "Diseño de producto de principio a fin, desde investigación hasta producto final",
-          "Diseño UI/UX para aplicaciones móviles y web",
-          "Desarrollo front-end (HTML, CSS, JavaScript)",
-          "Consulta con clientes y recopilación de requisitos",
-          "Prototipado en Figma, Adobe XD y Sketch"
+          "Ingeniería de Producto End-to-End: Arquitectura y despliegue de productos digitales",
+          "Integración Humano-Sistemas: Traducción de telemetría conductual en flujos UX deterministas",
+          "Implementación de Interfaz y Lógica: Aplicaciones web responsivas con Vanilla JS/HTML5/CSS3",
+          "Flujos de Trabajo Automatizados: Herramientas de desarrollo asistidas por IA"
         ],
         "de": [
-          "End-to-End Produktdesign von der Recherche bis zum ausgelieferten Produkt",
-          "UI/UX-Design für Mobile- und Web-Anwendungen",
-          "Front-End-Entwicklung (HTML, CSS, JavaScript)",
-          "Kundenberatung und Anforderungserhebung",
-          "Prototyping in Figma, Adobe XD und Sketch"
+          "End-to-End Produktentwicklung: Architektur und Deployment",
+          "Mensch-System-Integration: Übersetzung von Verhaltenstelemetrie in UX-Flows",
+          "Interface- & Logik-Implementierung: Responsive Webanwendungen mit Vanilla JS",
+          "Automatisierte Lifecycle-Workflows: KI-gestützte Entwicklungstools"
         ]
       },
       "skills": [
-        "Product Design",
-        "UI/UX",
-        "Figma",
-        "HTML/CSS",
-        "JavaScript",
-        "User Research",
-        "LinkedIn JSON Hydration"
+        "Interface Engineering",
+        "Modular Systems",
+        "Performance Optimization",
+        "Stateless Architecture"
       ]
     },
     {
       "id": "uniklinik-frankfurt",
       "company": "Uniklinik Frankfurt",
       "role": {
-        "en": "Clinical Exercise Physiologist",
-        "es": "Fisiólogo del Ejercicio Clínico",
-        "de": "Klinischer Trainingsphysiologe"
+        "en": "Clinical Systems Specialist",
+        "es": "Especialista en Sistemas Clínicos",
+        "de": "Spezialist für Klinische Systeme"
       },
       "location": {
         "en": "Frankfurt, Germany · On-site",
@@ -153,108 +139,53 @@
         "de": "Frankfurt, Deutschland · Präsenz"
       },
       "dates": {
-        "start": "2022-08",
-        "end": "2024-07",
+        "start": "2022-07",
+        "end": "2024-08",
         "display": {
-          "en": "Aug 2022 – Jul 2024",
-          "es": "Ago 2022 – Jul 2024",
-          "de": "Aug 2022 – Jul 2024"
+          "en": "Jul 2022 – Aug 2024",
+          "es": "Jul 2022 – Ago 2024",
+          "de": "Jul 2022 – Aug 2024"
         }
       },
       "description": {
-        "en": "Clinical exercise programming for orthopaedic and cardiac rehabilitation patients.",
-        "es": "Programación de ejercicio clínico para pacientes de rehabilitación ortopédica y cardíaca.",
-        "de": "Klinische Trainingsplanung für orthopädische und kardiale Reha-Patienten."
+        "en": "Engineered clinical protocols navigating medical, behavioral, and operational constraints.",
+        "es": "Diseño de protocolos clínicos navegando restricciones médicas, conductuales y operativas.",
+        "de": "Entwicklung klinischer Protokolle unter Berücksichtigung medizinischer und operativer Einschränkungen."
       },
       "bullets": {
         "en": [
-          "Designed individualised exercise programs for rehabilitation",
-          "Collaborated with multidisciplinary medical teams",
-          "Monitored patient progress and adapted protocols",
-          "Patient education on exercise and lifestyle"
+          "Constraint-Based Design: Engineered clinical protocols navigating medical, behavioral, and operational constraints",
+          "Closed-Loop Feedback: Iterated programs based on quantitative telemetry to ensure system accuracy",
+          "Multidisciplinary Integration: Synchronized medical and technical requirements across fragmented teams",
+          "System Documentation: Authored structured technical reports to support maintainability"
         ],
         "es": [
-          "Diseño de programas de ejercicio individualizados para rehabilitación",
-          "Colaboración con equipos médicos multidisciplinarios",
-          "Monitoreo del progreso del paciente y adaptación de protocolos",
-          "Educación del paciente sobre ejercicio y estilo de vida"
+          "Diseño Basado en Restricciones: Protocolos clínicos navegando restricciones",
+          "Retroalimentación de Bucle Cerrado: Programas iterados basados en telemetría cuantitativa",
+          "Integración Multidisciplinaria: Sincronización de requisitos médicos y técnicos",
+          "Documentación del Sistema: Informes técnicos estructurados"
         ],
         "de": [
-          "Entwicklung individueller Trainingsprogramme für die Rehabilitation",
-          "Zusammenarbeit mit multidisziplinären medizinischen Teams",
-          "Überwachung des Fortschritts und Anpassung von Protokollen",
-          "Patientenaufklärung zu Training und Lebensstil"
+          "Constraint-Based Design: Klinische Protokolle unter Berücksichtigung von Einschränkungen",
+          "Closed-Loop Feedback: Iterative Programme basierend auf Telemetrie",
+          "Multidisziplinäre Integration: Synchronisierung medizinischer und technischer Anforderungen",
+          "Systemdokumentation: Strukturierte technische Berichte"
         ]
       },
       "skills": [
-        "Clinical Exercise",
-        "Rehabilitation",
-        "Patient Care",
-        "Program Design",
-        "Medical Collaboration"
-      ]
-    },
-    {
-      "id": "aussie-ausdauer",
-      "company": "Aussie Ausdauer",
-      "role": {
-        "en": "Personal Trainer & Injury Consultant",
-        "es": "Entrenador Personal y Consultor de Lesiones",
-        "de": "Personal Trainer & Verletzungsberater"
-      },
-      "location": {
-        "en": "Frankfurt, Germany · Hybrid",
-        "es": "Frankfurt, Alemania · Híbrido",
-        "de": "Frankfurt, Deutschland · Hybrid"
-      },
-      "dates": {
-        "start": "2020-02",
-        "end": "2024-06",
-        "display": {
-          "en": "Feb 2020 – Jun 2024",
-          "es": "Feb 2020 – Jun 2024",
-          "de": "Feb 2020 – Jun 2024"
-        }
-      },
-      "description": {
-        "en": "Running personal training business specialising in injury prevention and rehabilitation.",
-        "es": "Negocio de entrenamiento personal especializado en prevención y rehabilitación de lesiones.",
-        "de": "Leitung eines Personal-Training-Unternehmens mit Schwerpunkt auf Verletzungsprävention und Rehabilitation."
-      },
-      "bullets": {
-        "en": [
-          "Built and managed independent training business",
-          "Specialised in injury prevention and return-to-sport",
-          "Online and in-person coaching delivery",
-          "Client acquisition and retention strategies"
-        ],
-        "es": [
-          "Creación y gestión de negocio de entrenamiento independiente",
-          "Especialización en prevención de lesiones y retorno al deporte",
-          "Entrega de coaching online y presencial",
-          "Estrategias de adquisición y retención de clientes"
-        ],
-        "de": [
-          "Aufbau und Leitung eines unabhängigen Trainingsunternehmens",
-          "Spezialisierung auf Verletzungsprävention und Return-to-Sport",
-          "Online- und Präsenz-Coaching",
-          "Strategien zur Kundengewinnung und -bindung"
-        ]
-      },
-      "skills": [
-        "Personal Training",
-        "Injury Prevention",
-        "Business Management",
-        "Client Relations"
+        "Constraint-Based Design",
+        "Closed-Loop Feedback",
+        "Multidisciplinary Integration",
+        "System Documentation"
       ]
     },
     {
       "id": "tg-ruesselsheim",
       "company": "TG 1862 Rüsselsheim",
       "role": {
-        "en": "Orthopaedic Rehabilitation Fitness Coordinator",
-        "es": "Coordinador de Fitness en Rehabilitación Ortopédica",
-        "de": "Koordinator für Fitness in der orthopädischen Rehabilitation"
+        "en": "Infrastructure Scaling",
+        "es": "Escalado de Infraestructura",
+        "de": "Infrastruktur-Skalierung"
       },
       "location": {
         "en": "Rüsselsheim, Germany · On-site",
@@ -271,44 +202,40 @@
         }
       },
       "description": {
-        "en": "Coordinating fitness programs within orthopaedic rehabilitation setting.",
-        "es": "Coordinación de programas de fitness en entorno de rehabilitación ortopédica.",
-        "de": "Koordination von Fitnessprogrammen im orthopädischen Reha-Umfeld."
+        "en": "Led operational scaling for a 500-member facility and optimized service workflows.",
+        "es": "Lideró el escalado operativo para una instalación de 500 miembros y optimizó flujos de trabajo.",
+        "de": "Leitete die betriebliche Skalierung einer Einrichtung mit 500 Mitgliedern."
       },
       "bullets": {
         "en": [
-          "Coordinated fitness programs for rehabilitation members",
-          "Supervised group exercise classes",
-          "Equipment maintenance and facility management",
-          "Member onboarding and progress tracking"
+          "Infrastructure Scaling: Led operational scaling for a 500-member facility",
+          "Resource Orchestration: Managed a team of 10 to optimize service workflows",
+          "Program Engineering: Deployed clinical protocols under complex musculoskeletal constraints"
         ],
         "es": [
-          "Coordinación de programas de fitness para miembros en rehabilitación",
-          "Supervisión de clases de ejercicio grupal",
-          "Mantenimiento de equipos y gestión de instalaciones",
-          "Integración de miembros y seguimiento del progreso"
+          "Escalado de Infraestructura: Escalado operativo para 500 miembros",
+          "Orquestación de Recursos: Gestión de equipo de 10 personas",
+          "Ingeniería de Programas: Despliegue de protocolos clínicos complejos"
         ],
         "de": [
-          "Koordination von Fitnessprogrammen für Reha-Mitglieder",
-          "Leitung von Gruppentrainings",
-          "Gerätewartung und Facility-Management",
-          "Onboarding von Mitgliedern und Fortschrittsverfolgung"
+          "Infrastruktur-Skalierung: Betriebliche Skalierung für 500 Mitglieder",
+          "Ressourcen-Orchestrierung: Teamleitung von 10 Personen",
+          "Programm-Engineering: Einsatz klinischer Protokolle"
         ]
       },
       "skills": [
-        "Rehabilitation",
-        "Fitness Coordination",
-        "Group Exercise",
-        "Member Management"
+        "Infrastructure Scaling",
+        "Resource Orchestration",
+        "Program Engineering"
       ]
     },
     {
       "id": "dantrim",
-      "company": "DanTrim GmbH",
+      "company": "Dantrim GmbH",
       "role": {
-        "en": "Studio Manager & Rehabilitation Consultant",
-        "es": "Gerente de Estudio y Consultor de Rehabilitación",
-        "de": "Studioleiter & Rehabilitationsberater"
+        "en": "Assistant Manager & Consultant",
+        "es": "Subgerente y Consultor",
+        "de": "Stellvertretender Manager & Berater"
       },
       "location": {
         "en": "Frankfurt, Germany · On-site",
@@ -325,188 +252,119 @@
         }
       },
       "description": {
-        "en": "Managing fitness studio operations and providing rehabilitation consulting services.",
-        "es": "Gestión de operaciones de estudio de fitness y servicios de consultoría en rehabilitación.",
-        "de": "Leitung der Studioabläufe und Beratung in der Rehabilitation."
+        "en": "Directed ergonomic restructuring for 400 staff, optimizing human-hardware interfaces.",
+        "es": "Dirigió la reestructuración ergonómica para 400 empleados.",
+        "de": "Leitete ergonomische Umstrukturierung für 400 Mitarbeiter."
       },
       "bullets": {
         "en": [
-          "Managed daily studio operations and staff scheduling",
-          "Provided rehabilitation consulting for members",
-          "Drove membership sales and retention",
-          "Developed training programs and protocols"
+          "Ergonomic Systems Design: Directed ergonomic restructuring for 400 staff, optimizing human-hardware interfaces",
+          "Constraint-Based Logic: Engineered health frameworks tailored to office operational constraints"
         ],
         "es": [
-          "Gestión de operaciones diarias del estudio y programación de personal",
-          "Consultoría de rehabilitación para miembros",
-          "Impulso de ventas de membresías y retención",
-          "Desarrollo de programas de entrenamiento y protocolos"
+          "Diseño de Sistemas Ergonómicos: Reestructuración para 400 empleados",
+          "Lógica Basada en Restricciones: Marcos de salud a medida"
         ],
         "de": [
-          "Verantwortung für den täglichen Studiobetrieb und Einsatzplanung",
-          "Rehabilitationsberatung für Mitglieder",
-          "Steigerung von Mitgliedsverkäufen und -bindung",
-          "Entwicklung von Trainingsprogrammen und Protokollen"
+          "Ergonomisches Systemdesign: Umstrukturierung für 400 Mitarbeiter",
+          "Constraint-Based Logic: Maßgeschneiderte Gesundheits-Frameworks"
         ]
       },
       "skills": [
-        "Studio Management",
-        "Staff Leadership",
-        "Sales",
-        "Rehabilitation",
-        "Program Development"
+        "Ergonomic Systems Design",
+        "Constraint-Based Logic"
       ]
     },
     {
-      "id": "forum-newcastle",
-      "company": "The Forum Sports & Aquatics Centre (UoN)",
+      "id": "combat-engineer",
+      "company": "Australian Army Reserves",
       "role": {
-        "en": "Certified Personal Trainer",
-        "es": "Entrenador Personal Certificado",
-        "de": "Zertifizierter Personal Trainer"
+        "en": "Combat Engineer",
+        "es": "Ingeniero de Combate",
+        "de": "Pionier"
       },
       "location": {
-        "en": "Newcastle, NSW, Australia · On-site",
-        "es": "Newcastle, NSW, Australia · Presencial",
-        "de": "Newcastle, NSW, Australien · Präsenz"
+        "en": "Australia",
+        "es": "Australia",
+        "de": "Australien"
+      },
+      "dates": {
+        "start": "2013-01",
+        "end": "2016-12",
+        "display": {
+          "en": "2013 – 2016",
+          "es": "2013 – 2016",
+          "de": "2013 – 2016"
+        }
+      },
+      "description": {
+        "en": "Executed structural mobility operations in high-stakes environments.",
+        "es": "Ejecutó operaciones de movilidad estructural en entornos de alto riesgo.",
+        "de": "Führte strukturelle Mobilitätsoperationen in risikoreichen Umgebungen durch."
+      },
+      "bullets": {
+        "en": [
+          "Tactical Engineering: Executed structural mobility operations in high-stakes environments",
+          "System Safety: Managed high-risk logistics following rigorous safety standards"
+        ],
+        "es": [
+          "Ingeniería Táctica: Operaciones de movilidad estructural",
+          "Seguridad del Sistema: Logística de alto riesgo"
+        ],
+        "de": [
+          "Taktisches Engineering: Strukturelle Mobilitätsoperationen",
+          "Systemsicherheit: Risikoreiche Logistik"
+        ]
+      },
+      "skills": [
+        "Tactical Engineering",
+        "System Safety"
+      ]
+    },
+    {
+      "id": "hunter-hospital",
+      "company": "Hunter Hospital",
+      "role": {
+        "en": "Clinical Internship",
+        "es": "Pasantía Clínica",
+        "de": "Klinisches Praktikum"
+      },
+      "location": {
+        "en": "Newcastle, NSW, Australia",
+        "es": "Newcastle, NSW, Australia",
+        "de": "Newcastle, NSW, Australien"
       },
       "dates": {
         "start": "2016-01",
         "end": "2016-12",
         "display": {
-          "en": "Jan 2016 – Dec 2016",
-          "es": "Ene 2016 – Dic 2016",
-          "de": "Jan 2016 – Dez 2016"
+          "en": "2016",
+          "es": "2016",
+          "de": "2016"
         }
       },
       "description": {
-        "en": "Delivering personal training services at university sports facility.",
-        "es": "Servicios de entrenamiento personal en instalaciones deportivas universitarias.",
-        "de": "Erbringung von Personal-Training-Leistungen in einer universitären Sportanlage."
+        "en": "Analyzed EKG and rhythm data for clinical decision making.",
+        "es": "Analizó datos de EKG y ritmo para toma de decisiones clínicas.",
+        "de": "Analysierte EKG- und Rhythmusdaten für klinische Entscheidungen."
       },
       "bullets": {
         "en": [
-          "Conducted fitness assessments and goal setting",
-          "Designed and delivered personalised training programs",
-          "Supported members with technique and motivation"
+          "Diagnostic Telemetry: Analyzed EKG and rhythm data for clinical decision making",
+          "Surgical Observation: Evaluated pacemaker integration to analyze human-device telemetry"
         ],
         "es": [
-          "Evaluaciones de fitness y establecimiento de metas",
-          "Diseño y entrega de programas de entrenamiento personalizados",
-          "Apoyo a miembros con técnica y motivación"
+          "Telemetría Diagnóstica: Análisis de datos EKG",
+          "Observación Quirúrgica: Integración de marcapasos"
         ],
         "de": [
-          "Durchführung von Fitness-Assessments und Zielsetzung",
-          "Entwurf und Durchführung personalisierter Trainingsprogramme",
-          "Unterstützung von Mitgliedern bei Technik und Motivation"
+          "Diagnostische Telemetrie: EKG-Analyse",
+          "Chirurgische Beobachtung: Schrittmacher-Integration"
         ]
       },
       "skills": [
-        "Personal Training",
-        "Fitness Assessment",
-        "Program Design"
-      ]
-    },
-    {
-      "id": "swim-instructor",
-      "company": "Various Employers",
-      "role": {
-        "en": "Swim Instructor",
-        "es": "Instructor de Natación",
-        "de": "Schwimmlehrer"
-      },
-      "location": {
-        "en": "Newcastle, NSW, Australia · On-site",
-        "es": "Newcastle, NSW, Australia · Presencial",
-        "de": "Newcastle, NSW, Australien · Präsenz"
-      },
-      "dates": {
-        "start": "2012-05",
-        "end": "2016-12",
-        "display": {
-          "en": "May 2012 – Dec 2016",
-          "es": "May 2012 – Dic 2016",
-          "de": "Mai 2012 – Dez 2016"
-        }
-      },
-      "description": {
-        "en": "Teaching swimming to children and adults at various aquatic facilities.",
-        "es": "Enseñanza de natación a niños y adultos en diversas instalaciones acuáticas.",
-        "de": "Schwimmunterricht für Kinder und Erwachsene in verschiedenen Einrichtungen."
-      },
-      "bullets": {
-        "en": [
-          "Taught swimming to children and adults",
-          "Delivered learn-to-swim programs",
-          "Ensured pool safety and supervision"
-        ],
-        "es": [
-          "Enseñanza de natación a niños y adultos",
-          "Entrega de programas de aprender a nadar",
-          "Garantía de seguridad y supervisión en piscina"
-        ],
-        "de": [
-          "Unterricht im Schwimmen für Kinder und Erwachsene",
-          "Durchführung von Anfängerschwimmkursen",
-          "Gewährleistung von Sicherheit und Aufsicht im Schwimmbad"
-        ]
-      },
-      "skills": [
-        "Swim Instruction",
-        "Child Safety",
-        "Teaching",
-        "Water Safety"
-      ]
-    },
-    {
-      "id": "newcastle-knights",
-      "company": "Newcastle Knights (Juniors S&C)",
-      "role": {
-        "en": "Volunteer Assistant Coach",
-        "es": "Entrenador Asistente Voluntario",
-        "de": "Ehrenamtlicher Assistenztrainer"
-      },
-      "location": {
-        "en": "Newcastle, NSW, Australia · On-site",
-        "es": "Newcastle, NSW, Australia · Presencial",
-        "de": "Newcastle, NSW, Australien · Präsenz"
-      },
-      "dates": {
-        "start": "2015-09",
-        "end": "2016-08",
-        "display": {
-          "en": "Sep 2015 – Aug 2016",
-          "es": "Sep 2015 – Ago 2016",
-          "de": "Sep 2015 – Aug 2016"
-        }
-      },
-      "description": {
-        "en": "Assisting with strength and conditioning for junior rugby league athletes.",
-        "es": "Asistencia con fuerza y acondicionamiento para atletas juveniles de rugby league.",
-        "de": "Unterstützung im Bereich Kraft und Kondition bei Junioren im Rugby League."
-      },
-      "bullets": {
-        "en": [
-          "Assisted with strength and conditioning sessions",
-          "Supported junior athlete development",
-          "Helped with game-day preparation"
-        ],
-        "es": [
-          "Asistencia en sesiones de fuerza y acondicionamiento",
-          "Apoyo al desarrollo de atletas juveniles",
-          "Ayuda en la preparación para días de partido"
-        ],
-        "de": [
-          "Unterstützung bei Kraft- und Konditionseinheiten",
-          "Förderung der Entwicklung von Nachwuchsathleten",
-          "Mithilfe bei der Vorbereitung auf Spieltage"
-        ]
-      },
-      "skills": [
-        "Strength & Conditioning",
-        "Coaching",
-        "Youth Development",
-        "Rugby League"
+        "Diagnostic Telemetry",
+        "Surgical Observation"
       ]
     }
   ]
