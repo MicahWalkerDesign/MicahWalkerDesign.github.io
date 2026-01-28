@@ -2583,3 +2583,26 @@
 .badge {
   animation: badge-appear 0.4s ease-out both;
 }
+/* ==================== PERFORMANCE: Non-Composited Animation Fixes ==================== */
+/* GPU-accelerated animations using will-change for smoother rendering */
+
+.skeleton,
+.cursor-glow,
+#scroll-progress,
+.reveal,
+.split-panel__side,
+.hero__visual-orb {
+  will-change: transform, opacity;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton,
+  .cursor-glow,
+  .hero__visual-orb,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+}

@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#4A7C59">
 
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Micah Walker — Frontend Engineer and Technical Product Designer specializing in Human-Systems Integration, React, and high-performance web architectures. View my portfolio of healthcare tech, AI, and system design projects.">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Micah Walker — Product Designer &amp; Frontend Developer">
+  <meta property="og:description" content="Portfolio showcasing healthcare technology, AI projects, and modern web architectures.">
+  <meta property="og:url" content="https://micahwalkerdesign.github.io/">
+  <link rel="canonical" href="https://micahwalkerdesign.github.io/">
+
   <title>Micah Walker — Product Designer & Frontend Developer</title>
 
   <!-- Preconnect to external resources -->
@@ -15,7 +25,8 @@
   <!-- Google Fonts: Inter for body, Playfair Display for headings -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-    rel="stylesheet">
+    rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"></noscript>
 
   <!-- Preload Critical Data -->
   <link rel="preload" href="assets/linkedin.json" as="fetch" crossorigin>
@@ -96,7 +107,7 @@
   </header>
 
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true" inert>
     <nav class="mobile-menu__nav">
       <ul class="mobile-menu__list">
         <li><a href="#portfolio" data-i18n="header.portfolio" class="mobile-menu__link">Projects</a></li>
@@ -303,11 +314,11 @@
           </p>
         </header>
 
-        <div class="split-panel" role="tablist" aria-label="Background information panels">
+        <div class="split-panel" role="presentation" aria-label="Background information panels">
           <!-- Experience Panel -->
           <div class="split-panel__side split-panel__side--experience split-panel__side--active" id="panel-experience"
-            role="tabpanel" aria-labelledby="tab-experience" tabindex="0">
-            <button class="split-panel__tab" id="tab-experience" role="tab" aria-selected="true"
+             aria-labelledby="tab-experience" tabindex="0">
+            <button class="split-panel__tab" id="tab-experience"  aria-selected="true"
               aria-controls="panel-experience">
               <h3 class="split-panel__title">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -340,9 +351,9 @@
           </div>
 
           <!-- Qualifications Panel -->
-          <div class="split-panel__side split-panel__side--qualifications" id="panel-qualifications" role="tabpanel"
+          <div class="split-panel__side split-panel__side--qualifications" id="panel-qualifications" 
             aria-labelledby="tab-qualifications" tabindex="0">
-            <button class="split-panel__tab" id="tab-qualifications" role="tab" aria-selected="false"
+            <button class="split-panel__tab" id="tab-qualifications"  aria-selected="false"
               aria-controls="panel-qualifications">
               <h3 class="split-panel__title">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
