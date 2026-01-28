@@ -2606,3 +2606,15 @@
     will-change: auto;
   }
 }
+
+/* ==================== FIX: Unified hover for expanded timeline items ==================== */
+/* Apply hover border to accordion trigger when wrapper is hovered */
+.timeline-item-wrapper:hover .accordion-trigger {
+  border-color: var(--primary);
+}
+
+/* When expanded, keep both trigger and panel borders synced on hover */
+.timeline-item-wrapper:hover .accordion-trigger[aria-expanded="true"],
+.timeline-item-wrapper:hover .accordion-panel.open {
+  border-color: var(--primary);
+}
