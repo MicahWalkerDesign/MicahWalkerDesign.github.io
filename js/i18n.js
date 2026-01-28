@@ -141,7 +141,14 @@ const dictionaries = {
       'Bilingual Support': 'Bilingual Support',
       'System': 'System',
       'App': 'App',
-      'AI / ML': 'AI / ML'
+      'AI / ML': 'AI / ML',
+      'React': 'React',
+      'Vanilla JS': 'Vanilla JS',
+      'Lighthouse 100': 'Lighthouse 100',
+      'Swift / SwiftUI': 'Swift / SwiftUI',
+      'CoreML': 'CoreML',
+      'iOS': 'iOS',
+      'React Native': 'React Native'
     },
     // Footer
     footer: {
