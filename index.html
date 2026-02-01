@@ -7,12 +7,14 @@
   <meta name="theme-color" content="#4A7C59">
 
   <!-- SEO Meta Description -->
-  <meta name="description" content="Micah Walker — Frontend Engineer and Technical Product Designer specializing in Human-Systems Integration, React, and high-performance web architectures. View my portfolio of healthcare tech, AI, and system design projects.">
+  <meta name="description"
+    content="Micah Walker — Frontend Engineer and Technical Product Designer specializing in Human-Systems Integration, React, and high-performance web architectures. View my portfolio of healthcare tech, AI, and system design projects.">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Micah Walker — Product Designer &amp; Frontend Developer">
-  <meta property="og:description" content="Portfolio showcasing healthcare technology, AI projects, and modern web architectures.">
+  <meta property="og:description"
+    content="Portfolio showcasing healthcare technology, AI projects, and modern web architectures.">
   <meta property="og:url" content="https://micahwalkerdesign.github.io/">
   <link rel="canonical" href="https://micahwalkerdesign.github.io/">
 
@@ -26,7 +28,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"></noscript>
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
+  </noscript>
 
   <!-- Preload Critical Data -->
   <link rel="preload" href="assets/linkedin.json" as="fetch" crossorigin>
@@ -128,8 +133,8 @@
           <h1 id="hero-heading" class="hero__title">
             <span class="hero__name gradient-text">Micah Walker</span>
           </h1>
-          <p class="hero__tagline" data-i18n="hero.tagline">
-            Frontend Engineer & Technical Product Designer
+          <p class="hero__tagline">
+            Frontend Developer & UI / UX Designer
           </p>
           <p class="hero__description" data-i18n="hero.description">
             Technical Product Architect specializing in Human-Systems Integration and Stateless Architectures. Leverages
@@ -157,76 +162,50 @@
     <!-- ==================== PORTFOLIO SECTION ==================== -->
     <section id="portfolio" class="section portfolio reveal" aria-labelledby="portfolio-heading">
       <div class="container">
-        <header class="section__header">
-          <h2 id="portfolio-heading" data-i18n="portfolio.title">Here is some of my Projects</h2>
-        </header>
+
 
         <!-- 
           Portfolio Container
           Renders project cards dynamically
           See js/components/portfolioGrid.js for implementation
         -->
-        <div id="portfolio-container" class="portfolio__grid">
-          <!-- Skeleton loaders while content loads -->
-          <div class="portfolio-skeleton" aria-hidden="true">
-            <div class="skeleton skeleton-card"></div>
-            <div class="skeleton skeleton-card"></div>
+        <!-- 
+          Portfolio Dashboard
+          New "Block Style" Interactive Layout
+          See js/components/portfolioDashboard.js for logic
+        -->
+        <div id="portfolio-dashboard" class="portfolio-dashboard">
+
+          <!-- Left: Project Navigation -->
+          <div class="projects-panel">
+            <h3 class="story-panel__header">Projects</h3>
+            <nav class="project-nav" aria-label="Project navigation">
+              <!-- Populated by JS -->
+            </nav>
           </div>
+
+          <!-- Middle: Device Viewport -->
+          <div class="device-viewport">
+            <div class="device-frame" id="device-frame">
+              <!-- Video or Iframe will be active -->
+              <video class="device-video" id="project-video" muted loop playsinline poster="assets/img/placeholder.svg">
+                <source src="" type="video/mp4">
+              </video>
+              <iframe class="device-iframe" id="project-iframe" loading="lazy" title="Project Preview"></iframe>
+            </div>
+            <div class="viewport-skeleton skeleton" aria-hidden="true"></div>
+          </div>
+
+          <!-- Right: Story Panel -->
+          <aside class="story-panel">
+            <h3 class="story-panel__header">Story</h3>
+            <p class="story-panel__roles">Design &bull; UI/UX &bull; Build</p>
+            <div class="story-panel__content">
+              <!-- Populated by JS -->
+            </div>
+            <div class="power-tags" id="power-tags"></div>
+          </aside>
         </div>
-
-        <!-- Portfolio Card Template -->
-        <template id="portfolio-card-template">
-          <article class="case-card reveal">
-            <div class="case-card__content">
-              <div class="case-card__header">
-                <h3 class="case-card__title"></h3>
-              </div>
-
-              <!-- Bubble Flow Navigation -->
-              <div class="bubble-nav">
-                <button class="bubble-btn active" data-target="problem" aria-label="Show Problem">
-                  <span>Problem</span>
-                </button>
-                <button class="bubble-btn" data-target="solution" aria-label="Show Solution">
-                  <span>Solution</span>
-                </button>
-                <button class="bubble-btn" data-target="evidence" aria-label="Show Results">
-                  <span>Results</span>
-                </button>
-              </div>
-
-              <!-- Dynamic Content Display (Magnifying Glass Effect) -->
-              <div class="bubble-display">
-                <div class="bubble-text active" data-content="problem"></div>
-                <div class="bubble-text" data-content="solution"></div>
-                <div class="bubble-text" data-content="evidence"></div>
-              </div>
-
-              <div class="case-card__tags tech-stack">
-                <!-- Tags will be injected here -->
-              </div>
-
-              <div class="case-card__links">
-                <a href="#" class="btn-link source-link" target="_blank" rel="noopener noreferrer">
-                  Source Code →
-                </a>
-                <a href="#" class="btn-link live-link" target="_blank" rel="noopener noreferrer">
-                  Live Demo →
-                </a>
-              </div>
-            </div>
-
-            <!-- Code Window (Featured only) -->
-            <div class="code-window" style="display: none;" aria-hidden="true">
-              <div class="code-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-              </div>
-              <pre><code class="code-content"></code></pre>
-            </div>
-          </article>
-        </template>
       </div>
     </section>
 
@@ -243,58 +222,61 @@
 
         <div class="about__content">
           <p class="about__bio" data-i18n="about.bio">
-            I'm a Product Designer & Exercise Physiologist who spent my career working in clinical rehabilitation,
+            I'm a Product Designer & Therapist who spent my career working in clinical rehabilitation,
             researching and tackling complex problems in the human body.
-            Now I design and build digital solutions.
+            Still working with users/patients in mind, now I research and tackle those problems to build digital
+            solutions.
           </p>
 
 
           <div class="skills-grid">
             <div class="skill-category">
-              <h3 class="skill-category__title" data-i18n="skills.frontend">Frontend</h3>
+              <h3 class="skill-category__title">Frontend</h3>
               <div class="skill-tags">
-                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Typescript</span>
                 <span class="skill-tag">React</span>
-                <span class="skill-tag">Next.js</span>
-                <span class="skill-tag">CSS/Sass</span>
+                <span class="skill-tag">CSS / SASS</span>
                 <span class="skill-tag">Tailwind</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h3 class="skill-category__title" data-i18n="skills.design">Design</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Figma</span>
-                <span class="skill-tag" data-i18n="skills.prototyping">Prototyping</span>
-                <span class="skill-tag" data-i18n="skills.systems">Systems</span>
-                <span class="skill-tag" data-i18n="skills.motion">Motion</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h3 class="skill-category__title" data-i18n="skills.tools">Tools</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Github</span>
-                <span class="skill-tag">Vite</span>
-                <span class="skill-tag">REST APIs</span>
-                <span class="skill-tag">Figma</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h3 class="skill-category__title" data-i18n="skills.backend">Back End</h3>
-              <div class="skill-tags">
+                <span class="skill-tag">Javascript</span>
                 <span class="skill-tag">Python</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">Firebase</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3 class="skill-category__title">Design</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Whiteboard</span>
+                <span class="skill-tag">Sketch</span>
+                <span class="skill-tag">Framer</span>
+                <span class="skill-tag">FigJam</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3 class="skill-category__title">Tools</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Adobe Creative</span>
+                <span class="skill-tag">Storybook</span>
+                <span class="skill-tag">Xcode</span>
+                <span class="skill-tag">VS Code</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3 class="skill-category__title">Backend</h3>
+              <div class="skill-tags">
                 <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Supabase</span>
+                <span class="skill-tag">Github</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">API</span>
               </div>
             </div>
             <div class="skill-category">
               <h3 class="skill-category__title">AI</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Gemini</span>
-                <span class="skill-tag">OpenAI</span>
                 <span class="skill-tag">Claude</span>
-                <span class="skill-tag">Prompts</span>
+                <span class="skill-tag">ChatGPT</span>
+                <span class="skill-tag">Grok</span>
+                <span class="skill-tag">Prompting</span>
               </div>
             </div>
           </div>
@@ -317,9 +299,8 @@
         <div class="split-panel" role="presentation" aria-label="Background information panels">
           <!-- Experience Panel -->
           <div class="split-panel__side split-panel__side--experience split-panel__side--active" id="panel-experience"
-             tabindex="0">
-            <button class="split-panel__tab" id="tab-experience" 
-             >
+            tabindex="0">
+            <button class="split-panel__tab" id="tab-experience">
               <h3 class="split-panel__title">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   aria-hidden="true">
@@ -351,10 +332,8 @@
           </div>
 
           <!-- Qualifications Panel -->
-          <div class="split-panel__side split-panel__side--qualifications" id="panel-qualifications" 
-            tabindex="0">
-            <button class="split-panel__tab" id="tab-qualifications" 
-             >
+          <div class="split-panel__side split-panel__side--qualifications" id="panel-qualifications" tabindex="0">
+            <button class="split-panel__tab" id="tab-qualifications">
               <h3 class="split-panel__title">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   aria-hidden="true">

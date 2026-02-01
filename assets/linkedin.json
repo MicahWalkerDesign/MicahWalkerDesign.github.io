@@ -2,369 +2,315 @@
   "_comment": [
     "LinkedIn Experience Data Mirror",
     "------------------------------",
-    "IMPORTANT: Real-time LinkedIn API embedding is NOT possible on GitHub Pages.",
-    "LinkedIn does not provide a public API for profile data without OAuth.",
-    "Scraping violates LinkedIn's Terms of Service.",
-    "",
-    "WORKAROUND: This JSON file serves as a manual mirror of LinkedIn experience.",
-    "To update this data:",
-    "  1. Export your LinkedIn profile data (Settings > Data Privacy > Get a copy)",
-    "  2. Extract the Positions.csv file",
-    "  3. Format entries into this JSON structure",
-    "  4. Commit and push to GitHub",
-    "",
-    "This approach is safe, compliant, and works on static hosting."
+    "Updated: 2026-02-01"
   ],
-  "lastUpdated": "2026-01-16",
+  "lastUpdated": "2026-02-01",
   "experiences": [
     {
-      "id": "arthrex-apac",
-      "company": "Arthrex APAC",
+      "id": "freelance-2020",
+      "company": "Freelance",
       "role": {
-        "en": "Sales Rep / Territory Manager – Sports Medicine",
-        "es": "Representante de Ventas / Gerente de Territorio – Medicina Deportiva",
-        "de": "Vertriebsmitarbeiter / Gebietsleiter – Sportmedizin"
+        "en": "Frontend Developer | UI / UX Designer",
+        "es": "Frontend Developer | UI / UX Designer",
+        "de": "Frontend Developer | UI / UX Designer"
       },
       "location": {
-        "en": "Perth, Western Australia · Hybrid",
-        "es": "Perth, Australia Occidental · Híbrido",
-        "de": "Perth, Westaustralien · Hybrid"
-      },
-      "dates": {
-        "start": "2024-09",
-        "end": null,
-        "display": {
-          "en": "Sep 2024 – Present",
-          "es": "Sep 2024 – Presente",
-          "de": "Sep 2024 – Heute"
-        }
-      },
-      "description": {
-        "en": "Led workflow analysis and cross-functional orchestration to ensure system-wide viability of orthopaedic solutions.",
-        "es": "Lideró el análisis de flujo de trabajo y la orquestación multifuncional para asegurar la viabilidad del sistema.",
-        "de": "Leitete Workflow-Analysen und funktionsübergreifende Orchestrierung."
-      },
-      "bullets": {
-        "en": [
-          "Systems Consulting: Led workflow analysis to identify integration constraints and operational bottlenecks",
-          "Technical Synthesis: Abstracted complex instrumentation into scalable solution frameworks for diverse stakeholders",
-          "Data-Driven Optimization: Modeled adoption telemetry to optimize territory strategy and product lifecycles",
-          "Cross-Functional Orchestration: Managed multidisciplinary matrices (Sales, Clinical, Engineering) to ensure system-wide viability"
-        ],
-        "es": [
-          "Consultoría de Sistemas: Análisis de flujo de trabajo para identificar cuellos de botella",
-          "Síntesis Técnica: Abstracción de instrumentación compleja en marcos escalables",
-          "Optimización basada en Datos: Modelado de telemetría de adopción",
-          "Orquestación Multifuncional: Gestión de matrices multidisciplinarias"
-        ],
-        "de": [
-          "Systemberatung: Workflow-Analyse zur Identifizierung von Engpässen",
-          "Technische Synthese: Abstraktion komplexer Instrumente",
-          "Datengetriebene Optimierung: Modellierung von Adoptionstelemetrie",
-          "Funktionsübergreifende Orchestrierung: Management multidisziplinärer Matrizen"
-        ]
-      },
-      "skills": [
-        "Systems Consulting",
-        "Technical Synthesis",
-        "Data-Driven Optimization",
-        "Cross-Functional Orchestration"
-      ]
-    },
-    {
-      "id": "freelance-designer",
-      "company": "Freelance / Independent",
-      "role": {
-        "en": "Systems Designer & Frontend Engineer",
-        "es": "Diseñador de Sistemas e Ingeniero Frontend",
-        "de": "Systemdesigner & Frontend-Ingenieur"
-      },
-      "location": {
-        "en": "Remote (Germany / Australia)",
-        "es": "Remoto (Alemania / Australia)",
-        "de": "Remote (Deutschland / Australien)"
+        "en": "Frankfurt, Germany | Perth, Australia | Barcelona, Spain · Remote",
+        "es": "Frankfurt, Germany | Perth, Australia | Barcelona, Spain · Remote",
+        "de": "Frankfurt, Germany | Perth, Australia | Barcelona, Spain · Remote"
       },
       "dates": {
         "start": "2020-04",
-        "end": null,
         "display": {
-          "en": "Apr 2020 – Present",
-          "es": "Abr 2020 – Presente",
-          "de": "Apr 2020 – Heute"
+          "en": "Apr 2020 - Present · 5 yrs 10 mos",
+          "es": "Apr 2020 - Present · 5 yrs 10 mos",
+          "de": "Apr 2020 - Present · 5 yrs 10 mos"
         }
       },
       "description": {
-        "en": "Architected and deployed full-stack digital products, managing the complete SDLC from problem discovery to production-ready MVPs.",
-        "es": "Arquitectura y despliegue de productos digitales full-stack, gestionando el SDLC completo.",
-        "de": "Architektur und Bereitstellung von Full-Stack-Digitalprodukten, Management des gesamten SDLC."
+        "en": "",
+        "es": "",
+        "de": ""
       },
       "bullets": {
         "en": [
-          "End-to-End Product Engineering: Architected and deployed full-stack digital products",
-          "Human-Systems Integration: Translated behavioral telemetry and user research into deterministic UX flows",
-          "Interface & Logic Implementation: Engineered responsive web applications using Vanilla JS/HTML5/CSS3",
-          "Automated Lifecycle Workflows: Leveraged AI-supported development tooling to compress iteration cycles"
+          "<strong>UI/UX Design:</strong> Designed user-focused interfaces by combining user research, behavioral data, and real-world feedback to create clear, intuitive flows.",
+          "<strong>Human–System Design:</strong> Turned complex user behavior and system logic into simple, predictable UX patterns and flexible, reusable design structures.",
+          "<strong>Interface & Interaction Build:</strong> Built responsive web interfaces and interactive prototypes using Figma for design prototypes, and Vanilla JS, Next.js, TypeScript, and CSS for fast, reliable front-end builds.",
+          "<strong>Iterative & Automated Workflows:</strong> Used AI-assisted tools to speed up design and development cycles, reduce friction, and continuously improve performance."
         ],
-        "es": [
-          "Ingeniería de Producto End-to-End: Arquitectura y despliegue de productos digitales",
-          "Integración Humano-Sistemas: Traducción de telemetría conductual en flujos UX deterministas",
-          "Implementación de Interfaz y Lógica: Aplicaciones web responsivas con Vanilla JS/HTML5/CSS3",
-          "Flujos de Trabajo Automatizados: Herramientas de desarrollo asistidas por IA"
-        ],
-        "de": [
-          "End-to-End Produktentwicklung: Architektur und Deployment",
-          "Mensch-System-Integration: Übersetzung von Verhaltenstelemetrie in UX-Flows",
-          "Interface- & Logik-Implementierung: Responsive Webanwendungen mit Vanilla JS",
-          "Automatisierte Lifecycle-Workflows: KI-gestützte Entwicklungstools"
-        ]
+        "es": [],
+        "de": []
       },
       "skills": [
-        "Interface Engineering",
-        "Modular Systems",
-        "Performance Optimization",
-        "Stateless Architecture"
+        "User Experience (UX)",
+        "User Interface Design",
+        "SEO",
+        "Product Design",
+        "Front-End Development",
+        "Innovation",
+        "SQL",
+        "API"
       ]
     },
     {
-      "id": "uniklinik-frankfurt",
-      "company": "Uniklinik Frankfurt",
+      "id": "arthrex-apac-2024",
+      "company": "Arthrex APAC",
       "role": {
-        "en": "Research Scientist - Sports & Therapy",
-        "es": "Especialista en Sistemas Clínicos",
-        "de": "Spezialist für Klinische Systeme"
+        "en": "Sales Representative – Sports Medicine",
+        "es": "Sales Representative – Sports Medicine",
+        "de": "Sales Representative – Sports Medicine"
       },
       "location": {
-        "en": "Frankfurt, Germany · On-site",
-        "es": "Frankfurt, Alemania · Presencial",
-        "de": "Frankfurt, Deutschland · Präsenz"
+        "en": "Perth, Western Australia, Australia · Hybrid",
+        "es": "Perth, Western Australia, Australia · Hybrid",
+        "de": "Perth, Western Australia, Australia · Hybrid"
+      },
+      "dates": {
+        "start": "2024-09",
+        "end": "2026-02",
+        "display": {
+          "en": "Sep 2024 - Feb 2026 · 1 yr 5 mos",
+          "es": "Sep 2024 - Feb 2026 · 1 yr 5 mos",
+          "de": "Sep 2024 - Feb 2026 · 1 yr 5 mos"
+        }
+      },
+      "description": {
+        "en": "",
+        "es": "",
+        "de": ""
+      },
+      "bullets": {
+        "en": [
+          "<strong>System Workflows:</strong> Strategically identified bottlenecks or points of friction within common workflows and provided solutions to streamline them.",
+          "<strong>Stakeholder Communication:</strong> Worked and communicated with Healthcare Professionals, Logistics, and Product Managers daily to ensure seamless integration of products.",
+          "<strong>Data-Driven Optimization:</strong> Constantly used KPIs and customer feedback to inform decisions and workflow.",
+          "<strong>Cross-Functional Communication:</strong> Communicated with multiple teams (Sales, Customer Service, Clinical & Marketing) to ensure common goals and success."
+        ],
+        "es": [],
+        "de": []
+      },
+      "skills": [
+        "Stakeholder Engagement",
+        "Workflow Analysis & Optimisation",
+        "Data-Informed Decision Making",
+        "Business Strategy",
+        "User Experience (UX)",
+        "Problem Solving",
+        "Innovation"
+      ]
+    },
+    {
+      "id": "uniklinik-2022",
+      "company": "Uniklinik Frankfurt",
+      "role": {
+        "en": "Research Scientist - Sports & Therapy (Exercise Physiologist)",
+        "es": "Research Scientist - Sports & Therapy (Exercise Physiologist)",
+        "de": "Research Scientist - Sports & Therapy (Exercise Physiologist)"
+      },
+      "location": {
+        "en": "Frankfurt, Hesse, Germany · On-site",
+        "es": "Frankfurt, Hesse, Germany · On-site",
+        "de": "Frankfurt, Hesse, Germany · On-site"
       },
       "dates": {
         "start": "2022-07",
         "end": "2024-08",
         "display": {
-          "en": "Jul 2022 – Aug 2024",
-          "es": "Jul 2022 – Ago 2024",
-          "de": "Jul 2022 – Aug 2024"
+          "en": "Jul 2022 - Aug 2024 · 2 yrs 2 mos",
+          "es": "Jul 2022 - Aug 2024 · 2 yrs 2 mos",
+          "de": "Jul 2022 - Aug 2024 · 2 yrs 2 mos"
         }
       },
       "description": {
-        "en": "Engineered clinical protocols navigating medical, behavioral, and operational constraints.",
-        "es": "Diseño de protocolos clínicos navegando restricciones médicas, conductuales y operativas.",
-        "de": "Entwicklung klinischer Protokolle unter Berücksichtigung medizinischer und operativer Einschränkungen."
+        "en": "",
+        "es": "",
+        "de": ""
       },
       "bullets": {
         "en": [
-          "Constraint-Based Design: Engineered clinical protocols navigating medical, behavioral, and operational constraints",
-          "Closed-Loop Feedback: Iterated programs based on quantitative telemetry to ensure system accuracy",
-          "Multidisciplinary Integration: Synchronized medical and technical requirements across fragmented teams",
-          "System Documentation: Authored structured technical reports to support maintainability"
+          "<strong>Constraint-Based Design:</strong> Designed clinical exercise protocols navigating medical, behavioral, and operational constraints.",
+          "<strong>Closed-Loop Feedback:</strong> Iterated programs based on patient research and feedback generated in focus groups to ensure system accuracy and safety.",
+          "<strong>Multidisciplinary Integration:</strong> Communicated and synchronised with fragmented clinical teams in a large Hospital to ensure quality patient care."
         ],
-        "es": [
-          "Diseño Basado en Restricciones: Protocolos clínicos navegando restricciones",
-          "Retroalimentación de Bucle Cerrado: Programas iterados basados en telemetría cuantitativa",
-          "Integración Multidisciplinaria: Sincronización de requisitos médicos y técnicos",
-          "Documentación del Sistema: Informes técnicos estructurados"
-        ],
-        "de": [
-          "Constraint-Based Design: Klinische Protokolle unter Berücksichtigung von Einschränkungen",
-          "Closed-Loop Feedback: Iterative Programme basierend auf Telemetrie",
-          "Multidisziplinäre Integration: Synchronisierung medizinischer und technischer Anforderungen",
-          "Systemdokumentation: Strukturierte technische Berichte"
-        ]
+        "es": [],
+        "de": []
       },
       "skills": [
-        "Constraint-Based Design",
-        "Closed-Loop Feedback",
-        "Multidisciplinary Integration",
-        "System Documentation"
+        "Medical Exercise",
+        "Exercise Physiology",
+        "Research",
+        "Teaching",
+        "Qualitative & Quantitative Research Methodologies",
+        "Cross-team Collaboration",
+        "Data Science"
       ]
     },
     {
-      "id": "tg-ruesselsheim",
+      "id": "tg-1862",
       "company": "TG 1862 Rüsselsheim",
       "role": {
-        "en": "Rehabilitation Manager",
-        "es": "Escalado de Infraestructura",
-        "de": "Infrastruktur-Skalierung"
+        "en": "Studio Manager",
+        "es": "Studio Manager",
+        "de": "Studio Manager"
       },
       "location": {
-        "en": "Rüsselsheim, Germany · On-site",
-        "es": "Rüsselsheim, Alemania · Presencial",
-        "de": "Rüsselsheim, Deutschland · Präsenz"
+        "en": "Rüsselsheim am Main, Hesse, Germany",
+        "es": "Rüsselsheim am Main, Hesse, Germany",
+        "de": "Rüsselsheim am Main, Hesse, Germany"
       },
       "dates": {
         "start": "2019-09",
         "end": "2022-08",
         "display": {
-          "en": "Sep 2019 – Aug 2022",
-          "es": "Sep 2019 – Ago 2022",
-          "de": "Sep 2019 – Aug 2022"
+          "en": "Sep 2019 - Aug 2022 · 3 yrs",
+          "es": "Sep 2019 - Aug 2022 · 3 yrs",
+          "de": "Sep 2019 - Aug 2022 · 3 yrs"
         }
       },
       "description": {
-        "en": "Led operational scaling for a 500-member facility and optimized service workflows.",
-        "es": "Lideró el escalado operativo para una instalación de 500 miembros y optimizó flujos de trabajo.",
-        "de": "Leitete die betriebliche Skalierung einer Einrichtung mit 500 Mitgliedern."
+        "en": "",
+        "es": "",
+        "de": ""
       },
       "bullets": {
-        "en": [
-          "Rehabilitation Manager: Led operational scaling for a 500-member facility",
-          "Resource Orchestration: Managed a team of 10 to optimize service workflows",
-          "Program Engineering: Deployed clinical protocols under complex musculoskeletal constraints"
-        ],
-        "es": [
-          "Escalado de Infraestructura: Escalado operativo para 500 miembros",
-          "Orquestación de Recursos: Gestión de equipo de 10 personas",
-          "Ingeniería de Programas: Despliegue de protocolos clínicos complejos"
-        ],
-        "de": [
-          "Infrastruktur-Skalierung: Betriebliche Skalierung für 500 Mitglieder",
-          "Ressourcen-Orchestrierung: Teamleitung von 10 Personen",
-          "Programm-Engineering: Einsatz klinischer Protokolle"
-        ]
+        "en": [],
+        "es": [],
+        "de": []
       },
       "skills": [
-        "Rehabilitation Manager",
-        "Resource Orchestration",
-        "Program Engineering"
+        "Management",
+        "Injury Prevention",
+        "Problem Solving",
+        "Cross-team Collaboration",
+        "User Experience (UX)",
+        "Social Media Marketing"
       ]
     },
     {
-      "id": "dantrim",
-      "company": "Dantrim GmbH",
+      "id": "aussie-ausdauer",
+      "company": "Aussie Ausdauer",
       "role": {
-        "en": "Assistant Manager & Consultant",
-        "es": "Subgerente y Consultor",
-        "de": "Stellvertretender Manager & Berater"
+        "en": "Consultant",
+        "es": "Consultant",
+        "de": "Consultant"
       },
       "location": {
-        "en": "Frankfurt, Germany · On-site",
-        "es": "Frankfurt, Alemania · Presencial",
-        "de": "Frankfurt, Deutschland · Präsenz"
+        "en": "Frankfurt, Hessen, Deutschland · Hybrid",
+        "es": "Frankfurt, Hessen, Deutschland · Hybrid",
+        "de": "Frankfurt, Hessen, Deutschland · Hybrid"
       },
       "dates": {
-        "start": "2018-03",
-        "end": "2020-02",
+        "start": "2018-04",
+        "end": "2020-07",
         "display": {
-          "en": "Mar 2018 – Feb 2020",
-          "es": "Mar 2018 – Feb 2020",
-          "de": "Mär 2018 – Feb 2020"
+          "en": "Apr 2018 - Jul 2020 · 2 yrs 4 mos",
+          "es": "Apr 2018 - Jul 2020 · 2 yrs 4 mos",
+          "de": "Apr 2018 - Jul 2020 · 2 yrs 4 mos"
         }
       },
       "description": {
-        "en": "Directed ergonomic restructuring for 400 staff, optimizing human-hardware interfaces.",
-        "es": "Dirigió la reestructuración ergonómica para 400 empleados.",
-        "de": "Leitete ergonomische Umstrukturierung für 400 Mitarbeiter."
+        "en": "",
+        "es": "",
+        "de": ""
       },
       "bullets": {
-        "en": [
-          "Ergonomic Systems Design: Directed ergonomic restructuring for 400 staff, optimizing human-hardware interfaces",
-          "Constraint-Based Logic: Engineered health frameworks tailored to office operational constraints"
-        ],
-        "es": [
-          "Diseño de Sistemas Ergonómicos: Reestructuración para 400 empleados",
-          "Lógica Basada en Restricciones: Marcos de salud a medida"
-        ],
-        "de": [
-          "Ergonomisches Systemdesign: Umstrukturierung für 400 Mitarbeiter",
-          "Constraint-Based Logic: Maßgeschneiderte Gesundheits-Frameworks"
-        ]
+        "en": [],
+        "es": [],
+        "de": []
       },
       "skills": [
-        "Ergonomic Systems Design",
-        "Constraint-Based Logic"
+        "Personal Training",
+        "Consulting",
+        "Sales",
+        "User Interface Design",
+        "Social Media Marketing",
+        "Web Development",
+        "Product Design"
       ]
     },
     {
-      "id": "combat-engineer",
-      "company": "Australian Army Reserves",
+      "id": "quadcopter-2013",
+      "company": "Associated with University of Newcastle",
       "role": {
-        "en": "Combat Engineer",
-        "es": "Ingeniero de Combate",
-        "de": "Pionier"
+        "en": "Project: Garage-built Quadcopter",
+        "es": "Project: Garage-built Quadcopter",
+        "de": "Project: Garage-built Quadcopter"
       },
       "location": {
-        "en": "Australia",
-        "es": "Australia",
-        "de": "Australien"
+        "en": "2013",
+        "es": "2013",
+        "de": "2013"
       },
       "dates": {
-        "start": "2013-01",
-        "end": "2016-12",
+        "start": "2012-01",
+        "end": "2013-01",
         "display": {
-          "en": "2013 – 2016",
-          "es": "2013 – 2016",
-          "de": "2013 – 2016"
+          "en": "Jan 2012 - Jan 2013",
+          "es": "Jan 2012 - Jan 2013",
+          "de": "Jan 2012 - Jan 2013"
         }
       },
       "description": {
-        "en": "Executed structural mobility operations in high-stakes environments.",
-        "es": "Ejecutó operaciones de movilidad estructural en entornos de alto riesgo.",
-        "de": "Führte strukturelle Mobilitätsoperationen in risikoreichen Umgebungen durch."
+        "en": "",
+        "es": "",
+        "de": ""
       },
       "bullets": {
         "en": [
-          "Tactical Engineering: Executed structural mobility operations in high-stakes environments",
-          "System Safety: Managed high-risk logistics following rigorous safety standards"
+          "Hand-built a custom quadcopter from scratch, engineering the frame, flight controller, and C++ signal processing for stable flight."
         ],
-        "es": [
-          "Ingeniería Táctica: Operaciones de movilidad estructural",
-          "Seguridad del Sistema: Logística de alto riesgo"
-        ],
-        "de": [
-          "Taktisches Engineering: Strukturelle Mobilitätsoperationen",
-          "Systemsicherheit: Risikoreiche Logistik"
-        ]
+        "es": [],
+        "de": []
       },
       "skills": [
-        "Tactical Engineering",
-        "System Safety"
+        "Mechatronics",
+        "Computer Engineering",
+        "Electrical Engineering",
+        "C++"
       ]
     },
     {
-      "id": "hunter-hospital",
-      "company": "Hunter Hospital",
+      "id": "retail-systems-2011",
+      "company": "Innovation Award Winner",
       "role": {
-        "en": "Clinical Internship",
-        "es": "Pasantía Clínica",
-        "de": "Klinisches Praktikum"
+        "en": "Design Project: Embedded Retail Systems",
+        "es": "Design Project: Embedded Retail Systems",
+        "de": "Design Project: Embedded Retail Systems"
       },
       "location": {
-        "en": "Newcastle, NSW, Australia",
-        "es": "Newcastle, NSW, Australia",
-        "de": "Newcastle, NSW, Australien"
+        "en": "2011",
+        "es": "2011",
+        "de": "2011"
       },
       "dates": {
-        "start": "2016-01",
-        "end": "2016-12",
+        "start": "2011-01",
+        "end": "2011-12",
         "display": {
-          "en": "2016",
-          "es": "2016",
-          "de": "2016"
+          "en": "2011",
+          "es": "2011",
+          "de": "2011"
         }
       },
       "description": {
-        "en": "Analyzed EKG and rhythm data for clinical decision making.",
-        "es": "Analizó datos de EKG y ritmo para toma de decisiones clínicas.",
-        "de": "Analysierte EKG- und Rhythmusdaten für klinische Entscheidungen."
+        "en": "",
+        "es": "",
+        "de": ""
       },
       "bullets": {
         "en": [
-          "Diagnostic Telemetry: Analyzed EKG and rhythm data for clinical decision making",
-          "Surgical Observation: Evaluated pacemaker integration to analyze human-device telemetry"
+          "Engineered an award-winning custom hardware-to-database shopping scanner to track inventory in real-time, significantly improving user experience."
         ],
-        "es": [
-          "Telemetría Diagnóstica: Análisis de datos EKG",
-          "Observación Quirúrgica: Integración de marcapasos"
-        ],
-        "de": [
-          "Diagnostische Telemetrie: EKG-Analyse",
-          "Chirurgische Beobachtung: Schrittmacher-Integration"
-        ]
+        "es": [],
+        "de": []
       },
       "skills": [
-        "Diagnostic Telemetry",
-        "Surgical Observation"
+        "User Experience Design (UED)",
+        "Product Design",
+        "User Experience (UX)",
+        "SQL",
+        "Databases",
+        "Innovation"
       ]
     }
   ]

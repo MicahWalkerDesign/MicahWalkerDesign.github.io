@@ -3,104 +3,105 @@
     {
       "id": "p1",
       "isFeatured": true,
-      "category": "System",
+      "category": "App",
+      "deviceType": "iphone",
+      "videoUrl": "assets/videos/p1-demo.mp4",
       "title": {
-        "en": "Pediatric Acute Care Coordinator",
-        "es": "Coordinador de Cuidados Agudos Pediátricos",
-        "de": "Koordinator für pädiatrische Akutversorgung"
+        "en": "Clinical Education Ecosystem",
+        "es": "Ecosistema de Educación Clínica",
+        "de": "Klinisches Bildungsökosystem"
       },
-      "caseStudy": {
-        "problem": {
-          "en": "Fragmented communication and delayed coordination in high-stakes pediatric multidisciplinary care units.",
-          "es": "Comunicación fragmentada y coordinación retrasada en unidades de cuidados multidisciplinarios pediátricos de alto riesgo.",
-          "de": "Fragmentierte Kommunikation und verzögerte Koordination in hochsensiblen multidisziplinären pädiatrischen Pflegeeinheiten."
+      "story": {
+        "why": {
+          "en": "After working within Multidisciplanary teams as a therapist in pediatric settings, it's clear to me that the communication and coordination could be better to increase standard of care for patients.",
+          "es": "Después de trabajar en equipos multidisciplinarios como terapeuta en entornos pediátricos, me queda claro que la comunicación y la coordinación podrían ser mejores para aumentar el estándar de atención a los pacientes.",
+          "de": "Nach meiner Arbeit in multidisziplinären Teams als Therapeut in der Pädiatrie ist mir klar, dass Kommunikation und Koordination besser sein könnten, um den Pflegestandard für Patienten zu erhöhen."
         },
-        "solution": {
-          "en": "Designed a centralized communication hub integrating real-time role-based messaging and voice-to-text data entry.",
-          "es": "Diseñó un centro de comunicación centralizado que integra mensajería basada en roles en tiempo real y entrada de datos por voz.",
-          "de": "Entwarf einen zentralisierten Kommunikationsknotenpunkt, der rollenbasierte Echtzeit-Nachrichten und Spracheingabe integriert."
-        },
-        "evidence": {
-          "en": "Beta testing: Positive feedback with internal communication and coordination, awaiting external feedback.",
-          "es": "Pruebas Beta: Comentarios positivos sobre la comunicación y coordinación interna, esperando comentarios externos.",
-          "de": "Beta-Tests: Positives Feedback zur internen Kommunikation und Koordination, warten auf externes Feedback."
+        "result": {
+          "en": "I am in contact with multiple organisations about trialing the App as its my personal project. One Clinic has agreed but wont be launching for the next couple of years.",
+          "es": "Estoy en contacto con múltiples organizaciones para probar la aplicación, ya que es mi proyecto personal. Una clínica ha aceptado, pero no se lanzará hasta dentro de un par de años.",
+          "de": "Ich stehe mit mehreren Organisationen in Kontakt, um die App zu testen, da es mein persönliches Projekt ist. Eine Klinik hat zugestimmt, wird aber erst in den nächsten Jahren starten."
         }
       },
-      "codeSnippet": {
-        "language": "typescript",
-        "code": "/* \n * AI Voice Command Processor\n * Integrating Audio Worklets, WebAssembly Inference, and Global State Management\n */\n\nimport { AudioProcessor, FeatureExtractor } from '@core/audio';\nimport { TFModel } from '@ai/tensorflow-lite';\nimport { dispatch, GlobalState } from '@store/state';\nimport { Logger } from '@utils/logger';\n\n// Configuration Constants\nconst SAMPLE_RATE = 16000;\nconst FFT_SIZE = 512;\nconst CONFIDENCE_THRESHOLD = 0.85;\nconst NOISE_GATE_THRESHOLD = 0.02;\n\nexport class VoiceCommandService {\n  private audioContext: AudioContext;\n  private model: TFModel;\n  private isListening: boolean = false;\n  private buffer: Float32Array;\n  private retryCount: number = 0;\n\n  constructor() {\n    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();\n    this.model = new TFModel('assets/models/voice-commands.json');\n    this.buffer = new Float32Array(FFT_SIZE);\n  }\n\n  /**\n   * Initializes the audio pipeline and starts real-time inference.\n   */\n  public async startListening(): Promise<void> {\n    if (this.isListening) return;\n\n    try {\n      Logger.info('Initializing Audio Pipeline...');\n      \n      // 1. Stream Acquisition with constraints\n      const stream = await navigator.mediaDevices.getUserMedia({\n        audio: {\n          echoCancellation: true,\n          noiseSuppression: true,\n          autoGainControl: true,\n          channelCount: 1\n        }\n      });\n\n      const source = this.audioContext.createMediaStreamSource(stream);\n\n      // 2. Audio Worklet for Non-blocking Processing\n      await this.audioContext.audioWorklet.addModule('processors/audio-worklet.js');\n      const workletNode = new AudioWorkletNode(this.audioContext, 'voice-processor');\n\n      // 3. Handle messages from worklet thread\n      workletNode.port.onmessage = (event) => {\n        if (event.data.type === 'AUDIO_BUFFER') {\n          this.handleAudioData(event.data.buffer);\n        } else if (event.data.type === 'ERROR') {\n          this.handleError(event.data.error);\n        }\n      };\n\n      source.connect(workletNode).connect(this.audioContext.destination);\n      this.isListening = true;\n      Logger.success('Voice Command Service Active');\n\n    } catch (error) {\n      console.error('Audio Pipeline Initialization Failed:', error);\n      dispatch({ type: 'ERROR', payload: { code: 'AUDIO_INIT_FAIL', message: error.message } });\n    }\n  }\n\n  /**\n   * Processes raw audio buffer -> MFCC Features -> Model Inference\n   */\n  private async handleAudioData(float32Array: Float32Array): Promise<void> {\n    // 0. Noise Gate: Skip processing if audio is silence\n    const rms = this.calculateRMS(float32Array);\n    if (rms < NOISE_GATE_THRESHOLD) return;\n\n    // 1. Feature Extraction (Mel-frequency cepstral coefficients)\n    // This runs on the main thread but uses optimized WASM backend if available\n    const features = FeatureExtractor.extractMFCC(float32Array, {\n      nMels: 40,\n      fftSize: FFT_SIZE,\n      sampleRate: SAMPLE_RATE\n    });\n\n    // 2. Real-time Inference\n    // Model runs in TFLite interpreter\n    const prediction = await this.model.predict(features);\n\n    // 3. State update based on high-confidence predictions\n    if (prediction.confidence > CONFIDENCE_THRESHOLD) {\n      await this.executeCommand(prediction.label);\n    }\n  }\n\n  /**\n   * Executes the detected command with debounce and validation.\n   */\n  private async executeCommand(label: string): Promise<void> {\n    Logger.info(`Command Detected: ${label}`);\n    \n    // Reset retry count on successful detection\n    this.retryCount = 0;\n\n    switch (label) {\n      case 'NAVIGATE_HOME':\n        dispatch({ type: 'NAVIGATION', payload: '/' });\n        break;\n        \n      case 'ACTIVATE_SEARCH':\n        dispatch({ type: 'UI_MODAL_OPEN', payload: 'search' });\n        break;\n        \n      case 'START_DICTATION':\n        dispatch({ type: 'DICTATION_MODE', payload: true });\n        this.notifyUser('Dictation Started');\n        break;\n        \n      case 'STOP':\n      case 'CANCEL':\n        dispatch({ type: 'PROCESS_HALT' });\n        break;\n        \n      default:\n        dispatch({ type: 'VOICE_LOG', payload: label });\n    }\n  }\n\n  private calculateRMS(buffer: Float32Array): number {\n    let sum = 0;\n    for (let i = 0; i < buffer.length; i++) {\n      sum += buffer[i] * buffer[i];\n    }\n    return Math.sqrt(sum / buffer.length);\n  }\n\n  private notifyUser(message: string): void {\n    // Trigger toast notification\n    dispatch({ type: 'TOAST_SHOW', payload: { message, type: 'info' } });\n  }\n\n  public stop(): void {\n    this.isListening = false;\n    this.audioContext.close();\n  }\n}"
-      },
-      "techStack": [
-        "Human-Systems Integration",
-        "Clinical Workflows",
-        "Data Synchronization",
-        "React"
+      "powerTags": [
+        "React Native",
+        "Typescript",
+        "Javascript",
+        "SQL",
+        "API"
       ],
-      "links": {
-        "demo": "#",
-        "source": "https://github.com/MicahWalkerDesign/MultiDisApp"
-      },
-      "phases": {}
+      "techStack": [
+        "Accessibility",
+        "Information Architecture",
+        "React Native",
+        "Bilingual Support"
+      ],
+      "sourceUrl": "https://github.com/MentesenMovimiento/mentesenmovimiento.github.io",
+      "liveUrl": "https://mentesenmovimiento.org/"
     },
     {
       "id": "p2",
-      "category": "System",
+      "category": "Website",
+      "deviceType": "browser",
+      "videoUrl": "assets/videos/p2-demo.mp4",
       "title": {
-        "en": "Systems Architecture Showcase",
-        "es": "Muestra de Arquitectura de Sistemas",
-        "de": "Systemarchitektur-Showcase"
+        "en": "Kraken Air & Electrical",
+        "es": "Kraken Aire y Electricidad",
+        "de": "Kraken Klima & Elektro"
       },
-      "caseStudy": {
-        "problem": {
-          "en": "Absence of a high-performance platform to demonstrate complex engineering logic and multidisciplinary project history.",
-          "es": "Ausencia de una plataforma de alto rendimiento para demostrar lógica de ingeniería compleja e historia de proyectos multidisciplinarios.",
-          "de": "Fehlen einer Hochleistungsplattform zur Demonstration komplexer technischer Logik und multidisziplinärer Projekthistorie."
+      "story": {
+        "why": {
+          "en": "Freelancer trying to compete with large organisations in a flooded market of air conditioning repairs and installs. Plus... He made himself a fun Logo with Chat GPT.",
+          "es": "Freelancer tratando de competir con grandes organizaciones en un mercado saturado de reparaciones e instalaciones de aire acondicionado. Además... Se hizo un logo divertido con Chat GPT.",
+          "de": "Freiberufler, der versucht, mit großen Organisationen in einem überfluteten Markt für Klimaanlagenreparaturen und -installationen zu konkurrieren. Plus... Er hat sich ein lustiges Logo mit Chat GPT gemacht."
         },
-        "solution": {
-          "en": "Developed a stateless, JSON-driven architecture using Vanilla JS/HTML5/CSS3. Implemented a decoupled hydration engine for zero-flicker performance.",
-          "es": "Desarrolló una arquitectura sin estado impulsada por JSON usando Vanilla JS/HTML5/CSS3. Implementó un motor de hidratación desacoplado para un rendimiento sin parpadeos.",
-          "de": "Entwickelte eine zustandslose, JSON-gesteuerte Architektur mit Vanilla JS/HTML5/CSS3. Implementierte eine entkoppelte Hydratations-Engine für flimmerfreie Leistung."
-        },
-        "evidence": {
-          "en": "Live interactive environment with 100/100 Lighthouse performance telemetry.",
-          "es": "Entorno interactivo en vivo con telemetría de rendimiento Lighthouse 100/100.",
-          "de": "Live interaktive Umgebung mit 100/100 Lighthouse-Leistungstelemetrie."
+        "result": {
+          "en": "I designed the colour scheme and theme off his logo and added a calendar to help users feel locked into a commitment and choose him. 100/100 Lighthouse and monitoring SEO for improvements.",
+          "es": "Diseñé el esquema de colores y el tema basándome en su logo y agregué un calendario para ayudar a los usuarios a sentirse comprometidos y elegirlo. 100/100 Lighthouse y monitoreando SEO para mejoras.",
+          "de": "Ich habe das Farbschema und das Thema basierend auf seinem Logo entworfen und einen Kalender hinzugefügt, damit sich die Benutzer an eine Verpflichtung gebunden fühlen und ihn wählen. 100/100 Lighthouse und Überwachung von SEO auf Verbesserungen."
         }
       },
-      "techStack": [
-        "Stateless Architecture",
-        "Vanilla JS",
-        "JSON Hydration",
-        "Lighthouse 100"
+      "powerTags": [
+        "Tailwind CSS",
+        "React (Next.js)",
+        "Typescript",
+        "Python"
       ],
-      "sourceUrl": "https://github.com/MicahWalkerDesign/MicahWalkerDesign.github.io",
-      "liveUrl": "self",
-      "phases": {}
+      "techStack": [
+        "Vanilla JS",
+        "Tailwind CSS",
+        "Static Generation"
+      ],
+      "sourceUrl": "https://github.com/MicahWalkerDesign/Kraken",
+      "liveUrl": "https://micahwalkerdesign.github.io/Kraken/",
+      "embedUrl": "https://micahwalkerdesign.github.io/Kraken/"
     },
     {
       "id": "p3",
+      "deviceType": "iphone",
+      "videoUrl": "assets/videos/p3-demo.mp4",
       "title": {
         "en": "PerfExpresso: AI Integrated Crema Analysis",
         "es": "PerfExpresso: Análisis de Crema Integrado con IA",
         "de": "PerfExpresso: KI-integrierte Crema-Analyse"
       },
-      "caseStudy": {
-        "problem": {
-          "en": "Subjective espresso quality assessment leads to inconsistent brewing extraction standards.",
-          "es": "La evaluación subjetiva de la calidad del espresso conduce a estándares de extracción inconsistentes.",
-          "de": "Subjektive Beurteilung der Espressoqualität führt zu inkonsistenten Extraktionsstandards."
+      "story": {
+        "why": {
+          "en": "My father in law asked me how to make the coffee from their espresso machine taste better, I started to give a sermon before realising there was an easier way...",
+          "es": "Mi suegro me preguntó cómo hacer que el café de su máquina de espresso supiera mejor, empecé a dar un sermón antes de darme cuenta de que había una manera más fácil...",
+          "de": "Mein Schwiegervater fragte mich, wie man den Kaffee aus seiner Espressomaschine besser schmecken lassen kann, ich fing an, eine Predigt zu halten, bevor mir klar wurde, dass es einen einfacheren Weg gibt..."
         },
-        "solution": {
-          "en": "Developed a computer vision pipeline using OpenCV to analyze crema color, texture, and persistence.",
-          "es": "Desarrolló un pipeline de visión por computadora usando OpenCV para analizar el color, la textura y la persistencia de la crema.",
-          "de": "Entwickelte eine Computer-Vision-Pipeline mit OpenCV zur Analyse von Crema-Farbe, Textur und Beständigkeit."
-        },
-        "evidence": {
-          "en": "Results coming soon...",
-          "es": "Resultados próximamente...",
-          "de": "Ergebnisse folgen bald..."
+        "result": {
+          "en": "A prototype that is ready to test upon my next visit to their house, if it works we will be saving lives, one coffee at a time.",
+          "es": "Un prototipo que está listo para probar en mi próxima visita a su casa, si funciona estaremos salvando vidas, un café a la vez.",
+          "de": "Ein Prototyp, der bereit ist, bei meinem nächsten Besuch in ihrem Haus getestet zu werden, wenn es funktioniert, werden wir Leben retten, einen Kaffee nach dem anderen."
         }
       },
+      "powerTags": [
+        "Swift",
+        "Xcode",
+        "API"
+      ],
       "techStack": [
         "Swift / SwiftUI",
         "CoreML",
@@ -110,43 +111,43 @@
       "links": {
         "demo": "#",
         "source": "https://github.com/MicahWalkerDesign/PerfEspresso"
-      },
-      "phases": {}
+      }
     },
     {
       "id": "p4",
-      "category": "App",
+      "category": "Website",
+      "deviceType": "browser",
+      "videoUrl": "assets/videos/p4-demo.mp4",
       "title": {
-        "en": "Clinical Education Ecosystem",
-        "es": "Ecosistema de Educación Clínica",
-        "de": "Klinisches Bildungsökosystem"
+        "en": "Mentes en Movimiento",
+        "es": "Mentes en Movimiento",
+        "de": "Mentes en Movimiento"
       },
-      "caseStudy": {
-        "problem": {
-          "en": "Inefficient information distribution between special needs educators, clinicians, and families requiring developmental support.",
-          "es": "Distribución ineficiente de información entre educadores de necesidades especiales, clínicos y familias que requieren apoyo para el desarrollo.",
-          "de": "Ineffiziente Informationsverteilung zwischen Sonderpädagogen, Klinikern und Familien, die Entwicklungsunterstützung benötigen."
+      "story": {
+        "why": {
+          "en": "This Clinic didn't have an online presence but needed to start their official applications.",
+          "es": "Esta clínica no tenía presencia en línea pero necesitaba comenzar sus solicitudes oficiales.",
+          "de": "Diese Klinik hatte keine Online-Präsenz, musste aber ihre offiziellen Anträge starten."
         },
-        "solution": {
-          "en": "Architected a multidisciplinary support platform designed for accessibility and high-reliability information delivery.",
-          "es": "Arquitectó una plataforma de apoyo multidisciplinaria diseñada para la accesibilidad y la entrega de información de alta confiabilidad.",
-          "de": "Konzipierte eine multidisziplinäre Support-Plattform, konzipiert für Barrierefreiheit und hochzuverlässige Informationsbereitstellung."
-        },
-        "evidence": {
-          "en": "Before this the Organisation didnt have a website; launched with 100% Lighthouse Performance & SEO scores.",
-          "es": "Antes de esto, la organización no tenía sitio web; se lanzó con 100% de rendimiento Lighthouse y puntajes SEO.",
-          "de": "Davor hatte die Organisation keine Website; Start mit 100% Lighthouse-Performance & SEO-Scores."
+        "result": {
+          "en": "A proffessional and multilingual static html that will give government bodies and charities a point of reference in regard to their applications.",
+          "es": "Un html estático profesional y multilingüe que dará a los organismos gubernamentales y organizaciones benéficas un punto de referencia con respecto a sus solicitudes.",
+          "de": "Ein professionelles und mehrsprachiges statisches HTML, das Regierungsbehörden und Wohltätigkeitsorganisationen einen Bezugspunkt für ihre Anträge gibt."
         }
       },
+      "powerTags": [
+        "HTML",
+        "Javascript",
+        "CSS"
+      ],
       "techStack": [
-        "Accessibility",
-        "Information Architecture",
-        "React Native",
-        "Bilingual Support"
+        "Semantic HTML",
+        "CSS Variables",
+        "i18n Support"
       ],
       "sourceUrl": "https://github.com/MentesenMovimiento/mentesenmovimiento.github.io",
       "liveUrl": "https://mentesenmovimiento.org/",
-      "phases": {}
+      "embedUrl": "https://micahwalkerdesign.github.io/Mentes/"
     }
   ]
 }

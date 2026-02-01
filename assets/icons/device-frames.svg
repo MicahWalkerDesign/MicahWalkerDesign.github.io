@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-iphone-bezel" viewBox="0 0 320 640">
+    <rect x="10" y="10" width="300" height="620" rx="30" fill="none" stroke="currentColor" stroke-width="12"/>
+    <path d="M110 10 h100 v30 h-100 z" fill="currentColor"/>
+  </symbol>
+  
+  <symbol id="icon-browser-chrome" viewBox="0 0 800 50">
+    <rect width="800" height="50" fill="#2d2d2d"/>
+    <circle cx="25" cy="25" r="6" fill="#ff5f56"/>
+    <circle cx="45" cy="25" r="6" fill="#ffbd2e"/>
+    <circle cx="65" cy="25" r="6" fill="#27c93f"/>
+  </symbol>
+</svg>

@@ -862,6 +862,10 @@
   padding: var(--space-12) 0;
 }
 
+#portfolio .section__header {
+  margin-bottom: var(--space-4);
+}
+
 .portfolio__grid {
   display: grid;
   gap: var(--space-6);
@@ -1292,19 +1296,11 @@
   z-index: 1;
   pointer-events: none;
   /* Let mouse pass through container to particles? */
-  /* Wait, user wants interactive particles. */
-  /* But container has content (text, skill boxes). */
-  /* If pointer-events: none, text selection and skill dragging won't work. */
   /* We must keep pointer-events: auto on container children. */
 }
 
 .about__content {
   pointer-events: auto;
-}
-
-.about__content {
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .about__bio {
@@ -2583,6 +2579,7 @@
 .badge {
   animation: badge-appear 0.4s ease-out both;
 }
+
 /* ==================== PERFORMANCE: Non-Composited Animation Fixes ==================== */
 /* GPU-accelerated animations using will-change for smoother rendering */
 
@@ -2597,6 +2594,7 @@
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+
   .skeleton,
   .cursor-glow,
   .hero__visual-orb,
@@ -2617,4 +2615,344 @@
 .timeline-item-wrapper:hover .accordion-trigger[aria-expanded="true"],
 .timeline-item-wrapper:hover .accordion-panel.open {
   border-color: var(--primary);
+}
+
+/* ========================================
+   PORTFOLIO DASHBOARD (New "Block Style")
+   ======================================== */
+
+.portfolio-dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  min-height: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .portfolio-dashboard {
+    grid-template-columns: 320px 1fr 320px;
+    /* Symmetric columns to center viewport */
+    gap: var(--space-6);
+    align-items: center;
+    /* Vertically center all columns */
+  }
+}
+
+/* --- Left Column: Projects Panel --- */
+.projects-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  height: 100%;
+  padding-right: var(--space-4);
+}
+
+/* --- Left Column: Project Navigation --- */
+.project-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-height: 580px;
+  /* Match device frame height */
+  overflow-y: auto;
+  padding: var(--space-4);
+  /* Increased padding to prevent clipping of shadows */
+  margin: calc(var(--space-4) * -1);
+  /* Negative margin to compensate for padding */
+  width: calc(100% + var(--space-8));
+  /* Compensate width */
+
+  /* Hide Scrollbar */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+.project-nav::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
+.project-nav__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-nav__card:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.project-nav__card.active {
+  border-color: var(--primary);
+  background: linear-gradient(to right, rgba(var(--primary-rgb), 0.05), transparent);
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.15);
+  transform: scale(1.02);
+  z-index: 1;
+}
+
+.project-nav__title {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  color: var(--text);
+  margin-bottom: var(--space-1);
+}
+
+.project-nav__category {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- Middle Column: Device Viewport --- */
+.device-viewport {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-4);
+  /* Ensure it takes height */
+  min-height: 500px;
+}
+
+.device-frame {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  background: #000;
+  overflow: hidden;
+}
+
+/* iPhone Frame */
+.device-frame--iphone {
+  width: 280px;
+  height: 580px;
+  border-radius: 40px;
+  border: 12px solid #2d2d2d;
+}
+
+.device-frame--iphone::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 25px;
+  background: #2d2d2d;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  z-index: 10;
+}
+
+/* Browser Frame */
+.device-frame--browser {
+  width: 100%;
+  height: 580px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.device-frame--browser .browser-chrome {
+  height: 32px;
+  background: #2d2d2d;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.device-frame--browser .browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.device-frame--browser .browser-dot.red {
+  background: #ff5f56;
+}
+
+.device-frame--browser .browser-dot.yellow {
+  background: #ffbd2e;
+}
+
+.device-frame--browser .browser-dot.green {
+  background: #27c93f;
+}
+
+/* Video Element */
+.device-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.device-frame--browser .device-video {
+  object-fit: cover;
+  /* or contain, depending on if we want full width */
+  flex: 1;
+}
+
+/* Skeleton for viewport */
+.viewport-skeleton {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 5;
+  background: var(--surface);
+  display: none;
+  /* Toggled by JS */
+}
+
+.viewport-skeleton.active {
+  display: block;
+}
+
+.viewport-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0,
+      var(--skeleton-shimmer) 20%,
+      var(--skeleton-shimmer) 60%,
+      rgba(255, 255, 255, 0));
+  animation: shimmer 2s infinite;
+}
+
+/* --- Right Column: Story Panel --- */
+.story-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  height: 100%;
+  padding-left: var(--space-4);
+}
+
+.story-panel__header {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--primary);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: var(--space-2);
+}
+
+.story-panel__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  flex: 1;
+  overflow-y: auto;
+  padding-right: var(--space-2);
+}
+
+.story-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.story-section__label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.story-section__text {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--text);
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--border);
+  transition: border-color var(--transition-fast);
+}
+
+.story-section:hover .story-section__text {
+  border-color: var(--primary);
+}
+
+/* Power Tags */
+.power-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px dotted var(--border);
+}
+
+.power-tag {
+  background: rgba(var(--primary-rgb), 0.05);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: var(--text-xs);
+  border: 1px solid rgba(var(--primary-rgb), 0.15);
+  transition: all var(--transition-fast);
+}
+
+.power-tag:hover {
+  background: rgba(var(--primary-rgb), 0.15);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   STORY ROLES & IFRAME
+   ======================================== */
+.story-panel__roles {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: -10px;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--border);
+}
+
+.story-panel__header {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: var(--space-2) !important;
+}
+
+.device-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none;
+  background: var(--surface);
+}
+
+.device-frame--browser .device-iframe {
+  position: relative;
+  flex: 1;
+  height: 100%;
 }

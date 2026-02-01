@@ -17,7 +17,8 @@ import { initI18n, setLanguage, getCurrentLanguage, t } from './i18n.js';
 import { initTheme, setTheme, getTheme } from './theme.js';
 import { initModal, openModal } from './components/modal.js';
 import { loadExperienceData, renderTimeline, refreshTimeline } from './components/timeline.js';
-import { initPortfolio, refreshPortfolio } from './components/portfolioGrid.js';
+// import { initPortfolio, refreshPortfolio } from './components/portfolioGrid.js'; // Legacy
+import { initDashboard, refreshDashboard } from './components/portfolioDashboard.js';
 import { PaperTossGame } from './components/paperToss/game.js';
 import { initSkillDragger } from './components/skillDragger.js';
 import { initParticleBackground } from './components/particleBackground.js';
@@ -81,8 +82,8 @@ async function initApp() {
   // Load and render experience timeline
   await initTimeline();
 
-  // Render portfolio section
-  await initPortfolio();
+  // Render portfolio dashboard
+  await initDashboard();
 
   // Initialize paper toss game
   initPaperToss();
@@ -294,14 +295,12 @@ function handleLanguageChange(event) {
     refreshTimeline(timelineContainer, experienceData);
   }
 
-  // Refresh portfolio with new language
-  const portfolioContainer = document.getElementById('portfolio-container');
-  if (portfolioContainer) {
-    refreshPortfolio(portfolioContainer);
-    // Re-initialize effects for new content
-    setupScrollReveal();
-    setupMagneticEffect();
-  }
+  // Refresh dashboard with new language
+  refreshDashboard();
+
+  // Re-initialize effects for new content
+  setupScrollReveal();
+  setupMagneticEffect();
 }
 
 /**
