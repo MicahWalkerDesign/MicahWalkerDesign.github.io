@@ -5,7 +5,10 @@
       "isFeatured": true,
       "category": "App",
       "deviceType": "iphone",
-      "videoUrl": "assets/videos/p1-demo.mp4",
+      "youtubeIds": [
+        "PxBQWbU5Svo",
+        "rY7KynMuh7A"
+      ],
       "title": {
         "en": "Clinical Education Ecosystem",
         "es": "Ecosistema de Educación Clínica",

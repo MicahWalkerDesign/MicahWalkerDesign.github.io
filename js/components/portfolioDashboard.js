@@ -166,9 +166,30 @@ function updateDashboard(project) {
     }
   }
 
-  // Handle Embed vs Video
-  if (project.embedUrl && dom.iframe) {
+  // Handle Embed vs Video vs YouTube Carousel
+  if (project.youtubeIds && project.youtubeIds.length > 0) {
+    // Show Carousel
+    if (dom.video) { dom.video.style.display = 'none'; dom.video.pause(); }
+    if (dom.iframe) dom.iframe.style.display = 'none';
+
+    // Check if carousel already exists
+    let carousel = dom.viewport.querySelector('.youtube-carousel');
+    if (!carousel) {
+      carousel = document.createElement('div');
+      carousel.className = 'youtube-carousel';
+      dom.viewport.appendChild(carousel);
+    }
+    carousel.style.display = 'flex';
+
+    // Render Carousel Content
+    renderYouTubeCarousel(carousel, project.youtubeIds);
+    if (dom.skeleton) dom.skeleton.classList.remove('active');
+
+  } else if (project.embedUrl && dom.iframe) {
     // Show Iframe
+    const carousel = dom.viewport.querySelector('.youtube-carousel');
+    if (carousel) carousel.style.display = 'none';
+
     if (dom.video) {
       dom.video.style.display = 'none';
       dom.video.pause();
@@ -176,7 +197,7 @@ function updateDashboard(project) {
 
     dom.iframe.style.display = 'block';
 
-    // Only reload if source changed to avoid flickering on re-clicks
+    // Only reload if source changed to avoid flickering
     if (dom.iframe.src !== project.embedUrl) {
       dom.iframe.src = project.embedUrl;
       dom.iframe.onload = () => {
@@ -188,9 +209,12 @@ function updateDashboard(project) {
 
   } else if (dom.video) {
     // Show Video
+    const carousel = dom.viewport.querySelector('.youtube-carousel');
+    if (carousel) carousel.style.display = 'none';
+
     if (dom.iframe) {
       dom.iframe.style.display = 'none';
-      dom.iframe.src = 'about:blank'; // Reset to stop playing
+      dom.iframe.src = 'about:blank';
     }
     dom.video.style.display = 'block';
 
@@ -204,11 +228,10 @@ function updateDashboard(project) {
         dom.skeleton.classList.remove('active');
         dom.video.style.opacity = '1';
       };
-      // Fallback for missing video
       dom.video.onerror = () => {
         dom.skeleton.classList.remove('active');
       };
-    }, 200); // slight delay for transition
+    }, 200);
   }
 
   // --- Right Column: Story Panel ---
@@ -250,6 +273,60 @@ function updateDashboard(project) {
       dom.powerTags.appendChild(span);
     });
   }
+}
+
+/**
+ * Renders the YouTube carousel content (Facade + Nav)
+ */
+function renderYouTubeCarousel(container, videoIds) {
+  let currentIndex = 0;
+
+  // Render Frame
+  const renderFrame = () => {
+    const videoId = videoIds[currentIndex];
+
+    // Check if we have an active iframe already to avoid reloading if possible
+    // But for carousel, we likely need to swap content.
+    // Facade approach is best for performance.
+
+    container.innerHTML = `
+      <div class="youtube-embed-wrapper" id="yt-wrapper-${videoId}">
+        <div class="youtube-facade" style="background-image: url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg');" onclick="this.style.display='none'; document.getElementById('yt-frame-${videoId}').src='https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&rel=0&playsinline=1';">
+          <div class="play-button"></div>
+        </div>
+        <iframe id="yt-frame-${videoId}" class="youtube-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      
+      ${videoIds.length > 1 ? `
+      <div class="carousel-nav">
+        <button class="carousel-btn prev-btn" aria-label="Previous video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="carousel-dots">
+          ${videoIds.map((_, i) => `<div class="carousel-dot ${i === currentIndex ? 'active' : ''}"></div>`).join('')}
+        </div>
+        <button class="carousel-btn next-btn" aria-label="Next video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>` : ''}
+    `;
+
+    // Attach Listeners
+    if (videoIds.length > 1) {
+      container.querySelector('.prev-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + videoIds.length) % videoIds.length;
+        renderFrame();
+      });
+      container.querySelector('.next-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % videoIds.length;
+        renderFrame();
+      });
+    }
+  };
+
+  renderFrame();
 }
 
 /**
