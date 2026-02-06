@@ -2843,8 +2843,8 @@ button.magnetic,
     grid-template-columns: 320px 1fr 320px;
     /* Symmetric columns to center viewport */
     gap: var(--space-6);
-    align-items: center;
-    /* Vertically center all columns */
+    align-items: start;
+    /* Top align to prevent jumping when content height changes */
   }
 }
 
@@ -2928,10 +2928,10 @@ button.magnetic,
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: var(--space-4);
   /* Ensure it takes height */
-  min-height: 500px;
+  min-height: 640px;
 }
 
 .device-frame {
