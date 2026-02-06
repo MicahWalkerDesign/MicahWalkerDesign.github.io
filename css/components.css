@@ -2439,6 +2439,13 @@
   display: inline-block;
   transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
   will-change: transform;
+  cursor: pointer;
+}
+
+/* Ensure buttons with magnetic class have proper transform origin */
+button.magnetic,
+.btn.magnetic {
+  transform-origin: center center;
 }
 
 .reveal {

@@ -181,7 +181,7 @@ const dictionaries = {
     // New Sections
     about: {
       title: 'Sobre Mí',
-      bio: "Soy Diseñador de Productos y Fisiólogo del Ejercicio que pasó su carrera trabajando en rehabilitación clínica, investigando y abordando problemas complejos en el cuerpo humano. Ahora diseño y construyo soluciones digitales."
+      bio: "Soy Diseñador de Productos con experiencia en Fisiología del Ejercicio e investigación clínica, que pasó su carrera trabajando en rehabilitación clínica, investigando y abordando problemas complejos en el cuerpo humano. Ahora diseño y construyo soluciones digitales."
     },
     skills: {
       frontend: 'Frontend',
@@ -217,18 +217,18 @@ const dictionaries = {
       subtitle: 'Haz clic en un panel para explorar mi trayectoria profesional o cualificaciones'
     },
     contact: {
-      title: 'Contact',
-      subtitle: '¿Tienes un proyecto en mente? Contáctame por correo o teléfono.'
+      title: 'Contacto',
+      subtitle: 'Ubicado en España (CET). Abierto a 100% remoto (UE/UK).'
     },
     // Hero section
     hero: {
       greeting: 'Hola, soy',
-      title: 'Micah Walker — Ingeniero Frontend y Diseñador Técnico de Producto',
-      tagline: 'Ingeniero Frontend y Diseñador Técnico de Producto',
-      subtitle: 'Arquitecto de Producto Técnico especializado en Integración Humano-Sistema',
-      description: 'Arquitecto de Producto Técnico especializado en Integración Humano-Sistema y Arquitecturas Sin Estado. Aprovecha experiencia en sistemas clínicos y comportamiento humano para diseñar infraestructuras digitales accesibles y de alto rendimiento.',
+      title: 'Micah Walker — Diseñador de Productos',
+      tagline: 'UX de cambio de comportamiento • Investigación → Flujos → UI',
+      subtitle: 'Diseñador de Productos — Salud, Rendimiento y Bienestar',
+      description: 'Diseño productos de salud y rendimiento que la gente realmente usa, aprovechando la experiencia personal y combinando pensamiento de cambio de comportamiento, investigación y UI limpia.',
       ctaPrimary: 'Contacto',
-      ctaSecondary: 'Tomar un Descanso'
+      ctaSecondary: 'Ver Proyectos'
     },
     // Experience timeline
     experience: {
@@ -330,7 +330,7 @@ const dictionaries = {
     // New Sections
     about: {
       title: 'Über Mich',
-      bio: "Ich bin Produktdesigner & Sportphysiologe und habe meine Karriere in der klinischen Rehabilitation verbracht, wo ich komplexe Probleme des menschlichen Körpers erforscht und gelöst habe. Jetzt entwerfe und entwickle ich digitale Lösungen."
+      bio: "Ich bin Produktdesigner mit Hintergrund in Sportphysiologie und klinischer Forschung, der seine Karriere in der klinischen Rehabilitation verbracht hat, wo ich komplexe Probleme des menschlichen Körpers erforscht und gelöst habe. Jetzt entwerfe und entwickle ich digitale Lösungen."
     },
     skills: {
       frontend: 'Frontend',
@@ -367,17 +367,17 @@ const dictionaries = {
     },
     contact: {
       title: 'Kontakt',
-      subtitle: 'Haben Sie ein Projekt im Sinn? Kontaktieren Sie mich per E-Mail oder Telefon.'
+      subtitle: 'Standort Spanien (CET). Offen für 100% Remote (EU/UK).'
     },
     // Hero section
     hero: {
       greeting: 'Hallo, ich bin',
-      title: 'Micah Walker — Frontend-Ingenieur & Technischer Produktdesigner',
-      tagline: 'Frontend-Ingenieur & Technischer Produktdesigner',
-      subtitle: 'Technischer Produktarchitekt mit Spezialisierung auf Mensch-System-Integration',
-      description: 'Technischer Produktarchitekt mit Spezialisierung auf Mensch-System-Integration und zustandslose Architekturen. Nutzt Erfahrung in klinischen Systemen und menschlichem Verhalten zur Entwicklung hochleistungsfähiger, barrierefreier digitaler Infrastrukturen.',
+      title: 'Micah Walker — Produktdesigner',
+      tagline: 'Verhaltensänderungs-UX • Forschung → Flows → UI',
+      subtitle: 'Produktdesigner — Gesundheit, Leistung & Wellness',
+      description: 'Ich entwerfe Gesundheits- und Leistungsprodukte, die Menschen tatsächlich nutzen, indem ich persönliche Erfahrung mit Verhaltensänderungs-Denken, Forschung und klarem UI kombiniere.',
       ctaPrimary: 'Kontakt',
-      ctaSecondary: 'Mach eine Pause'
+      ctaSecondary: 'Projekte ansehen'
     },
     // Experience timeline
     experience: {
