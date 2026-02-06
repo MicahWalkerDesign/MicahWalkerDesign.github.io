@@ -69,8 +69,8 @@ const dictionaries = {
       greeting: "Hi, I'm",
       title: 'Micah Walker — Frontend Engineer & Technical Product Designer',
       tagline: 'Frontend Engineer & Technical Product Designer',
-      subtitle: 'Technical Product Architect specializing in Human-Systems Integration',
-      description: 'Technical Product Architect specializing in Human-Systems Integration and Stateless Architectures. Leverages a background in clinical systems and human behavior to engineer high-performance, accessible digital infrastructures.',
+      subtitle: 'Product Designer — Health, Performance & Wellness',
+      description: 'I design health and performance products that people actually stick with by leveraging personal experience and combining behavior-change thinking, research, and clean UI.',
       ctaPrimary: 'Contact',
       ctaSecondary: 'Take a Break'
     },
