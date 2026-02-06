@@ -356,16 +356,15 @@
 }
 
 .hero__subheading {
-  font-size: var(--text-lg);
-  color: var(--text);
+  font-size: var(--text-xl);
+  color: var(--primary);
   font-weight: var(--font-medium);
   margin-bottom: var(--space-2);
-  opacity: 0.9;
 }
 
 @media (min-width: 768px) {
   .hero__subheading {
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
   }
 }
 
