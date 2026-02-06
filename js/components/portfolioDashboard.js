@@ -280,21 +280,34 @@ function updateDashboard(project) {
  */
 function renderYouTubeCarousel(container, videoIds) {
   let currentIndex = 0;
+  let player = null;
+
+  // Load YouTube API if not present
+  if (!window.YT) {
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  }
 
   // Render Frame
-  const renderFrame = () => {
+  const renderFrame = (autoPlay = false) => {
     const videoId = videoIds[currentIndex];
 
-    // Check if we have an active iframe already to avoid reloading if possible
-    // But for carousel, we likely need to swap content.
-    // Facade approach is best for performance.
+    // Cleanup previous player
+    if (player) {
+      player.destroy();
+      player = null;
+    }
 
+    // HTML Structure
     container.innerHTML = `
       <div class="youtube-embed-wrapper" id="yt-wrapper-${videoId}">
-        <div class="youtube-facade" style="background-image: url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg');" onclick="this.style.display='none'; document.getElementById('yt-frame-${videoId}').src='https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&rel=0&playsinline=1';">
+        <div id="player-${videoId}" class="youtube-iframe"></div>
+        ${!autoPlay ? `
+        <div class="youtube-facade" id="facade-${videoId}" style="background-image: url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg');">
           <div class="play-button"></div>
-        </div>
-        <iframe id="yt-frame-${videoId}" class="youtube-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>` : ''}
       </div>
       
       ${videoIds.length > 1 ? `
@@ -311,22 +324,72 @@ function renderYouTubeCarousel(container, videoIds) {
       </div>` : ''}
     `;
 
-    // Attach Listeners
+    const initPlayer = () => {
+      // Ensure API is ready
+      if (!window.YT || !window.YT.Player) {
+        // Retry logic if API calls initPlayer before ready
+        window.onYouTubeIframeAPIReady = () => initPlayer();
+        return;
+      }
+
+      const facade = document.getElementById(`facade-${videoId}`);
+      if (facade) facade.style.display = 'none';
+
+      player = new YT.Player(`player-${videoId}`, {
+        height: '100%',
+        width: '100%',
+        videoId: videoId,
+        playerVars: {
+          'playsinline': 1,
+          'autoplay': 1,
+          'controls': 1, // Need controls for user to scrub if they want
+          'rel': 0,
+          'modestbranding': 1
+        },
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    };
+
+    // If autoPlay, init immediately. Else wait for click.
+    if (autoPlay) {
+      // Small timeout to ensure DOM is ready and previous player destroyed
+      setTimeout(initPlayer, 100);
+    } else {
+      const facade = document.getElementById(`facade-${videoId}`);
+      if (facade) {
+        facade.addEventListener('click', () => {
+          initPlayer();
+        });
+      }
+    }
+
+    // Attach Nav Listeners
     if (videoIds.length > 1) {
       container.querySelector('.prev-btn').addEventListener('click', (e) => {
         e.stopPropagation();
         currentIndex = (currentIndex - 1 + videoIds.length) % videoIds.length;
-        renderFrame();
+        renderFrame(false); // Manual nav stops autoplay chain usually, or resets to facade
       });
       container.querySelector('.next-btn').addEventListener('click', (e) => {
         e.stopPropagation();
         currentIndex = (currentIndex + 1) % videoIds.length;
-        renderFrame();
+        renderFrame(false);
       });
     }
   };
 
-  renderFrame();
+  const onPlayerStateChange = (event) => {
+    // YT.PlayerState.ENDED is 0
+    if (event.data === 0) {
+      // Video ended, auto-advance
+      currentIndex = (currentIndex + 1) % videoIds.length;
+      renderFrame(true); // Auto-play next
+    }
+  };
+
+  renderFrame(false);
 }
 
 /**
