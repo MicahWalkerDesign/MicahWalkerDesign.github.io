@@ -81,8 +81,11 @@
     },
     {
       "id": "p3",
+      "category": "App",
       "deviceType": "iphone",
-      "videoUrl": "assets/videos/p3-demo.mp4",
+      "youtubeIds": [
+        "OxBskvPyaIo"
+      ],
       "title": {
         "en": "PerfExpresso: AI Integrated Crema Analysis",
         "es": "PerfExpresso: Análisis de Crema Integrado con IA",

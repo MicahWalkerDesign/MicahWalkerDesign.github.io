@@ -327,10 +327,12 @@ function renderYouTubeCarousel(container, videoIds) {
     const initPlayer = () => {
       // Ensure API is ready
       if (!window.YT || !window.YT.Player) {
-        // Retry logic if API calls initPlayer before ready
         window.onYouTubeIframeAPIReady = () => initPlayer();
         return;
       }
+
+      // If player already exists, don't re-init
+      if (player) return;
 
       const facade = document.getElementById(`facade-${videoId}`);
       if (facade) facade.style.display = 'none';
@@ -342,9 +344,10 @@ function renderYouTubeCarousel(container, videoIds) {
         playerVars: {
           'playsinline': 1,
           'autoplay': 1,
-          'controls': 1, // Need controls for user to scrub if they want
+          'controls': 1,
           'rel': 0,
-          'modestbranding': 1
+          'modestbranding': 1,
+          'mute': 1 // Mute required for browser autoplay policy
         },
         events: {
           'onStateChange': onPlayerStateChange
@@ -352,11 +355,25 @@ function renderYouTubeCarousel(container, videoIds) {
       });
     };
 
-    // If autoPlay, init immediately. Else wait for click.
+    // Auto-play logic: Check for visibility using IntersectionObserver
+    // If autoPlay arg is true (from sequential play), init immediately.
+    // Otherwise, wait for scroll or click.
     if (autoPlay) {
-      // Small timeout to ensure DOM is ready and previous player destroyed
       setTimeout(initPlayer, 100);
     } else {
+      // Observer for "Autoplay on Scroll"
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            initPlayer();
+            observer.disconnect(); // Only trigger once per carousel load
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(container);
+
+      // Keep click listener just in case or for immediate interaction
       const facade = document.getElementById(`facade-${videoId}`);
       if (facade) {
         facade.addEventListener('click', () => {
