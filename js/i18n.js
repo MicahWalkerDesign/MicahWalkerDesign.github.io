@@ -62,7 +62,13 @@ const dictionaries = {
     },
     contact: {
       title: "Contact",
-      subtitle: "Have a project in mind? reach out via email or phone."
+      subtitle: "Have a project in mind? reach out via email or phone.",
+      phone: {
+        btn: "Call / WhatsApp",
+        whatsapp: "💬 WhatsApp",
+        australia: "🇦🇺 Australia",
+        spain: "🇪🇸 Spain/Europe"
+      }
     },
     // Hero section
     hero: {
@@ -218,7 +224,13 @@ const dictionaries = {
     },
     contact: {
       title: 'Contacto',
-      subtitle: 'Ubicado en España (CET). Abierto a 100% remoto (UE/UK).'
+      subtitle: 'Ubicado en España (CET). Abierto a 100% remoto (UE/UK).',
+      phone: {
+        btn: 'Llamar / WhatsApp',
+        whatsapp: '💬 WhatsApp',
+        australia: '🇦🇺 Australia',
+        spain: '🇪🇸 España/Europa'
+      }
     },
     // Hero section
     hero: {
@@ -367,7 +379,13 @@ const dictionaries = {
     },
     contact: {
       title: 'Kontakt',
-      subtitle: 'Standort Spanien (CET). Offen für 100% Remote (EU/UK).'
+      subtitle: 'Standort Spanien (CET). Offen für 100% Remote (EU/UK).',
+      phone: {
+        btn: 'Anrufen / WhatsApp',
+        whatsapp: '💬 WhatsApp',
+        australia: '🇦🇺 Australien',
+        spain: '🇪🇸 Spanien/Europa'
+      }
     },
     // Hero section
     hero: {

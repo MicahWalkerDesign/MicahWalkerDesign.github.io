@@ -87,14 +87,23 @@ export class PaperTossGame {
    * Initializes the game, sets up canvas and event listeners.
    */
   init() {
+    // Initial setup - might be hidden (0x0)
     this.setupCanvas();
     this.attachEventListeners();
     this.resetGame();
 
-    // Log startup geometry once (for tuning verification)
-    // Logging removed for production
+    // Use ResizeObserver to handle "Coffee Break" detail expansion
+    // This allows the game to initialize/resize only when visible
+    const resizeObserver = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        if (entry.contentRect.width > 0 && entry.contentRect.height > 0) {
+          this.setupCanvas();
+          this.render();
+        }
+      }
+    });
 
-    this.render();
+    resizeObserver.observe(this.canvas);
   }
 
   /**
@@ -102,6 +111,13 @@ export class PaperTossGame {
    */
   setupCanvas() {
     const rect = this.canvas.getBoundingClientRect();
+
+    // If hidden, don't setup (avoids createLinearGradient errors)
+    if (rect.width === 0 || rect.height === 0) {
+      this.width = 0;
+      this.height = 0;
+      return;
+    }
 
     // Set canvas internal size to match CSS size (1:1 pixel mapping)
     this.canvas.width = rect.width;
@@ -150,16 +166,6 @@ export class PaperTossGame {
       radius: this.options.paperRadius,
       rotation: 0
     };
-
-    // Handle window resize with debounce to prevent layout thrashing
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      if (resizeTimeout) clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        this.setupCanvas();
-        this.render();
-      }, 100);
-    });
   }
 
   /**

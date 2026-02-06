@@ -63,40 +63,73 @@ function setupMobileMenu() {
  * Called when DOM is ready.
  */
 async function initApp() {
+  console.log('initApp: Starting...');
   // Initialize core systems
   initTheme();
   initI18n();
   initModal();
   initSkillDragger();
-  initParticleBackground('about-particles');
-  initParticleBackground('contact-particles');
+  try {
+    initParticleBackground('about-particles');
+    initParticleBackground('contact-particles');
+  } catch (e) { console.error('Particles failed:', e); }
 
   // Set up toggle button listeners
   setupLanguageToggles();
   setupThemeToggles();
   setupMobileMenu();
-  // setupScrollReveal and setupMagneticEffect moved to end of initApp to catch dynamic content
-
-
 
   // Load and render experience timeline
-  await initTimeline();
+  console.log('initApp: Calling initTimeline...');
+  try {
+    await initTimeline();
+    console.log('initApp: initTimeline completed');
+  } catch (e) {
+    console.error('initTimeline failed:', e);
+  }
 
   // Render portfolio dashboard
-  await initDashboard();
+  console.log('initApp: Calling initDashboard...');
+  try {
+    await initDashboard();
+    console.log('initApp: initDashboard completed');
+  } catch (e) {
+    console.error('initDashboard failed:', e);
+  }
 
   // Initialize paper toss game
-  initPaperToss();
+  console.log('initApp: Calling initPaperToss...');
+  try {
+    initPaperToss();
+    console.log('initApp: initPaperToss completed');
+  } catch (e) {
+    console.error('initPaperToss failed:', e);
+  }
 
   // Set up animations after dynamic content is loaded
-  setupScrollReveal();
-  setupMagneticEffect();
-  setupCursorGlow();
-  setupScrollProgress();
-  setupSplitPanel();
+  const setupFunctions = [
+    { name: 'setupScrollReveal', fn: setupScrollReveal },
+    { name: 'setupMagneticEffect', fn: setupMagneticEffect },
+    { name: 'setupCursorGlow', fn: setupCursorGlow },
+    { name: 'setupScrollProgress', fn: setupScrollProgress },
+    { name: 'setupSplitPanel', fn: setupSplitPanel }
+  ];
+
+  setupFunctions.forEach(({ name, fn }) => {
+    try {
+      console.log(`initApp: Calling ${name}...`);
+      fn();
+      console.log(`initApp: ${name} completed`);
+    } catch (e) {
+      console.error(`${name} failed:`, e);
+    }
+  });
+
+  console.log('initApp: Setup functions complete');
 
   // Listen for language changes to refresh content
   window.addEventListener('languagechange', handleLanguageChange);
+  console.log('initApp: FINISHED');
 }
 
 /**
@@ -480,4 +513,11 @@ function setupSplitPanel() {
       if (activeTab) activeTab.setAttribute('aria-selected', 'true');
     });
   });
+}
+
+// Initialize the application
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
 }
