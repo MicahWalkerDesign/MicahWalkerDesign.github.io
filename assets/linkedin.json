@@ -2,77 +2,29 @@
   "_comment": [
     "LinkedIn Experience Data Mirror",
     "------------------------------",
-    "Updated: 2026-02-01"
+    "Updated: 2026-02-06"
   ],
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-06",
   "experiences": [
-    {
-      "id": "freelance-2020",
-      "company": "Freelance",
-      "role": {
-        "en": "Frontend Developer | UI / UX Designer",
-        "es": "Frontend Developer | UI / UX Designer",
-        "de": "Frontend Developer | UI / UX Designer"
-      },
-      "location": {
-        "en": "Frankfurt, Germany | Perth, Australia | Barcelona, Spain · Remote",
-        "es": "Frankfurt, Germany | Perth, Australia | Barcelona, Spain · Remote",
-        "de": "Frankfurt, Germany | Perth, Australia | Barcelona, Spain · Remote"
-      },
-      "dates": {
-        "start": "2020-04",
-        "display": {
-          "en": "Apr 2020 - Present · 5 yrs 10 mos",
-          "es": "Apr 2020 - Present · 5 yrs 10 mos",
-          "de": "Apr 2020 - Present · 5 yrs 10 mos"
-        }
-      },
-      "description": {
-        "en": "",
-        "es": "",
-        "de": ""
-      },
-      "bullets": {
-        "en": [
-          "<strong>UI/UX Design:</strong> Designed user-focused interfaces by combining user research, behavioral data, and real-world feedback to create clear, intuitive flows.",
-          "<strong>Human–System Design:</strong> Turned complex user behavior and system logic into simple, predictable UX patterns and flexible, reusable design structures.",
-          "<strong>Interface & Interaction Build:</strong> Built responsive web interfaces and interactive prototypes using Figma for design prototypes, and Vanilla JS, Next.js, TypeScript, and CSS for fast, reliable front-end builds.",
-          "<strong>Iterative & Automated Workflows:</strong> Used AI-assisted tools to speed up design and development cycles, reduce friction, and continuously improve performance."
-        ],
-        "es": [],
-        "de": []
-      },
-      "skills": [
-        "User Experience (UX)",
-        "User Interface Design",
-        "SEO",
-        "Product Design",
-        "Front-End Development",
-        "Innovation",
-        "SQL",
-        "API"
-      ]
-    },
     {
       "id": "arthrex-apac-2024",
       "company": "Arthrex APAC",
       "role": {
-        "en": "Sales Representative – Sports Medicine",
-        "es": "Sales Representative – Sports Medicine",
-        "de": "Sales Representative – Sports Medicine"
+        "en": "Territory Manager / Sales (Sports Medicine)",
+        "es": "Territory Manager / Sales (Sports Medicine)",
+        "de": "Territory Manager / Sales (Sports Medicine)"
       },
       "location": {
-        "en": "Perth, Western Australia, Australia · Hybrid",
-        "es": "Perth, Western Australia, Australia · Hybrid",
-        "de": "Perth, Western Australia, Australia · Hybrid"
+        "en": "Perth · Hybrid",
+        "es": "Perth · Hybrid",
+        "de": "Perth · Hybrid"
       },
       "dates": {
         "start": "2024-09",
-        "end": "2026-02",
         "display": {
-          "en": "Sep 2024 - Feb 2026 · 1 yr 5 mos",
-          "es": "Sep 2024 - Feb 2026 · 1 yr 5 mos",
-          "de": "Sep 2024 - Feb 2026 · 1 yr 5 mos"
+          "en": "Sep 2024 – Present",
+          "es": "Sep 2024 – Present",
+          "de": "Sep 2024 – Present"
         }
       },
       "description": {
@@ -82,10 +34,12 @@
       },
       "bullets": {
         "en": [
-          "<strong>System Workflows:</strong> Strategically identified bottlenecks or points of friction within common workflows and provided solutions to streamline them.",
-          "<strong>Stakeholder Communication:</strong> Worked and communicated with Healthcare Professionals, Logistics, and Product Managers daily to ensure seamless integration of products.",
-          "<strong>Data-Driven Optimization:</strong> Constantly used KPIs and customer feedback to inform decisions and workflow.",
-          "<strong>Cross-Functional Communication:</strong> Communicated with multiple teams (Sales, Customer Service, Clinical & Marketing) to ensure common goals and success."
+          "Supported business growth and day-to-day product adoption across 4 hospitals and 20+ surgeons.",
+          "Worked with surgeons and hospital teams to understand clinical workflows and constraints.",
+          "Turned real-world needs into clear requirements and onboarding/adoption steps.",
+          "Coordinated stakeholders (clinical, operations, procurement) to keep onboarding moving.",
+          "Created repeatable training materials (guides, demos, training flows).",
+          "Identified common usage issues and suggested process + messaging improvements."
         ],
         "es": [],
         "de": []
@@ -96,30 +50,28 @@
         "Data-Informed Decision Making",
         "Business Strategy",
         "User Experience (UX)",
-        "Problem Solving",
-        "Innovation"
+        "Problem Solving"
       ]
     },
     {
-      "id": "uniklinik-2022",
-      "company": "Uniklinik Frankfurt",
+      "id": "freelance-2024",
+      "company": "Freelance",
       "role": {
-        "en": "Research Scientist - Sports & Therapy (Exercise Physiologist)",
-        "es": "Research Scientist - Sports & Therapy (Exercise Physiologist)",
-        "de": "Research Scientist - Sports & Therapy (Exercise Physiologist)"
+        "en": "Product Designer (Health, Performance & Wellness)",
+        "es": "Product Designer (Health, Performance & Wellness)",
+        "de": "Product Designer (Health, Performance & Wellness)"
       },
       "location": {
-        "en": "Frankfurt, Hesse, Germany · On-site",
-        "es": "Frankfurt, Hesse, Germany · On-site",
-        "de": "Frankfurt, Hesse, Germany · On-site"
+        "en": "Remote (DE/AU/ES)",
+        "es": "Remote (DE/AU/ES)",
+        "de": "Remote (DE/AU/ES)"
       },
       "dates": {
-        "start": "2022-07",
-        "end": "2024-08",
+        "start": "2024-04",
         "display": {
-          "en": "Jul 2022 - Aug 2024 · 2 yrs 2 mos",
-          "es": "Jul 2022 - Aug 2024 · 2 yrs 2 mos",
-          "de": "Jul 2022 - Aug 2024 · 2 yrs 2 mos"
+          "en": "Apr 2024 – Present",
+          "es": "Apr 2024 – Present",
+          "de": "Apr 2024 – Present"
         }
       },
       "description": {
@@ -129,9 +81,61 @@
       },
       "bullets": {
         "en": [
-          "<strong>Constraint-Based Design:</strong> Designed clinical exercise protocols navigating medical, behavioral, and operational constraints.",
-          "<strong>Closed-Loop Feedback:</strong> Iterated programs based on patient research and feedback generated in focus groups to ensure system accuracy and safety.",
-          "<strong>Multidisciplinary Integration:</strong> Communicated and synchronised with fragmented clinical teams in a large Hospital to ensure quality patient care."
+          "Built and improved 11 websites end-to-end.",
+          "Prototyped 4 apps and preparing to launch 2.",
+          "Designed products end-to-end: research → user flows → wireframes → UI → prototypes (mainly in Figma).",
+          "Spoke with users and tested early concepts to simplify journeys and information structure.",
+          "Built a lightweight design system (components, states, tokens) for consistency and speed.",
+          "Worked with developers and used AI tools to prototype faster, validate UI, and support handoff/design QA.",
+          "Applied behavior-change thinking (motivation, adherence, reducing friction) so products work in real life."
+        ],
+        "es": [],
+        "de": []
+      },
+      "skills": [
+        "User Experience (UX)",
+        "User Interface Design",
+        "Product Design",
+        "User Research",
+        "Prototyping",
+        "Design Systems"
+      ]
+    },
+    {
+      "id": "uniklinik-2022",
+      "company": "Uniklinik Frankfurt",
+      "role": {
+        "en": "Research Scientist (Sports & Therapy) / Exercise Physiologist",
+        "es": "Research Scientist (Sports & Therapy) / Exercise Physiologist",
+        "de": "Research Scientist (Sports & Therapy) / Exercise Physiologist"
+      },
+      "location": {
+        "en": "Frankfurt · On-site",
+        "es": "Frankfurt · On-site",
+        "de": "Frankfurt · On-site"
+      },
+      "dates": {
+        "start": "2022-07",
+        "end": "2024-08",
+        "display": {
+          "en": "Jul 2022 – Aug 2024",
+          "es": "Jul 2022 – Aug 2024",
+          "de": "Jul 2022 – Aug 2024"
+        }
+      },
+      "description": {
+        "en": "",
+        "es": "",
+        "de": ""
+      },
+      "bullets": {
+        "en": [
+          "Contributed to 3 research papers; co-wrote and designed the Exercise-CC study.",
+          "Supported nationwide SOPs through meticulous data capture and multi-clinic research work.",
+          "Designed clinical exercise protocols under real constraints (medical risk, adherence, staffing, equipment, scheduling).",
+          "Collected patient feedback (interviews / focus groups) and improved clarity, safety, and engagement.",
+          "Worked across hospital teams to keep care coordinated.",
+          "Helped structure databases and documentation so outcomes were trackable and reusable."
         ],
         "es": [],
         "de": []
@@ -140,10 +144,56 @@
         "Medical Exercise",
         "Exercise Physiology",
         "Research",
-        "Teaching",
         "Qualitative & Quantitative Research Methodologies",
         "Cross-team Collaboration",
         "Data Science"
+      ]
+    },
+    {
+      "id": "aussie-ausdauer",
+      "company": "Aussie Ausdauer",
+      "role": {
+        "en": "Consultant & Personal Trainer",
+        "es": "Consultant & Personal Trainer",
+        "de": "Consultant & Personal Trainer"
+      },
+      "location": {
+        "en": "Frankfurt · Hybrid",
+        "es": "Frankfurt · Hybrid",
+        "de": "Frankfurt · Hybrid"
+      },
+      "dates": {
+        "start": "2019-01",
+        "end": "2024-07",
+        "display": {
+          "en": "2019 – Jul 2024",
+          "es": "2019 – Jul 2024",
+          "de": "2019 – Jul 2024"
+        }
+      },
+      "description": {
+        "en": "",
+        "es": "",
+        "de": ""
+      },
+      "bullets": {
+        "en": [
+          "Built my brand from scratch (positioning, website, services, onboarding, delivery).",
+          "Delivered wellbeing programs for insurers and companies (ergonomics + movement interventions).",
+          "Grew and retained clients through marketing, referrals, and SEO; improved conversion with clearer offers and intake.",
+          "Designed programs for injuries/conditions with a focus on adherence (tracking + feedback loops).",
+          "Created education content and templates to standardise delivery and reduce repeated work."
+        ],
+        "es": [],
+        "de": []
+      },
+      "skills": [
+        "Personal Training",
+        "Consulting",
+        "Sales",
+        "User Interface Design",
+        "Social Media Marketing",
+        "Product Design"
       ]
     },
     {
@@ -155,17 +205,17 @@
         "de": "Studio Manager"
       },
       "location": {
-        "en": "Rüsselsheim am Main, Hesse, Germany",
-        "es": "Rüsselsheim am Main, Hesse, Germany",
-        "de": "Rüsselsheim am Main, Hesse, Germany"
+        "en": "Rüsselsheim (DE) · Full-time",
+        "es": "Rüsselsheim (DE) · Full-time",
+        "de": "Rüsselsheim (DE) · Full-time"
       },
       "dates": {
         "start": "2019-09",
         "end": "2022-08",
         "display": {
-          "en": "Sep 2019 - Aug 2022 · 3 yrs",
-          "es": "Sep 2019 - Aug 2022 · 3 yrs",
-          "de": "Sep 2019 - Aug 2022 · 3 yrs"
+          "en": "Sep 2019 – Aug 2022",
+          "es": "Sep 2019 – Aug 2022",
+          "de": "Sep 2019 – Aug 2022"
         }
       },
       "description": {
@@ -174,7 +224,12 @@
         "de": ""
       },
       "bullets": {
-        "en": [],
+        "en": [
+          "Ran day-to-day operations: scheduling, staffing, member support, consistent service quality.",
+          "Improved onboarding and safety processes so service didn't depend on who was working.",
+          "Fixed recurring member issues by adjusting workflows, templates, and program structure.",
+          "Coordinated coaches/therapists so the member experience felt consistent."
+        ],
         "es": [],
         "de": []
       },
@@ -183,30 +238,29 @@
         "Injury Prevention",
         "Problem Solving",
         "Cross-team Collaboration",
-        "User Experience (UX)",
-        "Social Media Marketing"
+        "User Experience (UX)"
       ]
     },
     {
-      "id": "aussie-ausdauer",
-      "company": "Aussie Ausdauer",
+      "id": "dantrim-2018",
+      "company": "DanTrim GmbH",
       "role": {
-        "en": "Consultant",
-        "es": "Consultant",
-        "de": "Consultant"
+        "en": "Studio Manager & Rehabilitation Consultant",
+        "es": "Studio Manager & Rehabilitation Consultant",
+        "de": "Studio Manager & Rehabilitation Consultant"
       },
       "location": {
-        "en": "Frankfurt, Hessen, Deutschland · Hybrid",
-        "es": "Frankfurt, Hessen, Deutschland · Hybrid",
-        "de": "Frankfurt, Hessen, Deutschland · Hybrid"
+        "en": "Rüsselsheim (DE)",
+        "es": "Rüsselsheim (DE)",
+        "de": "Rüsselsheim (DE)"
       },
       "dates": {
-        "start": "2018-04",
-        "end": "2020-07",
+        "start": "2018-03",
+        "end": "2020-02",
         "display": {
-          "en": "Apr 2018 - Jul 2020 · 2 yrs 4 mos",
-          "es": "Apr 2018 - Jul 2020 · 2 yrs 4 mos",
-          "de": "Apr 2018 - Jul 2020 · 2 yrs 4 mos"
+          "en": "Mar 2018 – Feb 2020",
+          "es": "Mar 2018 – Feb 2020",
+          "de": "Mar 2018 – Feb 2020"
         }
       },
       "description": {
@@ -215,18 +269,20 @@
         "de": ""
       },
       "bullets": {
-        "en": [],
+        "en": [
+          "Delivered rehab and return-to-activity programs tailored to injuries and real constraints.",
+          "Standardised intake, tracking, and program notes to make progress clear and easy to adjust.",
+          "Coordinated staff to keep coaching consistent and safe.",
+          "Supported scheduling and reporting workflows to maintain predictable service quality."
+        ],
         "es": [],
         "de": []
       },
       "skills": [
-        "Personal Training",
-        "Consulting",
-        "Sales",
-        "User Interface Design",
-        "Social Media Marketing",
-        "Web Development",
-        "Product Design"
+        "Rehabilitation",
+        "Program Design",
+        "Process Improvement",
+        "Team Coordination"
       ]
     },
     {
