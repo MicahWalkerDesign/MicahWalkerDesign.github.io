@@ -3,157 +3,204 @@
     {
       "id": "p1",
       "isFeatured": true,
-      "category": "App",
+      "category": "iOS App · Live on App Store",
       "deviceType": "iphone",
-      "youtubeIds": [
-        "rY7KynMuh7A",
-        "PxBQWbU5Svo"
-      ],
+      "imageUrl": "assets/img/babyeats-preview.png",
+      "appStoreUrl": "https://apps.apple.com/au/app/babyeats-blw-meal-planner/id6759222135",
       "title": {
-        "en": "Clinical Education Ecosystem",
-        "es": "Ecosistema de Educación Clínica",
-        "de": "Klinisches Bildungsökosystem"
+        "en": "BabyEats: BLW Meal Planner",
+        "es": "BabyEats: BLW Meal Planner",
+        "de": "BabyEats: BLW Meal Planner"
       },
       "story": {
         "why": {
-          "en": "After working within Multidisciplinary teams as a therapist in pediatric settings, it's clear to me that the communication and coordination could be better to increase standard of care for patients.",
-          "es": "Después de trabajar en equipos multidisciplinarios como terapeuta en entornos pediátricos, me queda claro que la comunicación y la coordinación podrían ser mejores para aumentar el estándar de atención a los pacientes.",
-          "de": "Nach meiner Arbeit in multidisziplinären Teams als Therapeut in der Pädiatrie ist mir klar, dass Kommunikation und Koordination besser sein könnten, um den Pflegestandard für Patienten zu erhöhen."
+          "en": "Built for my newborn daughter. New parents face a flood of contradictory guidance around introducing solids — what's safe, what's age-appropriate, how to handle allergens. I wanted one calm, evidence-informed tool that answered those questions without adding anxiety.",
+          "es": "Creado para mi hija recién nacida. Los padres primerizos enfrentan una avalancha de información contradictoria sobre la introducción de sólidos.",
+          "de": "Für meine neugeborene Tochter gebaut. Neue Eltern sind mit widersprüchlichen Ratschlägen zur Beikost überfordert."
         },
         "result": {
-          "en": "In Beta testing for the client and starting a long term more ambitious modular app to solve the market gap in multidisciplinary team coordination and communication.",
-          "es": "En pruebas Beta para el cliente y comenzando una aplicación modular más ambiciosa a largo plazo para resolver la brecha del mercado en la coordinación y comunicación de equipos multidisciplinarios.",
-          "de": "Im Beta-Test für den Kunden und beginnend mit einer langfristigen, ehrgeizigeren modularen App, um die Marktlücke bei der Koordination und Kommunikation multidisziplinärer Teams zu schließen."
+          "en": "Live on the App Store. Features a full food database with safety ratings, allergen tracking, age-appropriate guidance and a feeding log — built solo in SwiftUI from research through to App Store submission.",
+          "es": "Disponible en el App Store. Base de datos de alimentos, seguimiento de alérgenos, guía apropiada por edad y registro de alimentación.",
+          "de": "Im App Store. Lebensmitteldatenbank, Allergen-Tracking, altersgerechte Hinweise und Ernährungsprotokoll."
         }
       },
-      "powerTags": [
-        "React Native",
-        "Typescript",
-        "Javascript",
-        "SQL",
-        "API"
+      "learnings": [
+        {
+          "role": "Product Manager",
+          "points": [
+            "Scoping a solo build forces brutal prioritisation — I defined the MVP around the core anxiety (what can my baby eat right now?) and deferred everything else to v2.",
+            "Without a client or team, scope creep is self-inflicted; writing a one-page brief before each sprint kept me accountable to the original problem."
+          ]
+        },
+        {
+          "role": "Product Designer",
+          "points": [
+            "Designing for sleep-deprived, one-handed parents meant ruthlessly simplifying every screen — clarity always beat completeness.",
+            "Real user testing with new mums surfaced navigation patterns I'd never have anticipated from behind a desk."
+          ]
+        },
+        {
+          "role": "UI",
+          "points": [
+            "Healthcare-adjacent apps need a calm, trustworthy aesthetic — white space, soft palettes and consistent iconography carry more emotional weight than animation.",
+            "Accessibility constraints (dynamic type, high contrast) weren't an afterthought; building for them first made the design cleaner for everyone."
+          ]
+        },
+        {
+          "role": "UX",
+          "points": [
+            "The biggest challenge was information architecture — parents need safety reassurance first, food discovery second. Restructuring the hierarchy around that insight reduced early drop-off.",
+            "Onboarding had to earn trust fast; showing the evidence basis for each recommendation within the first two screens changed the tone of the whole experience."
+          ]
+        },
+        {
+          "role": "Software Engineer",
+          "points": [
+            "Building a CoreData-backed food database in SwiftUI early in my iOS journey taught me that schema decisions at day 1 are expensive to change post-launch — model first, build second.",
+            "App Store submission involves more product thinking than I expected: screenshot composition, metadata copywriting and review guidelines are all part of the shipped product."
+          ]
+        }
       ],
-      "techStack": [
-        "Accessibility",
-        "Information Architecture",
-        "React Native",
-        "Bilingual Support"
-      ],
-      "sourceUrl": "https://github.com/MentesenMovimiento/mentesenmovimiento.github.io",
-      "liveUrl": "https://mentesenmovimiento.org/"
+      "powerTags": ["Swift", "SwiftUI", "CoreData", "iOS", "App Store"]
     },
     {
       "id": "p2",
-      "category": "Website",
-      "deviceType": "browser",
-      "videoUrl": "assets/videos/p2-demo.mp4",
+      "category": "iOS App · Live on App Store",
+      "deviceType": "iphone",
+      "imageUrl": "assets/img/intimer-preview.png",
+      "appStoreUrl": "https://apps.apple.com/au/app/timer-interval/id6759624277",
       "title": {
-        "en": "Kraken Air & Electrical",
-        "es": "Kraken Aire y Electricidad",
-        "de": "Kraken Klima & Elektro"
+        "en": "Timer | Interval",
+        "es": "Timer | Interval",
+        "de": "Timer | Interval"
       },
       "story": {
         "why": {
-          "en": "Freelancer trying to compete with large organisations in a flooded market of air conditioning repairs and installs. Plus... He made himself a fun Logo with ChatGPT.",
-          "es": "Freelancer tratando de competir con grandes organizaciones en un mercado saturado de reparaciones e instalaciones de aire acondicionado. Además... Se hizo un logo divertido con ChatGPT.",
-          "de": "Freiberufler, der versucht, mit großen Organisationen in einem überfluteten Markt für Klimaanlagenreparaturen und -installationen zu konkurrieren. Plus... Er hat sich ein lustiges Logo mit ChatGPT gemacht."
+          "en": "As a coach and exercise scientist, I used interval timers constantly — and every existing app was either too cluttered or too simple. I wanted one that felt as clean as the training it was built for.",
+          "es": "Como entrenador y científico del ejercicio, usaba temporizadores de intervalos constantemente — y cada app era demasiado recargada o demasiado simple.",
+          "de": "Als Trainer und Sportwissenschaftler nutzte ich ständig Intervall-Timer — jede bestehende App war entweder überladen oder zu simpel."
         },
         "result": {
-          "en": "I designed the colour scheme and theme off his logo and added a calendar to help users feel locked into a commitment and choose him. 100/100 Lighthouse and monitoring SEO for improvements.",
-          "es": "Diseñé el esquema de colores y el tema basándome en su logo y agregué un calendario para ayudar a los usuarios a sentirse comprometidos y elegirlo. 100/100 Lighthouse y monitoreando SEO para mejoras.",
-          "de": "Ich habe das Farbschema und das Thema basierend auf seinem Logo entworfen und einen Kalender hinzugefügt, damit sich die Benutzer an eine Verpflichtung gebunden fühlen und ihn wählen. 100/100 Lighthouse und Überwachung von SEO auf Verbesserungen."
+          "en": "Live on the App Store. Clean interval timer with customisable work/rest cycles, sound and haptic cues, background accuracy and a home screen widget — designed and built end-to-end.",
+          "es": "Disponible en el App Store. Temporizador limpio con ciclos personalizables, señales sonoras, precisión en segundo plano y widget.",
+          "de": "Im App Store. Intervall-Timer mit anpassbaren Intervallen, Sound-Signalen, Hintergrundgenauigkeit und Widget."
         }
       },
-      "powerTags": [
-        "Tailwind CSS",
-        "React (Next.js)",
-        "Typescript",
-        "Python"
+      "learnings": [
+        {
+          "role": "Product Manager",
+          "points": [
+            "Interval timers sound deceptively simple — defining edge cases (rest periods, sound cues, haptics, background state, widget) revealed how much scope hides in 'simple' utility apps.",
+            "Positioning matters even in a crowded category; understanding why existing apps frustrated coaches helped me write a focused App Store description that converted."
+          ]
+        },
+        {
+          "role": "Product Designer",
+          "points": [
+            "The design challenge was making complex timer configurations feel instant and intuitive — progressive disclosure (simple defaults, advanced settings tucked away) is the right pattern for utility apps.",
+            "Designing the widget forced me to think about the absolute minimum information a user needs at a glance — a useful constraint that improved the main UI too."
+          ]
+        },
+        {
+          "role": "UI",
+          "points": [
+            "High contrast, large touch targets and readable countdown typography matter enormously when users are mid-exercise and glancing at the screen for half a second.",
+            "State transitions (work → rest → done) needed to be immediately distinguishable by colour and sound — not just label text."
+          ]
+        },
+        {
+          "role": "UX",
+          "points": [
+            "User testing mid-workout revealed that auditory and haptic feedback mattered far more than visual design — restructured the whole alert system around sound and haptic first.",
+            "The biggest UX failure in competing apps was buried settings; I surfaced the three most-changed values (work time, rest time, rounds) directly on the main screen."
+          ]
+        },
+        {
+          "role": "Software Engineer",
+          "points": [
+            "iOS background timer accuracy is non-trivial — the OS throttles background tasks in ways that affect UX. Learned to use BackgroundModes, UserNotifications and local notification scheduling to keep timing accurate.",
+            "WidgetKit has a different mental model to SwiftUI views; understanding the timeline-based refresh system required rethinking how I structured the app's shared state."
+          ]
+        }
       ],
-      "techStack": [
-        "Vanilla JS",
-        "Tailwind CSS",
-        "Static Generation"
-      ],
-      "sourceUrl": "https://github.com/MicahWalkerDesign/Kraken",
-      "liveUrl": "https://micahwalkerdesign.github.io/Kraken/",
-      "embedUrl": "https://micahwalkerdesign.github.io/Kraken/"
+      "powerTags": ["Swift", "SwiftUI", "WidgetKit", "iOS", "App Store"]
     },
     {
       "id": "p3",
-      "category": "App",
-      "deviceType": "iphone",
-      "youtubeIds": [
-        "OxBskvPyaIo"
-      ],
+      "category": "Fitness & Movement · YouTube · Website",
+      "deviceType": "browser",
+      "imageUrl": "assets/img/movement-preview.png",
+      "embedUrl": "https://www.movementbydesign.es",
+      "channelUrl": "https://www.youtube.com/channel/UCblexCGILCHMDAlIM62Xpbw",
       "title": {
-        "en": "PerfExpresso: AI Integrated Crema Analysis",
-        "es": "PerfExpresso: Análisis de Crema Integrado con IA",
-        "de": "PerfExpresso: KI-integrierte Crema-Analyse"
+        "en": "Movement by Design — Functional Fitness",
+        "es": "Movement by Design — Fitness Funcional",
+        "de": "Movement by Design — Funktionelles Fitness"
       },
       "story": {
         "why": {
-          "en": "My father in law asked me how to make the coffee from their espresso machine taste better, I started to give a sermon before realising there was an easier way...",
-          "es": "Mi suegro me preguntó cómo hacer que el café de su máquina de espresso supiera mejor, empecé a dar un sermón antes de darme cuenta de que había una manera más fácil...",
-          "de": "Mein Schwiegervater fragte mich, wie man den Kaffee aus seiner Espressomaschine besser schmecken lassen kann, ich fing an, eine Predigt zu halten, bevor mir klar wurde, dass es einen einfacheren Weg gibt..."
+          "en": "Built to share practical movement education beyond 1:1 sessions — reaching people who want to train smarter, prevent injury and build sustainable habits. The brand spans a coaching website, YouTube channel and social content.",
+          "es": "Creado para compartir educación práctica del movimiento más allá de las sesiones individuales.",
+          "de": "Aufgebaut um praktische Bewegungsbildung über Einzelsitzungen hinaus zu teilen."
         },
         "result": {
-          "en": "A prototype that is ready to test upon my next visit to their house, if it works we will be saving lives, one coffee at a time.",
-          "es": "Un prototipo que está listo para probar en mi próxima visita a su casa, si funciona estaremos salvando vidas, un café a la vez.",
-          "de": "Ein Prototyp, der bereit ist, bei meinem nächsten Besuch in ihrem Haus getestet zu werden, wenn es funktioniert, werden wir Leben retten, einen Kaffee nach dem anderen."
+          "en": "A live coaching website (movementbydesign.es) built and optimised end-to-end, plus a YouTube and Instagram brand — managing positioning, content strategy, video production, SEO and audience growth from scratch.",
+          "es": "Un sitio web de coaching en vivo (movementbydesign.es) construido y optimizado, más una marca en YouTube e Instagram.",
+          "de": "Eine live Coaching-Website (movementbydesign.es) von Grund auf aufgebaut, plus YouTube- und Instagram-Marke."
         }
       },
-      "powerTags": [
-        "Swift",
-        "Xcode",
-        "API"
-      ],
-      "techStack": [
-        "Swift / SwiftUI",
-        "CoreML",
-        "Computer Vision",
-        "iOS"
-      ],
-      "links": {
-        "demo": "#",
-        "source": "https://github.com/MicahWalkerDesign/PerfEspresso"
-      }
+      "powerTags": ["Content Strategy", "SEO", "Personal Brand", "Movement Education", "Video Production", "Website Design"]
     },
     {
       "id": "p4",
-      "category": "Website",
-      "deviceType": "browser",
-      "videoUrl": "assets/videos/p4-demo.mp4",
+      "category": "Clinical Research · Goethe University Frankfurt",
+      "deviceType": "abstract",
       "title": {
-        "en": "Mentes en Movimiento",
-        "es": "Mentes en Movimiento",
-        "de": "Mentes en Movimiento"
+        "en": "Clinical Exercise Research",
+        "es": "Investigación Clínica del Ejercicio",
+        "de": "Klinische Bewegungsforschung"
       },
       "story": {
         "why": {
-          "en": "This Clinic didn't have an online presence but needed to start their official applications.",
-          "es": "Esta clínica no tenía presencia en línea pero necesitaba comenzar sus solicitudes oficiales.",
-          "de": "Diese Klinik hatte keine Online-Präsenz, musste aber ihre offiziellen Anträge starten."
+          "en": "Exercise therapy in clinical oncology is underutilised and poorly coordinated. I joined Goethe University Frankfurt to contribute to research that aimed to change that — building the evidence base and practical delivery frameworks that make exercise part of real cancer care.",
+          "es": "La terapia de ejercicio en oncología clínica está infrautilizada. Me uní a la Universidad Goethe de Frankfurt para contribuir a la investigación.",
+          "de": "Bewegungstherapie in der klinischen Onkologie wird zu wenig genutzt. Ich trat der Goethe-Universität Frankfurt bei."
         },
         "result": {
-          "en": "A professional and multilingual static html that will give government bodies and charities a point of reference in regard to their applications.",
-          "es": "Un html estático profesional y multilingüe que dará a los organismos gubernamentales y organizaciones benéficas un punto de referencia con respecto a sus solicitudes.",
-          "de": "Ein professionelles und mehrsprachiges statisches HTML, das Regierungsbehörden und Wohltätigkeitsorganisationen einen Bezugspunkt für ihre Anträge gibt."
+          "en": "Contributed to multiple peer-reviewed studies — including the EXERCISE-CC randomised controlled trial and the MOVE-ONKO multi-clinic implementation study — both published in international journals.",
+          "es": "Contribuí a múltiples estudios revisados por pares, incluyendo EXERCISE-CC y MOVE-ONKO.",
+          "de": "Beiträge zu mehreren peer-reviewed Studien, einschließlich EXERCISE-CC und MOVE-ONKO."
         }
       },
-      "powerTags": [
-        "HTML",
-        "Javascript",
-        "CSS"
+      "abstracts": [
+        {
+          "title": "MOVE-ONKO",
+          "subtitle": "Multi-professional Care Pathway for Exercise Therapy in Oncology",
+          "summary": "Evaluates the implementation of a coordinated care network across three major German regions connecting cancer patients with quality-assured, needs-oriented exercise therapy. The study developed a structured pathway between oncology centres and local exercise providers, supported by a digital platform for patient-professional communication. Funded by German Cancer Aid (Deutsche Krebshilfe), the project ran across multiple Comprehensive Cancer Centres from 2023.",
+          "journal": "BMC Cancer",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40082847/"
+        },
+        {
+          "title": "EXERCISE-CC",
+          "subtitle": "Exercise Early to Reduce Corticosteroid-Induced Side Effects in Childhood Cancer — RCT",
+          "summary": "An 8-week randomised controlled trial investigating whether structured exercise, initiated within the first weeks of treatment, can reduce corticosteroid-induced complications (muscle weakness, bone loss, metabolic changes) in children and adolescents recently diagnosed with leukemia or lymphoma. Co-designed and delivered at Goethe University Frankfurt as part of the clinical research team.",
+          "journal": "Trials · Springer Nature",
+          "url": "https://link.springer.com/article/10.1186/s13063-026-09686-4"
+        }
       ],
-      "techStack": [
-        "Semantic HTML",
-        "CSS Variables",
-        "i18n Support"
+      "papers": [
+        {
+          "title": "MOVE-ONKO: Multi-professional care pathway for exercise therapy in oncological patients",
+          "journal": "BMC Cancer · PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40082847/"
+        },
+        {
+          "title": "EXERCISE-CC: Exercise early to reduce corticosteroid-induced side effects in childhood cancer — RCT Protocol",
+          "journal": "Trials · Springer Nature",
+          "url": "https://link.springer.com/article/10.1186/s13063-026-09686-4"
+        }
       ],
-      "sourceUrl": "https://github.com/MentesenMovimiento/mentesenmovimiento.github.io",
-      "liveUrl": "https://mentesenmovimiento.org/",
-      "embedUrl": "https://micahwalkerdesign.github.io/Mentes/"
+      "powerTags": ["Clinical Research", "Exercise Oncology", "RCT", "Multi-clinic Coordination", "Exercise Physiology"]
     }
   ]
 }

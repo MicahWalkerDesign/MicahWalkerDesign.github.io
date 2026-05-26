@@ -16,7 +16,6 @@
 import { initI18n, setLanguage, getCurrentLanguage, t } from './i18n.js';
 import { initTheme, setTheme, getTheme } from './theme.js';
 import { initModal, openModal } from './components/modal.js';
-import { loadExperienceData, renderTimeline, refreshTimeline } from './components/timeline.js';
 // import { initPortfolio, refreshPortfolio } from './components/portfolioGrid.js'; // Legacy
 import { initDashboard, refreshDashboard } from './components/portfolioDashboard.js';
 import { PaperTossGame } from './components/paperToss/game.js';
@@ -24,7 +23,6 @@ import { initSkillDragger } from './components/skillDragger.js';
 import { initParticleBackground } from './components/particleBackground.js';
 
 // Application state
-let experienceData = null;
 let paperTossGame = null;
 
 // Mobile Menu Logic
@@ -78,15 +76,6 @@ async function initApp() {
   setupLanguageToggles();
   setupThemeToggles();
   setupMobileMenu();
-
-  // Load and render experience timeline
-  console.log('initApp: Calling initTimeline...');
-  try {
-    await initTimeline();
-    console.log('initApp: initTimeline completed');
-  } catch (e) {
-    console.error('initTimeline failed:', e);
-  }
 
   // Render portfolio dashboard
   console.log('initApp: Calling initDashboard...');
@@ -235,25 +224,6 @@ function setupThemeToggles() {
 }
 
 /**
- * Loads experience data and renders the timeline.
- */
-async function initTimeline() {
-  const container = document.getElementById('timeline-container');
-  if (!container) {
-    console.warn('Timeline container not found');
-    return;
-  }
-
-  // Load experience data from JSON
-  experienceData = await loadExperienceData();
-
-  // Render timeline
-  renderTimeline(container, experienceData);
-}
-
-// initPortfolio is now imported from portfolioGrid.js
-
-/**
  * Initializes the paper toss game.
  */
 function initPaperToss() {
@@ -321,12 +291,6 @@ function initPaperToss() {
  */
 function handleLanguageChange(event) {
   const { language } = event.detail;
-
-  // Refresh timeline with new language
-  const timelineContainer = document.getElementById('timeline-container');
-  if (timelineContainer && experienceData) {
-    refreshTimeline(timelineContainer, experienceData);
-  }
 
   // Refresh dashboard with new language
   refreshDashboard();

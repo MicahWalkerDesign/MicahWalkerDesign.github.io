@@ -38,6 +38,7 @@ export async function initDashboard() {
   dom.storyContent = dom.container.querySelector('.story-panel__content');
   dom.powerTags = dom.container.querySelector('.power-tags');
   dom.skeleton = dom.container.querySelector('.viewport-skeleton');
+  dom.footer = document.getElementById('project-footer');
 
   try {
     const data = await loadPortfolioData();
@@ -137,22 +138,35 @@ function handleProjectSwitch(id) {
 function updateDashboard(project) {
   const lang = getCurrentLanguage();
 
-  // --- Middle Column: Device Viewport ---
+  // Clear footer first
+  if (dom.footer) dom.footer.innerHTML = '';
 
-  // Show skeleton while loading
+  // --- Middle Column: Device Viewport ---
   if (dom.skeleton) dom.skeleton.classList.add('active');
+
+  // Hide all existing media elements
+  const existingImg = dom.viewport && dom.viewport.querySelector('.device-screenshot');
+  const existingAbstract = dom.viewport && dom.viewport.querySelector('.device-abstract');
+  if (existingImg) existingImg.style.display = 'none';
+  if (existingAbstract) existingAbstract.style.display = 'none';
+  if (dom.video) { dom.video.style.display = 'none'; dom.video.pause && dom.video.pause(); }
+  if (dom.iframe) { dom.iframe.style.display = 'none'; dom.iframe.src = 'about:blank'; }
+  const existingCarousel = dom.viewport && dom.viewport.querySelector('.youtube-carousel');
+  if (existingCarousel) existingCarousel.style.display = 'none';
 
   // Switch Frame Type
   if (dom.viewport) {
-    dom.viewport.className = 'device-frame'; // reset
-    dom.viewport.classList.add(`device-frame--${project.deviceType || 'browser'}`);
-
-    // Manage Browser Chrome
+    dom.viewport.className = 'device-frame';
     const existingChrome = dom.viewport.querySelector('.browser-chrome');
-    if (project.deviceType === 'iphone') {
+    if (project.deviceType === 'iphone' || project.deviceType === 'abstract') {
       if (existingChrome) existingChrome.remove();
+      if (project.deviceType === 'abstract') {
+        dom.viewport.classList.add('device-frame--abstract');
+      } else {
+        dom.viewport.classList.add('device-frame--iphone');
+      }
     } else {
-      // Ensure browser chrome exists
+      dom.viewport.classList.add('device-frame--browser');
       if (!existingChrome) {
         const chrome = document.createElement('div');
         chrome.className = 'browser-chrome';
@@ -166,91 +180,96 @@ function updateDashboard(project) {
     }
   }
 
-  // Handle Embed vs Video vs YouTube Carousel
-  if (project.youtubeIds && project.youtubeIds.length > 0) {
-    // Show Carousel
-    if (dom.video) { dom.video.style.display = 'none'; dom.video.pause(); }
-    if (dom.iframe) dom.iframe.style.display = 'none';
+  // --- RENDER CENTER CONTENT ---
 
-    // Check if carousel already exists
-    let carousel = dom.viewport.querySelector('.youtube-carousel');
+  if (project.deviceType === 'abstract' && project.abstracts) {
+    // Abstract text panel (no iframe)
+    let abstractEl = dom.viewport && dom.viewport.querySelector('.device-abstract');
+    if (!abstractEl) {
+      abstractEl = document.createElement('div');
+      abstractEl.className = 'device-abstract';
+      dom.viewport.appendChild(abstractEl);
+    }
+    abstractEl.innerHTML = project.abstracts.map(a => `
+      <div class="abstract-card">
+        <div class="abstract-card__title">${a.title}</div>
+        <div class="abstract-card__subtitle">${a.subtitle}</div>
+        <p class="abstract-card__summary">${a.summary}</p>
+        <a href="${a.url}" target="_blank" rel="noopener noreferrer" class="abstract-card__link">
+          Read in ${a.journal} →
+        </a>
+      </div>
+    `).join('');
+    abstractEl.style.display = 'block';
+    if (dom.skeleton) dom.skeleton.classList.remove('active');
+
+  } else if (project.imageUrl) {
+    // Static image in phone frame
+    let imgEl = dom.viewport && dom.viewport.querySelector('.device-screenshot');
+    if (!imgEl) {
+      imgEl = document.createElement('img');
+      imgEl.className = 'device-screenshot';
+      dom.viewport.appendChild(imgEl);
+    }
+    imgEl.src = project.imageUrl;
+    imgEl.alt = getLocalizedValue(project.title, lang) + ' screenshot';
+    imgEl.style.display = 'block';
+    imgEl.onload = () => { if (dom.skeleton) dom.skeleton.classList.remove('active'); };
+    imgEl.onerror = () => { if (dom.skeleton) dom.skeleton.classList.remove('active'); };
+
+  } else if (project.embedUrl && dom.iframe) {
+    // Website iframe
+    dom.iframe.style.display = 'block';
+    if (dom.iframe.src !== project.embedUrl) {
+      dom.iframe.src = project.embedUrl;
+      dom.iframe.onload = () => { if (dom.skeleton) dom.skeleton.classList.remove('active'); };
+    } else {
+      if (dom.skeleton) dom.skeleton.classList.remove('active');
+    }
+
+  } else if (project.youtubeIds && project.youtubeIds.length > 0) {
+    let carousel = dom.viewport && dom.viewport.querySelector('.youtube-carousel');
     if (!carousel) {
       carousel = document.createElement('div');
       carousel.className = 'youtube-carousel';
       dom.viewport.appendChild(carousel);
     }
     carousel.style.display = 'flex';
-
-    // Render Carousel Content
     renderYouTubeCarousel(carousel, project.youtubeIds);
     if (dom.skeleton) dom.skeleton.classList.remove('active');
 
-  } else if (project.embedUrl && dom.iframe) {
-    // Show Iframe
-    const carousel = dom.viewport.querySelector('.youtube-carousel');
-    if (carousel) carousel.style.display = 'none';
-
-    if (dom.video) {
-      dom.video.style.display = 'none';
-      dom.video.pause();
-    }
-
-    dom.iframe.style.display = 'block';
-
-    // Only reload if source changed to avoid flickering
-    if (dom.iframe.src !== project.embedUrl) {
-      dom.iframe.src = project.embedUrl;
-      dom.iframe.onload = () => {
-        if (dom.skeleton) dom.skeleton.classList.remove('active');
-      };
-    } else {
-      if (dom.skeleton) dom.skeleton.classList.remove('active');
-    }
-
   } else if (dom.video) {
-    // Show Video
-    const carousel = dom.viewport.querySelector('.youtube-carousel');
-    if (carousel) carousel.style.display = 'none';
-
-    if (dom.iframe) {
-      dom.iframe.style.display = 'none';
-      dom.iframe.src = 'about:blank';
-    }
     dom.video.style.display = 'block';
-
     dom.video.style.opacity = '0';
-
     setTimeout(() => {
       dom.video.src = project.videoUrl || '';
       dom.video.load();
-      dom.video.play().catch(() => { });
+      dom.video.play().catch(() => {});
       dom.video.onloadeddata = () => {
-        dom.skeleton.classList.remove('active');
+        if (dom.skeleton) dom.skeleton.classList.remove('active');
         dom.video.style.opacity = '1';
       };
-      dom.video.onerror = () => {
-        dom.skeleton.classList.remove('active');
-      };
+      dom.video.onerror = () => { if (dom.skeleton) dom.skeleton.classList.remove('active'); };
     }, 200);
+  } else {
+    if (dom.skeleton) dom.skeleton.classList.remove('active');
   }
 
   // --- Right Column: Story Panel ---
-  if (dom.storyContent && project.story) {
-    dom.storyContent.innerHTML = ''; // Clear previous
+  const rolesEl = dom.container.querySelector('.story-panel__roles');
+  if (rolesEl) rolesEl.textContent = project.category || '';
 
-    const sections = ['why', 'result'];
-    const labels = {
-      why: 'The Why',
-      result: 'The Result'
-    };
+  if (dom.storyContent) {
+    dom.storyContent.innerHTML = '';
 
-    sections.forEach((key, index) => {
-      if (project.story[key]) {
+    // Why & Result
+    ['why', 'result'].forEach((key, index) => {
+      const labels = { why: 'The Why', result: 'The Result' };
+      if (project.story && project.story[key]) {
         const text = getLocalizedValue(project.story[key], lang);
         const section = document.createElement('div');
         section.className = 'story-section reveal';
         section.style.animationDelay = `${index * 100}ms`;
-
         section.innerHTML = `
           <div class="story-section__label">${labels[key]}</div>
           <p class="story-section__text">${text}</p>
@@ -258,20 +277,104 @@ function updateDashboard(project) {
         dom.storyContent.appendChild(section);
       }
     });
+
+    // App Store button (story panel only)
+    if (project.appStoreUrl) {
+      const appBtn = document.createElement('a');
+      appBtn.href = project.appStoreUrl;
+      appBtn.target = '_blank';
+      appBtn.rel = 'noopener noreferrer';
+      appBtn.className = 'story-appstore-btn';
+      appBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg> View on App Store`;
+      dom.storyContent.appendChild(appBtn);
+    }
   }
 
-  // Update Power Tags
+  // Power Tags
   if (dom.powerTags) {
     dom.powerTags.innerHTML = '';
-    const tags = project.powerTags || [];
-    tags.forEach((tag, index) => {
+    (project.powerTags || []).forEach((tag, i) => {
       const span = document.createElement('span');
-      span.className = 'power-tag';
+      span.className = 'power-tag badge';
+      span.style.animationDelay = `${i * 50}ms`;
       span.textContent = tag;
-      span.style.animationDelay = `${index * 50}ms`;
-      span.classList.add('badge');
       dom.powerTags.appendChild(span);
     });
+  }
+
+  // --- Footer: Learnings / Papers / Channel ---
+  if (!dom.footer) return;
+
+  if (project.learnings && project.learnings.length > 0) {
+    // App projects: horizontal learnings grid
+    const label = document.createElement('div');
+    label.className = 'project-footer__label';
+    label.textContent = 'Learnings by Role';
+    dom.footer.appendChild(label);
+
+    const grid = document.createElement('div');
+    grid.className = 'footer-learnings';
+    project.learnings.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'footer-learning-card';
+      const bullets = item.points.map(p => `<li>${p}</li>`).join('');
+      card.innerHTML = `
+        <div class="footer-learning-card__role">${item.role}</div>
+        <ul class="footer-learning-card__points">${bullets}</ul>
+      `;
+      grid.appendChild(card);
+    });
+    dom.footer.appendChild(grid);
+
+  } else if (project.papers && project.papers.length > 0) {
+    // Research: paper links in footer
+    const label = document.createElement('div');
+    label.className = 'project-footer__label';
+    label.textContent = 'Published Research';
+    dom.footer.appendChild(label);
+
+    const linksRow = document.createElement('div');
+    linksRow.className = 'footer-papers';
+    project.papers.forEach(paper => {
+      const a = document.createElement('a');
+      a.href = paper.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.className = 'footer-paper-link';
+      a.innerHTML = `<span class="footer-paper-link__title">${paper.title}</span><span class="footer-paper-link__journal">${paper.journal}</span>`;
+      linksRow.appendChild(a);
+    });
+    dom.footer.appendChild(linksRow);
+
+  } else if (project.channelUrl) {
+    // Movement / YouTube: channel link + tags in footer
+    const label = document.createElement('div');
+    label.className = 'project-footer__label';
+    label.textContent = 'Links & Skills';
+    dom.footer.appendChild(label);
+
+    const row = document.createElement('div');
+    row.className = 'footer-links-row';
+
+    const chanBtn = document.createElement('a');
+    chanBtn.href = project.channelUrl;
+    chanBtn.target = '_blank';
+    chanBtn.rel = 'noopener noreferrer';
+    chanBtn.className = 'story-appstore-btn';
+    chanBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube Channel`;
+    row.appendChild(chanBtn);
+
+    if (project.embedUrl) {
+      const siteBtn = document.createElement('a');
+      siteBtn.href = project.embedUrl;
+      siteBtn.target = '_blank';
+      siteBtn.rel = 'noopener noreferrer';
+      siteBtn.className = 'story-appstore-btn story-appstore-btn--secondary';
+      siteBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Visit Website`;
+      row.appendChild(siteBtn);
+    }
+
+    dom.footer.appendChild(row);
   }
 }
 

@@ -8,17 +8,17 @@
 
   <!-- SEO Meta Description -->
   <meta name="description"
-    content="Micah Walker — Product Designer specializing in Health, Performance & Wellness. Behavior-change UX, research-driven flows, and clean UI for digital health products people actually stick with.">
+    content="Micah Walker — Health & Wellness Consultant specialising in Movement, Prevention, Sport Performance & Digital Health UX. Helping health, wellness & healthtech organisations turn complex human problems into practical workflows, clear user journeys & supportive digital experiences.">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Micah Walker — Product Designer | Health, Performance & Wellness">
+  <meta property="og:title" content="Micah Walker — Health & Wellness Consultant | Movement & Digital Health UX">
   <meta property="og:description"
-    content="Portfolio showcasing healthcare technology, AI projects, and modern web architectures.">
+    content="Helping health, wellness & healthtech organisations turn complex human problems into practical workflows, clear user journeys & supportive digital experiences.">
   <meta property="og:url" content="https://micahwalkerdesign.github.io/">
   <link rel="canonical" href="https://micahwalkerdesign.github.io/">
 
-  <title>Micah Walker — Product Designer | Health, Performance & Wellness</title>
+  <title>Micah Walker — Health & Wellness Consultant | Movement & Digital Health UX</title>
 
   <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,9 +70,9 @@
       <!-- Navigation -->
       <nav class="header__nav" role="navigation" aria-label="Main navigation">
         <ul class="header__nav-list">
+          <li><a href="#specialties" data-i18n="header.specialties">Specialties</a></li>
           <li><a href="#portfolio" data-i18n="header.portfolio">Projects</a></li>
           <li><a href="#about" data-i18n="header.about">About</a></li>
-          <li><a href="#background" data-i18n="header.experience">Experience</a></li>
           <li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
         </ul>
       </nav>
@@ -115,9 +115,9 @@
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true" inert>
     <nav class="mobile-menu__nav">
       <ul class="mobile-menu__list">
+        <li><a href="#specialties" data-i18n="header.specialties" class="mobile-menu__link">Specialties</a></li>
         <li><a href="#portfolio" data-i18n="header.portfolio" class="mobile-menu__link">Projects</a></li>
         <li><a href="#about" data-i18n="header.about" class="mobile-menu__link">About</a></li>
-        <li><a href="#background" data-i18n="header.experience" class="mobile-menu__link">Experience</a></li>
         <li><a href="#contact" data-i18n="footer.contact" class="mobile-menu__link">Contact</a></li>
       </ul>
     </nav>
@@ -134,14 +134,15 @@
             <span class="hero__name gradient-text">Micah Walker</span>
           </h1>
           <p class="hero__subheading">
-            Product Designer Health, Performance & Wellness
+            Health &amp; Wellness Consultant<br>Movement, Prevention, Sport Performance &amp; Digital Health UX
           </p>
           <p class="hero__tagline">
-            Behavior-change UX • Research → Flows → UI
+            EN &nbsp;·&nbsp; DE &nbsp;·&nbsp; ES &nbsp;&nbsp;|&nbsp;&nbsp; Remote (AU)
           </p>
           <p class="hero__description" data-i18n="hero.description">
-            I design health and performance products that people actually stick with by leveraging personal experience
-            and combining behavior-change thinking, research, and clean UI.
+            I help health, wellness &amp; healthtech organisations turn complex human problems into practical workflows,
+            clear user journeys &amp; supportive digital experiences — combining movement science, behaviour change &amp;
+            UX thinking.
           </p>
           <div class="hero__cta">
             <a href="#contact" class="btn btn--primary magnetic" data-i18n="hero.ctaPrimary">
@@ -159,6 +160,289 @@
           <div class="hero__orb hero__orb--3"></div>
         </div>
       </div>
+    </section>
+
+    <!-- ==================== SPECIALTIES SECTION ==================== -->
+    <section id="specialties" class="section specialties reveal" aria-labelledby="specialties-heading">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="specialties-heading" class="section__title">What I Do</h2>
+          <p class="section__subtitle">Select a specialty to explore my background in that area</p>
+        </header>
+
+        <div class="specialty-selector">
+          <!-- Tab Buttons -->
+          <div class="specialty-tabs" role="tablist" aria-label="Specialty areas">
+
+            <button class="specialty-tab specialty-tab--active" role="tab" aria-selected="true"
+              aria-controls="specialty-consulting" data-specialty="consulting">
+              <span class="specialty-tab__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                  <path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/>
+                  <line x1="12" y1="12" x2="12" y2="16"/>
+                  <line x1="10" y1="14" x2="14" y2="14"/>
+                </svg>
+              </span>
+              <span class="specialty-tab__title">Health &amp; Wellness Consulting</span>
+              <span class="specialty-tab__sub">Digital Health · Behaviour Change · Service Delivery</span>
+            </button>
+
+            <button class="specialty-tab" role="tab" aria-selected="false" aria-controls="specialty-coaching"
+              data-specialty="coaching">
+              <span class="specialty-tab__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <circle cx="12" cy="5" r="3"/>
+                  <path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
+                  <path d="M3 10h4m10 0h4"/>
+                  <path d="M7 10c0 3 2 5 5 5s5-2 5-5"/>
+                </svg>
+              </span>
+              <span class="specialty-tab__title">Health Coaching &amp; Fitness</span>
+              <span class="specialty-tab__sub">Personal Training · Rehab · Strength &amp; Conditioning</span>
+            </button>
+
+            <button class="specialty-tab" role="tab" aria-selected="false" aria-controls="specialty-digital"
+              data-specialty="digital">
+              <span class="specialty-tab__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <rect x="5" y="2" width="14" height="20" rx="2"/>
+                  <line x1="9" y1="7" x2="15" y2="7"/>
+                  <line x1="9" y1="11" x2="15" y2="11"/>
+                  <line x1="9" y1="15" x2="12" y2="15"/>
+                </svg>
+              </span>
+              <span class="specialty-tab__title">Digital Products &amp; App Design</span>
+              <span class="specialty-tab__sub">UX/UI · Prototyping · Health Tech Products</span>
+            </button>
+
+            <button class="specialty-tab" role="tab" aria-selected="false" aria-controls="specialty-workplace"
+              data-specialty="workplace">
+              <span class="specialty-tab__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </span>
+              <span class="specialty-tab__title">Workplace Health &amp; Clinical Research</span>
+              <span class="specialty-tab__sub">Ergonomics · Injury Prevention · Exercise Research</span>
+            </button>
+
+          </div><!-- /.specialty-tabs -->
+
+          <!-- Specialty Panels -->
+          <div class="specialty-panels">
+
+            <!-- ── Panel 1: Health & Wellness Consulting ─────────────── -->
+            <div class="specialty-panel specialty-panel--active" id="specialty-consulting" role="tabpanel"
+              aria-labelledby="tab-consulting">
+              <div class="specialty-panel__inner">
+                <p class="specialty-panel__desc">
+                  Exercise and Sports Science professional translating clinical, user and operational needs into
+                  practical digital tools, workflows, education materials and adoption strategies — across digital
+                  health, MedTech, clinical research and direct health service delivery.
+                </p>
+                <div class="specialty-panel__body">
+                  <div class="specialty-panel__skills">
+                    <h4 class="specialty-col-label">Skill Areas</h4>
+                    <ul>
+                      <li>Digital health tools &amp; platforms</li>
+                      <li>Implementation &amp; service delivery</li>
+                      <li>Behaviour change &amp; adherence</li>
+                      <li>Stakeholder engagement</li>
+                      <li>Client onboarding &amp; education</li>
+                      <li>User research &amp; usability checks</li>
+                      <li>Workflow analysis &amp; improvement</li>
+                      <li>Health program design &amp; evaluation</li>
+                    </ul>
+                  </div>
+                  <div class="specialty-panel__experience">
+                    <h4 class="specialty-col-label">Key Experience</h4>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Health &amp; Wellness Consultant</span>
+                      <span class="specialty-exp-item__company">Freelance · 2019–Present</span>
+                      <p>Designed and delivered digital health, performance and wellness projects; built health
+                        platforms, app prototypes and Apple Store health products; translated exercise science and
+                        behaviour-change principles into onboarding flows, education content and digital tools.</p>
+                    </div>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Territory Manager — Sports Medicine &amp; MedTech</span>
+                      <span class="specialty-exp-item__company">Arthrex APAC · Sep 2024–Feb 2026</span>
+                      <p>Supported orthopaedic &amp; sports medicine services across 4 hospitals and 20+ surgeons;
+                        translated frontline clinical needs into training materials, onboarding plans and process
+                        improvements.</p>
+                    </div>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Research Scientist — Sports Therapy &amp; Clinical
+                        Exercise</span>
+                      <span class="specialty-exp-item__company">Goethe University Frankfurt · 2022–2024</span>
+                      <p>Co-designed the Exercise-CC study; designed clinical exercise protocols under real-world
+                        constraints; gathered patient feedback to improve program clarity, safety and engagement.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Panel 2: Health Coaching & Fitness ─────────────────── -->
+            <div class="specialty-panel" id="specialty-coaching" role="tabpanel" aria-labelledby="tab-coaching">
+              <div class="specialty-panel__inner">
+                <p class="specialty-panel__desc">
+                  Designing practical training and wellness programs around client goals, injury history, physical
+                  capacity, motivation and real-life constraints. Coached 50+ personal and hundreds of group training
+                  clients — from general fitness and rehabilitation to strength &amp; conditioning in professional rugby
+                  environments.
+                </p>
+                <div class="specialty-panel__body">
+                  <div class="specialty-panel__skills">
+                    <h4 class="specialty-col-label">Skill Areas</h4>
+                    <ul>
+                      <li>Exercise prescription &amp; goal setting</li>
+                      <li>Rehabilitation-informed training</li>
+                      <li>Injury prevention &amp; return to activity</li>
+                      <li>Nutrition education &amp; performance</li>
+                      <li>Group coaching &amp; seminar delivery</li>
+                      <li>Strength &amp; conditioning</li>
+                      <li>Behaviour change &amp; habit formation</li>
+                      <li>Client assessment &amp; progression</li>
+                    </ul>
+                  </div>
+                  <div class="specialty-panel__experience">
+                    <h4 class="specialty-col-label">Key Experience</h4>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Health, Movement &amp; Wellness Consultant</span>
+                      <span class="specialty-exp-item__company">Aussie Ausdauer (Freelance) · 2019–2024</span>
+                      <p>Delivered PT, group training, rehab-informed exercise, nutrition education and performance
+                        coaching for 50+ individual and group clients; designed programs around injury history,
+                        motivation and lifestyle constraints; delivered health &amp; motivational seminars for corporate
+                        clients.</p>
+                    </div>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Studio Manager — Health, Fitness &amp; Member
+                        Experience</span>
+                      <span class="specialty-exp-item__company">TG 1862 Rüsselsheim · Sep 2019–Aug 2022</span>
+                      <p>Coordinated daily operations for a 500-member facility; delivered exercise, wellness and
+                        rehabilitation-informed programs; coached members on movement confidence, adherence and
+                        long-term behaviour change.</p>
+                    </div>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Volunteer S&amp;C Coach — Junior Development</span>
+                      <span class="specialty-exp-item__company">Newcastle Knights · Sep 2015–Aug 2016</span>
+                      <p>Coached the junior development team (ages 16–21) in high-performance strength &amp;
+                        conditioning — gym and field-based sessions focused on performance, movement quality and
+                        injury prevention.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Panel 3: Digital Products / App Design ─────────────── -->
+            <div class="specialty-panel" id="specialty-digital" role="tabpanel" aria-labelledby="tab-digital">
+              <div class="specialty-panel__inner">
+                <p class="specialty-panel__desc">
+                  Designing health, movement and performance-focused digital experiences from research and user flows
+                  through to wireframes, UI, prototypes and handoff — combining real-world health domain knowledge with
+                  UX thinking, behaviour-change strategy and AI-assisted prototyping to ship products that actually
+                  work.
+                </p>
+                <div class="specialty-panel__body">
+                  <div class="specialty-panel__skills">
+                    <h4 class="specialty-col-label">Skill Areas</h4>
+                    <ul>
+                      <li>UX/UI Design (Figma)</li>
+                      <li>User research &amp; usability testing</li>
+                      <li>Information architecture &amp; user flows</li>
+                      <li>Wireframing &amp; prototyping</li>
+                      <li>Design systems &amp; components</li>
+                      <li>Behaviour change onboarding UX</li>
+                      <li>AI-assisted coding &amp; prototyping</li>
+                      <li>iOS app development (Swift/SwiftUI)</li>
+                    </ul>
+                  </div>
+                  <div class="specialty-panel__experience">
+                    <h4 class="specialty-col-label">Key Experience</h4>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Health &amp; Wellness Consultant — Digital Health UX
+                        &amp; Product Design</span>
+                      <span class="specialty-exp-item__company">Self-Employed · Apr 2024–Present</span>
+                      <p>Built &amp; optimised 11+ websites end-to-end; prototyped 4 app concepts; designed
+                        health-focused digital experiences end-to-end from research through to UI and handoff; created
+                        reusable design systems with components, states and tokens; used AI tools to validate UX and
+                        support development handoff.</p>
+                    </div>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Personal Project — BabyEats BLW App</span>
+                      <span class="specialty-exp-item__company">iOS · 2024</span>
+                      <p>Designed and built an iOS digital health app with food tracking, nutritional tables and
+                        evidence-informed guidance on baby-led weaning, food introduction and allergens — from research
+                        through to App Store launch.</p>
+                    </div>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Movement by Design</span>
+                      <span class="specialty-exp-item__company">YouTube / Instagram · 2019–Present</span>
+                      <p>Built a content brand focused on functional fitness, injury prevention and practical movement
+                        education — managing content strategy, production, SEO and audience growth.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Panel 4: Workplace Health & Clinical Research ──────── -->
+            <div class="specialty-panel" id="specialty-workplace" role="tabpanel" aria-labelledby="tab-workplace">
+              <div class="specialty-panel__inner">
+                <p class="specialty-panel__desc">
+                  Identifying physical and ergonomic risk factors, translating health evidence into practical advice,
+                  and supporting safer movement, wellbeing and long-term behaviour change across corporate, clinical
+                  and research environments.
+                </p>
+                <div class="specialty-panel__body">
+                  <div class="specialty-panel__skills">
+                    <h4 class="specialty-col-label">Skill Areas</h4>
+                    <ul>
+                      <li>Musculoskeletal injury prevention</li>
+                      <li>Manual handling &amp; ergonomics</li>
+                      <li>Workplace health promotion</li>
+                      <li>Clinical exercise protocol design</li>
+                      <li>Research &amp; evidence translation</li>
+                      <li>Return-to-work support</li>
+                      <li>Multi-clinic research coordination</li>
+                      <li>Data capture, SOPs &amp; documentation</li>
+                    </ul>
+                  </div>
+                  <div class="specialty-panel__experience">
+                    <h4 class="specialty-col-label">Key Experience</h4>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Research Scientist — Sports Therapy &amp; Clinical
+                        Exercise</span>
+                      <span class="specialty-exp-item__company">Goethe University Frankfurt · Jul 2022–Aug 2024</span>
+                      <p>Co-designed the Exercise-CC study; designed clinical exercise protocols for oncology patients
+                        under real-world constraints; maintained nationwide SOPs across multiple research sites;
+                        gathered patient feedback to improve program safety and engagement.</p>
+                    </div>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Studio Manager &amp; Corporate Consultant</span>
+                      <span class="specialty-exp-item__company">DanTrim GmbH · Mar 2018–Feb 2020</span>
+                      <p>Delivered workplace health, ergonomic and exercise-based wellbeing programs; designed
+                        return-to-work and injury prevention programs tailored to individual and organisational needs;
+                        managed intake, tracking and documentation systems.</p>
+                    </div>
+                    <div class="specialty-exp-item">
+                      <span class="specialty-exp-item__role">Territory Manager — Sports Medicine &amp; MedTech</span>
+                      <span class="specialty-exp-item__company">Arthrex APAC · Sep 2024–Feb 2026</span>
+                      <p>Developed deep domain knowledge in orthopaedic injuries, surgical pathways, hospital
+                        operations and rehabilitation considerations; translated frontline clinical needs into process
+                        improvements and adoption strategies.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /.specialty-panels -->
+        </div><!-- /.specialty-selector -->
+      </div><!-- /.container -->
     </section>
 
     <!-- ==================== PORTFOLIO SECTION ==================== -->
@@ -200,13 +484,14 @@
 
           <!-- Right: Story Panel -->
           <aside class="story-panel">
-            <h3 class="story-panel__header">Story</h3>
-            <p class="story-panel__roles">Design &bull; UI/UX &bull; Build</p>
+            <p class="story-panel__roles">Category</p>
             <div class="story-panel__content">
               <!-- Populated by JS -->
             </div>
             <div class="power-tags" id="power-tags"></div>
           </aside>
+          <!-- Project Footer: Learnings / Papers / Links — spans all 3 columns -->
+          <div id="project-footer" class="project-footer"></div>
         </div>
       </div>
     </section>
@@ -223,189 +508,17 @@
         </header>
 
         <div class="about__content">
-          <p class="about__bio" data-i18n="about.bio">
-            I'm a Product Designer with an Exercise Physiology + clinical research background, who spent my career
-            working in clinical rehabilitation, researching and tackling complex problems in the human body. Now I
-            design and build digital solutions.
-          </p>
-
-
-          <div class="skills-grid">
-            <div class="skill-category skill-category--featured">
-              <h3 class="skill-category__title">Design & Product</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Figma</span>
-                <span class="skill-tag">User Research</span>
-                <span class="skill-tag">User Flows</span>
-                <span class="skill-tag">Wireframing</span>
-                <span class="skill-tag">Prototyping</span>
-                <span class="skill-tag">Design Systems</span>
-                <span class="skill-tag">UI Design</span>
-              </div>
-            </div>
-            <div class="skill-category skill-category--featured">
-              <h3 class="skill-category__title">Research & Strategy</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">User Interviews</span>
-                <span class="skill-tag">Usability Testing</span>
-                <span class="skill-tag">Behavior Change</span>
-                <span class="skill-tag">Journey Mapping</span>
-                <span class="skill-tag">Information Architecture</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h3 class="skill-category__title">Frontend Literacy</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">HTML / CSS</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">React basics</span>
-                <span class="skill-tag">Prototyping support</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h3 class="skill-category__title">Tools</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">FigJam</span>
-                <span class="skill-tag">Miro</span>
-                <span class="skill-tag">Notion</span>
-                <span class="skill-tag">Adobe Creative</span>
-                <span class="skill-tag">VS Code</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h3 class="skill-category__title">AI-Assisted Workflows</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Prototyping, writing & iteration</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== EXPERIENCE & QUALIFICATIONS SPLIT PANEL ==================== -->
-    <section id="background" class="section split-section reveal" aria-labelledby="background-heading">
-      <div class="container">
-        <header class="section__header">
-          <h2 id="background-heading" class="section__title" data-i18n="background.title">
-            Background
-          </h2>
-          <p class="section__subtitle" data-i18n="background.subtitle">
-            Click a panel to explore my professional journey or qualifications
-          </p>
-        </header>
-
-        <div class="split-panel" role="presentation" aria-label="Background information panels">
-          <!-- Experience Panel -->
-          <div class="split-panel__side split-panel__side--experience split-panel__side--active" id="panel-experience"
-            tabindex="0">
-            <button class="split-panel__tab" id="tab-experience">
-              <h3 class="split-panel__title">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  aria-hidden="true">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                </svg>
-                <span data-i18n="experience.title">Experience</span>
-              </h3>
-              <span class="split-panel__hint" data-i18n="experience.subtitle">Professional history</span>
-            </button>
-            <div class="split-panel__content">
-              <div id="timeline-container" class="timeline" role="region" aria-label="Work experience timeline">
-                <!-- Skeleton loaders while content loads -->
-                <div class="timeline-skeleton" aria-hidden="true">
-                  <div class="timeline-item">
-                    <div class="skeleton skeleton-text skeleton-text--short"
-                      style="height: 1.2em; margin-bottom: 0.5rem;"></div>
-                    <div class="skeleton skeleton-text skeleton-text--medium"></div>
-                    <div class="skeleton skeleton-text skeleton-text--long"></div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="skeleton skeleton-text skeleton-text--short"
-                      style="height: 1.2em; margin-bottom: 0.5rem;"></div>
-                    <div class="skeleton skeleton-text skeleton-text--medium"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Qualifications Panel -->
-          <div class="split-panel__side split-panel__side--qualifications" id="panel-qualifications" tabindex="0">
-            <button class="split-panel__tab" id="tab-qualifications">
-              <h3 class="split-panel__title">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  aria-hidden="true">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                </svg>
-                <span data-i18n="qualifications.title">Qualifications</span>
-              </h3>
-              <span class="split-panel__hint" data-i18n="qualifications.hint">Education & achievements</span>
-            </button>
-            <div class="split-panel__content">
-              <div id="qualifications-container" class="qualifications">
-                <div class="qualification-group">
-                  <h4 class="qualification-group__title" data-i18n="qualifications.edu.title">Education</h4>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title" data-i18n="qualifications.edu.d1.title">Bachelor of Exercise
-                      & Sport Science</span>
-                    <span class="qualification-item__meta" data-i18n="qualifications.edu.d1.meta">University of
-                      Newcastle • 2016</span>
-                  </div>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title" data-i18n="qualifications.edu.d2.title">Mechatronics
-                      Engineering Coursework</span>
-                    <span class="qualification-item__meta" data-i18n="qualifications.edu.d2.meta">University of
-                      Newcastle • 2 years (2013)</span>
-                  </div>
-                </div>
-
-                <div class="qualification-group">
-                  <h4 class="qualification-group__title" data-i18n="qualifications.certs.title">Certifications</h4>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title" data-i18n="qualifications.certs.c1.title">Sales Psychology &
-                      Account Management</span>
-                    <span class="qualification-item__meta" data-i18n="qualifications.certs.c1.meta">2025</span>
-                  </div>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title" data-i18n="qualifications.certs.c2.title">Qualitative &
-                      Quantitative Research Methods</span>
-                    <span class="qualification-item__meta" data-i18n="qualifications.certs.c2.meta">2023</span>
-                  </div>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title" data-i18n="qualifications.certs.c3.title">Rehabilitation
-                      Trainer for Orthopedic Diseases</span>
-                    <span class="qualification-item__meta" data-i18n="qualifications.certs.c3.meta">2021</span>
-                  </div>
-                </div>
-
-                <div class="qualification-group">
-                  <h4 class="qualification-group__title" data-i18n="qualifications.innovations.title">Technical
-                    Innovations</h4>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title" data-i18n="qualifications.innovations.i1.title">Autonomous
-                      Flight Systems (Quadcopter)</span>
-                    <span class="qualification-item__meta" data-i18n="qualifications.innovations.i1.meta">Project |
-                      2013</span>
-                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;"
-                      data-i18n="qualifications.innovations.i1.desc">
-                      Hardware Integration: Custom multi-rotor UAV with calibrated PID tuning for stability.
-                    </p>
-                  </div>
-                  <div class="qualification-item">
-                    <span class="qualification-item__title" data-i18n="qualifications.innovations.i2.title">Embedded
-                      Retail Systems (Innovation Award)</span>
-                    <span class="qualification-item__meta" data-i18n="qualifications.innovations.i2.meta">Project |
-                      2011</span>
-                    <p style="font-size: var(--text-sm); color: var(--muted); margin-top: 0.5rem;"
-                      data-i18n="qualifications.innovations.i2.desc">
-                      Full-Stack Development: Hardware-based shopping scanner with relational database telemetry.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="about__bio-block">
+            <p class="about__bio" data-i18n="about.bio">
+              Exercise and Sports Scientist with a background spanning clinical research, sports medicine, health coaching, corporate wellness and digital product design. My career has always centred on one question: how do you help people actually change their behaviour — and stick with it?
+            </p>
+            <p class="about__bio about__bio--secondary">
+              I've worked in hospitals, research labs, gyms, corporate environments and on my own digital products — which means I understand health problems from the inside, not just from a screen. Whether I'm designing an app, delivering a wellness program or supporting a clinical trial, I bring the same thinking: what does this person actually need, and what will get in their way?
+            </p>
+            <p class="about__bio about__bio--secondary">
+              Languages: English (native) &nbsp;·&nbsp; German C1 &nbsp;·&nbsp; Spanish A2<br>
+              Based in Spain &amp; Australia &nbsp;·&nbsp; Open to 100% remote
+            </p>
           </div>
         </div>
       </div>
@@ -421,7 +534,7 @@
             Get In Touch
           </h2>
           <p class="section__subtitle" data-i18n="contact.subtitle">
-            Based in Spain (CET). Open to 100% remote (EU/UK).
+            Based in Spain &amp; Australia. Open to 100% remote.
           </p>
         </header>
 
@@ -571,6 +684,39 @@
         popup.classList.remove('active');
       }
     });
+
+    // ── Specialty Tab Switcher ──────────────────────────────────────
+    (function () {
+      var tabs = document.querySelectorAll('.specialty-tab');
+      var panels = document.querySelectorAll('.specialty-panel');
+
+      function activate(tab) {
+        var target = tab.getAttribute('data-specialty');
+
+        tabs.forEach(function (t) {
+          var isThis = t === tab;
+          t.classList.toggle('specialty-tab--active', isThis);
+          t.setAttribute('aria-selected', isThis ? 'true' : 'false');
+        });
+
+        panels.forEach(function (p) {
+          var isTarget = p.id === 'specialty-' + target;
+          p.classList.toggle('specialty-panel--active', isTarget);
+        });
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () { activate(tab); });
+
+        // Keyboard: left/right arrow to switch tabs
+        tab.addEventListener('keydown', function (e) {
+          var all = Array.from(tabs);
+          var idx = all.indexOf(tab);
+          if (e.key === 'ArrowRight') { e.preventDefault(); activate(all[(idx + 1) % all.length]); all[(idx + 1) % all.length].focus(); }
+          if (e.key === 'ArrowLeft')  { e.preventDefault(); activate(all[(idx - 1 + all.length) % all.length]); all[(idx - 1 + all.length) % all.length].focus(); }
+        });
+      });
+    })();
   </script>
 </body>
 

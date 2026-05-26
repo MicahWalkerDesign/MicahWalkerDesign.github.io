@@ -2,76 +2,29 @@
   "_comment": [
     "LinkedIn Experience Data Mirror",
     "------------------------------",
-    "Updated: 2026-02-06"
+    "Updated: 2026-04-24"
   ],
-  "lastUpdated": "2026-02-06",
+  "lastUpdated": "2026-04-24",
   "experiences": [
     {
-      "id": "arthrex-apac-2024",
-      "company": "Arthrex APAC",
-      "role": {
-        "en": "Territory Manager / Sales (Sports Medicine)",
-        "es": "Territory Manager / Sales (Sports Medicine)",
-        "de": "Territory Manager / Sales (Sports Medicine)"
-      },
-      "location": {
-        "en": "Perth · Hybrid",
-        "es": "Perth · Hybrid",
-        "de": "Perth · Hybrid"
-      },
-      "dates": {
-        "start": "2024-09",
-        "display": {
-          "en": "Sep 2024 – Present",
-          "es": "Sep 2024 – Present",
-          "de": "Sep 2024 – Present"
-        }
-      },
-      "description": {
-        "en": "",
-        "es": "",
-        "de": ""
-      },
-      "bullets": {
-        "en": [
-          "Supported business growth and day-to-day product adoption across 4 hospitals and 20+ surgeons.",
-          "Worked with surgeons and hospital teams to understand clinical workflows and constraints.",
-          "Turned real-world needs into clear requirements and onboarding/adoption steps.",
-          "Coordinated stakeholders (clinical, operations, procurement) to keep onboarding moving.",
-          "Created repeatable training materials (guides, demos, training flows).",
-          "Identified common usage issues and suggested process + messaging improvements."
-        ],
-        "es": [],
-        "de": []
-      },
-      "skills": [
-        "Stakeholder Engagement",
-        "Workflow Analysis & Optimisation",
-        "Data-Informed Decision Making",
-        "Business Strategy",
-        "User Experience (UX)",
-        "Problem Solving"
-      ]
-    },
-    {
       "id": "freelance-2024",
-      "company": "Freelance",
+      "company": "Self-Employed · Freelance",
       "role": {
-        "en": "Product Designer (Health, Performance & Wellness)",
-        "es": "Product Designer (Health, Performance & Wellness)",
-        "de": "Product Designer (Health, Performance & Wellness)"
+        "en": "Health & Wellness Consultant — Movement, Digital Health UX & Product Design",
+        "es": "Consultor de Salud y Bienestar — Movimiento, UX Digital en Salud y Diseño de Producto",
+        "de": "Gesundheits- & Wellness-Berater — Bewegung, Digital Health UX & Produktdesign"
       },
       "location": {
-        "en": "Remote (DE/AU/ES)",
-        "es": "Remote (DE/AU/ES)",
-        "de": "Remote (DE/AU/ES)"
+        "en": "Frankfurt · Perth · Barcelona · Remote",
+        "es": "Frankfurt · Perth · Barcelona · Remoto",
+        "de": "Frankfurt · Perth · Barcelona · Remote"
       },
       "dates": {
         "start": "2024-04",
         "display": {
           "en": "Apr 2024 – Present",
-          "es": "Apr 2024 – Present",
-          "de": "Apr 2024 – Present"
+          "es": "Abr 2024 – Presente",
+          "de": "Apr 2024 – Heute"
         }
       },
       "description": {
@@ -81,13 +34,13 @@
       },
       "bullets": {
         "en": [
-          "Built and improved 11 websites end-to-end.",
-          "Prototyped 4 apps and preparing to launch 2.",
-          "Designed products end-to-end: research → user flows → wireframes → UI → prototypes (mainly in Figma).",
-          "Spoke with users and tested early concepts to simplify journeys and information structure.",
-          "Built a lightweight design system (components, states, tokens) for consistency and speed.",
-          "Worked with developers and used AI tools to prototype faster, validate UI, and support handoff/design QA.",
-          "Applied behavior-change thinking (motivation, adherence, reducing friction) so products work in real life."
+          "Built & optimised websites end-to-end, prototyped app concepts & prepared multiple products for launch across health, wellness, service & digital-product contexts.",
+          "Designed health, movement & performance-focused digital experiences from research, positioning & user flows through to wireframes, UI, prototypes & handoff.",
+          "Translated complex health, wellness & behaviour-change concepts into simple onboarding, clear content, practical user journeys & supportive interfaces.",
+          "Used interviews, usability checks & early testing to identify friction points, clarify information architecture & simplify user decision-making.",
+          "Created reusable UI patterns & lightweight design systems, including components, states & tokens, to keep products consistent & easier to build.",
+          "Used AI-assisted coding & prototyping to validate UX decisions faster, align stakeholders & support cleaner design-to-development handoff.",
+          "Applied a behaviour-change lens across projects, focusing on adherence, motivation, confidence, habit formation & reducing real-world friction."
         ],
         "es": [],
         "de": []
@@ -98,28 +51,78 @@
         "Product Design",
         "User Research",
         "Prototyping",
-        "Design Systems"
+        "Design Systems",
+        "Behaviour Change"
       ]
     },
     {
-      "id": "uniklinik-2022",
-      "company": "Uniklinik Frankfurt",
+      "id": "arthrex-apac-2024",
+      "company": "Arthrex APAC",
       "role": {
-        "en": "Research Scientist (Sports & Therapy) / Exercise Physiologist",
-        "es": "Research Scientist (Sports & Therapy) / Exercise Physiologist",
-        "de": "Research Scientist (Sports & Therapy) / Exercise Physiologist"
+        "en": "Territory Manager / Sales Representative — Sports Medicine & MedTech",
+        "es": "Territory Manager / Representante de Ventas — Medicina Deportiva y MedTech",
+        "de": "Territory Manager / Vertriebsmitarbeiter — Sportmedizin & MedTech"
+      },
+      "location": {
+        "en": "Perth · Hybrid",
+        "es": "Perth · Híbrido",
+        "de": "Perth · Hybrid"
+      },
+      "dates": {
+        "start": "2024-09",
+        "end": "2026-02",
+        "display": {
+          "en": "Sep 2024 – Feb 2026",
+          "es": "Sep 2024 – Feb 2026",
+          "de": "Sep 2024 – Feb 2026"
+        }
+      },
+      "description": {
+        "en": "",
+        "es": "",
+        "de": ""
+      },
+      "bullets": {
+        "en": [
+          "Supported business growth & service delivery across 4 hospitals & 20+ surgeons in a high-accountability orthopaedic sports medicine environment.",
+          "Partnered with surgeons, hospitals & clinical teams to understand workflows, constraints & adoption barriers across sports medicine products & procedures.",
+          "Translated frontline clinical & operational needs into clearer requirements, product education, onboarding plans & stakeholder communication.",
+          "Built repeatable enablement assets including guides, demos, training flows & product education materials to improve understanding & successful usage.",
+          "Led stakeholder alignment across clinical, commercial & operational teams, helping clarify decision criteria & reduce friction in procurement & onboarding.",
+          "Identified usage barriers, behaviour patterns & workflow pain points in the field, feeding insights back into messaging, process improvement & customer support.",
+          "Developed deeper domain knowledge across musculoskeletal injury, surgical workflows, rehabilitation pathways, sports medicine & performance-related care."
+        ],
+        "es": [],
+        "de": []
+      },
+      "skills": [
+        "Stakeholder Engagement",
+        "Workflow Analysis & Optimisation",
+        "Sports Medicine",
+        "MedTech",
+        "Product Education",
+        "Problem Solving"
+      ]
+    },
+    {
+      "id": "goethe-2022",
+      "company": "Goethe University Frankfurt",
+      "role": {
+        "en": "Research Scientist — Sports Therapy & Clinical Exercise Research",
+        "es": "Científico Investigador — Terapia Deportiva e Investigación Clínica del Ejercicio",
+        "de": "Wissenschaftlicher Mitarbeiter — Sporttherapie & Klinische Bewegungsforschung"
       },
       "location": {
         "en": "Frankfurt · On-site",
-        "es": "Frankfurt · On-site",
-        "de": "Frankfurt · On-site"
+        "es": "Frankfurt · Presencial",
+        "de": "Frankfurt · Vor Ort"
       },
       "dates": {
         "start": "2022-07",
         "end": "2024-08",
         "display": {
           "en": "Jul 2022 – Aug 2024",
-          "es": "Jul 2022 – Aug 2024",
+          "es": "Jul 2022 – Ago 2024",
           "de": "Jul 2022 – Aug 2024"
         }
       },
@@ -130,36 +133,36 @@
       },
       "bullets": {
         "en": [
-          "Contributed to 3 research papers; co-wrote and designed the Exercise-CC study.",
-          "Supported nationwide SOPs through meticulous data capture and multi-clinic research work.",
-          "Designed clinical exercise protocols under real constraints (medical risk, adherence, staffing, equipment, scheduling).",
-          "Collected patient feedback (interviews / focus groups) and improved clarity, safety, and engagement.",
-          "Worked across hospital teams to keep care coordinated.",
-          "Helped structure databases and documentation so outcomes were trackable and reusable."
+          "Contributed to research papers & supported the design, documentation & delivery of the Exercise-CC study across clinical exercise & sports therapy contexts.",
+          "Helped develop structured exercise protocols under real-world constraints, including medical risk, adherence, equipment, staffing & scheduling.",
+          "Contributed to nationwide SOPs through meticulous data capture, documentation & multi-clinic research coordination.",
+          "Gathered patient feedback through interviews, focus groups & structured communication, using insights to improve clarity, safety & program engagement.",
+          "Worked across hospital teams to support coordinated delivery & reduce fragmentation between research, clinical workflows & patient-facing exercise programs.",
+          "Applied exercise science, movement education & behaviour-change principles within clinical-adjacent research environments."
         ],
         "es": [],
         "de": []
       },
       "skills": [
-        "Medical Exercise",
         "Exercise Physiology",
-        "Research",
         "Qualitative & Quantitative Research Methodologies",
+        "Clinical Research",
+        "Behaviour Change",
         "Cross-team Collaboration",
-        "Data Science"
+        "Data Documentation"
       ]
     },
     {
       "id": "aussie-ausdauer",
       "company": "Aussie Ausdauer",
       "role": {
-        "en": "Consultant & Personal Trainer",
-        "es": "Consultant & Personal Trainer",
-        "de": "Consultant & Personal Trainer"
+        "en": "Health, Movement & Wellness Consultant",
+        "es": "Consultor de Salud, Movimiento y Bienestar",
+        "de": "Gesundheits-, Bewegungs- & Wellness-Berater"
       },
       "location": {
         "en": "Frankfurt · Hybrid",
-        "es": "Frankfurt · Hybrid",
+        "es": "Frankfurt · Híbrido",
         "de": "Frankfurt · Hybrid"
       },
       "dates": {
@@ -178,11 +181,13 @@
       },
       "bullets": {
         "en": [
-          "Built my brand from scratch (positioning, website, services, onboarding, delivery).",
-          "Delivered wellbeing programs for insurers and companies (ergonomics + movement interventions).",
-          "Grew and retained clients through marketing, referrals, and SEO; improved conversion with clearer offers and intake.",
-          "Designed programs for injuries/conditions with a focus on adherence (tracking + feedback loops).",
-          "Created education content and templates to standardise delivery and reduce repeated work."
+          "Built an independent health & movement brand from scratch, including positioning, website, social media & YouTube, services, onboarding, client communication & program delivery.",
+          "Delivered practical wellbeing programs for insurers, organisations & individuals, including movement education, ergonomics & sustainable behaviour-change support.",
+          "Designed personalised movement, fitness & return-to-activity programs around client goals, injuries, motivation, confidence & real-life constraints.",
+          "Created habit-friendly programming, tracking templates, feedback loops & education resources to improve adherence & reduce repeated explanation.",
+          "Grew & retained a client base through marketing, referrals, SEO & clearer service positioning.",
+          "Improved client onboarding & intake processes so goals, constraints & expectations were easier to understand from the beginning.",
+          "Turned complex health & movement information into simple, usable education content clients could apply independently."
         ],
         "es": [],
         "de": []
@@ -190,31 +195,31 @@
       "skills": [
         "Personal Training",
         "Consulting",
-        "Sales",
-        "User Interface Design",
-        "Social Media Marketing",
-        "Product Design"
+        "Health & Wellness Program Design",
+        "Behaviour Change",
+        "Client Education",
+        "Marketing & SEO"
       ]
     },
     {
       "id": "tg-1862",
       "company": "TG 1862 Rüsselsheim",
       "role": {
-        "en": "Studio Manager",
-        "es": "Studio Manager",
-        "de": "Studio Manager"
+        "en": "Studio Manager — Health, Fitness & Member Experience",
+        "es": "Gerente de Estudio — Salud, Fitness y Experiencia de Socios",
+        "de": "Studioleiter — Gesundheit, Fitness & Mitgliedererlebnis"
       },
       "location": {
         "en": "Rüsselsheim (DE) · Full-time",
-        "es": "Rüsselsheim (DE) · Full-time",
-        "de": "Rüsselsheim (DE) · Full-time"
+        "es": "Rüsselsheim (DE) · Tiempo completo",
+        "de": "Rüsselsheim (DE) · Vollzeit"
       },
       "dates": {
         "start": "2019-09",
         "end": "2022-08",
         "display": {
           "en": "Sep 2019 – Aug 2022",
-          "es": "Sep 2019 – Aug 2022",
+          "es": "Sep 2019 – Ago 2022",
           "de": "Sep 2019 – Aug 2022"
         }
       },
@@ -225,10 +230,12 @@
       },
       "bullets": {
         "en": [
-          "Ran day-to-day operations: scheduling, staffing, member support, consistent service quality.",
-          "Improved onboarding and safety processes so service didn't depend on who was working.",
-          "Fixed recurring member issues by adjusting workflows, templates, and program structure.",
-          "Coordinated coaches/therapists so the member experience felt consistent."
+          "Managed day-to-day studio operations, including scheduling, staffing, member support, safety processes & service quality.",
+          "Improved onboarding & safety workflows so the member experience was more consistent & less dependent on individual staff style.",
+          "Identified recurring member pain points & improved workflows, templates & program structure to support engagement & retention.",
+          "Coordinated across coaches, trainers & therapy-adjacent staff to create a more joined-up experience for members.",
+          "Supported movement, injury-prevention & wellbeing programming across a broad member population.",
+          "Balanced operational demands with member experience, safety, communication & program delivery."
         ],
         "es": [],
         "de": []
@@ -236,18 +243,18 @@
       "skills": [
         "Management",
         "Injury Prevention",
-        "Problem Solving",
-        "Cross-team Collaboration",
-        "User Experience (UX)"
+        "Member Experience",
+        "Program Design",
+        "Cross-team Collaboration"
       ]
     },
     {
       "id": "dantrim-2018",
       "company": "DanTrim GmbH",
       "role": {
-        "en": "Studio Manager & Rehabilitation Consultant",
-        "es": "Studio Manager & Rehabilitation Consultant",
-        "de": "Studio Manager & Rehabilitation Consultant"
+        "en": "Studio Manager & Corporate Consultant",
+        "es": "Gerente de Estudio y Consultor Corporativo",
+        "de": "Studioleiter & Unternehmensberater"
       },
       "location": {
         "en": "Rüsselsheim (DE)",
@@ -260,7 +267,7 @@
         "display": {
           "en": "Mar 2018 – Feb 2020",
           "es": "Mar 2018 – Feb 2020",
-          "de": "Mar 2018 – Feb 2020"
+          "de": "Mär 2018 – Feb 2020"
         }
       },
       "description": {
@@ -270,41 +277,44 @@
       },
       "bullets": {
         "en": [
-          "Delivered rehab and return-to-activity programs tailored to injuries and real constraints.",
-          "Standardised intake, tracking, and program notes to make progress clear and easy to adjust.",
-          "Coordinated staff to keep coaching consistent and safe.",
-          "Supported scheduling and reporting workflows to maintain predictable service quality."
+          "Delivered corporate health & movement support for employees & members, including ergonomics, exercise guidance, prevention & return-to-activity programming.",
+          "Designed practical movement programs tailored to individual goals, physical limitations, injury history & workplace constraints.",
+          "Standardised intake, tracking & program notes so progress was easier to understand, communicate & adjust.",
+          "Supported staff with consistent coaching processes, safety expectations & client communication.",
+          "Improved scheduling, reporting & service workflows to make delivery more predictable & easier to manage.",
+          "Helped clients translate health & movement advice into sustainable routines they could realistically follow."
         ],
         "es": [],
         "de": []
       },
       "skills": [
-        "Rehabilitation",
+        "Injury Rehabilitation",
+        "Exercise Physiology",
+        "Corporate Health",
         "Program Design",
-        "Process Improvement",
-        "Team Coordination"
+        "Process Improvement"
       ]
     },
     {
-      "id": "quadcopter-2013",
-      "company": "Associated with University of Newcastle",
+      "id": "forum-sports-pt-2016",
+      "company": "The Forum Sports and Aquatics Centre, UoN",
       "role": {
-        "en": "Project: Garage-built Quadcopter",
-        "es": "Project: Garage-built Quadcopter",
-        "de": "Project: Garage-built Quadcopter"
+        "en": "Certified Personal Trainer",
+        "es": "Entrenador Personal Certificado",
+        "de": "Zertifizierter Personal Trainer"
       },
       "location": {
-        "en": "2013",
-        "es": "2013",
-        "de": "2013"
+        "en": "Newcastle, NSW",
+        "es": "Newcastle, NSW",
+        "de": "Newcastle, NSW"
       },
       "dates": {
-        "start": "2012-01",
-        "end": "2013-01",
+        "start": "2016-01",
+        "end": "2016-12",
         "display": {
-          "en": "Jan 2012 - Jan 2013",
-          "es": "Jan 2012 - Jan 2013",
-          "de": "Jan 2012 - Jan 2013"
+          "en": "Jan 2016 – Dec 2016",
+          "es": "Ene 2016 – Dic 2016",
+          "de": "Jan 2016 – Dez 2016"
         }
       },
       "description": {
@@ -314,38 +324,38 @@
       },
       "bullets": {
         "en": [
-          "Hand-built a custom quadcopter from scratch, engineering the frame, flight controller, and C++ signal processing for stable flight."
+          "Delivered personal training, group training, health & fitness checks, and exercise prescription."
         ],
         "es": [],
         "de": []
       },
       "skills": [
-        "Mechatronics",
-        "Computer Engineering",
-        "Electrical Engineering",
-        "C++"
+        "Personal Training",
+        "Exercise Prescription",
+        "Group Training",
+        "Sales"
       ]
     },
     {
-      "id": "retail-systems-2011",
-      "company": "Innovation Award Winner",
+      "id": "forum-sports-swim-2012",
+      "company": "The Forum Sports and Aquatics Centre, UoN",
       "role": {
-        "en": "Design Project: Embedded Retail Systems",
-        "es": "Design Project: Embedded Retail Systems",
-        "de": "Design Project: Embedded Retail Systems"
+        "en": "Swim Instructor",
+        "es": "Instructor de Natación",
+        "de": "Schwimmlehrer"
       },
       "location": {
-        "en": "2011",
-        "es": "2011",
-        "de": "2011"
+        "en": "Newcastle, NSW",
+        "es": "Newcastle, NSW",
+        "de": "Newcastle, NSW"
       },
       "dates": {
-        "start": "2011-01",
-        "end": "2011-12",
+        "start": "2012-05",
+        "end": "2016-12",
         "display": {
-          "en": "2011",
-          "es": "2011",
-          "de": "2011"
+          "en": "May 2012 – Dec 2016",
+          "es": "May 2012 – Dic 2016",
+          "de": "Mai 2012 – Dez 2016"
         }
       },
       "description": {
@@ -355,18 +365,56 @@
       },
       "bullets": {
         "en": [
-          "Engineered an award-winning custom hardware-to-database shopping scanner to track inventory in real-time, significantly improving user experience."
+          "Coached a wide range of levels and ages to develop water safety and improve stroke efficiency and technique."
         ],
         "es": [],
         "de": []
       },
       "skills": [
-        "User Experience Design (UED)",
-        "Product Design",
-        "User Experience (UX)",
-        "SQL",
-        "Databases",
-        "Innovation"
+        "Coaching",
+        "Communication",
+        "Instruction"
+      ]
+    },
+    {
+      "id": "newcastle-knights-2015",
+      "company": "Newcastle Knights",
+      "role": {
+        "en": "Volunteer Assistant Coach — Strength & Conditioning (Juniors)",
+        "es": "Asistente Voluntario de Entrenamiento — Fuerza y Acondicionamiento (Juveniles)",
+        "de": "Ehrenamtlicher Co-Trainer — Kraft & Konditionierung (Junioren)"
+      },
+      "location": {
+        "en": "Newcastle, NSW",
+        "es": "Newcastle, NSW",
+        "de": "Newcastle, NSW"
+      },
+      "dates": {
+        "start": "2015-09",
+        "end": "2016-08",
+        "display": {
+          "en": "Sep 2015 – Aug 2016",
+          "es": "Sep 2015 – Ago 2016",
+          "de": "Sep 2015 – Aug 2016"
+        }
+      },
+      "description": {
+        "en": "",
+        "es": "",
+        "de": ""
+      },
+      "bullets": {
+        "en": [
+          "Assisted in coaching the junior development team (ages 16–21) in high-performance strength & conditioning in the gym and on the field."
+        ],
+        "es": [],
+        "de": []
+      },
+      "skills": [
+        "Strength & Conditioning",
+        "Coaching",
+        "Exercise Physiology",
+        "Communication"
       ]
     }
   ]

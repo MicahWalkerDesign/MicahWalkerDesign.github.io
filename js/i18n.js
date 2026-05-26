@@ -14,6 +14,7 @@ const dictionaries = {
   en: {
     // Header / Navigation
     header: {
+      specialties: 'Specialties',
       experience: 'Experience',
       portfolio: 'Portfolio',
       about: 'About',
@@ -25,7 +26,7 @@ const dictionaries = {
     // New Sections
     about: {
       title: 'About Me',
-      bio: "I'm a Product Designer & Exercise Physiologist who spent my career working in clinical rehabilitation, researching and tackling complex problems in the human body. Now I design and build digital solutions."
+      bio: "My work has always been goal-driven: helping people prevent injuries, recover from setbacks, improve performance & build healthier habits. I focus on the intersection of movement, behaviour change & digital experience — helping health, wellness & healthtech organisations turn complex human problems into practical workflows, clear user journeys & supportive digital experiences."
     },
     skills: {
       frontend: 'Frontend',
@@ -62,7 +63,7 @@ const dictionaries = {
     },
     contact: {
       title: "Contact",
-      subtitle: "Have a project in mind? reach out via email or phone.",
+      subtitle: "Based in Spain & Australia. Open to 100% remote.",
       phone: {
         btn: "Call / WhatsApp",
         whatsapp: "💬 WhatsApp",
@@ -73,10 +74,10 @@ const dictionaries = {
     // Hero section
     hero: {
       greeting: "Hi, I'm",
-      title: 'Micah Walker — Frontend Engineer & Technical Product Designer',
-      tagline: 'Frontend Engineer & Technical Product Designer',
-      subtitle: 'Product Designer — Health, Performance & Wellness',
-      description: 'I design health and performance products that people actually stick with by leveraging personal experience and combining behavior-change thinking, research, and clean UI.',
+      title: 'Micah Walker — Health & Wellness Consultant',
+      tagline: 'Behaviour Change · Health · Remote (AU)',
+      subtitle: 'Health & Wellness Consultant | Movement, Prevention & Digital Health UX',
+      description: 'I help health, wellness & healthtech organisations turn complex human problems into practical workflows, clear user journeys & supportive digital experiences — combining movement science, behaviour change & UX thinking.',
       ctaPrimary: 'Contact',
       ctaSecondary: 'Take a Break'
     },
@@ -176,6 +177,7 @@ const dictionaries = {
   es: {
     // Header / Navigation
     header: {
+      specialties: 'Especialidades',
       experience: 'Experiencia',
       portfolio: 'Portafolio',
       about: 'Sobre Mí',
@@ -187,7 +189,7 @@ const dictionaries = {
     // New Sections
     about: {
       title: 'Sobre Mí',
-      bio: "Soy Diseñador de Productos con experiencia en Fisiología del Ejercicio e investigación clínica, que pasó su carrera trabajando en rehabilitación clínica, investigando y abordando problemas complejos en el cuerpo humano. Ahora diseño y construyo soluciones digitales."
+      bio: "Mi trabajo siempre ha sido orientado a objetivos: ayudar a las personas a prevenir lesiones, recuperarse de contratiempos, mejorar su rendimiento y desarrollar hábitos más saludables. Me centro en la intersección del movimiento, el cambio de comportamiento y la experiencia digital — ayudando a organizaciones de salud, bienestar y healthtech a convertir problemas humanos complejos en flujos prácticos, recorridos de usuario claros y experiencias digitales de apoyo."
     },
     skills: {
       frontend: 'Frontend',
@@ -224,7 +226,7 @@ const dictionaries = {
     },
     contact: {
       title: 'Contacto',
-      subtitle: 'Ubicado en España (CET). Abierto a 100% remoto (UE/UK).',
+      subtitle: 'Con base en España y Australia. Abierto a 100% remoto.',
       phone: {
         btn: 'Llamar / WhatsApp',
         whatsapp: '💬 WhatsApp',
@@ -235,10 +237,10 @@ const dictionaries = {
     // Hero section
     hero: {
       greeting: 'Hola, soy',
-      title: 'Micah Walker — Diseñador de Productos',
-      tagline: 'UX de cambio de comportamiento • Investigación → Flujos → UI',
-      subtitle: 'Diseñador de Productos — Salud, Rendimiento y Bienestar',
-      description: 'Diseño productos de salud y rendimiento que la gente realmente usa, aprovechando la experiencia personal y combinando pensamiento de cambio de comportamiento, investigación y UI limpia.',
+      title: 'Micah Walker — Consultor de Salud y Bienestar',
+      tagline: 'Cambio de Comportamiento · Salud · Remoto (AU)',
+      subtitle: 'Consultor de Salud y Bienestar | Movimiento, Prevención y UX Digital en Salud',
+      description: 'Ayudo a organizaciones de salud, bienestar y healthtech a convertir problemas humanos complejos en flujos prácticos, recorridos de usuario claros y experiencias digitales de apoyo — combinando ciencia del movimiento, cambio de comportamiento y UX.',
       ctaPrimary: 'Contacto',
       ctaSecondary: 'Ver Proyectos'
     },
@@ -331,6 +333,7 @@ const dictionaries = {
   de: {
     // Header / Navigation
     header: {
+      specialties: 'Schwerpunkte',
       experience: 'Erfahrung',
       portfolio: 'Portfolio',
       about: 'Über Mich',
@@ -342,7 +345,7 @@ const dictionaries = {
     // New Sections
     about: {
       title: 'Über Mich',
-      bio: "Ich bin Produktdesigner mit Hintergrund in Sportphysiologie und klinischer Forschung, der seine Karriere in der klinischen Rehabilitation verbracht hat, wo ich komplexe Probleme des menschlichen Körpers erforscht und gelöst habe. Jetzt entwerfe und entwickle ich digitale Lösungen."
+      bio: "Meine Arbeit war schon immer zielorientiert: Menschen dabei zu helfen, Verletzungen vorzubeugen, Rückschläge zu überwinden, ihre Leistung zu verbessern und gesündere Gewohnheiten aufzubauen. Ich konzentriere mich auf die Schnittstelle von Bewegung, Verhaltensänderung und digitaler Erfahrung — und helfe Gesundheits-, Wellness- und Healthtech-Organisationen, komplexe menschliche Probleme in praktische Workflows, klare User Journeys und unterstützende digitale Erlebnisse zu übersetzen."
     },
     skills: {
       frontend: 'Frontend',
@@ -379,7 +382,7 @@ const dictionaries = {
     },
     contact: {
       title: 'Kontakt',
-      subtitle: 'Standort Spanien (CET). Offen für 100% Remote (EU/UK).',
+      subtitle: 'Basis in Spanien und Australien. Offen für 100% Remote.',
       phone: {
         btn: 'Anrufen / WhatsApp',
         whatsapp: '💬 WhatsApp',
@@ -390,10 +393,10 @@ const dictionaries = {
     // Hero section
     hero: {
       greeting: 'Hallo, ich bin',
-      title: 'Micah Walker — Produktdesigner',
-      tagline: 'Verhaltensänderungs-UX • Forschung → Flows → UI',
-      subtitle: 'Produktdesigner — Gesundheit, Leistung & Wellness',
-      description: 'Ich entwerfe Gesundheits- und Leistungsprodukte, die Menschen tatsächlich nutzen, indem ich persönliche Erfahrung mit Verhaltensänderungs-Denken, Forschung und klarem UI kombiniere.',
+      title: 'Micah Walker — Gesundheits- & Wellness-Berater',
+      tagline: 'Verhaltensänderung · Gesundheit · Remote (AU)',
+      subtitle: 'Gesundheits- & Wellness-Berater | Bewegung, Prävention & Digital Health UX',
+      description: 'Ich helfe Gesundheits-, Wellness- und Healthtech-Organisationen, komplexe menschliche Probleme in praktische Workflows, klare User Journeys und unterstützende digitale Erlebnisse zu übersetzen — mit Bewegungswissenschaft, Verhaltensänderung und UX-Denken.',
       ctaPrimary: 'Kontakt',
       ctaSecondary: 'Projekte ansehen'
     },
